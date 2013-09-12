@@ -3,4 +3,4 @@
 import com.atomicscala.AtomicTest._
 
 theString is
-  "The dog visited the firehouse!"
+  "The dog visited the firehouse!"

@@ -3,5 +3,5 @@
 import com.atomicscala.AtomicTest._
 
 val roaringApe =
-  new GreatApe2(112, 9, "Male")
+  new GreatApe2(112, 9, "Male")
 roaringApe.myWords is Vector("Roar")

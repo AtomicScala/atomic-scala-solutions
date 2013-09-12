@@ -3,5 +3,5 @@
 import com.atomicscala.AtomicTest._
 
 val painting =
-  new Painting(64, 80, "Starry", 111, 1889)
+  new Painting(64, 80, "Starry", 111, 1889)
 painting.show is "Modern"

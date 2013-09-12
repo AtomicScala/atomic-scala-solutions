@@ -4,6 +4,6 @@ import com.atomicscala.AtomicTest._
 
 val earth = new Planet(moons =
 1,
-  name = "Earth",
-  description = "a hospitable planet")
+  name = "Earth",
+  description = "a hospitable planet")
 earth.hasMoon is true

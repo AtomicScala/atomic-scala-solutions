@@ -4,4 +4,4 @@ import com.atomicscala.AtomicTest._
 
 travel2(Passenger("Sally",
 "Marie")) is
-Â  "Sally is walking"
+Â  "Sally is walking"

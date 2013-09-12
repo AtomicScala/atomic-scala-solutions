@@ -3,10 +3,10 @@
 import com.atomicscala.AtomicTest._
 
 val anotherT1 =
-  new SimpleTimeDefault(10, 30)
+  new SimpleTimeDefault(10, 30)
 val anotherT2 = new SimpleTimeDefault(9)
 val anotherST =
-  anotherT1.subtract(anotherT2)
+  anotherT1.subtract(anotherT2)
 anotherST.hours is 1
 anotherST.minutes is 30
 val anotherST2 =

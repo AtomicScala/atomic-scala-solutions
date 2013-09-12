@@ -3,4 +3,4 @@
 import com.atomicscala.AtomicTest._
 
 sentence.toString() is
-  "The dog visited the firehouse "
+  "The dog visited the firehouse "

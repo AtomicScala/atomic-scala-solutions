@@ -9,7 +9,7 @@ Activity("01-04", "Run"),
 Activity("01-10", "Ski"),
 Activity("01-03", "Run"))
 getDates("Ski", activities) is
-  Vector("01-03", "01-10")
+  Vector("01-03", "01-10")
 getDates("Run", activities) is
-  Vector("01-01", "01-04", "01-03")
+  Vector("01-01", "01-04", "01-03")
 getDates("Bike", activities) is Vector()

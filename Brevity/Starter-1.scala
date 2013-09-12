@@ -4,8 +4,8 @@ import com.atomicscala.AtomicTest._
 
 def
 assignResult(arg:Boolean):Int = {
-Â  val result = if(arg) 42 else 47
-Â  result
+Â  val result = if(arg) 42 else 47
+Â  result
 }
 assignResult(true) is 42
 assignResult(false) is 47

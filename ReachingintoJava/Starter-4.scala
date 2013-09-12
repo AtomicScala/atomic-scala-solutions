@@ -4,5 +4,5 @@ import com.atomicscala.AtomicTest._
 
 val f = new Frequency
 // add values for cat, dog, cat, bird, 
-//   cat, cat, kitten, mouse here
+//   cat, cat, kitten, mouse here
 f.getCount("cat") is 4

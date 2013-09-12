@@ -4,12 +4,12 @@ import com.atomicscala.AtomicTest._
 
 getActivities("01-01",
 activities) is
-  Vector("Run")
+  Vector("Run")
 getActivities("01-02", activities) is
-  Vector()
+  Vector()
 getActivities("01-03", activities) is
-  Vector("Ski", "Run")
+  Vector("Ski", "Run")
 getActivities("01-04", activities) is
-  Vector("Run")
+  Vector("Run")
 getActivities("01-10", activities) is
-  Vector("Ski")
+  Vector("Ski")

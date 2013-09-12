@@ -6,7 +6,7 @@ val people = Vector(
 Person("Zach","Smith","zach@smith.com"),
 Person("Mary", "Add", "mary@add.com"),
 Person("Sally", "Taylor",
-Â Â Â Â Â Â  "sally@taylor.com"))
+Â Â Â Â Â Â  "sally@taylor.com"))
 val sorted = // call sort here
 sorted is "Vector(" +
 + "Person(Mary,Add,mary@add.com)," +

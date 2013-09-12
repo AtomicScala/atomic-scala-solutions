@@ -4,7 +4,7 @@ import com.atomicscala.AtomicTest._
 
 val p = Person("John",
 "Smith",
-Â  "john@smith.com")
+Â  "john@smith.com")
 p.fullName is "John Smith"
 p.first is "John"
 p.email is "john@smith.com"
