@@ -2,7 +2,7 @@ Copyright (c)2013, MindView, LLC. All Rights Reserved.
 
 Solutions for "Atomic Scala."
 
-You cannot copy and distribute this code; it is available only from
+You cannot copy and distribute this code; it is (freely) available only from
 http://www.AtomicScala.com
 
 You cannot remove this copyright and notice. You cannot distribute modified 
