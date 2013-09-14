@@ -1,3 +1,4 @@
+
 Atomic Scala Solutions
 ======================
 
