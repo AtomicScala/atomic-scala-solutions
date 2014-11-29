@@ -1,10 +1,9 @@
 // Solution-1.scala
 // Solution to Exercise 1 in "Imports & Packages"
+import com.atomicscala.pythagorean.RightTriangle
 
-import com.atomicscala.royals.Royalty
-
-val royal = new Royalty("Henry", "Laughs")
-val title = royal.title()
-assert("Sir Laughsalot" == title,
-  "Expected Sir Laughsalot, Got " + title)
-println(title)
+val rt = new RightTriangle
+println(rt.hypotenuse(3,4))
+println(rt.area(3,4))
+assert(rt.hypotenuse(3,4) == 5)
+assert(rt.area(3,4) == 6)
