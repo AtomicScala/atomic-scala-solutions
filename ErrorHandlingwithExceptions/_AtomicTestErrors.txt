@@ -2,3 +2,5 @@
 IndexOutOfBoundsException
 Main$$anon$1$FauxPas: Oops![Error] expected:
 Oops!
+no throw[Error] expected:
+
