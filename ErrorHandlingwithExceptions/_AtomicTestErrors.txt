@@ -1,2 +1,4 @@
 1[Error] expected:
 IndexOutOfBoundsException
+Main$$anon$1$FauxPas: Oops![Error] expected:
+Oops!
