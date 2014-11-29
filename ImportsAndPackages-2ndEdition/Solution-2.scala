@@ -1,10 +1,9 @@
 // Solution-2.scala
 // Solution to Exercise 2 in "Imports & Packages"
+import com.atomicscala.pythagorean.EquilateralTriangle
 
-import com.atomicscala.royals.Crest
-val crest = new Crest("Bear", "1875")
-assert("Bear in the year 1875" ==
-  crest.description(),
-  "Expected Bear in the year 1875, Got " +
-  crest)
-println(crest.description)
+val et = new EquilateralTriangle
+println(et.area(2))
+assert(et.area(2) == Math.sqrt(3))
+println(et.area(9.49))
+assert(Math.round(et.area(9.49)) == 39)
