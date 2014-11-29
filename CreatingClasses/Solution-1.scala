@@ -16,7 +16,6 @@ val giraffe = new Giraffe
 
 println(hippo)
 println(lion)
-println(giraffe)
 println(tiger)
 println(monkey)
 println(giraffe)
