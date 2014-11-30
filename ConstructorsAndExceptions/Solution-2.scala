@@ -6,7 +6,6 @@ import codelisting._
 
 class CodeListingTester2(
 	makeList: String => IndexedSeq[String]) {
-
 	val l = makeList("CodeListingTester.scala")
 	var index = 1
 	for (i <- l) {
