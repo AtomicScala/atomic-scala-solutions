@@ -3,12 +3,12 @@
 import com.atomicscala.AtomicTest._
 
 case class Cycle(riders:Int) {
-	override def toString = riders match {
-		case 1 => "Unicycle"
-		case 2 => "Bicycle"
-		case 3 => "Tricycle"
-		case _ => "Cycle with " + riders + " wheels"
-	}
+    override def toString = riders match {
+        case 1 => "Unicycle"
+        case 2 => "Bicycle"
+        case 3 => "Tricycle"
+        case _ => "Cycle with " + riders + " wheels"
+    }
 }
 
 val c1 = Cycle(1)

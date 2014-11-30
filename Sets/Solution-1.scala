@@ -35,7 +35,7 @@ def percentVeggies(contents: Set[String]) = {
 def percentOther(contents: Set[String]) = {
   100.0 *
   (contents --
-  	(fruits | vegetables | meats)).size /
+      (fruits | vegetables | meats)).size /
   contents.size
 }
 

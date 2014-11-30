@@ -5,7 +5,7 @@ import com.atomicscala.AtomicTest._
 // TicTacToe.scala
 
 object Move extends Enumeration {
-	type Move = Value
+    type Move = Value
     val Unset, X, O = Value
 }
 
@@ -27,7 +27,7 @@ class Grid {
     Vector(new Cell, new Cell, new Cell)
   )
   def play(e:Move.Value, x:Int, y:Int) = {
-  	val status = {
+      val status = {
       if(x < 0 || x > 2 || y < 0 || y > 2)
         "invalid move"
       else
@@ -37,12 +37,12 @@ class Grid {
     status
   }
   def showBoard() = {
-  	for (row <- cells) {
-  		for (cell <- row) {
-  			print(cell.entry + " ")
-  		}
-  		println
-  	}
+      for (row <- cells) {
+          for (cell <- row) {
+              print(cell.entry + " ")
+          }
+          println
+      }
   }
 }
 

@@ -22,7 +22,7 @@ class Grid {
     Vector(new Cell, new Cell, new Cell)
   )
   def play(e:Char, x:Int, y:Int) = {
-  	val status = {
+      val status = {
       if(x < 0 || x > 2 || y < 0 || y > 2)
         "invalid move"
       else
@@ -32,12 +32,12 @@ class Grid {
     status
   }
   def showBoard() = {
-  	for (row <- cells) {
-  		for (cell <- row) {
-  			print(cell.entry + " ")
-  		}
-  		println
-  	}
+      for (row <- cells) {
+          for (cell <- row) {
+              print(cell.entry + " ")
+          }
+          println
+      }
   }
 }
 

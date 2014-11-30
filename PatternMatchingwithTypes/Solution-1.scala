@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 case class Person(name:String) {
-	override def toString:String = { name }
+    override def toString:String = { name }
 }
 
 def plus1(x: Any) : Any = {

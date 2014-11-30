@@ -8,7 +8,7 @@ abstract class Adder(x:Int) {
 
 class NumericAdder(x:Int)
 extends Adder(x) {
-	def add(y:Int):Int = x + y
+    def add(y:Int):Int = x + y
 
 }
 

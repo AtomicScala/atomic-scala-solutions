@@ -10,18 +10,18 @@ trait Connections {
     connection match {
       case true =>
         if (connected < maxConnections) {
-	      connected = connected + 1
-	      true
-	    }
-	    else false
+          connected = connected + 1
+          true
+        }
+        else false
       case false =>
-	    if (connected > 0) {
-	      connected = connected - 1
-	      true
-	    }
-	    else false
+        if (connected > 0) {
+          connected = connected - 1
+          true
+        }
+        else false
 
-	  }
+      }
   }
 }
 

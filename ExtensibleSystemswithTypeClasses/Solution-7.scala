@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 /*{oldDescription}
-7.	Modify the previous exercise by adding a second transform method that produces a different type of result.
+7.    Modify the previous exercise by adding a second transform method that produces a different type of result.
 {oldDescription}*/
 
 // needs solution

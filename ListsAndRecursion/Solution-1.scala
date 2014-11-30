@@ -6,8 +6,8 @@ import Math.max
 {
 
 def findMax(aList:List[Int], theMax: Int):Int = {
-	if (aList.isEmpty) theMax
-	else findMax(aList.tail, max(theMax, aList.head))
+    if (aList.isEmpty) theMax
+    else findMax(aList.tail, max(theMax, aList.head))
 }
 
 val aList = List(10, 20, 45, 15, 30)

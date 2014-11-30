@@ -8,11 +8,11 @@ val activities = Vector( Activity("01-01", "Run"), Activity("01-03", "Ski"),
   Activity("01-03", "Run") )
 
 def getActivities(date: String, activities: Vector[Activity]) : Vector[String] = {
-	for {
+    for {
     a <- activities
-		if a.date equals(date)
+        if a.date equals(date)
   }
-	yield a.action
+    yield a.action
 
 }
 

@@ -22,9 +22,9 @@ battery.monitor(10) is "red"
 
 trait BatteryPower {
   def monitor(level: Int) = level match {
-	case i: Int if (i < 20) => "red"
-	case i: Int if (i <= 39) => "yellow"
-	case _ => "green"
+    case i: Int if (i < 20) => "red"
+    case i: Int if (i <= 39) => "yellow"
+    case _ => "green"
   }
 }
 

@@ -10,7 +10,7 @@ class Element2 {
 }
 
 trait Skill {
-	val id: String
+    val id: String
 }
 
 trait Fighting extends Skill {

@@ -7,7 +7,7 @@ trait Contact {
 }
 
 class Person2(val first: String, val last: String) {
-	override def toString = first + " " + last
+    override def toString = first + " " + last
 }
 
 class Friend(first: String, last: String, val email: String)  extends Person2(first: String, last: String) with Contact {

@@ -3,18 +3,18 @@
 import com.atomicscala.AtomicTest._
 
 case class Person(name:String) {
-	override def toString:String = { name }
+    override def toString:String = { name }
 }
 
 def convertToSize(x: Any): Any = {
-	x match {
-		case s: String => s.length
-		case n: Int => n
-		case f: Float => f
-		case p: Person => 1
-		case _ => 0
+    x match {
+        case s: String => s.length
+        case n: Int => n
+        case f: Float => f
+        case p: Person => 1
+        case _ => 0
 
-	}
+    }
 }
 
 convertToSize(45) is 45

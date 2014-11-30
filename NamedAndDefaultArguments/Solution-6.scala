@@ -4,9 +4,9 @@ import com.atomicscala.AtomicTest._
 
 class Item(val name: String, var price: Int) {
 
-	def cost(grocery:Boolean=false, medication:Boolean=false, rate:Double=0.10):Double = {
-		if (grocery || medication) price
-		else price + (rate*price)
+    def cost(grocery:Boolean=false, medication:Boolean=false, rate:Double=0.10):Double = {
+        if (grocery || medication) price
+        else price + (rate*price)
     }
 }
 val flour = new Item(name="flour", 4)

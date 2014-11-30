@@ -8,7 +8,7 @@ if (s3.contentEquals(s1)) {
    println("s1 and s3 are equal")
 }
 else {
-	println("s1 and s3 are not equal")
+    println("s1 and s3 are not equal")
 }
 println(s1)
 println(s3)

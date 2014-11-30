@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 /*{oldDescription}
-2.	Modify TicTacToe.scala from Summary 2 to use Success and Fail.
+2.    Modify TicTacToe.scala from Summary 2 to use Success and Fail.
 {oldDescription}*/
 
 // needs solution

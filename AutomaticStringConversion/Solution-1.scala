@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 case class Bicycle(riders:Int) {
-	override def toString = "Bicycle built for 2"
+    override def toString = "Bicycle built for 2"
 }
 
 val forTwo = Bicycle(2)

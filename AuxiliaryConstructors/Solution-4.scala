@@ -3,27 +3,27 @@
 import com.atomicscala.AtomicTest._
 
 class ClothesWasher3(val model: String, val capacity: Double) {
-	val cycles = 5
+    val cycles = 5
 
-	def this(model: String) = {
-		this(model, 2)
-	}
+    def this(model: String) = {
+        this(model, 2)
+    }
 
-	def this(capacity: Double) = {
-	   this("Unknown", capacity)
-	}
+    def this(capacity: Double) = {
+       this("Unknown", capacity)
+    }
 
-	def this() = {
-		this("Unknown", 2)
-	}
+    def this() = {
+        this("Unknown", 2)
+    }
 
-	def wash(bleach: Int, fabricSoftener: Int) = {
-		"Wash used " + bleach + " bleach and " + fabricSoftener + " fabric softener"
-	}
+    def wash(bleach: Int, fabricSoftener: Int) = {
+        "Wash used " + bleach + " bleach and " + fabricSoftener + " fabric softener"
+    }
 
-	def wash() = {
-		"Simple wash"
-	}
+    def wash() = {
+        "Simple wash"
+    }
 }
 
 val washer7 = new ClothesWasher3("LG 100", 3.6)

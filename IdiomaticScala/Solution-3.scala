@@ -31,12 +31,12 @@ true
 // OR ...
 
 def isOpen(activity: String, hour: Int) = activity match {
-	case "swimming" | "ice skating" =>
-	  val opens = 9
-	  val closes = 20
-	  println("Operating hours: " +
+    case "swimming" | "ice skating" =>
+      val opens = 9
+      val closes = 20
+      println("Operating hours: " +
         opens + " - " + closes)
-	  (hour >= opens && hour <= closes)
+      (hour >= opens && hour <= closes)
 
-	case _ => true
+    case _ => true
 }

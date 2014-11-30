@@ -5,11 +5,11 @@ import com.atomicscala.AtomicTest._
 case class Activity(date: String, action: String)
 
 def getDates(action: String, activities: Vector[Activity]):Vector[String]  = {
-	for {
+    for {
     a <- activities
-		if a.action equals(action)
+        if a.action equals(action)
   }
-	yield a.date
+    yield a.date
 }
 val activities = Vector( Activity("01-01", "Run"), Activity("01-03", "Ski"),
   Activity("01-04", "Run"), Activity("01-10", "Ski"),

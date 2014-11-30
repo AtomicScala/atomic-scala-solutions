@@ -3,8 +3,8 @@
 import com.atomicscala.AtomicTest._
 
 def isPalIgnoreCase(str: String) : Boolean = {
-	val s = str.toUpperCase.reverse
-	s.equals(str.toUpperCase)
+    val s = str.toUpperCase.reverse
+    s.equals(str.toUpperCase)
 }
 
 isPalIgnoreCase("Bob") is true

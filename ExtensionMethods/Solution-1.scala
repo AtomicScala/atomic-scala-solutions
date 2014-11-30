@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 /*{oldDescription}
-1.	Rewrite ExtensionMethodArguments.scala so you get the same results without using extension methods.
+1.    Rewrite ExtensionMethodArguments.scala so you get the same results without using extension methods.
 {oldDescription}*/
 
 // needs solution
