@@ -3,10 +3,10 @@
 import com.atomicscala.AtomicTest._
 
 class Exclaim4(val s: String) {
-	var count = 0
-	def exclaim() = {
-		count = count + 1
-		s + "!"
+  var count = 0
+  def exclaim() = {
+    count = count + 1
+    s + "!"
     }
 }
 

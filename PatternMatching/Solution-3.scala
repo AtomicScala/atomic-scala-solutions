@@ -5,12 +5,12 @@ import com.atomicscala.AtomicTest._
 // Simple solution
 def checkTruth(
   exp1:Boolean, exp2:Boolean):String = exp1 match {
-	case true=>
-	  if (exp2) "Both are true"
-	  else "First: true, second: false"
-	case false=>
-	  if (exp2) "First: false, second: true"
-	  else "Both are false"
+  case true=>
+    if (exp2) "Both are true"
+    else "First: true, second: false"
+  case false=>
+    if (exp2) "First: false, second: true"
+    else "Both are false"
 
   }
 
@@ -26,10 +26,10 @@ checkTruth(true && false, false && true) is
 // BONUS Solution:
 def checkTruth2(
  exp1:Boolean, exp2:Boolean):String = (exp1, exp2) match {
-	case (true, true) => "Both are true"
-	case (true, false) => "First: true, second: false"
-	case (false, true) => "First: false, second: true"
-	case (false, false) => "Both are false"
+  case (true, true) => "Both are true"
+  case (true, false) => "First: true, second: false"
+  case (false, true) => "First: false, second: true"
+  case (false, false) => "Both are false"
 
   }
 

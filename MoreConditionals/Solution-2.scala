@@ -3,8 +3,8 @@
 import com.atomicscala.AtomicTest._
 
 def isPalindrome(str: String) : Boolean = {
-	val s = str.reverse
-	s.equals(str)
+  val s = str.reverse
+  s.equals(str)
 }
 
 isPalindrome("mom") is true

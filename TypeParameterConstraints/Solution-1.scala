@@ -19,17 +19,17 @@ trait Clean[T]
 trait Edible
 
 object Protein extends Enumeration {
-	case class _Val() extends Val
+  case class _Val() extends Val
        with Edible
     type Protein = _Val
     val beef, chicken, pork, tofu = _Val()
   }
 
 object Fruit extends Enumeration {
-	case class _Val() extends Val
-	  with Edible
-	type Fruit = _Val
-	val apple, orange, banana, tomato = _Val()
+  case class _Val() extends Val
+    with Edible
+  type Fruit = _Val
+  val apple, orange, banana, tomato = _Val()
 }
 
 trait Food[F<: Edible] extends Store[F]
@@ -39,18 +39,18 @@ trait Food[F<: Edible] extends Store[F]
 trait Handheld
 
 object Cutlery extends Enumeration {
-	case class _Val() extends Val
-	  with Handheld
-	type Cutlery = _Val
-	val knife, spoon, fork, spatula = _Val()
+  case class _Val() extends Val
+    with Handheld
+  type Cutlery = _Val
+  val knife, spoon, fork, spatula = _Val()
 
 }
 
 object Device extends Enumeration {
-	case class _Val() extends Val
-	  with Handheld
-	type Device = _Val
-	val poacher, timer, sifter, torch = _Val()
+  case class _Val() extends Val
+    with Handheld
+  type Device = _Val
+  val poacher, timer, sifter, torch = _Val()
 }
 
 trait Utensils[U<:Handheld] extends Store[U]

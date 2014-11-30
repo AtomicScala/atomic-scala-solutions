@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 /*{oldDescription}
-4.	Modify CodeListingCustom.scala to use Try and recover.
+4.  Modify CodeListingCustom.scala to use Try and recover.
 {oldDescription}*/
 
 // needs solution

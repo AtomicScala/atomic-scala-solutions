@@ -13,7 +13,7 @@ val eb = new EveryBody
 var everyone = ""
 for (i <- eb.all)
 {
-	everyone += i.name + ", "
+  everyone += i.name + ", "
 }
 
 everyone is "Janet Doe, Janet Doe, Janet Doe, "

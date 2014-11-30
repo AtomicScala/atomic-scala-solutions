@@ -7,18 +7,18 @@ class SimpleTimeNamed(val hours:Int=0,
   def subtract(aTime: SimpleTimeNamed):
   SimpleTimeNamed = {
     val h = hours - aTime.hours
-	val m = minutes - aTime.minutes
+  val m = minutes - aTime.minutes
 
     // see simplification above
-	if (h < 0)
-	  return new SimpleTimeNamed(hours=0)
+  if (h < 0)
+    return new SimpleTimeNamed(hours=0)
 
-	if (m >= 0)
-	  new SimpleTimeNamed(h, m)
-	else
-	  new SimpleTimeNamed(h-1, m+60)
+  if (m >= 0)
+    new SimpleTimeNamed(h, m)
+  else
+    new SimpleTimeNamed(h-1, m+60)
 
-	}
+  }
 }
 
 val namedST = new SimpleTimeNamed(hours=9)

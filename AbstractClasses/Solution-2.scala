@@ -12,15 +12,15 @@ abstract class Animal {
 }
 
 class Chicken extends Animal {
-	def food = "insects"
-	def animal = "Chicken"
-	def sound = "Bawk"
+  def food = "insects"
+  def animal = "Chicken"
+  def sound = "Bawk"
 }
 
 class Pig extends Animal {
-	def food = "anything"
-	def animal = "Pig"
-	def sound = "Oink"
+  def food = "anything"
+  def animal = "Pig"
+  def sound = "Oink"
 }
 
 val chicken = new Chicken

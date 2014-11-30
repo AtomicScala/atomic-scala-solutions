@@ -16,8 +16,8 @@ class Temperature {
     scale = "c"
   }
   def setKelvin(now:Double) = {
-  	current = now
-  	scale = "k"
+    current = now
+    scale = "k"
   }
   def getFahrenheit() = {
     if(scale == "f")

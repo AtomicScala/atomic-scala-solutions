@@ -10,11 +10,11 @@ testLetters(13) is "Consonant: n"
 {oldDescription}*/
 
 def testLetters(n:Int) = {
-	letters(n) match {
-		case Left(letter) => s"Vowel: $letter"
+  letters(n) match {
+    case Left(letter) => s"Vowel: $letter"
         case Right(letter) => s"Consonant: $letter"
         case _ => "Unknown"
-	}
+  }
 }
 
 testLetters(0) is "Vowel: a"

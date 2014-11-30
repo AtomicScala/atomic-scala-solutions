@@ -3,13 +3,13 @@
 import com.atomicscala.AtomicTest._
 
 class Sailboat {
-	def raise():String = { "Sails raised" }
-	def lower():String = { "Sails lowered" }
+  def raise():String = { "Sails raised" }
+  def lower():String = { "Sails lowered" }
 }
 
 class Motorboat {
-	def start():String = { "Motor on" }
-	def stop():String = { "Motor off" }
+  def start():String = { "Motor on" }
+  def stop():String = { "Motor off" }
 }
 
 val sailboat = new Sailboat

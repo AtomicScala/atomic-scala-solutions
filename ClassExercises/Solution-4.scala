@@ -10,13 +10,13 @@ class SimpleTime(val hours: Int,
     val m = minutes - aTime.minutes
 
     // see simplification above
-	if (h < 0)
-	  return new SimpleTime(0, 0)
+  if (h < 0)
+    return new SimpleTime(0, 0)
 
-	if (m >= 0)
-	  new SimpleTime(h, m)
-	else
-	  new SimpleTime(h-1, m+60)
+  if (m >= 0)
+    new SimpleTime(h, m)
+  else
+    new SimpleTime(h-1, m+60)
 
   }
 }
