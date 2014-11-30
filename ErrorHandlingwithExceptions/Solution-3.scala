@@ -1,7 +1,5 @@
 // Solution-3.scala
 // Solution to Exercise 3 in "Error Handling with Exceptions"
-/* Create a Vector containing some elements. Try to index outside the range
-of that Vector. Now write code to catch the exception. */
 import com.atomicscala.AtomicTest._
 
 val v = Vector(1, 7, 22, 11, 17)

@@ -1,8 +1,5 @@
 // Solution-8.scala
 // Solution to Exercise 8 in "Error Handling with Exceptions"
-/* Create a class called FailingConstructor with a constructor that might
-fail partway through the construction process and throw an exception. In
-another method, write code that properly guards against this failure. */
 import com.atomicscala.AtomicTest._
 
 // Any exception will do here, but IllegalStateException is often
