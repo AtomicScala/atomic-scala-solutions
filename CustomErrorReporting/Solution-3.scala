@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 /*{oldDescription}
- 3.    Can tuples be used as an error-reporting technique? Show how this can work by modifying DivZeroCustom.scala.
+ 3.	Can tuples be used as an error-reporting technique? Show how this can work by modifying DivZeroCustom.scala.
 {oldDescription}*/
 
 // needs solution

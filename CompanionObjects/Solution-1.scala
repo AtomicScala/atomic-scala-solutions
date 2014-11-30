@@ -5,7 +5,7 @@ import com.atomicscala.AtomicTest._
 class WalkActivity
 object WalkActivity {
 
-    def start(athlete: String)  { println("started!") }
+	def start(athlete: String)  { println("started!") }
 
 }
 

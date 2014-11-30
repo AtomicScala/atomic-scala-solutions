@@ -7,12 +7,12 @@ println("Uncomment the text in the solution to see the error")
 // Uncomment the following to see the error
 /*class Family3(parents: String*, kids: String* ) {
 
-    def familySize(): Int = {
-        var count = 2
-        for (i<-kids) {
-            count = count + 1
-        }
-        count
-    }
+	def familySize(): Int = {
+		var count = 2
+		for (i<-kids) {
+			count = count + 1
+		}
+		count
+	}
 }
 */

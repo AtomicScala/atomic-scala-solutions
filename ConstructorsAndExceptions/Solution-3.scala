@@ -4,12 +4,12 @@ import com.atomicscala.AtomicTest._
 import codelisting._
 
 class CodeListingTester3(makeList:String => IndexedSeq[String]) {
-    val l = makeList("NoSuchFile.scala")
-    var index = 1
-    for (i <- l) {
-        println (s"$index $i")
-        index = index + 1
-    }
+	val l = makeList("NoSuchFile.scala")
+	var index = 1
+	for (i <- l) {
+		println (s"$index $i")
+		index = index + 1
+	}
 }
 
 new CodeListingTester3(CodeListing.apply)

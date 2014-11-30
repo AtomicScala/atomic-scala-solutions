@@ -3,19 +3,19 @@
 import com.atomicscala.AtomicTest._
 
 class Flare {
-    def light(): String = { "Flare used!"}
+	def light(): String = { "Flare used!"}
 }
 
 class Sailboat2 {
-    def raise():String = { "Sails raised" }
-    def lower():String = { "Sails lowered" }
-    def signal(): String = new Flare().light()
+	def raise():String = { "Sails raised" }
+	def lower():String = { "Sails lowered" }
+	def signal(): String = new Flare().light()
 }
 
 class Motorboat2 {
-    def start():String = { "Motor on" }
-    def stop():String = { "Motor off" }
-    def signal(): String = new Flare().light()
+	def start():String = { "Motor on" }
+	def stop():String = { "Motor off" }
+	def signal(): String = new Flare().light()
 }
 
 val sailboat2 = new Sailboat2

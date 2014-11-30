@@ -7,12 +7,12 @@ import com.atomicscala.AtomicTest._
 {oldDescription}*/
 
 def divideLetters = 'a' to 'z' map {
-    case 'a' => Left('a')
-    case 'e' => Left('e')
-    case 'i' => Left('i')
-    case 'o' => Left('o')
-    case 'u' => Left('u')
-    case x => Right(x)
+	case 'a' => Left('a')
+	case 'e' => Left('e')
+	case 'i' => Left('i')
+	case 'o' => Left('o')
+	case 'u' => Left('u')
+	case x => Right(x)
 }
 
 val letters = divideLetters

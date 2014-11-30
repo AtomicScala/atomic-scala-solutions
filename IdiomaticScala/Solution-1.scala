@@ -21,8 +21,8 @@ else       println("It's false")
 // OR
 
 z match {
-    case true => println("It's true")
-    case false => println("It's false")
+	case true => println("It's true")
+	case false => println("It's false")
 }
 
 // If5.scala

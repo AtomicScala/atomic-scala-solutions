@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 class ClothesWasher2(val model: String = "Unknown", val capacity: Double = 2D) {
-    val cycles = 5
+	val cycles = 5
 }
 
 val washer4 = new ClothesWasher2

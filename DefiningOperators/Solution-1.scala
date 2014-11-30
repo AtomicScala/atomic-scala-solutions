@@ -3,19 +3,19 @@
 import com.atomicscala.AtomicTest._
 
 class SimpleTime2(val hours: Int, val minutes: Int) {
-    def -(aTime: SimpleTime2): SimpleTime2 = {
-        val h = hours - aTime.hours
-        val m = minutes - aTime.minutes
+	def -(aTime: SimpleTime2): SimpleTime2 = {
+		val h = hours - aTime.hours
+		val m = minutes - aTime.minutes
 
-        if (h < 0)
-           return new SimpleTime2(0, 0)    // see simplification above
+		if (h < 0)
+		   return new SimpleTime2(0, 0)	// see simplification above
 
-        if (m >= 0)
-          new SimpleTime2(h, m)
-        else
-          new SimpleTime2(h-1, m+60)
+		if (m >= 0)
+		  new SimpleTime2(h, m)
+		else
+		  new SimpleTime2(h-1, m+60)
 
-    }
+	}
 }
 
 val someT1 = new SimpleTime2(10, 30)

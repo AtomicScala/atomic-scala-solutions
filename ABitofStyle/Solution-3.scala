@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 class Exclaim3(val s: String) {
-    def noParens = s + "!"
+	def noParens = s + "!"
 }
 
 val e3 = new Exclaim3("big yes")

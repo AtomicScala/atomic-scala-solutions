@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 /*{oldDescription}
-1.    Rewrite CodeListing2.scala and ShowListingEither.scala to use Success and Fail.
+1.	Rewrite CodeListing2.scala and ShowListingEither.scala to use Success and Fail.
 {oldDescription}*/
 
 // needs solution

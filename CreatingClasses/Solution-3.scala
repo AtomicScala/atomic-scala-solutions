@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 class Zebra {
-    println("I have stripes!")
+	println("I have stripes!")
 }
 
 val z = new Zebra

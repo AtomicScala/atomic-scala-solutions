@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 class Flare {
-    def light(): String = { "Flare used!"}
+	def light(): String = { "Flare used!"}
 }
 
 val flare = new Flare
