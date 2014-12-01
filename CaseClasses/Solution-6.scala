@@ -3,12 +3,12 @@
 import com.atomicscala.AtomicTest._
 
 case class SimpleTimeDefault(hours:Int, minutes:Int = 0) {
-   def subtract(aTime: SimpleTimeDefault): SimpleTimeDefault = {
+  def subtract(aTime: SimpleTimeDefault): SimpleTimeDefault = {
     val h = hours - aTime.hours
     val m = minutes - aTime.minutes
 
     if (h < 0)
-       return new SimpleTimeDefault(0)  // see simplification above
+       return new SimpleTimeDefault(0)  // See simplification above
 
     if (m >= 0)
       new SimpleTimeDefault(h, m)

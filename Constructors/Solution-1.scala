@@ -12,19 +12,16 @@ class Coffee(val shots:Int = 2,
   def getCup():Unit = {
     if(toGo) {
       result += "ToGoCup "
-    }
-    else {
+    } else {
       result += "HereCup "
     }
   }
   def caf() = shots - decaf
-
   def pourShots():Unit = {
     for(s <- 0 until shots) {
       if(decaf > 0) {
         result += "decaf shot "
-      }
-      else {
+      } else {
         result += "shot "
       }
     }
@@ -51,4 +48,3 @@ doubleHalfCaf.shots is 2
 tripleHalfCaf.decaf is 2
 tripleHalfCaf.caf() is 1
 tripleHalfCaf.shots is 3
-

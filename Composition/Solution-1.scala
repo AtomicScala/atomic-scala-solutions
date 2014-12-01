@@ -17,6 +17,3 @@ serving.serveFood is true
 
 val prep = new PrepKitchen
 prep.prepFood is true
-
-
-

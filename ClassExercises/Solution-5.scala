@@ -2,8 +2,7 @@
 // Solution to Exercise 5 in "Class Exercises"
 import com.atomicscala.AtomicTest._
 
-class SimpleTimeDefault(val hours:Int,
-  val minutes:Int = 0) {
+class SimpleTimeDefault(val hours:Int, val minutes:Int = 0) {
   def subtract(aTime: SimpleTimeDefault):
   SimpleTimeDefault = {
   val h = hours - aTime.hours
@@ -17,16 +16,12 @@ class SimpleTimeDefault(val hours:Int,
     new SimpleTimeDefault(h, m)
   else
     new SimpleTimeDefault(h-1, m+60)
-
   }
 }
 
-val anotherT1 =
-  new SimpleTimeDefault(10, 30)
-val anotherT2 =
-  new SimpleTimeDefault(9)
-val anotherST =
-  anotherT1.subtract(anotherT2)
+val anotherT1 = new SimpleTimeDefault(10, 30)
+val anotherT2 = new SimpleTimeDefault(9)
+val anotherST = anotherT1.subtract(anotherT2)
 anotherST.hours is 1
 anotherST.minutes is 30
 val anotherST2 =
@@ -34,5 +29,3 @@ val anotherST2 =
   new SimpleTimeDefault(9, 45))
 anotherST2.hours is 0
 anotherST2.minutes is 15
-
-

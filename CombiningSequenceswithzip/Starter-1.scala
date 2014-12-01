@@ -2,8 +2,7 @@
 // From "Combining Sequences with zip" atom
 import com.atomicscala.AtomicTest._
 
-val people = Vector("Sally
-Smith",
+val people = Vector("Sally Smith",
   "Dan Jones", "Tom Brown", "Betsy Blanc",
   "Stormy Morgan", "Hal Goodsen")
 val group1 = // fill this in

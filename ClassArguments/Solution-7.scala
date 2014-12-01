@@ -16,5 +16,3 @@ class Cup3(var percentFull:Int) {
 val cup3 = new Cup3(0)
 cup3.percentFull=100
 println(cup3.percentFull)
-
-

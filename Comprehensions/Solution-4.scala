@@ -2,12 +2,12 @@
 // Solution to Exercise 4 in "Comprehensions"
 import com.atomicscala.AtomicTest._
 
-def yielding4(v:Vector[Int]):Vector[Int]={
- // you can get this to work if you create the variables OUTSIDE the loop
- // any attemp to create them inside the loop fails
- var n = 0
- var isOdd = false
- for {
+def yielding4(v:Vector[Int]):Vector[Int] = {
+  // you can get this to work if you create the variables OUTSIDE the loop
+  // any attemp to create them inside the loop fails
+  var n = 0
+  var isOdd = false
+  for {
     n <- v
     if n < 10
     isOdd = (n % 2 != 0)

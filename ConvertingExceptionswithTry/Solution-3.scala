@@ -2,18 +2,12 @@
 // Solution to Exercise 3 in "Converting Exceptions with Try"
 import com.atomicscala.AtomicTest._
 
-/*{oldDescription}
- Modify ShowListingTry.scala to include line numbers. Were you able to use your CodeListingTester from ConstructorsAndExceptions?
-{oldDescription}*/
-
-// ShowListingTry.scala
 import util.Try
 import java.io.FileNotFoundException
 import codelisting._
 
 class CodeListingTester2(
   makeList: String => IndexedSeq[String]) {
-
   val l = makeList("CodeListingTester.scala")
   var index = 1
   for (i <- l) {

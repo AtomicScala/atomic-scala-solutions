@@ -31,20 +31,15 @@ trait Kitchen {
 }
 
 class ServingKitchen extends Kitchen {
-
   override def serveFood:Boolean = true
   override def prepFood:Boolean = false
-
   val serveUtensils = new ServeUtensils
-
   val utensils = Vector(serveUtensils)
 }
 
 class WorkKitchen extends Kitchen {
-
    override def serveFood:Boolean = false
    override def prepFood:Boolean = true
-
    val prepUtensils = new PrepUtensils
    val utensils = Vector(prepUtensils)
 }
@@ -52,7 +47,6 @@ class WorkKitchen extends Kitchen {
 class SimpleKitchen extends Kitchen {
   override def serveFood:Boolean = true
   override def prepFood:Boolean = true
-
   val serveUtensils = new ServeUtensils
   val prepUtensils = new PrepUtensils
   val utensils = Vector(serveUtensils, prepUtensils)
@@ -72,5 +66,3 @@ val simple = new SimpleKitchen
 simple.serveFood is true
 simple.prepFood is true
 simple.utensils is "Vector(ServeUtensils, PrepUtensils)"
-
-

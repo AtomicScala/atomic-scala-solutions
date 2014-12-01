@@ -14,4 +14,3 @@ pairs is Vector(
   ("Sally Smith","Betsy Blanc"),
   ("Dan Jones","Stormy Morgan"),
   ("Tom Brown","Hal Goodsen"))
-

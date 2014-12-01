@@ -3,11 +3,10 @@ package codelisting
 import java.io.FileNotFoundException
 
 class ExtensionException(name:String)
-  extends Exception(
-    s"$name doesn't end with '.scala'")
+  extends Exception(s"$name doesn't end with '.scala'")
 
 class CodeListing(val fileName:String)
-extends collection.IndexedSeq[String] {
+  extends collection.IndexedSeq[String] {
   if(!fileName.endsWith(".scala"))
     throw new ExtensionException(fileName)
   val vec = io.Source.fromFile(fileName)

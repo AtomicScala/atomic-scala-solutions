@@ -2,26 +2,22 @@
 // Solution to Exercise 6 in "Class Exercises"
 import com.atomicscala.AtomicTest._
 
-class SimpleTimeAux(val hours:Int,
-  val minutes:Int) {
-
+class SimpleTimeAux(val hours:Int, val minutes:Int) {
   def this(hours: Int) = {
-  this(hours, 0)
+    this(hours, 0)
   }
-  def subtract(aTime: SimpleTimeAux):
-  SimpleTimeAux = {
+  def subtract(aTime: SimpleTimeAux): SimpleTimeAux = {
     val h = hours - aTime.hours
-  val m = minutes - aTime.minutes
+    val m = minutes - aTime.minutes
 
     // see simplification above
-  if (h < 0)
-    return new SimpleTimeAux(0, 0)
+    if (h < 0)
+      return new SimpleTimeAux(0, 0)
 
-  if (m >= 0)
-    new SimpleTimeAux(h, m)
-  else
-    new SimpleTimeAux(h-1, m+60)
-
+    if (m >= 0)
+      new SimpleTimeAux(h, m)
+    else
+      new SimpleTimeAux(h-1, m+60)
   }
 }
 
@@ -34,5 +30,3 @@ val auxST2 = new SimpleTimeAux(12).
   subtract(new SimpleTimeAux(9, 45))
 auxST2.hours is 2
 auxST2.minutes is 15
-
-

@@ -2,6 +2,5 @@
 // From "Class Arguments" atom
 import com.atomicscala.AtomicTest._
 
-val familyNoKids =
-  new FlexibleFamily("Mom", "Dad")
+val familyNoKids = new FlexibleFamily("Mom", "Dad")
 familyNoKids.familySize() is 2

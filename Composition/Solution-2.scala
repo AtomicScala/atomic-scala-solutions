@@ -8,20 +8,18 @@ trait Kitchen {
 }
 
 class ServingKitchen extends Kitchen {
-
-   def serveFood:Boolean = true
-   def prepFood:Boolean = false
+  def serveFood:Boolean = true
+  def prepFood:Boolean = false
 }
 
 class WorkKitchen extends Kitchen {
-
-    def serveFood:Boolean = false
-    def prepFood:Boolean = true
+  def serveFood:Boolean = false
+  def prepFood:Boolean = true
 }
 
 class SimpleKitchen extends Kitchen {
-   def serveFood:Boolean = true
-   def prepFood:Boolean = true
+  def serveFood:Boolean = true
+  def prepFood:Boolean = true
 }
 
 val serving = new ServingKitchen

@@ -17,13 +17,11 @@ class SimpleTimeNamed(val hours:Int=0,
     new SimpleTimeNamed(h, m)
   else
     new SimpleTimeNamed(h-1, m+60)
-
   }
 }
 
 val namedST = new SimpleTimeNamed(hours=9)
-val anotherNamedST =
-  new SimpleTimeNamed(minutes=30)
+val anotherNamedST = new SimpleTimeNamed(minutes=30)
 namedST.hours is 9
 namedST.minutes is 0
 anotherNamedST.hours is 0
