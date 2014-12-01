@@ -6,12 +6,10 @@ var evens:Int = 0
 var odds:Int = 0
 
 for (i<- 0 to 10) {
- if (i % 2 == 0) evens = evens + i
- else odds = odds+i
+  if (i % 2 == 0) evens = evens + i
+  else odds = odds+i
 }
 
 evens is 30
 odds is 25
 (evens + odds) is 55
-
-

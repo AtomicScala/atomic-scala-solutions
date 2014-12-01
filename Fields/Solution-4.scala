@@ -8,7 +8,7 @@ class Cup4 {
   def add(increase:Int):Int = {
     percentFull += increase
     if(percentFull > max) percentFull = max
-      percentFull // Return this value
+    percentFull // Return this value
   }
   def set(x: Int) { percentFull = x }
   def get(): Int = percentFull
@@ -17,4 +17,3 @@ class Cup4 {
 val cup4 = new Cup4
 cup4.set(56)
 cup4.get() is 56
-

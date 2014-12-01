@@ -2,5 +2,4 @@
 // From "Functions as Objects" atom
 import com.atomicscala.AtomicTest._
 
-
 str is "1234"

@@ -6,4 +6,3 @@ var total:Int = 0
 for (i <- Range(0, 10).inclusive)
   total = total + i
 total is 55
-
