@@ -7,7 +7,7 @@ import com.atomicscala.AtomicTest._
 
 class Trip(val origination: String, val destination: String, val startDate: String, val endDate: String) {
   override def toString = "From " + origination + " to " + destination + ": " + startDate + " to " + endDate
- }
+}
 
  val cities = Vector("Boston",
   "Albany","Buffalo","Cleveland",
@@ -17,15 +17,14 @@ class Trip(val origination: String, val destination: String, val startDate: Stri
   "Salt Lake City","Las Vegas",
   "Bakersfield","San Francisco")
 
- class CarTrip(val cities: Vector[String], startDate: String, endDate: String)
- extends Trip(cities(0), cities(cities.size-1), startDate, endDate){
+class CarTrip(val cities: Vector[String], startDate: String, endDate: String)
+  extends Trip(cities(0), cities(cities.size-1), startDate, endDate){
   val firstCity = cities(0)
   val lastCity = cities(cities.size-1)
   override def toString = "Traveling from " + firstCity + " to " + lastCity + ": " + startDate + " to " + endDate
 }
 
-val c = new CarTrip(cities,
-  "6/1/2012","7/1/2012")
+val c = new CarTrip(cities, "6/1/2012","7/1/2012")
 c.origination is "Boston"
 c.destination is "San Francisco"
 c.startDate is "6/1/2012"

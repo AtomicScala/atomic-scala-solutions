@@ -7,7 +7,7 @@ class Exclaim4(val s: String) {
   def exclaim() = {
     count = count + 1
     s + "!"
-    }
+  }
 }
 
 val e4 = new Exclaim4("counting")

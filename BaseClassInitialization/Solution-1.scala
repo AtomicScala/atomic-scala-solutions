@@ -4,8 +4,7 @@ import com.atomicscala.AtomicTest._
 
 // GreatApe2.scala
 
-class GreatApe(
-  val weight:Double, val age:Int, val gender:String)
+class GreatApe(val weight:Double, val age:Int, val gender:String)
 
 class Bonobo(weight:Double, age:Int, gender:String)
   extends GreatApe(weight, age, gender)

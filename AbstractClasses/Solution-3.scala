@@ -6,10 +6,8 @@ abstract class Adder(x:Int) {
   def add(y:Int):Int
 }
 
-class NumericAdder(x:Int)
-extends Adder(x) {
+class NumericAdder(x:Int) extends Adder(x) {
   def add(y:Int):Int = x + y
-
 }
 
 val num = new NumericAdder(5)

@@ -2,8 +2,7 @@
 // From "Base Class Initialization" atom
 import com.atomicscala.AtomicTest._
 
-val t = new
-Trip("Detroit","Houston",
+val t = new Trip("Detroit","Houston",
   "5/1/2012","6/1/2012")
 val a = new AirplaneTrip("Detroit",
   "London","9/1/1939",

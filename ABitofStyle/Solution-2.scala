@@ -3,8 +3,8 @@
 import com.atomicscala.AtomicTest._
 
 class Exclaim2(val s:String) {
- def parens() = s + "!"
- val noParens = s + "!"
+  def parens() = s + "!"
+  val noParens = s + "!"
 }
 
 val e2 = new Exclaim2("yes")

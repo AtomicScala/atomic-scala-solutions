@@ -14,7 +14,6 @@ class Home(address:String, state:String,
   zip:String, val name:String, val heart: Boolean)
   extends House(address, state, zip) {
     override def toString = "Where the heart is"
-
 }
 
 val h = new Home("123 Main", "FL", "99999", "The retreat", true)

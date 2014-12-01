@@ -58,14 +58,10 @@ case class Latte(shots: Shots,
     override def toString = s"Latte($shots,$caffeine,$cup,$milk)"
   }
 
-val latte = new Latte(Single, Caf,
-  Here, Skim)
-latte is
-  "Latte(Single,Caf,Here,Skim)"
+val latte = new Latte(Single, Caf, Here, Skim)
+latte is "Latte(Single,Caf,Here,Skim)"
 
-val usual = new Coffee(Double, Caf,
-  Here)
-usual is
-  "Coffee(Double,Caf,Here)"
+val usual = new Coffee(Double, Caf, Here)
+usual is "Coffee(Double,Caf,Here)"
 
 

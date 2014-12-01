@@ -5,10 +5,8 @@ import com.atomicscala.AtomicTest._
 abstract class Adder(x:Int) {
   def add(y:Int):Int
 }
-case class MyAdder(x:Int)
-extends Adder(x) {
+case class MyAdder(x:Int) extends Adder(x) {
   def add(y:Int):Int = x+y
-
 }
 
 val myNum = MyAdder(15)

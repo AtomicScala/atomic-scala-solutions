@@ -18,5 +18,4 @@ object Battery2 extends App {
   val battery = new Battery2
   for(arg <- args)
     println(battery.monitor(arg.toInt))
-
 }

@@ -2,8 +2,7 @@
 // From "Abstract Classes" atom
 import com.atomicscala.AtomicTest._
 
-class NumericAdder(val x:Int)
-extends Adder(x) {
+class NumericAdder(val x:Int) extends Adder(x) {
   def add(y:Int):Int = // Complete this
 }
 val num = new NumericAdder(5)

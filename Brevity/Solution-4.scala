@@ -28,8 +28,7 @@ class Coffee(val shots:Int = 2,
     if(milk)
       result += "milk "
 
-  def addSyrup() =
-    result += syrup
+  def addSyrup() = result += syrup
 
   getCup()
   pourShots()
