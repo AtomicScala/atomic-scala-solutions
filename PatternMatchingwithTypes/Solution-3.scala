@@ -5,12 +5,12 @@ import com.atomicscala.AtomicTest._
 case class Person(name:String) {
   override def toString:String = { name }
 }
-def convertToSize2(x: Any): Int = {
+def convertToSize2(x:Any):Int = {
   x match {
-    case s: String => s.length
-    case n: Int => n
-    case f: Float => scala.math.round(f)
-    case p: Person => 1
+    case s:String => s.length
+    case n:Int => n
+    case f:Float => scala.math.round(f)
+    case p:Person => 1
     case _ => 0
 
   }

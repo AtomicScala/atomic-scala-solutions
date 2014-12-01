@@ -20,7 +20,7 @@ object MonthName extends Enumeration {
 
 import MonthName._
 
-def monthNumber(name: MonthName) = {
+def monthNumber(name:MonthName) = {
   name.id
 }
 July is "July"

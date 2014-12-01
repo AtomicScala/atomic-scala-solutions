@@ -36,7 +36,7 @@ trait PaintingTexture extends Texture {
 
 
 trait ArtPeriod3 {
-  val year: Int
+  val year:Int
   def show = {
      year match {
        case y: Int if y < 1300 => "Pre-Renaissance"
@@ -52,7 +52,7 @@ trait ArtPeriod3 {
 
 class Painting3(val width:Double,
   val height:Double, val id:String,
-  val hue:Int, val year: Int)
+  val hue:Int, val year:Int)
   extends PaintingDimensions with Color
   with PaintingTexture with Description with ArtPeriod3
 

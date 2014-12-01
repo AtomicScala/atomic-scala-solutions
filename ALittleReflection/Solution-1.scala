@@ -4,13 +4,13 @@ import com.atomicscala.AtomicTest._
 
 import com.atomicscala.Name
 
-case class Toy(name: String, batteryOperated: Boolean)
+case class Toy(name:String, batteryOperated:Boolean)
 
 val toy = new Toy("Teddy Bear", false)
 
 println(toy)
 
-case class ReflectedToy(name: String, batteryOperated: Boolean) extends Name
+case class ReflectedToy(name:String, batteryOperated:Boolean) extends Name
 
 val reflectedToy = new ReflectedToy("Bunny", true)
 println(reflectedToy)

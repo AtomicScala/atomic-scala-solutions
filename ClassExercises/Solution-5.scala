@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 class SimpleTimeDefault(val hours:Int, val minutes:Int = 0) {
-  def subtract(aTime: SimpleTimeDefault):
+  def subtract(aTime:SimpleTimeDefault):
   SimpleTimeDefault = {
   val h = hours - aTime.hours
   val m = minutes - aTime.minutes

@@ -1,7 +1,7 @@
 // Solution-1.scala
 // Solution to Exercise 1 in "Methods"
 
-def getSquare(num: Int):Int = {
+def getSquare(num:Int):Int = {
   num*num
 }
 

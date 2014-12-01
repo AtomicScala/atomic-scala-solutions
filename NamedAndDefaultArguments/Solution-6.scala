@@ -2,7 +2,7 @@
 // Solution to Exercise 6 in "Named & Default Arguments"
 import com.atomicscala.AtomicTest._
 
-class Item(val name: String, var price: Int) {
+class Item(val name:String, var price:Int) {
 
   def cost(grocery:Boolean=false, medication:Boolean=false, rate:Double=0.10):Double = {
     if (grocery || medication) price

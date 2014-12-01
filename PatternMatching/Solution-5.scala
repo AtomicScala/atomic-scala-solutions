@@ -2,7 +2,7 @@
 // Solution to Exercise 5 in "Pattern Matching"
 import com.atomicscala.AtomicTest._
 
-def forecast(temp: Int) : String = {
+def forecast(temp:Int):String = {
   temp match {
        case 100 => "Sunny"
        case 80 => "Mostly Sunny"
@@ -14,7 +14,7 @@ def forecast(temp: Int) : String = {
 }
 
 val data = Vector(100, 80, 50, 20, 15, 80, 20)
-def forecastLoop(data: Vector[Int]) : Unit = {
+def forecastLoop(data:Vector[Int]):Unit = {
 
   for (s <-data)
     println("forecast("+s+") is " + forecast(s))

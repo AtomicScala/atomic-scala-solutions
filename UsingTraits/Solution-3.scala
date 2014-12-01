@@ -4,7 +4,7 @@ import com.atomicscala.AtomicTest._
 
 trait WIFI {
   def reportStatus = "working"
-  val address: String
+  val address:String
 }
 
 class Camera {
@@ -21,7 +21,7 @@ trait Connections {
   val maxConnections = 5
   var connected = 0
 
-  def connect(connection: Boolean) = {
+  def connect(connection:Boolean) = {
     connection match {
       case true =>
         if (connected < maxConnections) {

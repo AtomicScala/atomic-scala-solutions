@@ -31,7 +31,7 @@ def travel2(transport:Any):String = {
       thingamajig + " is in limbo!"
   }
 }
-case class Kitten(name: String)
+case class Kitten(name:String)
 
 travel2(Kitten("Kitty")) is
   "Kitten(Kitty) is in limbo!"

@@ -2,9 +2,9 @@
 // Solution to Exercise 5 in "Comprehensions"
 import com.atomicscala.AtomicTest._
 
-case class Activity(date: String, action: String)
+case class Activity(date:String, action:String)
 
-def getDates(action: String, activities: Vector[Activity]):Vector[String]  = {
+def getDates(action:String, activities:Vector[Activity]):Vector[String]  = {
   for {
     a <- activities
     if a.action equals(action)

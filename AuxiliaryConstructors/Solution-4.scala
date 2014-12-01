@@ -2,14 +2,14 @@
 // Solution to Exercise 4 in "Auxiliary Constructors"
 import com.atomicscala.AtomicTest._
 
-class ClothesWasher3(val model: String, val capacity: Double) {
+class ClothesWasher3(val model:String, val capacity:Double) {
   val cycles = 5
 
-  def this(model: String) = {
+  def this(model:String) = {
     this(model, 2)
   }
 
-  def this(capacity: Double) = {
+  def this(capacity:Double) = {
      this("Unknown", capacity)
   }
 
@@ -17,7 +17,7 @@ class ClothesWasher3(val model: String, val capacity: Double) {
     this("Unknown", 2)
   }
 
-  def wash(bleach: Int, fabricSoftener: Int) = {
+  def wash(bleach:Int, fabricSoftener:Int) = {
     "Wash used " + bleach + " bleach and " + fabricSoftener + " fabric softener"
   }
 

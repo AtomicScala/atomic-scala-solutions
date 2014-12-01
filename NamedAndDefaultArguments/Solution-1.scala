@@ -2,7 +2,7 @@
 // Solution to Exercise 1 in "Named & Default Arguments"
 import com.atomicscala.AtomicTest._
 
-class SimpleTime(val hours: Int, val minutes: Int)
+class SimpleTime(val hours:Int, val minutes:Int)
 
 val t = new SimpleTime(hours=5, minutes=30)
 t.hours is 5

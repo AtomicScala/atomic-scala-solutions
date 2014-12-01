@@ -5,7 +5,7 @@ import com.atomicscala.AtomicTest._
 /* Yes -- you only have to write the toString method. The real benefit is exposed if you add another subclass, CarTrip.
 */
 
-class Trip(val origination: String, val destination: String, val startDate: String, val endDate: String) {
+class Trip(val origination:String, val destination:String, val startDate:String, val endDate:String) {
   override def toString = "From " + origination + " to " + destination + ": " + startDate + " to " + endDate
 }
 
@@ -17,7 +17,7 @@ class Trip(val origination: String, val destination: String, val startDate: Stri
   "Salt Lake City","Las Vegas",
   "Bakersfield","San Francisco")
 
-class CarTrip(val cities: Vector[String], startDate: String, endDate: String)
+class CarTrip(val cities:Vector[String], startDate:String, endDate:String)
   extends Trip(cities(0), cities(cities.size-1), startDate, endDate){
   val firstCity = cities(0)
   val lastCity = cities(cities.size-1)

@@ -14,7 +14,7 @@ def f(i:Int):Either[String, Int] =
   else
     Right(24/i)
 
-def test(n:Int): Any =
+def test(n:Int):Any =
   f(n) match {
     case Left(why) => s"Failed: $why"
     case Right(result) => result

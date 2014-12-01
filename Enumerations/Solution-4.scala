@@ -20,7 +20,7 @@ object MonthName extends Enumeration {
 
 import MonthName._
 
-def season(name: MonthName) = name match {
+def season(name:MonthName) = name match {
   case January | February | December => "Winter"
   case March | April | May => "Spring"
   case June | July | August => "Summer"

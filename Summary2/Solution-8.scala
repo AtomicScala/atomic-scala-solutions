@@ -39,7 +39,7 @@ class Grid {
       println
     }
   }
-  def checkFor3(row: Vector[Cell]): Boolean = {
+  def checkFor3(row:Vector[Cell]):Boolean = {
     var countX = 0
     var countO = 0
     for (c <- row) {
@@ -55,7 +55,7 @@ class Grid {
     else false
   }
 
-  def checkWinner(): Boolean = {
+  def checkWinner():Boolean = {
     for (row <- cells) {
       if (checkFor3(row)) return true
     }

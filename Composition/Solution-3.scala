@@ -2,12 +2,12 @@
 // Solution to Exercise 3 in "Composition"
 import com.atomicscala.AtomicTest._
 
-case class Knife(name: String)
-case class Fork(name: String)
-case class Spoon(name: String)
+case class Knife(name:String)
+case class Fork(name:String)
+case class Spoon(name:String)
 class Utensils
 
-case class Spatula(name: String)
+case class Spatula(name:String)
 case class Flatware(names:String*)
 
 class PrepUtensils extends Utensils {

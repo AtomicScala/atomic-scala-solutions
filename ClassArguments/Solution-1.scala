@@ -2,8 +2,8 @@
 // Solution to Exercise 1 in "Class Arguments"
 import com.atomicscala.AtomicTest._
 
-class Family(names: String* ) {
-  def familySize(): Int = {
+class Family(names:String* ) {
+  def familySize():Int = {
     var count = 0
     for (i<-names) {
       count = count + 1

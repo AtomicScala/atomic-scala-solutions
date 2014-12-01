@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 trait ArtPeriod2 {
-  def show(year: Int) = {
+  def show(year:Int) = {
      year match {
        case y: Int if y < 1300 => "Pre-Renaissance"
        case y: Int if y >= 1300 && y < 1600 => "Renaissance"

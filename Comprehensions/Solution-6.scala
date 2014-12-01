@@ -2,7 +2,7 @@
 // Solution to Exercise 6 in "Comprehensions"
 import com.atomicscala.AtomicTest._
 
-case class Activity(date: String, action: String)
+case class Activity(date:String, action:String)
 val activities = Vector(
   Activity("01-01", "Run"),
   Activity("01-03", "Ski"),

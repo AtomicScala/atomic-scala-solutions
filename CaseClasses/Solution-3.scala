@@ -2,7 +2,7 @@
 // Solution to Exercise 3 in "Case Classes"
 import com.atomicscala.AtomicTest._
 
-case class Dog(name: String, breed: String)
+case class Dog(name:String, breed:String)
 val dogs = Vector(Dog("Fido", "Golden Lab"),
                   Dog("Ruff", "Alaskan Malamute"),
                   Dog("Fifi", "Miniature Poodle"))

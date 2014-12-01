@@ -3,9 +3,9 @@
 import com.atomicscala.AtomicTest._
 
 class FunNumbers2 {
-  def f(i: Int, j: Int) : Double = { i + j }
+  def f(i:Int, j:Int):Double = { i + j }
   // this won't work (redefined function, different only in return type):
-  // def f(i: Int, j: Int): Int = { i + j }
+  // def f(i:Int, j:Int):Int = { i + j }
 
 }
 

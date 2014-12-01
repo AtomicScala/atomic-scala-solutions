@@ -2,7 +2,7 @@
 // Solution to Exercise 3 in "A Bit of Style"
 import com.atomicscala.AtomicTest._
 
-class Exclaim3(val s: String) {
+class Exclaim3(val s:String) {
   def noParens = s + "!"
 }
 

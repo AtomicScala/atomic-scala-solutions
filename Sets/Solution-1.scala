@@ -14,25 +14,25 @@ val groceryCart = Set("apple",
   "beans", "asparagus", "sweet potatoes",
   "spinach", "carrots")
 
-def percentMeat(contents: Set[String]) = {
+def percentMeat(contents:Set[String]) = {
   100.0 *
   (contents intersect meats).size /
   contents.size
 }
 
-def percentFruit(contents: Set[String]) = {
+def percentFruit(contents:Set[String]) = {
   100.0 *
   (contents intersect fruits).size /
   contents.size
 }
 
-def percentVeggies(contents: Set[String]) = {
+def percentVeggies(contents:Set[String]) = {
   100.0 *
   (contents intersect vegetables).size /
   contents.size
 }
 
-def percentOther(contents: Set[String]) = {
+def percentOther(contents:Set[String]) = {
   100.0 *
   (contents --
     (fruits | vegetables | meats)).size /

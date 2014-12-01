@@ -2,7 +2,7 @@
 // Solution to Exercise 3 in "More Conditionals"
 import com.atomicscala.AtomicTest._
 
-def isPalIgnoreCase(str: String) : Boolean = {
+def isPalIgnoreCase(str:String):Boolean = {
   val s = str.toUpperCase.reverse
   s.equals(str.toUpperCase)
 }

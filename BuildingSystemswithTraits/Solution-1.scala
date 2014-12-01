@@ -32,7 +32,7 @@ object Syrup extends Enumeration {
     Raspberry, Choc = _Val()
 }
 trait Amount {
-  val pumps: Int
+  val pumps:Int
 }
 
 trait Taste[F <: Flavor] extends Amount {
@@ -46,8 +46,8 @@ import Milk._
 import Syrup._
 
 case class Coffee(shots:Shots,
-  caffeine: Caffeine,
-  cup: Cup, milk: Milk, syrup: Syrup)
+  caffeine:Caffeine,
+  cup:Cup, milk:Milk, syrup:Syrup)
 
 val single = new Coffee(Single, Caf, Here, Skim, Choc)
 single is "Coffee(Single,Caf,Here,Skim,Choc)"

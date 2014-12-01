@@ -2,8 +2,8 @@
 // Solution to Exercise 2 in "Class Arguments"
 import com.atomicscala.AtomicTest._
 
-class FlexibleFamily(mom: String, dad: String, kids: String* ) {
-  def familySize(): Int = {
+class FlexibleFamily(mom:String, dad:String, kids:String* ) {
+  def familySize():Int = {
     var count = 2    // see change!
     for (i<-kids) {
       count = count + 1

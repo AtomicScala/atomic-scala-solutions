@@ -6,7 +6,7 @@ trait Connections {
   val maxConnections = 5
   var connected = 0
 
-  def connect(connection: Boolean) = {
+  def connect(connection:Boolean) = {
     connection match {
       case true =>
         if (connected < maxConnections) {

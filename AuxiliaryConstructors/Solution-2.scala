@@ -2,7 +2,7 @@
 // Solution to Exercise 2 in "Auxiliary Constructors"
 import com.atomicscala.AtomicTest._
 
-class ClothesWasher2(val model: String = "Unknown", val capacity: Double = 2D) {
+class ClothesWasher2(val model:String = "Unknown", val capacity:Double = 2D) {
   val cycles = 5
 }
 

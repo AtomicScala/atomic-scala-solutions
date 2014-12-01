@@ -2,7 +2,7 @@
 // Solution to Exercise 9 in "Class Arguments"
 import com.atomicscala.AtomicTest._
 
-def squareThem(x: Int*):Int = {
+def squareThem(x:Int*):Int = {
   var square = 0
   for (i <- x) {
     square = square + i*i

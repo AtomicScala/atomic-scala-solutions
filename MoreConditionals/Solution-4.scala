@@ -2,7 +2,7 @@
 // Solution to Exercise 4 in "More Conditionals"
 import com.atomicscala.AtomicTest._
 
-def isPalIgnoreSpecial(str: String) : Boolean = {
+def isPalIgnoreSpecial(str:String):Boolean = {
   var createdStr = ""
   for (c <- str) {
     val theValue = c.toInt

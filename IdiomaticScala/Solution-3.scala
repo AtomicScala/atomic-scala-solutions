@@ -30,7 +30,7 @@ true
 
 // OR ...
 
-def isOpen(activity: String, hour: Int) = activity match {
+def isOpen(activity:String, hour:Int) = activity match {
   case "swimming" | "ice skating" =>
     val opens = 9
     val closes = 20

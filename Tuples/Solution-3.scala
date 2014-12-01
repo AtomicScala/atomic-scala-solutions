@@ -2,7 +2,7 @@
 // Solution to Exercise 3 in "Tuples"
 import com.atomicscala.AtomicTest._
 
-def weather(temperature: Int, humidity: Int) = {
+def weather(temperature:Int, humidity:Int) = {
   if (humidity > 40) {
      if (temperature > 80) ("Hot", "Humid")
      else if (temperature < 50) ("Cold", "Damp")

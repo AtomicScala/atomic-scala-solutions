@@ -2,7 +2,7 @@
 // Solution to Exercise 4 in "Pattern Matching with Types"
 import com.atomicscala.AtomicTest._
 
-def quantify(x: Any): String = {
+def quantify(x:Any):String = {
   x match {
     case i: Int if (i < 100) => "small"
     case i: Int if (i < 1000) => "medium"

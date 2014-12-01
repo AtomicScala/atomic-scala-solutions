@@ -4,7 +4,7 @@ import com.atomicscala.AtomicTest._
 
 trait WIFI {
   def reportStatus = "working"
-  val address: String
+  val address:String
 }
 
 class Camera {

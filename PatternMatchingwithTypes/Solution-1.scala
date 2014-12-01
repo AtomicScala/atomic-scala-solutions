@@ -6,7 +6,7 @@ case class Person(name:String) {
   override def toString:String = { name }
 }
 
-def plus1(x: Any) : Any = {
+def plus1(x:Any):Any = {
   x match {
     case s:String => s + "s"
     case i:Int => i + 1

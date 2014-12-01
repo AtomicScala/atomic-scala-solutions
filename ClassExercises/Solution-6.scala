@@ -3,10 +3,10 @@
 import com.atomicscala.AtomicTest._
 
 class SimpleTimeAux(val hours:Int, val minutes:Int) {
-  def this(hours: Int) = {
+  def this(hours:Int) = {
     this(hours, 0)
   }
-  def subtract(aTime: SimpleTimeAux): SimpleTimeAux = {
+  def subtract(aTime:SimpleTimeAux):SimpleTimeAux = {
     val h = hours - aTime.hours
     val m = minutes - aTime.minutes
 

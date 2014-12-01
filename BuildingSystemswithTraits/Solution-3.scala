@@ -42,14 +42,14 @@ object Syrup extends Enumeration {
 import Syrup._
 
 trait Amount {
-  val quantity: Int
+  val quantity:Int
 }
 
 trait Taste[F <: Flavor] extends Amount {
   val flavor:F
 }
 
-//class Sweetener(quantity: Int, Syrup: Syrup) extends Taste[Syrup]
+//class Sweetener(quantity:Int, Syrup:Syrup) extends Taste[Syrup]
 
 import Shots._
 import Caffeine._
@@ -58,15 +58,15 @@ import Milk._
 import Syrup._
 
 class Coffee(shots:Shots,
-  caffeine: Caffeine,
-  cup: Cup) {
+  caffeine:Caffeine,
+  cup:Cup) {
   override def toString =
     s"Coffee($shots,$caffeine,$cup)"
 }
 
-class Latte(shots: Shots,
-  caffeine: Caffeine, cup: Cup,
-  val milk: Milk)
+class Latte(shots:Shots,
+  caffeine:Caffeine, cup:Cup,
+  val milk:Milk)
   extends Coffee(shots, caffeine, cup) {
     override def toString =
       s"Latte($shots,$caffeine,$cup,$milk)"

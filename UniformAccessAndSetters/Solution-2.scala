@@ -2,7 +2,7 @@
 // Solution to Exercise 2 in "Uniform Access & Setters"
 import com.atomicscala.AtomicTest._
 
-class Base (var d3: Int) {
+class Base (var d3:Int) {
   def f1:Int = 99
   def f2:Int = 99
   val d1:Int = 99
@@ -10,7 +10,7 @@ class Base (var d3: Int) {
   var n = 1
 }
 
-class Derived(d3: Int) extends Base(d3) {
+class Derived(d3:Int) extends Base(d3) {
   override def f1 = 1
   override val f2 = 1 // Was def, now val
   override val d1 = 1

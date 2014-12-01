@@ -2,7 +2,7 @@
 // Solution to Exercise 4 in "Parameterized Types"
 import com.atomicscala.AtomicTest._
 
-def historicalData(data: Vector[Int]) : String = {
+def historicalData(data:Vector[Int]):String = {
   var sunny = 0
   var mostlySunny = 0
   var mostlyCloudy = 0

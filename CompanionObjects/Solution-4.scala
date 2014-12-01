@@ -9,18 +9,18 @@ class WalkActivity4 {
 
 object WalkActivity4 {
   var log = new String
-  def MET(mph: Double) = mph match {
-    case x: Double if (x < 1.7) => 2.3
-    case x: Double if (x < 2.5) => 2.9
-    case x: Double if (x < 3) => 3.3
-    case x: Double if (x >= 3) => 3.3
+  def MET(mph:Double) = mph match {
+    case x:Double if (x < 1.7) => 2.3
+    case x:Double if (x < 2.5) => 2.9
+    case x:Double if (x < 3) => 3.3
+    case x:Double if (x >= 3) => 3.3
     case _ => 2.3
   }
   val MET = 2.3
-  def start(athlete: String)  {
+  def start(athlete:String)  {
     log += ("[" + athlete + "] Activity started,")
   }
-  def stop(athlete: String) {
+  def stop(athlete:String) {
     log +=("[" + athlete + "] Activity stopped,")
   }
 }

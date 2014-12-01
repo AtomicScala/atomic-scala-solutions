@@ -2,7 +2,7 @@
 // Solution to Exercise 5 in "Pattern Matching with Types"
 import com.atomicscala.AtomicTest._
 
-def forecast(temp: Int) : String = {
+def forecast(temp:Int):String = {
   temp match {
        case i: Int if i > 80 => "Sunny"
        case i: Int if i > 50 => "Mostly Sunny"

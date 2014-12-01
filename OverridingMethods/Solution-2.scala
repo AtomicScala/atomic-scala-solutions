@@ -9,7 +9,7 @@ class GreatApe2(
 
 class Bonobo2(weight:Double, age:Int, gender:String)
   extends GreatApe2(weight, age, gender) {
-     override def knownWords: Vector[String] = super.knownWords ++ Vector("Hello")
+     override def knownWords:Vector[String] = super.knownWords ++ Vector("Hello")
   }
 
 val roaringApe = new GreatApe2(112, 9, "Male")

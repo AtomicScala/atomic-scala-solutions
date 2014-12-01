@@ -32,7 +32,7 @@ object Fruit extends Enumeration {
   val apple, orange, banana, tomato = _Val()
 }
 
-trait Food[F<: Edible] extends Store[F]
+trait Food[F <: Edible] extends Store[F]
   with Clean[F]
   with Cook[F]
 
@@ -53,12 +53,12 @@ object Device extends Enumeration {
   val poacher, timer, sifter, torch = _Val()
 }
 
-trait Utensils[U<:Handheld] extends Store[U]
+trait Utensils[U <: Handheld] extends Store[U]
   with Clean[U]
   with Cook[U]
 
 trait Kitchen {
-  val rooms: Vector[Room]
+  val rooms:Vector[Room]
   val storage:Storage
   val sinks:Vector[Sink]
   val food:Food[Edible]

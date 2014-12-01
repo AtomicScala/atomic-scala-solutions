@@ -6,7 +6,7 @@ val animalList = List("cat", "dog",
   "cat", "bird", "cat", "cat", "kitten",
   "mouse")
 
-def calcFreq(aList: List[String], animal: String, total: Int):
+def calcFreq(aList:List[String], animal:String, total:Int):
   Int = {
   if (aList.isEmpty) total
   else {

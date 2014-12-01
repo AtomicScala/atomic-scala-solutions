@@ -11,10 +11,10 @@ alphanumeric('$') is None
 alphanumeric('Z') is Some('Z') //~
 {oldDescription}*/
 
-def alphanumeric(a: Any): Option[Any]= { a match {
-  case c: Char if (c >= 'a' && c <= 'z') => Some(c)
-  case c: Char if (c >= 'A' && c <= 'Z') => Some(c)
-  case i: Int => Some(i)
+def alphanumeric(a:Any):Option[Any]= { a match {
+  case c:Char if (c >= 'a' && c <= 'z') => Some(c)
+  case c:Char if (c >= 'A' && c <= 'Z') => Some(c)
+  case i:Int => Some(i)
   case _ => None
   }
  }

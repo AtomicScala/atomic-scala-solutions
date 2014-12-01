@@ -2,7 +2,7 @@
 // Solution to Exercise 4 in "Methods"
 import com.atomicscala.AtomicTest._
 
-def getMe(str: String) = str.toLowerCase
+def getMe(str:String) = str.toLowerCase
 val g1 = getMe("abraCaDabra")
 println(g1)
 assert("abracadabra" == g1,

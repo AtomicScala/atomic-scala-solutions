@@ -2,7 +2,7 @@
 // Solution to Exercise 3 in "Overriding Methods"
 import com.atomicscala.AtomicTest._
 
-class Trip(val origination: String, val destination: String, val startDate: String, val endDate: String) {
+class Trip(val origination:String, val destination:String, val startDate:String, val endDate:String) {
   override def toString = "From " + origination + " to " + destination + ": " + startDate + " to " + endDate
  }
 
@@ -11,7 +11,7 @@ val t = new Trip("Detroit","Houston",
 t is "From Detroit to Houston:" +
   " 5/1/2012 to 6/1/2012"
 
-class AirplaneTrip(origination: String, destination: String, startDate: String, endDate: String, val movie: String)
+class AirplaneTrip(origination:String, destination:String, startDate:String, endDate:String, val movie:String)
 extends Trip(origination, destination, startDate, endDate){
   override def toString = super.toString + ", we watched " + movie
 }
@@ -29,7 +29,7 @@ val cities = Vector("Boston",
   "Salt Lake City","Las Vegas",
   "Bakersfield","San Francisco")
 
- class CarTrip(val cities: Vector[String], startDate: String, endDate: String)
+ class CarTrip(val cities:Vector[String], startDate:String, endDate:String)
  extends Trip(cities(0), cities(cities.size-1), startDate, endDate){
   val firstCity = cities(0)
   val lastCity = cities(cities.size-1)

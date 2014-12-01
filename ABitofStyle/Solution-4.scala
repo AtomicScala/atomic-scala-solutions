@@ -2,7 +2,7 @@
 // Solution to Exercise 4 in "A Bit of Style"
 import com.atomicscala.AtomicTest._
 
-class Exclaim4(val s: String) {
+class Exclaim4(val s:String) {
   var count = 0
   def exclaim() = {
     count = count + 1

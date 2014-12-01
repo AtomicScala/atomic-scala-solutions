@@ -2,7 +2,7 @@
 // Solution to Exercise 5 in "Methods"
 import com.atomicscala.AtomicTest._
 
-def addStrings(str1: String, str2: String) = str1 + str2
+def addStrings(str1:String, str2:String) = str1 + str2
 
 val s1 = addStrings("abc", "def")
 println(s1)

@@ -12,7 +12,7 @@ class House(val address:String,
 
 class VacationHouse2(state:String, zip:String, val startMonth:Int, val endMonth:Int)
   extends House(state, zip) {
-  def monthName(month: Int): String = month match {
+  def monthName(month:Int):String = month match {
     case 1 => "January"
     case 2 => "February"
     case 3 => "March"

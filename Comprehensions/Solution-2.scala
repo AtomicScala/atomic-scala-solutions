@@ -2,7 +2,7 @@
 // Solution to Exercise 2 in "Comprehensions"
 import com.atomicscala.AtomicTest._
 
-def yielding2(l: List[Int]) : List[Int] = {
+def yielding2(l:List[Int]):List[Int] = {
   val result = for {
     n <- l
     if n < 10

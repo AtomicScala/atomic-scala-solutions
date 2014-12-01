@@ -2,7 +2,7 @@
 // Solution to Exercise 2 in "Methods"
 import com.atomicscala.AtomicTest._
 
-def getSquareDouble(num: Double):Double = {
+def getSquareDouble(num:Double):Double = {
   num*num
 }
 

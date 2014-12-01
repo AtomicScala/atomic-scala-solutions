@@ -10,8 +10,8 @@ class Cup4 {
     if(percentFull > max) percentFull = max
     percentFull // Return this value
   }
-  def set(x: Int) { percentFull = x }
-  def get(): Int = percentFull
+  def set(x:Int) { percentFull = x }
+  def get():Int = percentFull
 }
 
 val cup4 = new Cup4

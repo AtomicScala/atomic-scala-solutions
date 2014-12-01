@@ -3,11 +3,11 @@
 import com.atomicscala.AtomicTest._
 import scala.math.pow
 
-class FancyNumber2(val num: Int) {
-  def power(n:Int): Int = {
+class FancyNumber2(val num:Int) {
+  def power(n:Int):Int = {
     pow(num.toDouble,  n.toDouble).toInt
   }
-  def ^(n:Int): Int = power(n)
+  def ^(n:Int):Int = power(n)
 }
 
 val a2 = new FancyNumber2(2)

@@ -2,7 +2,7 @@
 // Solution to Exercise 7 in "Methods"
 import com.atomicscala.AtomicTest._
 
-def bmiStatus(lbs: Double, height: Double): String = {
+def bmiStatus(lbs:Double, height:Double):String = {
   val bmi = lbs / (height*height) * 703.07
 
   if (bmi < 18.5) "Underweight"

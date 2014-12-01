@@ -3,14 +3,14 @@
 import com.atomicscala.AtomicTest._
 
 trait Contact {
-  val email: String
+  val email:String
 }
 
-class Person2(val first: String, val last: String) {
+class Person2(val first:String, val last:String) {
   override def toString = first + " " + last
 }
 
-class Friend(first: String, last: String, val email: String)  extends Person2(first: String, last: String) with Contact
+class Friend(first:String, last:String, val email:String)  extends Person2(first:String, last:String) with Contact
 
 val friends2 = Vector(
   new Friend(

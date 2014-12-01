@@ -2,7 +2,7 @@
 // Solution to Exercise 2 in "Case Classes"
 import com.atomicscala.AtomicTest._
 
-case class Person(first: String, last: String, email: String)
+case class Person(first:String, last:String, email:String)
 
 val people = Vector(
   Person("Jane", "Smile", "jane@smile.com"),

@@ -2,7 +2,7 @@
 // Solution to Exercise 1 in "Pattern Matching"
 import com.atomicscala.AtomicTest._
 
-def matchColor(color: String): String = {
+def matchColor(color:String):String = {
   if (color == "red") "RED"
   else if (color == "blue") "BLUE"
   else if (color == "green") "GREEN"
