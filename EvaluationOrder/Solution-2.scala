@@ -9,5 +9,4 @@ val somewhatSunnyAndWarm =
   sky == "party cloudy") &&
   temperature > 80
 
- println(somewhatSunnyAndWarm)
-
+println(somewhatSunnyAndWarm)

@@ -9,7 +9,6 @@ object Level extends Enumeration {
   val Draining, Pooling, Dry = Value
 }
 
-
 import Level._
 
 def checkLevel(level:Level) = level match {
@@ -26,4 +25,3 @@ checkLevel(Empty) is "Alert"
 checkLevel(Draining) is "Level Draining OK"
 checkLevel(Pooling) is "Warning!"
 checkLevel(Dry) is "Alert"
-

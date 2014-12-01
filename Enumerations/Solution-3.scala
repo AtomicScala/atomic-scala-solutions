@@ -22,9 +22,7 @@ import MonthName._
 
 def monthNumber(name: MonthName) = {
   name.id
-
 }
 July is "July"
 
 monthNumber(July) is 6
-

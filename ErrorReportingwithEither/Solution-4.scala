@@ -12,8 +12,8 @@ testLetters(13) is "Consonant: n"
 def testLetters(n:Int) = {
   letters(n) match {
     case Left(letter) => s"Vowel: $letter"
-        case Right(letter) => s"Consonant: $letter"
-        case _ => "Unknown"
+    case Right(letter) => s"Consonant: $letter"
+    case _ => "Unknown"
   }
 }
 
@@ -22,7 +22,6 @@ testLetters(4) is "Vowel: e"
 testLetters(13) is "Consonant: n"
 
 // Starter Code:
-testLetters(0) is "Vowel:
-a"
+testLetters(0) is "Vowel: a"
 testLetters(4) is "Vowel: e"
 testLetters(13) is "Consonant: n"

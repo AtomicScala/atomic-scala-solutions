@@ -5,17 +5,17 @@ import com.atomicscala.AtomicTest._
 object MonthName extends Enumeration {
   type MonthName = Value
   val January,
-  February,
-  March,
-  April,
-  May,
-  June,
-  July,
-  August,
-  September,
-  October,
-  November,
-  December = Value
+      February,
+      March,
+      April,
+      May,
+      June,
+      July,
+      August,
+      September,
+      October,
+      November,
+      December = Value
 }
 
 import MonthName._
@@ -31,4 +31,3 @@ season(January) is "Winter"
 season(April) is "Spring"
 season(August) is "Summer"
 season(November) is "Autumn"
-

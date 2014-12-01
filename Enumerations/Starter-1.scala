@@ -2,6 +2,5 @@
 // From "Enumerations" atom
 import com.atomicscala.AtomicTest._
 
-MonthName.February is
-"February"
+MonthName.February is "February"
 MonthName.February.id is 1
