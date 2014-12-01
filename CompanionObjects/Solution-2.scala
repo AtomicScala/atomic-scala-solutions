@@ -7,11 +7,11 @@ class WalkActivity2
 object WalkActivity2 {
   //val log = new StringBuilder (another solution!)
   var log = new String
-  def start(athlete: String) { 
-    log += ("[" + athlete + "] Activity started.") 
+  def start(athlete: String) {
+    log += ("[" + athlete + "] Activity started.")
   }
-  def stop(athlete: String) { 
-    log += ("[" + athlete + "] Activity stopped.") 
+  def stop(athlete: String) {
+    log += ("[" + athlete + "] Activity stopped.")
   }
 }
 

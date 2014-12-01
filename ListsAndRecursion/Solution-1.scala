@@ -14,4 +14,3 @@ val aList = List(10, 20, 45, 15, 30)
 findMax(aList, 0) is 45
 
 }
-

@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 val m =
-Map("sally@taylor.com" 
+Map("sally@taylor.com"
   -> Name("Sally","Taylor"))
-m("sally@taylor.com") is 
+m("sally@taylor.com") is
   Name("Sally", "Taylor")

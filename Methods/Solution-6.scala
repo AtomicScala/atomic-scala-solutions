@@ -10,5 +10,3 @@ assert("abcabcabc" == m1, "Expected abcabcabc, Got " + m1)
 val m2 = manyTimesString("123", 2)
 println(m2)
 assert("123123" == m2, "Expected 123123, Got " + m2)
-
-

@@ -27,5 +27,3 @@ says(new Chimpanzee) is
   "says Grrr!"
 says(new BonoboB) is
   "says Grrr!"
-
-

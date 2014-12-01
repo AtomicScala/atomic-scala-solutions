@@ -16,5 +16,3 @@ Set("toys", "games", "books") is
 Set("shoes", "clothes", "toys",
 Â  "dishes", "games", "books") is
 /* fill this in -- call flatten */
-
-

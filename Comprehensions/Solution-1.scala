@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 def oddLT10(v:Vector[Int]):Vector[Int] = {
-  val result = for { 
+  val result = for {
     n <- v
     if n < 10
     if n % 2 != 0

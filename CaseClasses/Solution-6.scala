@@ -28,5 +28,3 @@ val anotherST2 =
   new SimpleTimeDefault(9, 45))
 anotherST2.hours is 0
 anotherST2.minutes is 15
-
-

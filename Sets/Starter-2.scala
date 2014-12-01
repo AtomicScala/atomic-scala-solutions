@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 val vegetarian =
-Set("kidney beans", 
+Set("kidney beans",
 Â  "black beans", "tofu")
 val groceryCart2 = Set("apple",
 Â Â "pretzels", "bread", "orange", "beef",

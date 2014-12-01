@@ -12,5 +12,3 @@ import com.atomicscala.BasicLibrary._
 val wb = new WhizBang
 wb.cube(3) is 27
 wb.bang("pop") is "pop!"
-
-

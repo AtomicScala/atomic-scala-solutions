@@ -11,4 +11,3 @@ mayDay.getDate is 1
 mayDay.getMonth is 0 // this is actually minutes
 
 println("ANSWER: mm represents minutes")
-

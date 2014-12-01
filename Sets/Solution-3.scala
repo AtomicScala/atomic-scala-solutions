@@ -18,7 +18,3 @@ Set("toys", "games", "books") is
 Set("shoes", "clothes", "toys", "dishes",
   "games", "books") is
   house.flatten.flatten
-
-
-
-

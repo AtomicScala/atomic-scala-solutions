@@ -45,4 +45,3 @@ d3.player is "Puff"
 // d3.fly is "Fly!"
 // d3.Magic is "Spell!"
 d3.id is "NoMagicNoFlyingDragon"
-

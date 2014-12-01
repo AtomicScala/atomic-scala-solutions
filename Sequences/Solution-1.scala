@@ -11,4 +11,3 @@ val p = Person("John", "Smith", "john@smith.com")
 p.fullName is "John Smith"
 p.first is "John"
 p.email is "john@smith.com"
-

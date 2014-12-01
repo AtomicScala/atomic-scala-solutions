@@ -43,4 +43,3 @@ percentMeat(groceryCart) is 10.0
 percentFruit(groceryCart) is 20.0
 percentVeggies(groceryCart) is 50.0
 percentOther(groceryCart) is 20.0
-

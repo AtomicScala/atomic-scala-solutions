@@ -18,4 +18,3 @@ def calcFreq(aList: List[String], animal: String, total: Int):
 
 calcFreq(animalList, "cat", 0) is 4
 calcFreq(animalList, "dog", 0) is 1
-

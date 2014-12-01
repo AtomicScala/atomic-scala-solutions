@@ -19,4 +19,3 @@ class Home(address:String, state:String,
 val h = new Home("123 Main", "FL", "99999", "The retreat", true)
 h.toString is "Where the heart is"
 h.heart is true
-

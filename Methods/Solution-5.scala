@@ -10,4 +10,3 @@ assert("abcdef" == s1, "Expected abcdef, Got " + s1)
 val s2 = addStrings("zyx", "abc")
 println(s2)
 assert("zyxabc" == s2, "Expected zyxabc, Got " + s2)
-

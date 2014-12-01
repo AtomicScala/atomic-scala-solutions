@@ -22,4 +22,3 @@ val webcam = new WIFICamera
 webcam.showImage is "Showing video"
 webcam.address is "192.168.0.200"
 webcam.reportStatus is "working"
-

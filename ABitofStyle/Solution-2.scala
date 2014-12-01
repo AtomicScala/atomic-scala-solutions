@@ -10,4 +10,3 @@ class Exclaim2(val s:String) {
 val e2 = new Exclaim2("yes")
 e2.noParens is "yes!"
 e2.parens() is "yes!"
-

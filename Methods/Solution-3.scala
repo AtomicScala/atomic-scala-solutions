@@ -16,4 +16,3 @@ val t2 = isArg1GreaterThanArg2(2.1, 1.2)
 println(t2)
 assert(true == t2,
   "Expected true, Got " + t2)
-

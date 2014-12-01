@@ -10,4 +10,3 @@ val p = new Planet(name="Mercury",
   description = "small and hot planet",
   moons=0)
 p.hasMoon is false
-

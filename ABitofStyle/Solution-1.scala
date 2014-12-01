@@ -10,4 +10,3 @@ class Exclaim(val s:String) {
 val e = new Exclaim("cool")
 e.noParens is "cool!"
 e.parens() is "cool!"
-

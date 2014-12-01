@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 def yielding3(l: List[Int]) : List[Int] = {
-  val result = for { 
+  val result = for {
     n <- l
     if n < 10
     if n % 2 != 0

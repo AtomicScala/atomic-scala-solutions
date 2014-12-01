@@ -9,5 +9,3 @@ class Planet(val name:String, val description:String, val moons:Int = 1) {
 val earth = new Planet(moons = 1, name="Earth",
   description = "a hospitable planet")
 earth.hasMoon is true
-
-

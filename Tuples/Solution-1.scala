@@ -22,4 +22,3 @@ val (temp3, ski3, view3) = tuple3
 temp3 is 51
 ski3 is "Blue"
 view3 is "Night"
-

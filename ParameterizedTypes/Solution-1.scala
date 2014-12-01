@@ -9,4 +9,3 @@ def explicitDouble(
 
 explicitDouble(1, 2,  3) is
 Vector(1.0, 2.0, 3.0)
-

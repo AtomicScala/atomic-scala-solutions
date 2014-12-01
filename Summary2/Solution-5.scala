@@ -17,5 +17,3 @@ for (i <- eb.all)
 }
 
 everyone is "Janet Doe, Janet Doe, Janet Doe, "
-
-

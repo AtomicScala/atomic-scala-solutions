@@ -56,5 +56,3 @@ class Painting2(val width:Double,
 
 val painting2 = new Painting2(64, 80, "Starry", 111)
 painting2.show(1889) is "Modern"
-
-

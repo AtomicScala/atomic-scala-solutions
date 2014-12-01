@@ -84,5 +84,3 @@ class Mocha(shots:Shots,
 
 val mocha = new Mocha(Double,Caf,ToGo,Skim)
 mocha is "Mocha(Double,Caf,ToGo,Skim,Choc)"
-
-

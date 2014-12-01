@@ -2,9 +2,9 @@
 // Solution to Exercise 3 in "Constructors"
 import com.atomicscala.AtomicTest._
 
-class Tea2(val decaf:Boolean = false, 
-           val milk:Boolean = false, 
-           val sugar:Boolean = false, 
+class Tea2(val decaf:Boolean = false,
+           val milk:Boolean = false,
+           val sugar:Boolean = false,
            val name:String = "Earl Grey") {
   def extras:String = {
     var text:String = ""

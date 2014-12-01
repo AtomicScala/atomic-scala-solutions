@@ -3,7 +3,7 @@ package com.atomicscala
 import reflect.runtime.currentMirror
 
 object Name {
-  def className(o:Any) = 
+  def className(o:Any) =
     currentMirror.reflect(o).symbol.
     toString.replace('$', ' ').
     split(' ').last

@@ -31,5 +31,3 @@ for (i <- sVec.sorted) {
   sVecString += i + " "
 }
 sVecString is "My ate dog homework my "
-
-

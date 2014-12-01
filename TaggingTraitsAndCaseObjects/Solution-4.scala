@@ -22,4 +22,3 @@ Color.values.map(display) is
 println("ANSWER: The test fails but you can add Color to the Vector")
 
 // ANSWER: The test fails but you can add Color to the Vector
-

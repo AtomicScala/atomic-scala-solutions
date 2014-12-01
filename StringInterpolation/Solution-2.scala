@@ -25,5 +25,3 @@ gnome.show(87) is "Poof! 87 false true"
 val bob = new GardenGnome("Bob")
 bob.show(25) is
 "Poof! 25 true true"
-
-

@@ -23,5 +23,3 @@ period.show(1650) is
   "Baroque"
 period.show(1279) is
   "Pre-Renaissance"
-
-

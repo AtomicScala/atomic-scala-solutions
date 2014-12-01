@@ -38,4 +38,3 @@ t.getFahrenheit() is 68
 
 t.setKelvin(293.15)
 t.getFahrenheit() is 68
-

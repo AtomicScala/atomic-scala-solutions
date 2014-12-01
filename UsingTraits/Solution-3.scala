@@ -48,5 +48,3 @@ c2.connected is 1
 c2.connect(false) is true
 c2.connected is 0
 c2.connect(false) is false
-
-

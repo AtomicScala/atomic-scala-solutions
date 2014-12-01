@@ -44,4 +44,3 @@ c.startDate is "6/1/2012"
 
 c is "From Boston to San Francisco:" +
   " 6/1/2012 to 7/1/2012"
-

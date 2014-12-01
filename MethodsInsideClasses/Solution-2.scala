@@ -12,4 +12,3 @@ assert(f1 == "Flare used!",
   "Expected Flare used!, Got " +
   f1)
 println(f1)
-

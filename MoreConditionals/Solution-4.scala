@@ -23,4 +23,3 @@ def isPalIgnoreSpecial(str: String) : Boolean = {
 
 isPalIgnoreSpecial("Madam I'm adam") is true
 isPalIgnoreSpecial("trees") is false
-

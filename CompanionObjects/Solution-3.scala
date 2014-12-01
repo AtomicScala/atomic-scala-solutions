@@ -10,11 +10,11 @@ class WalkActivity3 {
 object WalkActivity3 {
   var log = new String
   val MET = 2.3
-  def start(athlete: String) { 
-    log += ("[" + athlete + "] Activity started,") 
+  def start(athlete: String) {
+    log += ("[" + athlete + "] Activity started,")
   }
-  def stop(athlete: String) { 
-    log += ("[" + athlete + "] Activity stopped,") 
+  def stop(athlete: String) {
+    log += ("[" + athlete + "] Activity stopped,")
   }
 }
 

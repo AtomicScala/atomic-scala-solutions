@@ -44,5 +44,3 @@ val trip2 = Vector(
 travel(trip2(1)) is "Plane B757 " +
   "Vector(Passenger(Harvey,Rabbit), " +
   "Passenger(Dorothy,Gale))"
-
-

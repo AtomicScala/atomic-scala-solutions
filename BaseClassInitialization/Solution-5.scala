@@ -17,4 +17,3 @@ extends Trip(origination, destination, startDate, endDate){
 
 val a = new AirplaneTrip("Detroit", "London","9/1/1939", "10/31/1939", "Superman")
 a is "On a flight from Detroit to London, we watched Superman"
-

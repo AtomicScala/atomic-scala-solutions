@@ -14,4 +14,3 @@ class FlexibleFamily(mom: String, dad: String, kids: String* ) {
 
 val familyNoKids = new FlexibleFamily("Mom", "Dad")
 familyNoKids.familySize is 2
-

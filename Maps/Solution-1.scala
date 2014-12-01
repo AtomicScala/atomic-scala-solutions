@@ -28,4 +28,3 @@ List("(3.141,Pi)", "(2.718,e)", "(1.618,phi)")
 (for((k,v) <- constants)
   yield k + ": " + v) is
 "List(3.141: Pi, 2.718: e, 1.618: phi)"
-

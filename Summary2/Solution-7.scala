@@ -47,4 +47,3 @@ grid.play('X', 1, 1) is "invalid move"
 grid.play('O', 1, 3) is "invalid move"
 grid.play('O', 0, 0) is "successful move"
 grid.play('X', 2, 2) is "successful move"
-

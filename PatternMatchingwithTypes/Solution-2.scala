@@ -23,7 +23,3 @@ convertToSize("truck") is 5
 convertToSize(Person("Joanna")) is 1
 convertToSize(45.6F) is 45.6F
 convertToSize(Vector(1, 2, 3)) is 0
-
-
-
-

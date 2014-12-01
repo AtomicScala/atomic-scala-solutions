@@ -8,4 +8,3 @@ if (s1.equals(s2)) {
 } else {
   println("s1 and s2 are not equal")
 }
-

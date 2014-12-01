@@ -34,4 +34,3 @@ batteryPower.monitor(30) is "yellow"
 batteryPower.monitor(10) is "red"
 
 */
-

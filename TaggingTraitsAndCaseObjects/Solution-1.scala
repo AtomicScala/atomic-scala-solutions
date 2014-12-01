@@ -20,6 +20,3 @@ def display(c:Color) = c match {
 
 Color.values.map(display) is
 "Vector(It's Red, It's Green, It's Blue)"
-
-
-

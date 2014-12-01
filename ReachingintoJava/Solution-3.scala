@@ -3,5 +3,3 @@
 import com.atomicscala.AtomicTest._
 
 println("ANSWER: Months start with 0. Days start with 1. It's horribly inconsistent.")
-
-

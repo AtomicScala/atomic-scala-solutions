@@ -17,4 +17,3 @@ f.addValue("cat")
 f.addValue("kitten")
 f.addValue("mouse")
 f.getCount("cat") is 4
-

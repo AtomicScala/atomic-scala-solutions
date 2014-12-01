@@ -27,4 +27,3 @@ val chicken = new Chicken
 chicken.food is "insects"
 val pig = new Pig
 pig.food is "anything"
-

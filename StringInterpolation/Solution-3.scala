@@ -25,7 +25,3 @@ gnome.show() is "height: 20.0 weight: 110.0 happy: false painted: true"
 val bob = new GardenGnome("Bob")
 bob.show() is
 "height: 15.0 weight: 100.0 happy: true painted: true"
-
-
-
-

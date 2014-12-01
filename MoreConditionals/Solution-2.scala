@@ -10,4 +10,3 @@ def isPalindrome(str: String) : Boolean = {
 isPalindrome("mom") is true
 isPalindrome("dad") is true
 isPalindrome("street") is false
-

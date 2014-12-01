@@ -9,4 +9,3 @@ moisture1 is "Humid"
 val (/* fill this in */) = weather(27, 55)
 heat2 is "Cold"
 moisture2 is "Damp"
-

@@ -11,4 +11,3 @@ object EnumColor extends Enumeration {
 EnumColor.Red is "Red"
 EnumColor.Blue is "Blue"
 EnumColor.Green is "Green"
-

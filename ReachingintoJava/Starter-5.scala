@@ -5,5 +5,5 @@ import com.atomicscala.AtomicTest._
 val s = new SummaryStatistics
 // add values here
 s.getMean is 55
-s.getStandardDeviation is 
+s.getStandardDeviation is
 39.370039370059054

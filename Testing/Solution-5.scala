@@ -17,5 +17,3 @@ rectangleArea(2, 2) is 4
 rectangleArea(5, 4) is 20
 trapezoidArea(2, 2, 4) is 8
 trapezoidArea(3, 4, 1) is 3.5
-
-

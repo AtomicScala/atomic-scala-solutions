@@ -9,4 +9,3 @@ val theString =
   "firehouse ", "firehouse!")
 theString is
  "The dog visited the firehouse!"
-

@@ -14,5 +14,3 @@ assert(b == 36, "Expected 36, Got " + b)
 val c = getSquare(5)
 println(c)
 assert(c == 25, "Expected 25, Got " + c)
-
-

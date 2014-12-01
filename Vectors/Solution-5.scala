@@ -9,4 +9,3 @@ val v5 = Vector("The", "dog", "visited",
 for (word <- v5) {
   println(word.reverse)
 }
-

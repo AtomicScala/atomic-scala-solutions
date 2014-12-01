@@ -24,4 +24,3 @@ assert("Underweight" == underweight,
   underweight)
 
 println("completed normally")
-

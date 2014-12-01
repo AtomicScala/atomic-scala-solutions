@@ -14,4 +14,3 @@ val sd2 = getSquareDouble(5.7)
 println(sd2)
 assert(32.49 == sd2,
   "Expected 32.49, Got " + sd2)
-

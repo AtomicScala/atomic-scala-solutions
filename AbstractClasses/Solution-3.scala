@@ -12,4 +12,3 @@ class NumericAdder(x:Int) extends Adder(x) {
 
 val num = new NumericAdder(5)
 num.add(10) is 15
-

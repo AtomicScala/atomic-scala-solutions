@@ -19,5 +19,3 @@ sunscreen.cost() is 3.3
 val tv = new Item(
   name="television", 500)
 tv.cost(rate = 0.06) is 530
-
-

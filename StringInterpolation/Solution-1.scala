@@ -25,5 +25,3 @@ gnome.show() is "20.0 110.0 false true"
 val bob = new GardenGnome("Bob")
 bob.show() is
   "15.0 100.0 true true"
-
-

@@ -10,4 +10,3 @@ def isPalIgnoreCase(str: String) : Boolean = {
 isPalIgnoreCase("Bob") is true
 isPalIgnoreCase("DAD") is true
 isPalIgnoreCase("Blob") is false
-

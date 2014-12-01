@@ -14,5 +14,3 @@ val p3 = Person("Sally", "Taylor", "sally@taylor.com")
 val v = Vector(p1, p2, p3)
 val sorted = v.sortBy(_.last)
 sorted is "Vector(Mary Add, Zach Smith, Sally Taylor)"
-
-

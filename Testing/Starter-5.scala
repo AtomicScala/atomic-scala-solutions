@@ -7,7 +7,5 @@ def squareArea(x: Int):Int={
 }
 def rectangleArea(x: Int,
   y: Int): Int = { x * x }
-def trapezoidArea(x: Int, y: Int, 
+def trapezoidArea(x: Int, y: Int,
   h: Int): Double = h/2 * (x + y)
-
-

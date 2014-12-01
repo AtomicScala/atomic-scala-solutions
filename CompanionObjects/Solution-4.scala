@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 class WalkActivity4 {
-  def calories(lbs:Int, mins:Int, mph:Double = 3):Long = 
+  def calories(lbs:Int, mins:Int, mph:Double = 3):Long =
     scala.math.round((WalkActivity4.MET(mph) * 3.5 * lbs * 0.45)/200.0 * mins)
 }
 
@@ -17,11 +17,11 @@ object WalkActivity4 {
     case _ => 2.3
   }
   val MET = 2.3
-  def start(athlete: String)  { 
-    log += ("[" + athlete + "] Activity started,")  
+  def start(athlete: String)  {
+    log += ("[" + athlete + "] Activity started,")
   }
-  def stop(athlete: String) { 
-    log +=("[" + athlete + "] Activity stopped,") 
+  def stop(athlete: String) {
+    log +=("[" + athlete + "] Activity stopped,")
   }
 }
 

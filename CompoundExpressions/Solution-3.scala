@@ -32,7 +32,7 @@ val isGoodTemperature = {
 }
 
 val shouldDoActivity = isOpen && isGoodTemperature
-println(activity + ":" + isOpen + " && " + 
+println(activity + ":" + isOpen + " && " +
   isGoodTemperature + " = " + shouldDoActivity)
 
 /* Output:

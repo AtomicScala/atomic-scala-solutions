@@ -23,5 +23,3 @@ forecast(20) is "Mostly Cloudy"
 forecast(1) is "Mostly Cloudy"
 forecast(0) is "Cloudy"
 forecast(-1) is "Unknown"
-
-

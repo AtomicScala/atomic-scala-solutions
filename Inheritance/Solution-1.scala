@@ -24,5 +24,3 @@ val ape2 = new Bonobo
 ape2.vocalize is "Grrr!"
 val ape3 = new Chimpanzee
 ape3.vocalize is "Grrr!"
-
-

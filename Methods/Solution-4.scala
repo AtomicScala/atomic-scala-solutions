@@ -11,4 +11,3 @@ val g2 = getMe("zyxwVUT")
 println(g2)
 assert("zyxwvut"== g2,
   "Expected zyxwvut, Got " + g2)
-
