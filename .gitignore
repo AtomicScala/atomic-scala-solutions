@@ -1,1 +1,4 @@
 *.class
+*.out
+*.err
+_AtomicTestErrors.txt
