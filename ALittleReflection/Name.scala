@@ -10,6 +10,5 @@ object Name {
 }
 
 trait Name {
-  override def toString =
-    Name.className(this)
+  override def toString = Name.className(this)
 }

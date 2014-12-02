@@ -10,6 +10,7 @@ parser.add_argument("-r", "--run", action='store_true', help="Run all the scala 
 parser.add_argument("-s", "--simplify", action='store_true', help="Remove unimportant trace files & show non-empty error files")
 parser.add_argument("-c", "--clean", action='store_true', help="Remove all 'run' artifacts")
 parser.add_argument("-p", "--prerequisites", action='store_true', help="Compile prerequisites")
+parser.add_argument("-n", "--nonsolutionfiles", action='store_true', help="Display non 'Solution-' and non 'Starter-' scala files")
 
 @contextmanager
 def visitDir(d):
@@ -24,6 +25,10 @@ compileFiles = [
     ("ImportsAndPackages-2ndEdition", [
         ("EquilateralTriangle.scala", "com/atomicscala/pythagorean/EquilateralTriangle.class"),
         ("PythagoreanTheorem.scala", "com/atomicscala/pythagorean/RightTriangle.class")
+    ]),
+    ("ALittleReflection", [
+        ("Name.scala", "com/atomicscala/Name.class"),
+        ("Name2.scala", "com/atomicscala/Name2.class")
     ]),
 ]
 
@@ -82,9 +87,17 @@ def clean():
                 f == "_AtomicTestErrors.txt"]
 
 
+def showNonSolutionFiles():
+    print "Non-Solution files:"
+    nsf = [os.path.join(d[0], f) for d in os.walk(".") for f in d[2]
+                  if f.endswith(".scala") and not f.startswith("Solution-") and not f.startswith("Starter-")]
+    print "\n".join(nsf)
+
+
 args = parser.parse_args()
 if not any(vars(args).values()): parser.print_help()
 if args.clean: clean() # Happens first with multiple command args
 if args.prerequisites: compilePrerequisites()
 if args.run: run()
 if args.simplify: simplify()
+if args.nonsolutionfiles: showNonSolutionFiles()
