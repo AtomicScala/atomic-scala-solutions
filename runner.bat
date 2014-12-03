@@ -58,6 +58,7 @@ def compilePrerequisites():
 
 
 def run():
+    compilePrerequisites()
     print "Running"
     for p in paths:
         print p
@@ -98,9 +99,11 @@ def clean():
                 if f.endswith(".out") or
                 f.endswith(".err") or
                 f == "_AtomicTestErrors.txt"]
-
+    for r in removals:
+        print r
+        os.remove(r)
     cf = set([os.path.join(".", direct, os.path.normpath(dep[1]).split(os.sep)[0]) for direct, deps in compileFiles for dep in deps])
-    print "\n".join(cf)
+    # print "\n".join(cf)
     for f in [f for f in cf if os.path.exists(f)]:
         print f
         shutil.rmtree(f)
@@ -109,7 +112,7 @@ def clean():
 def showUnusedFiles():
     print "Unused files:"
     nsf = set([os.path.join(d[0], f) for d in os.walk(".") for f in d[2]
-                  if f.endswith(".scala") and not f.startswith("Solution-") and not f.startswith("Starter-")])
+               if f.endswith(".scala") and not f.startswith("Solution-") and not f.startswith("Starter-")])
     cf = set([os.path.join(".", direct, dep[0]) for direct, deps in compileFiles for dep in deps])
     print "\n".join(nsf - cf)
 
