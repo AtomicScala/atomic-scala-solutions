@@ -2,10 +2,8 @@
 // Solution to Exercise 4 in "Summary 2"
 import com.atomicscala.AtomicTest._
 
-// BasicMethods.scala
-
-// needs BasicLibrary.scala
-// scalac BasicLibrary.scala
+// needs BasicMethods.scala
+// scalac BasicMethods.scala
 
 import com.atomicscala.BasicLibrary._
 

@@ -10,7 +10,7 @@ parser.add_argument("-r", "--run", action='store_true', help="Run all the scala 
 parser.add_argument("-s", "--simplify", action='store_true', help="Remove unimportant trace files & show non-empty error files")
 parser.add_argument("-c", "--clean", action='store_true', help="Remove all 'run' artifacts")
 parser.add_argument("-p", "--prerequisites", action='store_true', help="Compile prerequisites")
-parser.add_argument("-n", "--nonsolutionfiles", action='store_true', help="Display non 'Solution-' and non 'Starter-' scala files")
+parser.add_argument("-u", "--unusedfiles", action='store_true', help="Display non 'Solution-' and non 'Starter-' scala files")
 
 @contextmanager
 def visitDir(d):
@@ -22,13 +22,26 @@ paths = [os.path.join('.', p[0:-1]) for p in glob('*/')]
 
 compileFiles = [
     # (Directory, [(file, artifact), (file, artifact), ...])
-    ("ImportsAndPackages-2ndEdition", [
-        ("EquilateralTriangle.scala", "com/atomicscala/pythagorean/EquilateralTriangle.class"),
-        ("PythagoreanTheorem.scala", "com/atomicscala/pythagorean/RightTriangle.class")
-    ]),
     ("ALittleReflection", [
         ("Name.scala", "com/atomicscala/Name.class"),
-        ("Name2.scala", "com/atomicscala/Name2.class")
+        ("Name2.scala", "com/atomicscala/Name2.class"),
+    ]),
+    ("ConstructorsAndExceptions", [
+        ("CodeListing.scala", "codelisting/CodeListing.class"),
+        ("CodeListingTester.scala", "codelistingtester/CodeListingTester.class"),
+    ]),
+    ("ImportsAndPackages-1stEdition", [
+        ("Crest.scala", "com/atomicscala/royals/Crest.class"),
+        ("TheRoyalty.scala", "com/atomicscala/royals/Royalty.class"),
+        ("Trivia.scala", "com/atomicscala/trivia/Movies.class"),
+    ]),
+    ("ImportsAndPackages-2ndEdition", [
+        ("EquilateralTriangle.scala", "com/atomicscala/pythagorean/EquilateralTriangle.class"),
+        ("PythagoreanTheorem.scala", "com/atomicscala/pythagorean/RightTriangle.class"),
+    ]),
+    ("Summary2", [
+        ("BasicMethods.scala", "com/atomicscala/BasicLibrary/WhizBang.class"),
+        ("ClassBodies.scala", "com/atomicscala/Bodies/NoBody.class"),
     ]),
 ]
 
@@ -87,11 +100,14 @@ def clean():
                 f == "_AtomicTestErrors.txt"]
 
 
-def showNonSolutionFiles():
-    print "Non-Solution files:"
-    nsf = [os.path.join(d[0], f) for d in os.walk(".") for f in d[2]
-                  if f.endswith(".scala") and not f.startswith("Solution-") and not f.startswith("Starter-")]
-    print "\n".join(nsf)
+def showUnusedFiles():
+    print "Unused files:"
+    nsf = set([os.path.join(d[0], f) for d in os.walk(".") for f in d[2]
+                  if f.endswith(".scala") and not f.startswith("Solution-") and not f.startswith("Starter-")])
+    cf = set([os.path.join(".", direct, dep[0]) for direct, deps in compileFiles for dep in deps])
+    print "\n".join(nsf - cf)
+
+    #print "\n".join(nsf)
 
 
 args = parser.parse_args()
@@ -100,4 +116,4 @@ if args.clean: clean() # Happens first with multiple command args
 if args.prerequisites: compilePrerequisites()
 if args.run: run()
 if args.simplify: simplify()
-if args.nonsolutionfiles: showNonSolutionFiles()
+if args.unusedfiles: showUnusedFiles()
