@@ -1,6 +1,6 @@
 @setlocal enabledelayedexpansion && python -x "%~f0" %* & exit /b !ERRORLEVEL!
 #start python code here (tested on Python 2.7.4)
-import os, sys
+import os, sys, shutil
 from contextlib import contextmanager
 from glob import glob
 import argparse
@@ -99,6 +99,12 @@ def clean():
                 f.endswith(".err") or
                 f == "_AtomicTestErrors.txt"]
 
+    cf = set([os.path.join(".", direct, os.path.normpath(dep[1]).split(os.sep)[0]) for direct, deps in compileFiles for dep in deps])
+    print "\n".join(cf)
+    for f in [f for f in cf if os.path.exists(f)]:
+        print f
+        shutil.rmtree(f)
+
 
 def showUnusedFiles():
     print "Unused files:"
@@ -106,8 +112,6 @@ def showUnusedFiles():
                   if f.endswith(".scala") and not f.startswith("Solution-") and not f.startswith("Starter-")])
     cf = set([os.path.join(".", direct, dep[0]) for direct, deps in compileFiles for dep in deps])
     print "\n".join(nsf - cf)
-
-    #print "\n".join(nsf)
 
 
 args = parser.parse_args()
