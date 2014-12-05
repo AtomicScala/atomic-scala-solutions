@@ -1,5 +1,6 @@
 @setlocal enabledelayedexpansion && python -x "%~f0" %* & exit /b !ERRORLEVEL!
 #start python code here (tested on Python 2.7.4)
+## Look for Â in all files and clean up
 import os, sys, shutil
 from contextlib import contextmanager
 from glob import glob

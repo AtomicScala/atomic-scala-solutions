@@ -8,7 +8,8 @@ case class Person(first:String, last:String, email:String) {
 }
 
 val people = Vector(
-Person("John", "Smith", "john@smith.com"),
-Person("Mary", "Smith", "mary@smith.com"),
-Person("Sally", "Small", "sally@small.com"))
+  Person("John", "Smith", "john@smith.com"),
+  Person("Mary", "Smith", "mary@smith.com"),
+  Person("Sally", "Small", "sally@small.com")
+)
 people.size is 3
