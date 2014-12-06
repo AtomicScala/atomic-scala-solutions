@@ -1,7 +1,6 @@
 // Solution-4.scala
 // Solution to Exercise 4 in "map & reduce"
 import com.atomicscala.AtomicTest._
-
 import scala.collection.immutable.VectorBuilder
 
 val v = Vector(1, 2, 3, 4)

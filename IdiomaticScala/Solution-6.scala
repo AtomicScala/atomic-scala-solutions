@@ -4,13 +4,12 @@ import com.atomicscala.AtomicTest._
 
 // Dog.scala
 class Dog {
-  def bark =  "yip!"
+  def bark = "yip!"
 }
 val dog = new Dog
 dog.bark is "yip!"
 
 // Cat.scala
-
   class Cat {
   def meow = "mew!"
 }
@@ -18,14 +17,10 @@ val cat = new Cat
 cat.meow is "mew!"
 
 // Hamster.scala
-
   class Hamster {
   def speak = "squeak!"
-  def exercise =
-    speak + " Running on wheel"
+  def exercise = speak + " Running on wheel"
 
 }
-
 val hamster = new Hamster
-hamster.exercise is
-  "squeak! Running on wheel"
+hamster.exercise is "squeak! Running on wheel"

@@ -25,8 +25,7 @@ assert("Sir Laughsalot" == title2,
   "Expected Sir Laughsalot, Got " + title2)
 println(title2)
 
-// this won't work if Crest isn't
-// imported
+// This won't work if Crest isn't imported
 val crest3 = new Crest("Bear", "1875")
 assert("Bear in the year 1875" ==
   crest3.description(),

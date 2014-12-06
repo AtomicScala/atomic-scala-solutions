@@ -5,12 +5,12 @@ import com.atomicscala.AtomicTest._
 import Math.max
 {
 
-def findMax(aList:List[Int], theMax:Int):Int = {
-  if (aList.isEmpty) theMax
-  else findMax(aList.tail, max(theMax, aList.head))
-}
+  def findMax(aList:List[Int], theMax:Int):Int = {
+    if (aList.isEmpty) theMax
+    else findMax(aList.tail, max(theMax, aList.head))
+  }
 
-val aList = List(10, 20, 45, 15, 30)
-findMax(aList, 0) is 45
+  val aList = List(10, 20, 45, 15, 30)
+  findMax(aList, 0) is 45
 
 }

@@ -8,7 +8,5 @@ class Flare {
 
 val flare = new Flare
 val f1 = flare.light
-assert(f1 == "Flare used!",
-  "Expected Flare used!, Got " +
-  f1)
+assert(f1 == "Flare used!", "Expected Flare used!, Got " + f1)
 println(f1)

@@ -3,9 +3,7 @@
 
 val sailboat2 = new Sailboat2
 val signal = sailboat2.signal()
-assert(signal == "Flare used!",
-  "Expected Flare used! Got " + signal)
+assert(signal == "Flare used!", "Expected Flare used! Got " + signal)
 val motorboat2 = new Motorboat2
 val flare2 = motorboat2.signal()
-assert(flare2 == "Flare used!",
-  "Expected Flare used!, Got " + flare2)
+assert(flare2 == "Flare used!", "Expected Flare used!, Got " + flare2)

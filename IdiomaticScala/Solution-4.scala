@@ -10,8 +10,7 @@ def addMultiply(x:Int,
   (x + y) * 2.1
 }
 
-val r2:Double =
-  addMultiply(7, 9, "Inside addMultiply")
+val r2:Double = addMultiply(7, 9, "Inside addMultiply")
 r2 is 33.6
 
 def simplyPrint() = {

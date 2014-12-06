@@ -7,7 +7,6 @@ class Royalty(name:String,
     "Sir " + characteristic + "alot"
   }
   def fancyTitle():String = {
-    "Sir " + name +
-    " " + characteristic + "alot"
+    "Sir " + name + " " + characteristic + "alot"
   }
 }

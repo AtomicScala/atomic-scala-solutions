@@ -6,7 +6,6 @@ class GreatApe {
   // Not practical, just demonstration:
   val weight = 100.0
   val age = 12
-
   def vocalize = "Grrr!"
 }
 
