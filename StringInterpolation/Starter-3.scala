@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 val gnome =
-Â Â new GardenGnome(20.0, 110.0, false)
+  new GardenGnome(20.0, 110.0, false)
 gnome.show() is "height: 20.0 " +
 "weight: 110.0 happy: false painted: true"
 val bob = new GardenGnome("Bob")

@@ -10,9 +10,9 @@ val attic = Set(box1, box2)
 val basement = Set(box3)
 val house = Set(attic, basement)
 Set("shoes", "clothes", "toys",
-Â  "dishes") is attic.flatten
+  "dishes") is attic.flatten
 Set("toys", "games", "books") is
-Â  basement.flatten
+  basement.flatten
 Set("shoes", "clothes", "toys",
-Â  "dishes", "games", "books") is
+  "dishes", "games", "books") is
 /* fill this in -- call flatten */

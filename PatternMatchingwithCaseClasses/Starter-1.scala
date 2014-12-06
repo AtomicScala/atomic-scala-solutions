@@ -3,9 +3,9 @@
 import com.atomicscala.AtomicTest._
 
 val trip2 = Vector(
-Â  Train(travelers, "Reading"),
-Â  Plane(travelers, "B757"),
-Â Â Bus(travelers, 100))
+  Train(travelers, "Reading"),
+  Plane(travelers, "B757"),
+  Bus(travelers, 100))
 travel(trip2(1)) is "Plane B757 " +
-Â  "Vector(Passenger(Harvey,Rabbit), " +
-Â  "Passenger(Dorothy,Gale))"
+  "Vector(Passenger(Harvey,Rabbit), " +
+  "Passenger(Dorothy,Gale))"

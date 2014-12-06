@@ -17,7 +17,7 @@ def visitDir(d):
 
 paths = [os.path.join('.', p[0:-1]) for p in glob('*/')]
 # Testing:
-paths = ['C:\\Users\\Bruce\\Documents\\GitHub\\atomic-scala-solutions\\Sequences']
+# paths = ['C:\\Users\\Bruce\\Documents\\GitHub\\atomic-scala-solutions\\Sequences']
 
 for p in paths:
     print p

@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 /*{oldDescription}
- Inspect the default case (marked “interesting, but not accurate”) in ColorBlend.scala. What is it doing?
+ Inspect the default case (marked "interesting, but not accurate") in ColorBlend.scala. What is it doing?
 {oldDescription}*/
 
 // needs solution

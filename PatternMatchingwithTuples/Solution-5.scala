@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 /*{oldDescription}
-  Working from you solution to the exercise above, add the color white to PaintColors.scala. In the match expression, return the “other” color whenever white is blended with it. Satisfy the following tests:
+  Working from you solution to the exercise above, add the color white to PaintColors.scala. In the match expression, return the "other" color whenever white is blended with it. Satisfy the following tests:
 blend3(red, yellow) is orange
 blend3(red, red) is red
 blend3(yellow,blue) is green

@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 /*{oldDescription}
- Using the techniques shown in EitherMap.scala, start with the range ‘a’ to ‘z’ and divide it into vowels and consonants. Print the resulting mapping.
+ Using the techniques shown in EitherMap.scala, start with the range 'a' to 'z' and divide it into vowels and consonants. Print the resulting mapping.
 {oldDescription}*/
 
 def divideLetters = 'a' to 'z' map {
