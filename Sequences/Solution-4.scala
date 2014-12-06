@@ -10,7 +10,8 @@ class Person2(val first:String, val last:String) {
   override def toString = first + " " + last
 }
 
-class Friend(first:String, last:String, val email:String)  extends Person2(first:String, last:String) with Contact {
+class Friend(first:String, last:String, val email:String)
+  extends Person2(first:String, last:String) with Contact {
 }
 
 val f1 = new Friend("Mary", "Add", "mary@add.com")
