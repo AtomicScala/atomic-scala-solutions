@@ -2,7 +2,6 @@
 // From "Reaching into Java" atom
 import com.atomicscala.AtomicTest._
 
-val mayDay =
-datePattern.parse("05/01/12")
+val mayDay = datePattern.parse("05/01/12")
 mayDay.getDate is 1
 mayDate.getMonth is 4

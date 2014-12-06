@@ -3,10 +3,8 @@
 import com.atomicscala.AtomicTest._
 
 class Element2 {
-  val id =
-    getClass.getSimpleName.split('$').last
-  def interact(other:Element2) =
-    id + " interact " + other.id
+  val id = getClass.getSimpleName.split('$').last
+  def interact(other:Element2) = id + " interact " + other.id
 }
 
 trait Skill {
@@ -35,7 +33,6 @@ class Dragon extends Character with Magic with Flight
 
 val d = new Dragon
 d.player = "Puff"
-
 
 class NoMagicNoFlyingDragon extends Character("Puff")
 

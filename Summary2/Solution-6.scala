@@ -2,8 +2,6 @@
 // Solution to Exercise 6 in "Summary 2"
 import com.atomicscala.AtomicTest._
 
-// Temperature.scala
-
 class Temperature {
   var current = 0.0
   var scale = "f"

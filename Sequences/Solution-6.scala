@@ -18,7 +18,8 @@ val friends3 = Vector(
   new Friend("Mary", "Add", "mary@add.com"),
   new Friend("Sally","Taylor","sally@taylor.com"),
   new Friend("Mary", "Smith", "mary@smith.com")
-  )
+)
+
 val s3 = friends3.sortBy(_.last)
 val s4 = s3.sortBy(_.first)
 s4 is "Vector(Mary Add, Mary Smith, Sally Taylor, Zach Smith)"

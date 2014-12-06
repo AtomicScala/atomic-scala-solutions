@@ -9,12 +9,9 @@ val attic = Set(box1, box2)
 val basement = Set(box3)
 val house = Set(attic, basement)
 
-Set("shoes", "clothes", "toys",
-  "dishes") is attic.flatten
+Set("shoes", "clothes", "toys", "dishes") is attic.flatten
 
-Set("toys", "games", "books") is
-  basement.flatten
+Set("toys", "games", "books") is basement.flatten
 
-Set("shoes", "clothes", "toys", "dishes",
-  "games", "books") is
+Set("shoes", "clothes", "toys", "dishes", "games", "books") is
   house.flatten.flatten

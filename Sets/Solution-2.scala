@@ -2,14 +2,12 @@
 // Solution to Exercise 2 in "Sets"
 import com.atomicscala.AtomicTest._
 
-val fruits = Set("apple", "orange",
-  "banana", "kiwi")
+val fruits = Set("apple", "orange", "banana", "kiwi")
 val vegetables = Set("beans", "peas",
   "carrots", "sweet potatoes",
   "asparagus", "spinach")
 val meats = Set("beef", "chicken")
-val vegetarian = Set("kidney beans",
-  "black beans", "tofu")
+val vegetarian = Set("kidney beans", "black beans", "tofu")
 val proteins = Set(meats, vegetarian)
 
 val groceryCart = Set("apple",
@@ -23,8 +21,7 @@ def percentMeat(contents:Set[String]) = {
   contents.size
 }
 
-def percentVegetarian(
-  contents:Set[String]) = {
+def percentVegetarian(contents:Set[String]) = {
   100.0 *
   (contents intersect vegetarian).size /
   contents.size

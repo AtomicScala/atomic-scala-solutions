@@ -10,6 +10,5 @@ class SomeBody {
 }
 
 class EveryBody {
-  val all = Vector(new SomeBody,
-    new SomeBody, new SomeBody)
+  val all = Vector(new SomeBody, new SomeBody, new SomeBody)
 }

@@ -12,7 +12,7 @@ class Inert extends Element {
 
 
 class Wall2 extends Inert {
-   override def draw = "Don't draw on the wall!"
+  override def draw = "Don't draw on the wall!"
 }
 
 val wall2 = new Wall2

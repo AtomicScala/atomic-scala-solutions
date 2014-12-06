@@ -1,7 +1,6 @@
 // Solution-5.scala
 // Solution to Exercise 5 in "Reaching into Java"
 import com.atomicscala.AtomicTest._
-
 import org.apache.commons.math._
 import stat.descriptive._
 

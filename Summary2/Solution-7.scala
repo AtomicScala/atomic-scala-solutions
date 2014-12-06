@@ -2,8 +2,6 @@
 // Solution to Exercise 7 in "Summary 2"
 import com.atomicscala.AtomicTest._
 
-// TicTacToe.scala
-
 class Cell {
   var entry = ' '
   def set(e:Char) = {

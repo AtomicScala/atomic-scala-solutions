@@ -1,7 +1,6 @@
 // Solution-2.scala
 // Solution to Exercise 2 in "Reaching into Java"
 import com.atomicscala.AtomicTest._
-
 import java.text.SimpleDateFormat
 
 println("Exercise 2")

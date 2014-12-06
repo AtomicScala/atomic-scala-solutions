@@ -2,8 +2,6 @@
 // Solution to Exercise 8 in "Summary 2"
 import com.atomicscala.AtomicTest._
 
-// TicTacToe.scala
-
 class Cell {
   var entry = ' '
   def set(e:Char) = {
@@ -54,7 +52,6 @@ class Grid {
         else if(countO == 3) true
     else false
   }
-
   def checkWinner():Boolean = {
     for(row <- cells) {
       if(checkFor3(row)) return true
@@ -108,5 +105,4 @@ val grid6 = new Grid
 grid6.play('O', 0, 0)
 grid6.play('O', 0, 1)
 grid6.play('O', 0, 2)
-
 grid6.checkWinner() is true

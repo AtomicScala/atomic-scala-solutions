@@ -2,8 +2,7 @@
 // Solution to Exercise 1 in "Sets"
 import com.atomicscala.AtomicTest._
 
-val fruits = Set("apple", "orange",
-  "banana", "kiwi")
+val fruits = Set("apple", "orange", "banana", "kiwi")
 val vegetables = Set("beans", "peas",
   "carrots", "sweet potatoes",
   "asparagus", "spinach")
