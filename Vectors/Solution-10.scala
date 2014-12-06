@@ -27,7 +27,7 @@ scala> l.sum
 scala> l.reverse
 res23: List[java.lang.String] = List(nonsense, is, words, of, list, a, sometimes)
 
-scala> for (word <- l)
+scala> for(word <- l)
      | println(word)
 sometimes
 a
@@ -60,7 +60,7 @@ res27: Int = 9
 scala> intList.sum
 res28: Int = 39
 
-scala> for (i <- intList)
+scala> for(i <- intList)
      | println(i)
 1
 3

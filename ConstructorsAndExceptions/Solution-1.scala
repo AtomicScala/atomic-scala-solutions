@@ -5,7 +5,7 @@ import codelisting._
 
 class CodeListingTester1(makeList:String => IndexedSeq[String]) {
   val l = makeList("CodeListingTester.scala")
-  for (i <- l)
+  for(i <- l)
     println(i)
 }
 

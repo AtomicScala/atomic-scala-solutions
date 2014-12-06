@@ -5,8 +5,8 @@ import com.atomicscala.AtomicTest._
 var evens2:Int = 0
 var odds2:Int = 0
 
-for (i<- Range.inclusive(0, 10)) {
-  if (i % 2 == 0) evens2 = evens2 + i
+for(i<- Range.inclusive(0, 10)) {
+  if(i % 2 == 0) evens2 = evens2 + i
   else odds2 = odds2 + i
 }
 

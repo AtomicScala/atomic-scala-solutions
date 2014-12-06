@@ -5,7 +5,7 @@ import com.atomicscala.AtomicTest._
 class Family3(val mom:String, val dad:String, val kids:String* ) {
   def familySize():Int = {
     var count = 2    // NOTE: This changed
-    for (i<-kids) {
+    for(i<-kids) {
       count = count + 1
     }
     count

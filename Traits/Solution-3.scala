@@ -3,11 +3,11 @@
 import com.atomicscala.AtomicTest._
 
 trait BatteryPower {
- def monitor(charge:Int):String = {
-   if (charge < 20) "red"
-   else if (charge < 40) "yellow"
-   else "green"
- }
+  def monitor(charge:Int):String = {
+    if(charge < 20) "red"
+    else if(charge < 40) "yellow"
+    else "green"
+  }
 }
 
 trait Toy

@@ -32,8 +32,8 @@ class Grid {
     status
   }
   def showBoard() = {
-    for (row <- cells) {
-      for (cell <- row) {
+    for(row <- cells) {
+      for(cell <- row) {
         print(cell.entry + " ")
       }
       println

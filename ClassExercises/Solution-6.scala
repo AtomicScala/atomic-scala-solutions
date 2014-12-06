@@ -11,10 +11,10 @@ class SimpleTimeAux(val hours:Int, val minutes:Int) {
     val m = minutes - aTime.minutes
 
     // see simplification above
-    if (h < 0)
+    if(h < 0)
       return new SimpleTimeAux(0, 0)
 
-    if (m >= 0)
+    if(m >= 0)
       new SimpleTimeAux(h, m)
     else
       new SimpleTimeAux(h-1, m+60)

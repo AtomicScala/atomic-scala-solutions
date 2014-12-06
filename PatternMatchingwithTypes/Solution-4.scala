@@ -4,10 +4,10 @@ import com.atomicscala.AtomicTest._
 
 def quantify(x:Any):String = {
   x match {
-    case i: Int if (i < 100) => "small"
-    case i: Int if (i < 1000) => "medium"
-    case d: Double if (d < 100.0) => "small"
-    case d: Double if (d < 1000.0) => "medium"
+    case i: Int if(i < 100) => "small"
+    case i: Int if(i < 1000) => "medium"
+    case d: Double if(d < 100.0) => "small"
+    case d: Double if(d < 1000.0) => "medium"
     case _ => "large"
   }
 }

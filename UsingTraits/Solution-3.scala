@@ -12,8 +12,7 @@ class Camera {
   def takeStillPhoto = "Took a picture"
 }
 
-class WIFICamera extends Camera with WIFI
-{
+class WIFICamera extends Camera with WIFI {
   val address = "192.168.0.200"
 }
 
@@ -24,18 +23,17 @@ trait Connections {
   def connect(connection:Boolean) = {
     connection match {
       case true =>
-        if (connected < maxConnections) {
+        if(connected < maxConnections) {
         connected = connected + 1
         true
       }
       else false
       case false =>
-      if (connected > 0) {
+      if(connected > 0) {
         connected = connected - 1
         true
       }
       else false
-
     }
   }
 }

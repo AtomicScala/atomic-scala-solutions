@@ -5,8 +5,8 @@ import com.atomicscala.AtomicTest._
 var evens:Int = 0
 var odds:Int = 0
 
-for (i <- 0 to 10) {
-  if (i % 2 == 0) evens = evens + i
+for(i <- 0 to 10) {
+  if(i % 2 == 0) evens = evens + i
   else odds = odds + i
 }
 

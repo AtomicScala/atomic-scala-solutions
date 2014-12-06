@@ -6,7 +6,7 @@ import codelisting._
 class CodeListingTester3(makeList:String => IndexedSeq[String]) {
   val l = makeList("NoSuchFile.scala")
   var index = 1
-  for (i <- l) {
+  for(i <- l) {
     println (s"$index $i")
     index = index + 1
   }

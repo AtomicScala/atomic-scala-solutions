@@ -7,7 +7,7 @@ cVec.sorted is Vector('a', 'f', 'g', 'p', 'z')
 cVec.min is 'a'
 cVec.max is 'z'
 var cVecString = ""
-for (i <- cVec.sorted) {
+for(i <- cVec.sorted) {
   cVecString += i + " "
 }
 cVecString is "a f g p z "
@@ -17,7 +17,7 @@ iVec.sorted is Vector(-8, 1, 2, 4, 9, 12, 23, 455)
 iVec.min is -8
 iVec.max is 455
 var iVecString = ""
-for (i <- iVec.sorted) {
+for(i <- iVec.sorted) {
   iVecString += i + " "
 }
 iVecString is "-8 1 2 4 9 12 23 455 "
@@ -27,7 +27,7 @@ sVec.sorted is Vector("My", "ate", "dog", "homework", "my")
 sVec.min is "My"
 sVec.max is "my"
 var sVecString = ""
-for (i <- sVec.sorted) {
+for(i <- sVec.sorted) {
   sVecString += i + " "
 }
 sVecString is "My ate dog homework my "

@@ -5,7 +5,7 @@ import com.atomicscala.AtomicTest._
 class Cup5(var percentFull:Int) {
   val max = 100
   def increase(amount:Int*):Int = {
-    for (i<-amount) {
+    for(i<-amount) {
       percentFull += i
       if(percentFull > max) percentFull = max
     }

@@ -11,10 +11,10 @@ val activity = "swimming"
 // val activity = "couch"
 
 val isOpen = {
-  if (activity == "swimming") {
+  if(activity == "swimming") {
       val opensAt = 9
       val closesAt = 20
-      if (hour >= opensAt && hour <= closesAt) true
+      if(hour >= opensAt && hour <= closesAt) true
       else false
   } else {
     true
@@ -22,11 +22,11 @@ val isOpen = {
 }
 
 val isGoodTemperature = {
-  if (activity == "swimming") {
-    if (airTemperature > 80) true
+  if(activity == "swimming") {
+    if(airTemperature > 80) true
     else false
-  } else if (activity == "biking") {
-    if (airTemperature > 50) true
+  } else if(activity == "biking") {
+    if(airTemperature > 50) true
     else false
   } else true
 }

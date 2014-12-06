@@ -4,18 +4,15 @@ import com.atomicscala.AtomicTest._
 
 def isPalIgnoreSpecial(str:String):Boolean = {
   var createdStr = ""
-  for (c <- str) {
+  for(c <- str) {
     val theValue = c.toInt
-
-    if (theValue >64 && theValue < 123) {
+    if(theValue >64 && theValue < 123) {
       createdStr += c
     }
-    else if (theValue > 47 && theValue <58) {
+    else if(theValue > 47 && theValue <58) {
       createdStr += c
     }
-
   }
-
   val s1 = createdStr.toUpperCase.reverse
   val s2 = createdStr.toUpperCase
   s1.equals(s2)

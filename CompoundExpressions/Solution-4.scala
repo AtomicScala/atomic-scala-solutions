@@ -6,11 +6,11 @@ val distance = 9
 val activity = "biking"
 
 val willDo = {
-  if (activity == "running") {
+  if(activity == "running") {
     distance < 10
-  } else if (activity == "biking") {
+  } else if(activity == "biking") {
     distance < 20
-  } else if (activity == "walking") {
+  } else if(activity == "walking") {
     distance < 6
   } else {
       false

@@ -7,10 +7,10 @@ case class SimpleTimeDefault(hours:Int, minutes:Int = 0) {
     val h = hours - aTime.hours
     val m = minutes - aTime.minutes
 
-    if (h < 0)
+    if(h < 0)
        return new SimpleTimeDefault(0)  // See simplification above
 
-    if (m >= 0)
+    if(m >= 0)
       new SimpleTimeDefault(h, m)
     else
       new SimpleTimeDefault(h-1, m+60)

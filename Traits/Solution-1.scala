@@ -5,11 +5,11 @@ import com.atomicscala.AtomicTest._
 trait EnergySource
 
 trait BatteryPower {
- def monitor(charge:Int):String = {
-   if (charge < 20) "red"
-   else if (charge < 40) "yellow"
-   else "green"
- }
+  def monitor(charge:Int):String = {
+    if(charge < 20) "red"
+    else if(charge < 40) "yellow"
+    else "green"
+  }
 }
 
 class Battery extends EnergySource with BatteryPower
@@ -22,9 +22,9 @@ battery.monitor(10) is "red"
 
 trait BatteryPower {
   def monitor(level:Int) = level match {
-  case i: Int if (i < 20) => "red"
-  case i: Int if (i <= 39) => "yellow"
-  case _ => "green"
+    case i: Int if(i < 20) => "red"
+    case i: Int if(i <= 39) => "yellow"
+    case _ => "green"
   }
 }
 

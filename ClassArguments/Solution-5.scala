@@ -9,7 +9,7 @@ println("Uncomment the text in the solution to see the error")
 
   def familySize():Int = {
     var count = 2
-    for (i<-kids) {
+    for(i<-kids) {
       count = count + 1
     }
     count

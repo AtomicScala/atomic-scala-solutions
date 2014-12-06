@@ -23,7 +23,7 @@ class Temperature {
     if(scale == "f")
       current
     else {
-      if (scale == "k") current -= 273.15
+      if(scale == "k") current -= 273.15
       current * 9.0/5.0 + 32.0
     }
   }

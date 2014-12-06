@@ -7,8 +7,8 @@ class Cup3 {
   val max = 100
   def add(increase:Int):Int = {
     percentFull += increase
-    if (percentFull > max) percentFull = max
-    if (percentFull < 0) percentFull = 0
+    if(percentFull > max) percentFull = max
+    if(percentFull < 0) percentFull = 0
     percentFull // Return this value
   }
 }

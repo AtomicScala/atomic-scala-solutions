@@ -1,7 +1,6 @@
 // Solution-3.scala
 // Solution to Exercise 3 in "Converting Exceptions with Try"
 import com.atomicscala.AtomicTest._
-
 import util.Try
 import java.io.FileNotFoundException
 import codelisting._
@@ -10,7 +9,7 @@ class CodeListingTester2(
   makeList:String => IndexedSeq[String]) {
   val l = makeList("CodeListingTester.scala")
   var index = 1
-  for (i <- l) {
+  for(i <- l) {
     println (f"$index%2d $i")
     index = index + 1
   }

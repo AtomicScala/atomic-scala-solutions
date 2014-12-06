@@ -8,10 +8,10 @@ val sVec = Vector("My", "dog", "ate", "my", "homework")
 
 var allString = ""
 val allVec = Vector(cVec, iVec, sVec)
-for (outer <- allVec) {
-  for (inner <- outer) {
+for(outer <- allVec) {
+  for(inner <- outer) {
      allString += inner + " "
   }
-
 }
+
 allString is "f z g a p 1 455 23 -8 4 9 12 2 My dog ate my homework "

@@ -15,7 +15,7 @@ It's false
 
 // OR
 
-if (false) println("It's true")
+if(false) println("It's true")
 else       println("It's false")
 
 // OR
@@ -38,13 +38,13 @@ println(result)
 // OR, compare to
 
 val r =
-  if (99 > 100) 4
+  if(99 > 100) 4
   else          42
 
  println(r)
 
  // OR, Get rid of intermediate result with:
- if (99 > 100) println(4)
+ if(99 > 100) println(4)
  else          println(42)
 
  // END If5 example
