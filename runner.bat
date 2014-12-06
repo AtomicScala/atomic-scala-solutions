@@ -1,7 +1,11 @@
 @setlocal enabledelayedexpansion && python -x "%~f0" %* & exit /b !ERRORLEVEL!
 #start python code here (tested on Python 2.7.4)
+## For individual directories, enable ..\runner so that it only runs in that directory
+##      -- Check current directory, if it's not the root then only run in this directory
 ## 'Applications' directory: compile all, run command lines, capture output and verify
-##     To verify: Add commented "output should be" and compare with that
+##     To verify: Add commented "OUTPUT_SHOULD_BE" and compare with that
+## Add command to check for superfluous inclusion of AtomicTest
+## Copy errors._ to Converting Exceptions with Try
 import os, sys, shutil
 from contextlib import contextmanager
 from glob import glob

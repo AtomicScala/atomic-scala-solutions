@@ -2,3 +2,5 @@
 // Solution to Exercise 1 in "Expressions"
 
 val feetPerMile = 5280
+
+println(feetPerMile)

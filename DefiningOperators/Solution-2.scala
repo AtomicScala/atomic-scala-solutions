@@ -5,7 +5,7 @@ import scala.math.pow
 
 class FancyNumber1(val num:Int) {
   def power(n:Int):Int = {
-    pow(num.toDouble,  n.toDouble).toInt
+    pow(num.toDouble, n.toDouble).toInt
   }
 }
 

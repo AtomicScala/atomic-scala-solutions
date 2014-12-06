@@ -15,5 +15,4 @@ prep.utensils is "Vector(PrepUtensils)"
 val simple = new SimpleKitchen
 simple.serveFood is true
 simple.prepFood is true
-simple.utensils is
-"Vector(ServeUtensils, PrepUtensils)"
+simple.utensils is "Vector(ServeUtensils, PrepUtensils)"

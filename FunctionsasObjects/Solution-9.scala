@@ -7,6 +7,6 @@ val pluralize = (x:String) => (x + "s")
 val words = Vector("word", "cat", "animal")
 
 var s = ""
-words.foreach(x=>(s = s + (pluralize(x) + " ")))
+words.foreach(x => (s = s + (pluralize(x) + " ")))
 
 s is "words cats animals "

@@ -1,6 +1,5 @@
 // Solution-2.scala
 // Solution to Exercise 2 in "Creating Classes"
-import com.atomicscala.AtomicTest._
 
 class Lion
 class Giraffe

@@ -1,6 +1,5 @@
 // Solution-1.scala
 // Solution to Exercise 1 in "Creating Classes"
-import com.atomicscala.AtomicTest._
 
 class Hippo
 class Lion

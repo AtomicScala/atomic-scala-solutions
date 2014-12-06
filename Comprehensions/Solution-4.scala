@@ -4,7 +4,7 @@ import com.atomicscala.AtomicTest._
 
 def yielding4(v:Vector[Int]):Vector[Int] = {
   // you can get this to work if you create the variables OUTSIDE the loop
-  // any attemp to create them inside the loop fails
+  // any attempt to create them inside the loop fails
   var n = 0
   var isOdd = false
   for {
