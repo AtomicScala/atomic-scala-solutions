@@ -6,7 +6,6 @@ class FunNumbers2 {
   def f(i:Int, j:Int):Double = { i + j }
   // this won't work (redefined function, different only in return type):
   // def f(i:Int, j:Int):Int = { i + j }
-
 }
 
 val funNumbers2 = new FunNumbers2

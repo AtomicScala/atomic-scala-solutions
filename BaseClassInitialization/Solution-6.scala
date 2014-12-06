@@ -18,7 +18,7 @@ class Trip(val origination:String, val destination:String, val startDate:String,
   "Bakersfield","San Francisco")
 
 class CarTrip(val cities:Vector[String], startDate:String, endDate:String)
-  extends Trip(cities(0), cities(cities.size-1), startDate, endDate){
+  extends Trip(cities(0), cities(cities.size-1), startDate, endDate) {
   val firstCity = cities(0)
   val lastCity = cities(cities.size-1)
   override def toString = "Traveling from " + firstCity + " to " + lastCity + ": " + startDate + " to " + endDate

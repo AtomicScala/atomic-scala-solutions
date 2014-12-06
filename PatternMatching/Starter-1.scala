@@ -2,6 +2,5 @@
 // From "Pattern Matching" atom
 import com.atomicscala.AtomicTest._
 
-matchColor("white") is
-"UNKNOWN COLOR: white"
+matchColor("white") is "UNKNOWN COLOR: white"
 matchColor("blue") is "BLUE"

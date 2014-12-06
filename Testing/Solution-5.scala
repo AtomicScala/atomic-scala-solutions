@@ -2,13 +2,11 @@
 // Solution to Exercise 5 in "Testing"
 import com.atomicscala.AtomicTest._
 
-def squareArea(x:Double):Double={
+def squareArea(x:Double):Double = {
   x * x
 }
-def rectangleArea(x:Double,
-  y:Double):Double = { x * y }
-def trapezoidArea(x:Double, y:Double,
-  h:Double):Double = h/2 * (x + y)
+def rectangleArea(x:Double, y:Double):Double = { x * y }
+def trapezoidArea(x:Double, y:Double, h:Double):Double = h/2 * (x + y)
 
 squareArea(1) is 1
 squareArea(2) is 4

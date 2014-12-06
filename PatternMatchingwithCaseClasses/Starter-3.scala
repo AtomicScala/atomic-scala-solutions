@@ -3,5 +3,5 @@
 import com.atomicscala.AtomicTest._
 
 case class Kitten(name:String)
-travel2(Kitten("Kitty")) is
-  "Kitten(Kitty) is in limbo!"
+
+travel2(Kitten("Kitty")) is "Kitten(Kitty) is in limbo!"

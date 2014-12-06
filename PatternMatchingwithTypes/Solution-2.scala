@@ -13,7 +13,6 @@ def convertToSize(x:Any):Any = {
     case f:Float => f
     case p:Person => 1
     case _ => 0
-
   }
 }
 

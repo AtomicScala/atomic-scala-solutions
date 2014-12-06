@@ -2,8 +2,7 @@
 // From "Pattern Matching with Types" atom
 import com.atomicscala.AtomicTest._
 
-forecast(100) is
-"Sunny"
+forecast(100) is "Sunny"
 forecast(81) is "Sunny"
 forecast(80) is "Mostly Sunny"
 forecast(51) is "Mostly Sunny"

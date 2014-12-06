@@ -13,10 +13,19 @@ def forecast(temp:Int):String = {
   }
 }
 
-val data = Vector(100, 80, 50, 20, 15, 80, 20)
 def forecastLoop(data:Vector[Int]):Unit = {
   for(s <-data)
     println("forecast("+s+") is " + forecast(s))
 }
 
-val allData = forecastLoop(data)
+val allData = forecastLoop(Vector(100, 80, 50, 20, 15, 80, 20))
+
+/* OUTPUT_SHOULD_BE
+forecast(100) is Sunny
+forecast(80) is Mostly Sunny
+forecast(50) is Partly Sunny
+forecast(20) is Mostly Cloudy
+forecast(15) is Unknown
+forecast(80) is Mostly Sunny
+forecast(20) is Mostly Cloudy
+*/

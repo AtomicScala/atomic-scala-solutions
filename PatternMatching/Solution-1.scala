@@ -8,5 +8,6 @@ def matchColor(color:String):String = {
   else if(color == "green") "GREEN"
   else "UNKNOWN COLOR: " + color
 }
+
 matchColor("white") is "UNKNOWN COLOR: white"
 matchColor("blue") is "BLUE"
