@@ -1,7 +1,6 @@
 // Solution-1.scala
 // Solution to Exercise 1 in "A Little Reflection"
 import com.atomicscala.AtomicTest._
-
 import com.atomicscala.Name
 
 case class Toy(name:String, batteryOperated:Boolean)

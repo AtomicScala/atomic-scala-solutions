@@ -1,6 +1,7 @@
 @setlocal enabledelayedexpansion && python -x "%~f0" %* & exit /b !ERRORLEVEL!
 #start python code here (tested on Python 2.7.4)
-## Look for Â in all files and clean up
+## 'Applications' directory: compile all, run command lines, capture output and verify
+##     To verify: Add commented "output should be" and compare with that
 import os, sys, shutil
 from contextlib import contextmanager
 from glob import glob
@@ -38,6 +39,11 @@ compileFiles = [
         ("Name.scala", "com/atomicscala/Name.class"),
         ("Name2.scala", "com/atomicscala/Name2.class"),
     ]),
+    ("Applications", [
+        ("Solution-1.scala", "WhenAmI.class"),
+        ("Solution-2.scala", "Battery1.class"),
+        ("Solution-3.scala", "Battery2.class"),
+    ]),
     ("ConstructorsAndExceptions", [
         ("CodeListing.scala", "codelisting/CodeListing.class"),
         ("CodeListingTester.scala", "codelistingtester/CodeListingTester.class"),
@@ -50,6 +56,7 @@ compileFiles = [
     ("ImportsAndPackages-2ndEdition", [
         ("EquilateralTriangle.scala", "com/atomicscala/pythagorean/EquilateralTriangle.class"),
         ("PythagoreanTheorem.scala", "com/atomicscala/pythagorean/RightTriangle.class"),
+        ("Trivia.scala", "com/atomicscala/trivia/Movies.class"),
     ]),
     ("Summary2", [
         ("BasicMethods.scala", "com/atomicscala/BasicLibrary/WhizBang.class"),

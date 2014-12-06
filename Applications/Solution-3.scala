@@ -1,5 +1,7 @@
 // Solution-3.scala
 // Solution to Exercise 3 in "Applications"
+// Compile, then run with
+// scala Battery2 10 30 50
 import com.atomicscala.AtomicTest._
 
 trait BatteryPower {
