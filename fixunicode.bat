@@ -5,20 +5,25 @@
 import os, sys, shutil
 from contextlib import contextmanager
 from glob import glob
+from ftfy import fix_file
+from pprint import pprint
 
 @contextmanager
 def visitDir(d):
+    old = os.getcwd()
     os.chdir(d)
     yield d
-    os.chdir("..")
+    os.chdir(old)
 
 paths = [os.path.join('.', p[0:-1]) for p in glob('*/')]
+# Testing:
+paths = ['C:\\Users\\Bruce\\Documents\\GitHub\\atomic-scala-solutions\\Sequences']
 
 for p in paths:
     print p
     with visitDir(p):
         for n in glob('*.scala'):
-            #print "    " + n
-            contents = file(n).read()
-            if '\xc3' in contents:
-                print 'xc3'
+            print "    " + n
+            with file(n) as unfixed:
+                fixed = "".join(fix_file(unfixed))
+            file(n, 'w').write(fixed.replace(u'\xc2', ''))
