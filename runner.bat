@@ -12,14 +12,25 @@ parser.add_argument("-s", "--simplify", action='store_true', help="Remove unimpo
 parser.add_argument("-c", "--clean", action='store_true', help="Remove all 'run' artifacts")
 parser.add_argument("-p", "--prerequisites", action='store_true', help="Compile prerequisites")
 parser.add_argument("-u", "--unusedfiles", action='store_true', help="Display non 'Solution-' and non 'Starter-' scala files")
+parser.add_argument("-t", "--test", action='store_true', help="Test")
+args = parser.parse_args()
 
 @contextmanager
 def visitDir(d):
+    old = os.getcwd()
     os.chdir(d)
     yield d
-    os.chdir("..")
+    os.chdir(old)
 
 paths = [os.path.join('.', p[0:-1]) for p in glob('*/')]
+
+if args.test:
+    for p in paths:
+        with visitDir(p):
+            print p + ": "
+            for f in glob('*'):
+                print "", f
+    sys.exit()
 
 compileFiles = [
     # (Directory, [(file, artifact), (file, artifact), ...])
@@ -118,7 +129,6 @@ def showUnusedFiles():
     print "\n".join(nsf - cf)
 
 
-args = parser.parse_args()
 if not any(vars(args).values()): parser.print_help()
 if args.clean: clean() # Happens first with multiple command args
 if args.prerequisites: compilePrerequisites()
