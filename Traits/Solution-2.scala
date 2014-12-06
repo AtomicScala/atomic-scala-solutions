@@ -11,6 +11,7 @@ trait BatteryPower {
 }
 
 trait Toy
+
 class BatteryPoweredToy extends Toy with BatteryPower
 
 val toy = new BatteryPoweredToy

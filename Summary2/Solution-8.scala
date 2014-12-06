@@ -62,9 +62,9 @@ class Grid {
     }
     // check diagonal
     val diag1 = Vector(cells(0)(0), cells(1)(1), cells(2)(2))
-    if(checkFor3(diag1) ) return true
+    if(checkFor3(diag1)) return true
     val diag2 = Vector(cells(0)(2), cells(1)(1), cells(2)(0))
-    if(checkFor3(diag2) ) return true
+    if(checkFor3(diag2)) return true
     false
   }
 }

@@ -2,8 +2,7 @@
 // Solution to Exercise 8 in "Vectors"
 import com.atomicscala.AtomicTest._
 
-val v6 = Vector("the", "dog", "visited",
-  "the", "firehouse")
+val v6 = Vector("the", "dog", "visited", "the", "firehouse")
 
 // String doesn't have a sum operation
 //println("The string Vector sum is " + v6.sum)

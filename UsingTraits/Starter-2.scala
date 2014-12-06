@@ -2,8 +2,7 @@
 // From "Using Traits" atom
 import com.atomicscala.AtomicTest._
 
-val c = new Object with
-Connections
+val c = new Object with Connections
 c.maxConnections is 5
 c.connect(true) is true
 c.connected is 1

@@ -12,10 +12,8 @@ class Camera {
   def takeStillPhoto = "Took a picture"
 }
 
-class WIFICamera extends Camera with WIFI
-{
+class WIFICamera extends Camera with WIFI {
   val address = "192.168.0.200"
-
 }
 
 val webcam = new WIFICamera

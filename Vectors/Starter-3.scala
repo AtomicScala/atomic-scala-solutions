@@ -2,5 +2,4 @@
 // From "Vectors" atom
 import com.atomicscala.AtomicTest._
 
-sentence.toString() is
-  "The dog visited the firehouse "
+sentence.toString() is "The dog visited the firehouse "

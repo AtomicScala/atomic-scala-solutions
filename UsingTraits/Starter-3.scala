@@ -2,8 +2,7 @@
 // From "Using Traits" atom
 import com.atomicscala.AtomicTest._
 
-val c2 = new WIFICamera with
-Connections
+val c2 = new WIFICamera with Connections
 c2.maxConnections is 5
 c2.connect(true) is true
 c2.connected is 1

@@ -2,7 +2,7 @@
 // Solution to Exercise 1 in "Maps"
 import com.atomicscala.AtomicTest._
 
-val constants = Map( 3.141 -> "Pi", 2.718-> "e", 1.618-> "phi")
+val constants = Map(.141 -> "Pi", 2.718-> "e", 1.618-> "phi")
 
 Map((3.141, "Pi"), (2.718, "e"), (1.618, "phi")) is constants
 

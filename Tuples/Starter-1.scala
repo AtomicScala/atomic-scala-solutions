@@ -2,15 +2,13 @@
 // From "Tuples" atom
 import com.atomicscala.AtomicTest._
 
-val tuple1 = (65,
-"Sunny", "Stars")
+val tuple1 = (65, "Sunny", "Stars")
 val (/* fill this in */) = tuple1
 temp1 is 65
 sky1 is "Sunny"
 view1 is "Stars"
 
-vap tuple2 =
-  (78, "Cloudy", "Satellites")
+vap tuple2 = (78, "Cloudy", "Satellites")
 val (/* fill this in */) = tuple2
 temp2 is 78
 ski2 is "Cloudy"

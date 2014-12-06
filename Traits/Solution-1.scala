@@ -13,6 +13,7 @@ trait BatteryPower {
 }
 
 class Battery extends EnergySource with BatteryPower
+
 val battery = new Battery
 battery.monitor(80) is "green"
 battery.monitor(30) is "yellow"

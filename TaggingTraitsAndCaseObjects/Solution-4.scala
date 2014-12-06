@@ -16,8 +16,7 @@ def display(c:Color) = c match {
   case Blue => s"It's $c"
 }
 
-Color.values.map(display) is
-"Vector(It's Red, It's Green, It's Blue)"
+Color.values.map(display) is "Vector(It's Red, It's Green, It's Blue)"
 
 println("ANSWER: The test fails but you can add Color to the Vector")
 

@@ -5,8 +5,7 @@ import com.atomicscala.AtomicTest._
 println("Uncomment the text in the solution to see the error")
 
 // Uncomment the following to see the error
-/*class Family3(parents:String*, kids:String* ) {
-
+/*class Family3(parents:String*, kids:String*) {
   def familySize():Int = {
     var count = 2
     for(i<-kids) {

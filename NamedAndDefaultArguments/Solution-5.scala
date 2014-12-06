@@ -2,7 +2,7 @@
 // Solution to Exercise 5 in "Named & Default Arguments"
 import com.atomicscala.AtomicTest._
 
-class Family3(val mom:String, val dad:String, val kids:String* ) {
+class Family3(val mom:String, val dad:String, val kids:String*) {
   def familySize():Int = {
     var count = 2    // NOTE: This changed
     for(i<-kids) {
