@@ -7,8 +7,7 @@ class Trip(val origination:String, val destination:String, val startDate:String,
 }
 
 val t = new Trip("Detroit","Houston", "5/1/2012","6/1/2012")
-t is "From Detroit to Houston:" +
-  " 5/1/2012 to 6/1/2012"
+t is "From Detroit to Houston: 5/1/2012 to 6/1/2012"
 
 class AirplaneTrip(origination:String, destination:String, startDate:String, endDate:String, val movie:String)
 extends Trip(origination, destination, startDate, endDate){
