@@ -3,9 +3,9 @@
 import com.atomicscala.AtomicTest._
 
 class Item(val name:String, var price:Int) {
-  def cost(grocery:Boolean=false, medication:Boolean=false, rate:Double=0.10):Double = {
+  def cost(grocery:Boolean=false, medication:Boolean=false, taxRate:Double=0.10):Double = {
     if(grocery || medication) price
-    else price + (rate*price)
+    else price + (taxRate * price)
     }
 }
 
@@ -16,4 +16,4 @@ val sunscreen = new Item(name="sunscreen", 3)
 sunscreen.cost() is 3.3
 
 val tv = new Item(name="television", 500)
-tv.cost(rate = 0.06) is 530
+tv.cost(taxRate = 0.06) is 530
