@@ -17,7 +17,7 @@ parser.add_argument("-c", "--clean", action='store_true', help="Remove all 'run'
 parser.add_argument("-p", "--prerequisites", action='store_true', help="Compile prerequisites")
 parser.add_argument("-u", "--unusedfiles", action='store_true', help="Display non 'Solution-' and non 'Starter-' scala files")
 parser.add_argument("-t", "--trace", action='store_true', help="Output trace information")
-parser.add_argument("-f", "--file", action='store', help="Run only on the designated file")
+parser.add_argument("-f", "--file", nargs='+', action='store', help="Run only on the designated file")
 args = parser.parse_args()
 
 if args.trace:
@@ -166,7 +166,9 @@ def showUnusedFiles():
 
 # if not any(vars(args).values()): parser.print_help()
 if not any(vars(args).values()): run()
-if args.file: runfile(args.file)
+if args.file: 
+    for fname in args.file:
+        runfile(fname)
 if args.clean: clean() # Happens first with multiple command args
 if args.prerequisites: compilePrerequisites()
 if args.simplify: simplify()
