@@ -6,18 +6,18 @@
 ## - To verify: Add commented "OUTPUT_SHOULD_BE" and compare with that
 ## - Add command to check for superfluous inclusion of AtomicTest
 ## - Copy errors._ to Converting Exceptions with Try
-import os, sys, shutil
+import os, sys, shutil, re
 from contextlib import contextmanager
 from glob import glob
 import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-r", "--run", action='store_true', help="Run all the scala scripts and capture any errors")
+parser = argparse.ArgumentParser(description='With no arguments, runs all the scala scripts and capture any errors')
 parser.add_argument("-s", "--simplify", action='store_true', help="Remove unimportant trace files & show non-empty error files")
 parser.add_argument("-c", "--clean", action='store_true', help="Remove all 'run' artifacts")
 parser.add_argument("-p", "--prerequisites", action='store_true', help="Compile prerequisites")
 parser.add_argument("-u", "--unusedfiles", action='store_true', help="Display non 'Solution-' and non 'Starter-' scala files")
 parser.add_argument("-t", "--test", action='store_true', help="Test")
+parser.add_argument("-f", "--file", action='store', help="Run only on the designated file")
 args = parser.parse_args()
 
 @contextmanager
@@ -80,17 +80,37 @@ def compilePrerequisites():
                     os.system(cmd)
 
 
+def runfile(name):
+    base = name.rsplit('.')[0]
+    outputFile = base + ".out"
+    errorFile = base + ".err"
+    cmd = "scala " + name + " > " + outputFile + " 2> " + errorFile
+    print "    " + cmd
+    os.system(cmd)
+    contents = file(name).read()
+    OUTPUT_SHOULD_BE = re.search(r"OUTPUT_SHOULD_BE(.*)\*/", contents, re.DOTALL)
+    OUTPUT_SHOULD_CONTAIN = re.search(r"OUTPUT_SHOULD_CONTAIN(.*)\*/", contents, re.DOTALL)
+    if OUTPUT_SHOULD_BE:
+        should_be = OUTPUT_SHOULD_BE.group(1).strip()
+        print "1 [" + should_be + "]"
+        assert(should_be == open(outputFile).read().strip())
+    if OUTPUT_SHOULD_CONTAIN:
+        should_contain = OUTPUT_SHOULD_CONTAIN.group(1).strip()
+        print "1 [" + should_contain + "]"
+
 def run():
-    compilePrerequisites()
-    print "Running"
-    for p in paths:
-        print p
-        with visitDir(p):
-            for n in glob('Solution-*.scala'):
-                base = n.rsplit('.')[0]
-                cmd = "scala " + n + " > " + base + ".out 2> " + base + ".err"
-                print "    " + cmd
-                os.system(cmd)
+    if os.getcwd().endswith("atomic-scala-solutions"):
+        print "Running all"
+        compilePrerequisites()
+        for p in paths:
+            print p
+            with visitDir(p):
+                for n in glob('Solution-*.scala'):
+                    runfile(n)
+    else:
+        print "Just running this directory"
+        for n in glob('Solution-*.scala'):
+            runfile(n)
 
 
 def simplify():
@@ -140,9 +160,10 @@ def showUnusedFiles():
     print "\n".join(nsf - cf)
 
 
-if not any(vars(args).values()): parser.print_help()
+# if not any(vars(args).values()): parser.print_help()
+if not any(vars(args).values()): run()
+if args.file: runfile(args.file)
 if args.clean: clean() # Happens first with multiple command args
 if args.prerequisites: compilePrerequisites()
-if args.run: run()
 if args.simplify: simplify()
 if args.unusedfiles: showUnusedFiles()
