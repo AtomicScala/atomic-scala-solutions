@@ -16,9 +16,14 @@ parser.add_argument("-s", "--simplify", action='store_true', help="Remove unimpo
 parser.add_argument("-c", "--clean", action='store_true', help="Remove all 'run' artifacts")
 parser.add_argument("-p", "--prerequisites", action='store_true', help="Compile prerequisites")
 parser.add_argument("-u", "--unusedfiles", action='store_true', help="Display non 'Solution-' and non 'Starter-' scala files")
-parser.add_argument("-t", "--test", action='store_true', help="Test")
+parser.add_argument("-t", "--trace", action='store_true', help="Output trace information")
 parser.add_argument("-f", "--file", action='store', help="Run only on the designated file")
 args = parser.parse_args()
+
+if args.trace:
+    def trace(arg): print(arg)
+else:
+    def trace(arg): pass
 
 @contextmanager
 def visitDir(d):
@@ -28,14 +33,6 @@ def visitDir(d):
     os.chdir(old)
 
 paths = [os.path.join('.', p[0:-1]) for p in glob('*/')]
-
-if args.test:
-    for p in paths:
-        with visitDir(p):
-            print p + ": "
-            for f in glob('*'):
-                print "", f
-    sys.exit()
 
 compileFiles = [
     # (Directory, [(file, artifact), (file, artifact), ...])
@@ -76,7 +73,7 @@ def compilePrerequisites():
             for scala, dep in items:
                 if not os.path.exists(dep):
                     cmd = "scalac " + scala
-                    print direct + ":", cmd
+                    trace(direct + ": " + cmd)
                     os.system(cmd)
 
 
@@ -85,30 +82,37 @@ def runfile(name):
     outputFile = base + ".out"
     errorFile = base + ".err"
     cmd = "scala " + name + " > " + outputFile + " 2> " + errorFile
-    print "    " + cmd
+    trace("    " + cmd)
     os.system(cmd)
     contents = file(name).read()
     OUTPUT_SHOULD_BE = re.search(r"OUTPUT_SHOULD_BE(.*)\*/", contents, re.DOTALL)
     OUTPUT_SHOULD_CONTAIN = re.search(r"OUTPUT_SHOULD_CONTAIN(.*)\*/", contents, re.DOTALL)
     if OUTPUT_SHOULD_BE:
         should_be = OUTPUT_SHOULD_BE.group(1).strip()
-        print "1 [" + should_be + "]"
+        trace("output should be [" + should_be + "]")
         assert(should_be == open(outputFile).read().strip())
+        print("Results OK")
     if OUTPUT_SHOULD_CONTAIN:
         should_contain = OUTPUT_SHOULD_CONTAIN.group(1).strip()
-        print "1 [" + should_contain + "]"
+        trace("output should contain [" + should_contain + "]")
+        if "error" in should_contain:
+            assert(should_contain in file(errorFile).read())
+        else:
+            assert(should_contain in file(outputFile).read())
+        print("Results OK")
+
 
 def run():
     if os.getcwd().endswith("atomic-scala-solutions"):
-        print "Running all"
+        trace("Running all")
         compilePrerequisites()
         for p in paths:
-            print p
+            trace(p)
             with visitDir(p):
                 for n in glob('Solution-*.scala'):
                     runfile(n)
     else:
-        print "Just running this directory"
+        trace("Just running this directory")
         for n in glob('Solution-*.scala'):
             runfile(n)
 
@@ -117,21 +121,21 @@ def simplify():
     print "Simplifying"
     for p in paths:
         with visitDir(p):
-            print os.path.basename(p)
+            trace(os.path.basename(p))
             logs = glob("*.out") + glob("*.err") + glob("_AtomicTestErrors.txt")
             if "_AtomicTestErrors.txt" in "".join(logs):
                 # Save the output files, only erase empty .err files
-                print "   _AtomicTestErrors.txt"
+                trace("   _AtomicTestErrors.txt")
                 for e in [f for f in logs if f.endswith(".err")]:
                     if not os.path.getsize(e):
-                        print "    removing " + os.path.basename(e)
+                        trace("    removing " + os.path.basename(e))
                         os.remove(e)
             else:
                 for e in [f for f in logs if f.endswith(".err")]:
-                    print "  ", e, os.path.getsize(e)
+                    trace("  ", e, os.path.getsize(e))
                     if not os.path.getsize(e):
                         # Remove .out and .err when .err is empty
-                        print "    removing " + os.path.basename(e) + " and " + os.path.splitext(e)[0] + ".out"
+                        trace("    removing " + os.path.basename(e) + " and " + os.path.splitext(e)[0] + ".out")
                         os.remove(e)
                         os.remove(os.path.splitext(e)[0] + ".out")
 
@@ -143,12 +147,12 @@ def clean():
                 f.endswith(".err") or
                 f == "_AtomicTestErrors.txt"]
     for r in removals:
-        print r
+        trace(r)
         os.remove(r)
     cf = set([os.path.join(".", direct, os.path.normpath(dep[1]).split(os.sep)[0]) for direct, deps in compileFiles for dep in deps])
-    # print "\n".join(cf)
+    trace("\n".join(cf))
     for f in [f for f in cf if os.path.exists(f)]:
-        print f
+        trace(f)
         shutil.rmtree(f)
 
 
