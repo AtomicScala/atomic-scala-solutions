@@ -3,7 +3,6 @@
 ## For individual directories, enable ..\runner so that it only runs in that directory
 ##   (Check current directory, if it's not the root then only run in this directory)
 ## - 'Applications' directory: compile all, run command lines, capture output and verify
-## - To verify: Add commented "OUTPUT_SHOULD_BE" and compare with that
 ## - Add command to check for superfluous inclusion of AtomicTest
 ## - Copy errors._ to Converting Exceptions with Try
 import os, sys, shutil, re
@@ -149,7 +148,8 @@ def clean():
     for r in removals:
         trace(r)
         os.remove(r)
-    cf = set([os.path.join(".", direct, os.path.normpath(dep[1]).split(os.sep)[0]) for direct, deps in compileFiles for dep in deps])
+    cf = set([os.path.join(".", direct, os.path.normpath(dep[1]).split(os.sep)[0]) 
+              for direct, deps in compileFiles for dep in deps])
     trace("\n".join(cf))
     for f in [f for f in cf if os.path.exists(f)]:
         trace(f)
