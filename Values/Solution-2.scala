@@ -1,11 +1,15 @@
 // Solution-2.scala
 // Solution to Exercise 2 in "Values"
-import com.atomicscala.AtomicTest._
 
-/*{oldDescription}
-Using the value you just stored (17), try to change it to 20. What happened?
-{oldDescription}*/
+val v1 = 17
+println(v1)
+// This won't work:
+v1 = 20
+println("You can't change a val")
 
-// this won't work
-// v2 = 20
-println("You can't change a value, once set")
+/* OUTPUT_SHOULD_CONTAIN
+error: reassignment to val
+v1 = 20
+   ^
+one error found
+*/
