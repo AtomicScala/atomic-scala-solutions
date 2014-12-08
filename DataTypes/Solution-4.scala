@@ -3,3 +3,7 @@
 
 val b:Boolean = true
 println(b)
+
+/* OUTPUT_SHOULD_BE
+true
+*/

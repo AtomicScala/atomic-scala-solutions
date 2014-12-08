@@ -3,3 +3,7 @@
 
 val d:Double = 15
 println(d)
+
+/* OUTPUT_SHOULD_BE
+15.0
+*/

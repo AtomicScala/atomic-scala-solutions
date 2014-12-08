@@ -3,3 +3,7 @@
 
 val d1:Double = 5.4D
 println(d1)
+
+/* OUTPUT_SHOULD_BE
+5.4
+*/

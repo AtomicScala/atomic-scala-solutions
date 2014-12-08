@@ -1,7 +1,14 @@
 // Solution-6.scala
 // Solution to Exercise 6 in "Data Types"
 
-// this will not run
-// val b:Boolean = "maybe"
+// This will not run:
+val b:Boolean = "maybe"
 
-println("You can't store a string in a Boolean")
+/* OUTPUT_SHOULD_CONTAIN
+error: type mismatch;
+ found   : String("maybe")
+ required: Boolean
+val b:Boolean = "maybe"
+                ^
+one error found
+*/

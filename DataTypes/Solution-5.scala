@@ -11,3 +11,14 @@ of
 lines"""
 
 println(s2)
+
+/* OUTPUT_SHOULD_BE
+This
+allows
+you
+to
+store
+lots
+of
+lines
+*/

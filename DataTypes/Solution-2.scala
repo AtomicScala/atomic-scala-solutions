@@ -3,3 +3,7 @@
 
 val s:String = "ABC1234"
 println(s)
+
+/* OUTPUT_SHOULD_BE
+ABC1234
+*/
