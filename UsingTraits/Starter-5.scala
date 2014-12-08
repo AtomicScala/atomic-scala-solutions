@@ -2,5 +2,5 @@
 // From "Using Traits" atom
 import com.atomicscala.AtomicTest._
 
-val painting = new Painting(64, 80, "Starry", 111)
-painting.show(1889) is "Modern"
+val painting = new Painting("The Starry Night", 1889)
+painting.period is "Modern"

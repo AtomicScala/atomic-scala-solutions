@@ -11,7 +11,7 @@ wikipedia.org/wiki/Art_periods
 // Romanticism: 1790-1880
 // Modern: 1881-1970
 // Contemporary: after 1971
-val period = new ArtPeriod
-period.show(1400) is "Renaissance"
-period.show(1650) is "Baroque"
-period.show(1279) is "Pre-Renaissance"
+val art = new ArtPeriod
+art.period(1400) is "Renaissance"
+art.period(1650) is "Baroque"
+art.period(1279) is "Pre-Renaissance"
