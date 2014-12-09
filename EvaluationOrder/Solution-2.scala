@@ -10,3 +10,7 @@ val somewhatSunnyAndWarm =
   temperature > 80
 
 println(somewhatSunnyAndWarm)
+
+/* OUTPUT_SHOULD_BE
+true
+*/

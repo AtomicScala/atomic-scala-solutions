@@ -6,3 +6,7 @@ var temperature = 87
 
 val sunnyAndWarm = sky == "sunny" && temperature > 80
 println(sunnyAndWarm)
+
+/* OUTPUT_SHOULD_BE
+true
+*/
