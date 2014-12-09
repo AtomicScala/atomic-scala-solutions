@@ -7,4 +7,10 @@ val yards2:Double = {
 }
 val miles2 = 2000/yards2
 
+println(yards2)
 println(miles2)
+
+/* OUTPUT_SHOULD_BE
+1760.0
+1.1363636363636365
+*/

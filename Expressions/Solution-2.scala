@@ -6,3 +6,8 @@ val yardsPerMile=feetPerMile/3.0
 
 println(feetPerMile)
 println(yardsPerMile)
+
+/* OUTPUT_SHOULD_BE
+5280
+1760.0
+*/
