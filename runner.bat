@@ -89,7 +89,6 @@ def runfile(name):
         should_be = OUTPUT_SHOULD_BE.group(1).strip()
         trace("output should be [" + should_be + "]")
         assert(should_be == open(outputFile).read().strip())
-        print("Results OK")
     if OUTPUT_SHOULD_CONTAIN:
         should_contain = OUTPUT_SHOULD_CONTAIN.group(1).strip()
         trace("output should contain [" + should_contain + "]")
@@ -97,7 +96,8 @@ def runfile(name):
             assert(should_contain in file(errorFile).read())
         else:
             assert(should_contain in file(outputFile).read())
-        print("Results OK")
+
+    print(name + ": Passed")
 
 
 def run():

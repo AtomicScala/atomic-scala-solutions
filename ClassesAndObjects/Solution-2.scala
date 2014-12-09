@@ -5,6 +5,14 @@ val s = "This is an experiment"
 val afterSplit = s.split(" ")
 
 // Bonus
-for(piece <- afterSplit) {
-  println(piece)
-}
+println(afterSplit(0))
+println(afterSplit(1))
+println(afterSplit(2))
+println(afterSplit(3))
+
+/* OUTPUT_SHOULD_BE
+This
+is
+an
+experiment
+*/

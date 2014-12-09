@@ -10,3 +10,9 @@ println(r2.step)
 // BONUS
 val r3 = r1.by(4)
 println(r3.step)
+
+/* OUTPUT_SHOULD_BE
+1
+2
+4
+*/
