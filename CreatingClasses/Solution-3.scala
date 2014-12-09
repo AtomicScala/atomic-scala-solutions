@@ -6,3 +6,7 @@ class Zebra {
 }
 
 val z = new Zebra
+
+/* OUTPUT_SHOULD_BE
+I have stripes!
+*/

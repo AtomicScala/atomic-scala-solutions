@@ -18,3 +18,11 @@ println(lion)
 println(tiger)
 println(monkey)
 println(giraffe)
+
+/* OUTPUT_SHOULD_CONTAIN
+Main$$anon$1$Hippo@
+Main$$anon$1$Lion@
+Main$$anon$1$Tiger@
+Main$$anon$1$Monkey@
+Main$$anon$1$Giraffe@
+*/

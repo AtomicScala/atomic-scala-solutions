@@ -11,3 +11,9 @@ val giraffe3 = new Giraffe
 println(lion2)
 println(giraffe2)
 println(giraffe3)
+
+/* OUTPUT_SHOULD_CONTAIN
+Main$$anon$1$Lion@
+Main$$anon$1$Giraffe@
+Main$$anon$1$Giraffe@
+*/
