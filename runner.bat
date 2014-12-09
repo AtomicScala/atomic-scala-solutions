@@ -1,7 +1,6 @@
 @setlocal enabledelayedexpansion && python -x "%~f0" %* & exit /b !ERRORLEVEL!
 #start python code here (tested on Python 2.7.4)
-## For individual directories, enable ..\runner so that it only runs in that directory
-##   (Check current directory, if it's not the root then only run in this directory)
+## - Capture any failures in a central file, then clean the artifacts
 ## - 'Applications' directory: compile all, run command lines, capture output and verify
 ## - Add command to check for superfluous inclusion of AtomicTest
 ## - Copy errors._ to Converting Exceptions with Try
@@ -148,7 +147,7 @@ def clean():
     for r in removals:
         trace(r)
         os.remove(r)
-    cf = set([os.path.join(".", direct, os.path.normpath(dep[1]).split(os.sep)[0]) 
+    cf = set([os.path.join(".", direct, os.path.normpath(dep[1]).split(os.sep)[0])
               for direct, deps in compileFiles for dep in deps])
     trace("\n".join(cf))
     for f in [f for f in cf if os.path.exists(f)]:
@@ -166,7 +165,7 @@ def showUnusedFiles():
 
 # if not any(vars(args).values()): parser.print_help()
 if not any(vars(args).values()): run()
-if args.file: 
+if args.file:
     for fname in args.file:
         runfile(fname)
 if args.clean: clean() # Happens first with multiple command args
