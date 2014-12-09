@@ -3,3 +3,4 @@
 *.err
 _AtomicTestErrors.txt
 tmp.txt
+results.txt

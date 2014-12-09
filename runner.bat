@@ -8,6 +8,7 @@ import os, sys, shutil, re
 from contextlib import contextmanager
 from glob import glob
 import argparse
+from solutionDirs import solutionDirs # In order they appear in book
 
 parser = argparse.ArgumentParser(description='With no arguments, runs all the scala scripts and capture any errors')
 parser.add_argument("-s", "--simplify", action='store_true', help="Remove unimportant trace files & show non-empty error files")
@@ -30,7 +31,7 @@ def visitDir(d):
     yield d
     os.chdir(old)
 
-paths = [os.path.join('.', p[0:-1]) for p in glob('*/')]
+#paths = [os.path.join('.', p[0:-1]) for p in glob('*/')]
 
 compileFiles = [
     # (Directory, [(file, artifact), (file, artifact), ...])
@@ -67,15 +68,39 @@ compileFiles = [
 def compilePrerequisites():
     print "Compiling prerequisites"
     for direct, items in compileFiles:
+        trace(direct)
+        trace(items)
         with visitDir(direct):
             for scala, dep in items:
+                trace(scala)
+                trace(dep)
                 if not os.path.exists(dep):
                     cmd = "scalac " + scala
                     trace(direct + ": " + cmd)
                     os.system(cmd)
 
 
+def run():
+    if os.getcwd().endswith("atomic-scala-solutions"):
+        trace("Running all")
+        compilePrerequisites()
+        for p in solutionDirs:
+            print(p)
+            with visitDir(p):
+                for n in glob('Solution-*.scala'):
+                    runfile(n)
+    else:
+        trace("Just running this directory")
+        for n in glob('Solution-*.scala'):
+            runfile(n)
+
+
 def runfile(name):
+    if os.path.exists("results.txt"):
+        for line in file("results.txt").readlines():
+            if name in line and "Failed" not in line:
+                print line.rstrip()
+                return
     base = name.rsplit('.')[0]
     outputFile = base + ".out"
     errorFile = base + ".err"
@@ -88,36 +113,32 @@ def runfile(name):
     if OUTPUT_SHOULD_BE:
         should_be = OUTPUT_SHOULD_BE.group(1).strip()
         trace("output should be [" + should_be + "]")
-        assert(should_be == open(outputFile).read().strip())
-    if OUTPUT_SHOULD_CONTAIN:
+        verify(name, should_be == open(outputFile).read().strip())
+    elif OUTPUT_SHOULD_CONTAIN:
         should_contain = OUTPUT_SHOULD_CONTAIN.group(1).strip()
         trace("output should contain [" + should_contain + "]")
         if "error" in should_contain:
-            assert(should_contain in file(errorFile).read())
+            verify(name, should_contain in file(errorFile).read())
         else:
-            assert(should_contain in file(outputFile).read())
+            verify(name, should_contain in file(outputFile).read())
+    else: # No "SHOULD"
+        verify(name, len(file(errorFile).read()) == 0)
 
-    print(name + ": Passed")
 
-
-def run():
-    if os.getcwd().endswith("atomic-scala-solutions"):
-        trace("Running all")
-        compilePrerequisites()
-        for p in paths:
-            trace(p)
-            with visitDir(p):
-                for n in glob('Solution-*.scala'):
-                    runfile(n)
-    else:
-        trace("Just running this directory")
-        for n in glob('Solution-*.scala'):
-            runfile(n)
+def verify(name, test):
+    with file("results.txt", 'a') as results:
+        if test:
+            print("   " + name + ": Passed")
+            print >>results, "!  " + name + ": Passed"
+        else:
+            print("   " + name + ": Failed")
+            print >>results, "!  " + name + ": Failed"
+            sys.exit(1)
 
 
 def simplify():
     print "Simplifying"
-    for p in paths:
+    for p in solutionDirs:
         with visitDir(p):
             trace(os.path.basename(p))
             logs = glob("*.out") + glob("*.err") + glob("_AtomicTestErrors.txt")
@@ -164,7 +185,7 @@ def showUnusedFiles():
 
 
 # if not any(vars(args).values()): parser.print_help()
-if not any(vars(args).values()): run()
+if not any(vars(args).values()) or args.trace: run()
 if args.file:
     for fname in args.file:
         runfile(fname)
