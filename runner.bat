@@ -4,7 +4,7 @@
 ## - 'Applications' directory: compile all, run command lines, capture output and verify
 ## - Add command to check for superfluous inclusion of AtomicTest
 ## - Copy errors._ to Converting Exceptions with Try
-import os, sys, shutil, re, inspect
+import os, sys, shutil, re, inspect, pprint
 from contextlib import contextmanager
 from glob import glob
 import argparse
@@ -23,10 +23,37 @@ parser.add_argument("-t", "--trace", action='store_true', help="Output trace inf
 parser.add_argument("-f", "--file", nargs='+', action='store', help="Run only on the designated files")
 args = parser.parse_args()
 
+def main():
+    if not any(vars(args).values()) or args.trace: # Change this so it's ONLY args.trace on the CL
+        run()
+        return
+    if args.file:
+        for fname in args.file:
+            runfile(fname)
+        return
+    if args.clean:
+        clean()
+        return
+    if args.prerequisites:
+        compilePrerequisites()
+        return
+    if args.simplify:
+        simplify()
+        return
+    if args.unusedfiles:
+        showUnusedFiles()
+        return
+    if args.remove_results:
+        remove_results()
+        return
+    parser.print_help()
+
+
 if args.trace:
-    def trace(arg): pprint(arg)
+    def trace(arg): pprint.pprint(arg)
 else:
     def trace(arg): pass
+
 
 @contextmanager
 def visitDir(d):
@@ -35,7 +62,6 @@ def visitDir(d):
     yield d
     os.chdir(old)
 
-#paths = [os.path.join('.', p[0:-1]) for p in glob('*/')]
 
 compileFiles = [
     # (Directory, [(file, artifact), (file, artifact), ...])
@@ -194,13 +220,5 @@ def remove_results():
         os.remove(f)
 
 
-# if not any(vars(args).values()): parser.print_help()
-if not any(vars(args).values()) or args.trace: run()
-if args.file:
-    for fname in args.file:
-        runfile(fname)
-if args.clean: clean() # Happens first with multiple command args
-if args.prerequisites: compilePrerequisites()
-if args.simplify: simplify()
-if args.unusedfiles: showUnusedFiles()
-if args.remove_results: remove_results()
+if __name__ == '__main__':
+    main()
