@@ -1,11 +1,15 @@
 package com.atomicscala.Bodies
 
 class NoBody {
-  def who():String = "Nobody's home"
+  def who():String = {
+    "Nobody's home"
+  }
 }
 
 class SomeBody {
-  def name():String = "Janet Doe"
+  def name():String = {
+    "Janet Doe"
+  }
   println(name + " is SomeBody")
 }
 

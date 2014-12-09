@@ -16,7 +16,9 @@ class Coffee(val shots:Int = 2,
       result += "HereCup "
     }
   }
-  def caf() = shots - decaf
+  def caf() = {
+    shots - decaf
+  }
   def pourShots():Unit = {
     for(s <- 0 until shots) {
       if(decaf > 0) {

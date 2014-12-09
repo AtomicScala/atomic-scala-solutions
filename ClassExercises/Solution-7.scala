@@ -2,10 +2,8 @@
 // Solution to Exercise 7 in "Class Exercises"
 import com.atomicscala.AtomicTest._
 
-class SimpleTimeNamed(val hours:Int=0,
-  val minutes:Int = 0) {
-  def subtract(aTime:SimpleTimeNamed):
-  SimpleTimeNamed = {
+class SimpleTimeNamed(val hours:Int=0, val minutes:Int = 0) {
+  def subtract(aTime:SimpleTimeNamed):SimpleTimeNamed = {
     val h = hours - aTime.hours
   val m = minutes - aTime.minutes
 

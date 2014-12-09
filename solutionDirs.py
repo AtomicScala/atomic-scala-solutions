@@ -101,16 +101,19 @@ if __name__ == '__main__':
     start = solutionDirs.index("Methods")
     stop = solutionDirs.index("Brevity")
     for tdir in solutionDirs[start:stop]:
+        dirmsg = tdir + "\n" + '=' * len(tdir)
         with visitDir(tdir):
-            print tdir
-            print '=' * len(tdir)
             for sfile in glob("*.scala"):
                 msg = sfile + ": "
                 lines = open(sfile).readlines()
                 for ln in lines:
                     if "def " in ln and '{' not in ln:
+                        if dirmsg:
+                            print dirmsg
+                            dirmsg = None
                         if msg:
                             print msg
                             msg = None
                         print ln
+                        os.system("subl " + sfile)
 

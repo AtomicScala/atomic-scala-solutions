@@ -15,7 +15,9 @@ class GardenGnome(val height:Double, val weight:Double, val happy:Boolean) {
     this(15.0)
     painted is true
   }
-  def show():String = s"$height $weight $happy $painted"
+  def show():String = {
+    s"$height $weight $happy $painted"
+  }
 }
 
 val gnome = new GardenGnome(20.0, 110.0, false)

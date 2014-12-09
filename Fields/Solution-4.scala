@@ -11,7 +11,7 @@ class Cup4 {
     percentFull // Return this value
   }
   def set(x:Int) { percentFull = x }
-  def get():Int = percentFull
+  def get():Int = { percentFull }
 }
 
 val cup4 = new Cup4
