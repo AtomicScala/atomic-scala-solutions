@@ -2,7 +2,7 @@
 // Solution to Exercise 1 in "Methods"
 
 def getSquare(num:Int):Int = {
-  num*num
+  num * num
 }
 
 val a = getSquare(3)
@@ -14,3 +14,9 @@ assert(b == 36, "Expected 36, Got " + b)
 val c = getSquare(5)
 println(c)
 assert(c == 25, "Expected 25, Got " + c)
+
+/* OUTPUT_SHOULD_BE
+9
+36
+25
+*/

@@ -9,13 +9,20 @@ def bmiStatus(lbs:Double, height:Double):String = {
 }
 
 val normal = bmiStatus(160, 68)
+println(normal)
 assert("Normal weight" == normal,
   "Expected Normal weight, Got " + normal)
 val overweight = bmiStatus(180, 60)
+println(overweight)
 assert("Overweight" == overweight,
   "Expected Overweight, Got " + overweight)
 val underweight = bmiStatus(100, 68)
+println(underweight)
 assert("Underweight" == underweight,
   "Expected Underweight, Got " + underweight)
 
-println("completed normally")
+/* OUTPUT_SHOULD_BE
+Normal weight
+Overweight
+Underweight
+*/

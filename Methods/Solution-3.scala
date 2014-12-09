@@ -1,9 +1,7 @@
 // Solution-3.scala
 // Solution to Exercise 3 in "Methods"
-import com.atomicscala.AtomicTest._
 
-def isArg1GreaterThanArg2(num1:Double,
-  num2:Double) = {
+def isArg1GreaterThanArg2(num1:Double, num2:Double) = {
   num1 > num2
 }
 
@@ -13,3 +11,8 @@ assert(false == t1, "Expected false, Got " + t1)
 val t2 = isArg1GreaterThanArg2(2.1, 1.2)
 println(t2)
 assert(true == t2, "Expected true, Got " + t2)
+
+/* OUTPUT_SHOULD_BE
+false
+true
+*/
