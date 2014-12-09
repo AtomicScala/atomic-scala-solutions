@@ -27,3 +27,8 @@ val motorboat2 = new Motorboat2
 val flare2 = motorboat2.signal()
 assert(flare2 == "Flare used!", "Expected Flare used!, Got " + flare2)
 println(flare2)
+
+/* OUTPUT_SHOULD_BE
+Flare used!
+Flare used!
+*/

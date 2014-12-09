@@ -1,6 +1,5 @@
 // Solution-1.scala
 // Solution to Exercise 1 in "Methods Inside Classes"
-import com.atomicscala.AtomicTest._
 
 class Sailboat {
   def raise():String = { "Sails raised" }
@@ -27,3 +26,9 @@ assert(s1 == "Motor on", "Expected Motor on, Got " +  s1)
 val s2 = motorboat.stop()
 assert(s2 == "Motor off", "Expected Motor off, Got " + s2)
 println(s2)
+
+/* OUTPUT_SHOULD_BE
+Sails raised
+Sails lowered
+Motor off
+*/
