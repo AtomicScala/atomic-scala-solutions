@@ -15,3 +15,8 @@ if(b < 2) {
 } else {
   println("b is not less than 2")
 }
+
+/* OUTPUT_SHOULD_BE
+a is less than 2
+b is not less than 2
+*/

@@ -9,3 +9,7 @@ if(a < b) {
 } else {
   println("a is not less than b")
 }
+
+/* OUTPUT_SHOULD_BE
+a is less than b
+*/

@@ -16,3 +16,8 @@ if(b < c) {
 } else {
   println ("b is not less than c")
 }
+
+/* OUTPUT_SHOULD_BE
+a is less than c
+b is not less than c
+*/
