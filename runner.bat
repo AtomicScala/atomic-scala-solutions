@@ -134,7 +134,12 @@ def runfile(name):
     base = name.rsplit('.')[0]
     outputFile = base + ".out"
     errorFile = base + ".err"
-    cmd = "scala " + name + " > " + outputFile + " 2> " + errorFile
+    if os.path.basename(os.getcwd()) in [f[0] for f in compileFiles]:
+        trace("adding -nocompdaemon")
+        flag = " -nocompdaemon "
+    else:
+        flag = ""
+    cmd = "scala " + flag + name + " > " + outputFile + " 2> " + errorFile
     trace("    " + cmd)
     os.system(cmd)
     contents = file(name).read()
@@ -149,8 +154,14 @@ def runfile(name):
         trace("output should contain [" + should_contain + "]")
         if "error" in should_contain:
             verify(name, should_contain in file(errorFile).read())
-        else:
-            verify(name, should_contain in file(outputFile).read())
+        else: # Examine line-by-line
+            results = file(outputFile).read()
+            for line in should_contain.splitlines():
+                trace("testing line " + line)
+                trace(line in results)
+                if not line in results:
+                    verify(name, False)
+            verify(name, True)
     else: # No "SHOULD"
         verify(name, len(file(errorFile).read()) == 0)
 
