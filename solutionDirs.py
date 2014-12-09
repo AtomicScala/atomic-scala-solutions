@@ -1,3 +1,5 @@
+# Solution directories in the order the chapters appear in the book
+
 solutionDirs = [
     "Values",
     "DataTypes",
@@ -76,7 +78,39 @@ solutionDirs = [
     "ExtensibleSystemswithTypeClasses",
 ]
 
-if __name__ == '__main__':
+
+def findmissing():
     import glob, pprint
     paths = [p[:-1] for p in glob.glob('*/')]
     pprint.pprint(set(paths).symmetric_difference(set(solutionDirs)))
+
+
+from contextlib import contextmanager
+import os
+from glob import glob
+
+@contextmanager
+def visitDir(d):
+    old = os.getcwd()
+    os.chdir(d)
+    yield d
+    os.chdir(old)
+
+if __name__ == '__main__':
+    from pprint import pprint
+    start = solutionDirs.index("Methods")
+    stop = solutionDirs.index("Brevity")
+    for tdir in solutionDirs[start:stop]:
+        with visitDir(tdir):
+            print tdir
+            print '=' * len(tdir)
+            for sfile in glob("*.scala"):
+                msg = sfile + ": "
+                lines = open(sfile).readlines()
+                for ln in lines:
+                    if "def " in ln and '{' not in ln:
+                        if msg:
+                            print msg
+                            msg = None
+                        print ln
+

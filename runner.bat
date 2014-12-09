@@ -1,5 +1,6 @@
 @setlocal enabledelayedexpansion && python -x "%~f0" %* & exit /b !ERRORLEVEL!
 #start python code here (tested on Python 2.7.4)
+## - Check for unbraced methods until the "Brevity" atom
 ## - Capture any failures in a central file, then clean the artifacts
 ## - 'Applications' directory: compile all, run command lines, capture output and verify
 ## - Add command to check for superfluous inclusion of AtomicTest
