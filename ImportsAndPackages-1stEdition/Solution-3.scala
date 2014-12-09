@@ -1,7 +1,7 @@
 // Solution-3.scala
 // Solution to Exercise 3 in "Imports & Packages"
 
-// Solution 1: import specific classes
+// Strategy 1: import specific classes
 import com.atomicscala.royals.{Royalty, Crest}
 
 val royal3 = new Royalty("Henry", "Laughs")
@@ -12,13 +12,12 @@ assert("Sir Laughsalot" == title3,
 val crest2 = new Crest("Bear", "1875")
 assert("Bear in the year 1875" ==
   crest2.description(),
-  "Expected Bear in the year 1875, Got " +
-  crest2)
+  "Expected Bear in the year 1875, Got " + crest2)
 println(crest2.description)
 
-// Solution 2: import everything
-
+// Strategy 2: import everything
 import com.atomicscala.royals._
+
 val royal2 = new Royalty("Henry", "Laughs")
 val title2 = royal2.title()
 assert("Sir Laughsalot" == title2,
@@ -29,6 +28,11 @@ println(title2)
 val crest3 = new Crest("Bear", "1875")
 assert("Bear in the year 1875" ==
   crest3.description(),
-  "Expected Bear in the year 1875, Got " +
-  crest3)
+  "Expected Bear in the year 1875, Got " + crest3)
 println(crest3.description)
+
+/* OUTPUT_SHOULD_BE
+Bear in the year 1875
+Sir Laughsalot
+Bear in the year 1875
+*/

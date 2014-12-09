@@ -29,6 +29,7 @@ def main():
         run()
         return
     if args.file:
+        compilePrerequisites()
         for fname in args.file:
             runfile(fname)
         return
@@ -103,7 +104,7 @@ compileFiles = [
 
 
 def compilePrerequisites():
-    print "Compiling prerequisites"
+    message = "Compiling prerequisites"
     for direct, items in compileFiles:
         trace(direct)
         trace(items)
@@ -112,6 +113,9 @@ def compilePrerequisites():
                 trace(scala)
                 trace(dep)
                 if not os.path.exists(dep):
+                    if message:
+                        print(message)
+                        message = None # Only display it once
                     cmd = "scalac " + scala
                     print(direct + ": " + cmd)
                     os.system(cmd)
