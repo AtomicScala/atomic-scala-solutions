@@ -1,6 +1,7 @@
 *.class
 *.out
 *.err
+*.pyc
 _AtomicTestErrors.txt
 tmp.txt
 results.txt

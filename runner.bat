@@ -4,23 +4,27 @@
 ## - 'Applications' directory: compile all, run command lines, capture output and verify
 ## - Add command to check for superfluous inclusion of AtomicTest
 ## - Copy errors._ to Converting Exceptions with Try
-import os, sys, shutil, re
+import os, sys, shutil, re, inspect
 from contextlib import contextmanager
 from glob import glob
 import argparse
 from solutionDirs import solutionDirs # In order they appear in book
 
+# Directory where runner.bat lives:
+ROOT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+
 parser = argparse.ArgumentParser(description='With no arguments, runs all the scala scripts and capture any errors')
 parser.add_argument("-s", "--simplify", action='store_true', help="Remove unimportant trace files & show non-empty error files")
-parser.add_argument("-c", "--clean", action='store_true', help="Remove all 'run' artifacts")
+parser.add_argument("-c", "--clean", action='store_true', help="Remove 'run' artifacts")
+parser.add_argument("-r", "--remove_results", action='store_true', help="Remove all results.txt files")
 parser.add_argument("-p", "--prerequisites", action='store_true', help="Compile prerequisites")
 parser.add_argument("-u", "--unusedfiles", action='store_true', help="Display non 'Solution-' and non 'Starter-' scala files")
 parser.add_argument("-t", "--trace", action='store_true', help="Output trace information")
-parser.add_argument("-f", "--file", nargs='+', action='store', help="Run only on the designated file")
+parser.add_argument("-f", "--file", nargs='+', action='store', help="Run only on the designated files")
 args = parser.parse_args()
 
 if args.trace:
-    def trace(arg): print(arg)
+    def trace(arg): pprint(arg)
 else:
     def trace(arg): pass
 
@@ -70,20 +74,20 @@ def compilePrerequisites():
     for direct, items in compileFiles:
         trace(direct)
         trace(items)
-        with visitDir(direct):
+        with visitDir(os.path.join(ROOT_DIR, direct)):
             for scala, dep in items:
                 trace(scala)
                 trace(dep)
                 if not os.path.exists(dep):
                     cmd = "scalac " + scala
-                    trace(direct + ": " + cmd)
+                    print(direct + ": " + cmd)
                     os.system(cmd)
 
 
 def run():
+    compilePrerequisites()
     if os.getcwd().endswith("atomic-scala-solutions"):
         trace("Running all")
-        compilePrerequisites()
         for p in solutionDirs:
             print(p)
             with visitDir(p):
@@ -170,7 +174,7 @@ def clean():
         os.remove(r)
     cf = set([os.path.join(".", direct, os.path.normpath(dep[1]).split(os.sep)[0])
               for direct, deps in compileFiles for dep in deps])
-    trace("\n".join(cf))
+    trace(cf)
     for f in [f for f in cf if os.path.exists(f)]:
         trace(f)
         shutil.rmtree(f)
@@ -184,6 +188,12 @@ def showUnusedFiles():
     print "\n".join(nsf - cf)
 
 
+def remove_results():
+    for f in glob("results.txt") + glob("*/results.txt"):
+        print "removing " + f
+        os.remove(f)
+
+
 # if not any(vars(args).values()): parser.print_help()
 if not any(vars(args).values()) or args.trace: run()
 if args.file:
@@ -193,3 +203,4 @@ if args.clean: clean() # Happens first with multiple command args
 if args.prerequisites: compilePrerequisites()
 if args.simplify: simplify()
 if args.unusedfiles: showUnusedFiles()
+if args.remove_results: remove_results()
