@@ -14,17 +14,18 @@ from solutionDirs import solutionDirs # In order they appear in book
 ROOT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 
 parser = argparse.ArgumentParser(description='With no arguments, runs all the scala scripts and capture any errors')
-parser.add_argument("-s", "--simplify", action='store_true', help="Remove unimportant trace files & show non-empty error files")
+parser.add_argument("-f", "--file", nargs='+', action='store', help="Run only on the designated files")
+parser.add_argument("-p", "--prerequisites", action='store_true', help="Compile prerequisites")
 parser.add_argument("-c", "--clean", action='store_true', help="Remove 'run' artifacts")
 parser.add_argument("-r", "--remove_results", action='store_true', help="Remove all results.txt files")
-parser.add_argument("-p", "--prerequisites", action='store_true', help="Compile prerequisites")
+parser.add_argument("-s", "--simplify", action='store_true', help="Remove unimportant trace files & show non-empty error files")
 parser.add_argument("-u", "--unusedfiles", action='store_true', help="Display non 'Solution-' and non 'Starter-' scala files")
 parser.add_argument("-t", "--trace", action='store_true', help="Output trace information")
-parser.add_argument("-f", "--file", nargs='+', action='store', help="Run only on the designated files")
+parser.add_argument("-d", "--debug", action='store_true', help="Output debug information")
 args = parser.parse_args()
 
 def main():
-    if not any(vars(args).values()) or args.trace: # Change this so it's ONLY args.trace on the CL
+    if not any(vars(args).values()) or args.trace or args.debug: # Change this so it's ONLY args.trace on the CL
         run()
         return
     if args.file:
@@ -53,6 +54,12 @@ if args.trace:
     def trace(arg): pprint.pprint(arg)
 else:
     def trace(arg): pass
+
+
+if args.debug:
+    def debug(arg): pprint.pprint(arg)
+else:
+    def debug(arg): pass
 
 
 @contextmanager
@@ -148,7 +155,13 @@ def runfile(name):
     if OUTPUT_SHOULD_BE:
         should_be = OUTPUT_SHOULD_BE.group(1).strip()
         trace("output should be [" + should_be + "]")
-        verify(name, should_be == open(outputFile).read().strip())
+        if "warning:" in should_be:
+            generated = open(errorFile).read().strip() + "\n" + open(outputFile).read().strip()
+            debug("generated: [" + generated + "]")
+            debug("should be: [" + should_be + "]")
+            verify(name, should_be == generated)
+        else:
+            verify(name, should_be == open(outputFile).read().strip())
     elif OUTPUT_SHOULD_CONTAIN:
         should_contain = OUTPUT_SHOULD_CONTAIN.group(1).strip()
         trace("output should contain [" + should_contain + "]")
