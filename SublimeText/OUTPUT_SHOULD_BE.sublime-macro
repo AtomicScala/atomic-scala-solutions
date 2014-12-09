@@ -1,0 +1,94 @@
+[
+	{
+		"args":
+		{
+			"characters": "\n/*"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " OUTPUT"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "_shoul"
+		},
+		"command": "insert"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args":
+		{
+			"characters": "SHOULD_"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "BE"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\n\n*"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "/"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\n"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"by": "lines",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "lines",
+			"forward": false
+		},
+		"command": "move"
+	}
+]
