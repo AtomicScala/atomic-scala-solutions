@@ -1,6 +1,5 @@
 // Solution-4.scala
 // Solution to Exercise 4 in "Compound Expressions"
-import com.atomicscala.AtomicTest._
 
 val distance = 9
 val activity = "biking"
@@ -19,9 +18,6 @@ val willDo = {
 
 println(activity + ": " + willDo)
 
-/* Output
-(run 3 times, once for each activity):
-running: true
-walking: false
+/* OUTPUT_SHOULD_BE
 biking: true
 */

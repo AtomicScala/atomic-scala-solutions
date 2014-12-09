@@ -1,6 +1,5 @@
 // Solution-1.scala
 // Solution to Exercise 1 in "Compound Expressions"
-import com.atomicscala.AtomicTest._
 
 val a = 1
 val b = 5 // change to 6 to test exercise 2
@@ -17,3 +16,8 @@ if(b<=c) {
 } else {
   println("b is not less than or equal to c")
 }
+
+/* OUTPUT_SHOULD_BE
+a is less than or equal to c
+b is less than or equal to c
+*/

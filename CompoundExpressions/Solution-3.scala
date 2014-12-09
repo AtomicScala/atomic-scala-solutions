@@ -1,10 +1,10 @@
 // Solution-3.scala
 // Solution to Exercise 3 in "Compound Expressions"
-import com.atomicscala.AtomicTest._
 
 val airTemperature = 40
 val hour = 7
 
+// Uncomment these one at a time:
 val activity = "swimming"
 // val activity = "walking"
 // val activity = "biking"
@@ -35,9 +35,6 @@ val shouldDoActivity = isOpen && isGoodTemperature
 println(activity + ":" + isOpen + " && " +
   isGoodTemperature + " = " + shouldDoActivity)
 
-/* Output:
-swimming:false
-walking:true
-biking:false
-couch:true
+/* OUTPUT_SHOULD_BE
+swimming:false && false = false
 */
