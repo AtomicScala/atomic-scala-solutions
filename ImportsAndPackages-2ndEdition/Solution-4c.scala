@@ -8,3 +8,7 @@ val c1 = new Literature
 val c2 = new Science
 val c3 = new Movies
 println("Imported everything")
+
+/* OUTPUT_SHOULD_BE
+Imported everything
+*/

@@ -6,3 +6,7 @@ import com.atomicscala.trivia.Literature
 
 val lit = new Literature
 println("Imported 1 class")
+
+/* OUTPUT_SHOULD_BE
+Imported 1 class
+*/

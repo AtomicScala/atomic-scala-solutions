@@ -7,3 +7,7 @@ import com.atomicscala.trivia.{Science, Movies}
 val science = new Science
 val movies = new Movies
 println("Imported 2 classes")
+
+/* OUTPUT_SHOULD_BE
+Imported 2 classes
+*/

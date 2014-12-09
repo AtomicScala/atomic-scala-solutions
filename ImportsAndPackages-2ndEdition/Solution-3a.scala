@@ -1,7 +1,7 @@
 // Solution-3a.scala
 // Solution to Exercise 3 in "Imports & Packages"
 
-// Solution 1: import specific classes
+// Approach 1: import specific classes
 import com.atomicscala.pythagorean.{RightTriangle, EquilateralTriangle}
 
 val rt = new RightTriangle
@@ -15,3 +15,10 @@ println(et.area(2))
 assert(et.area(2) == Math.sqrt(3))
 println(et.area(9.49))
 assert(Math.round(et.area(9.49)) == 39)
+
+/* OUTPUT_SHOULD_BE
+5.0
+6.0
+1.7320508075688772
+38.99716723368346
+*/
