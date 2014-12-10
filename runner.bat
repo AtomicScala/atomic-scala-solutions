@@ -7,6 +7,8 @@ from contextlib import contextmanager
 from glob import glob
 import argparse
 from solutionDirs import solutionDirs # In order they appear in book
+import colorama
+colorama.init()
 
 # Directory where runner.bat lives:
 ROOT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
@@ -166,11 +168,13 @@ def runfile(fname):
     if SuccessfullyRun().contains(dirname, fname): return
 
     def verify(test):
+        FAIL = '\033[91m'
+        ENDC = '\033[0m'    
         if test:
-            print("   " + fname + ": Passed")
+            print("   " + fname + ": " + colorama.Back.GREEN + "Passed" + colorama.Style.RESET_ALL)
             SuccessfullyRun().add(dirname, fname)
         else:
-            print("   " + fname + ": Failed")
+            print("   " + fname + ": " + colorama.Back.RED + "Failed" + colorama.Style.RESET_ALL)
             sys.exit(1)
 
     base = fname.rsplit('.')[0]
