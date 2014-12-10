@@ -2,7 +2,7 @@
 ## - 'Applications' directory: compile all, run command lines, capture output and verify
 ## - Add command to check for superfluous inclusion of AtomicTest
 ## - Copy errors._ to Converting Exceptions with Try
-import os, sys, shutil, re, inspect, pprint
+import os, sys, shutil, re, inspect, pprint, subprocess
 from contextlib import contextmanager
 from glob import glob
 import argparse
@@ -13,6 +13,9 @@ colorama.init()
 # Directory where runner.bat lives:
 ROOT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 SUCCEEDED = os.path.join(ROOT_DIR, "Succeeded.txt")
+SUBLIME = r'C:\Program Files\SublimeText2\sublime_text.exe'
+if not os.path.exists(SUBLIME):
+    SUBLIME = "subl"
 
 parser = argparse.ArgumentParser(description='With no arguments, runs all the scala scripts and capture any errors')
 parser.add_argument("-f", "--file", nargs='+', action='store', help="Run only on the designated files")
@@ -24,10 +27,11 @@ parser.add_argument("-u", "--unusedfiles", action='store_true', help="Display no
 parser.add_argument("-t", "--trace", action='store_true', help="Output trace information")
 parser.add_argument("-d", "--debug", action='store_true', help="Output debug information")
 parser.add_argument("--test", action='store_true', help="Run a test")
+parser.add_argument("--sublime", action='store_true', help="Open Sublime Text on a failed file")
 args = parser.parse_args()
 
 def main():
-    if not any(vars(args).values()) or args.trace or args.debug: # Change this so it's ONLY args.trace on the CL
+    if not any(vars(args).values()) or args.trace or args.debug or args.sublime: # Change this so it's ONLY args.trace on the CL
         run()
         return
     if args.file:
@@ -169,12 +173,14 @@ def runfile(fname):
 
     def verify(test):
         FAIL = '\033[91m'
-        ENDC = '\033[0m'    
+        ENDC = '\033[0m'
         if test:
             print("   " + fname + ": " + colorama.Back.GREEN + "Passed" + colorama.Style.RESET_ALL)
             SuccessfullyRun().add(dirname, fname)
         else:
             print("   " + fname + ": " + colorama.Back.RED + "Failed" + colorama.Style.RESET_ALL)
+            if args.sublime:
+                subprocess.call([SUBLIME, fname])
             sys.exit(1)
 
     base = fname.rsplit('.')[0]

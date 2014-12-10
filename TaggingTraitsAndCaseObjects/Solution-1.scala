@@ -19,3 +19,10 @@ def display(c:Color) = c match {
 // Test fails if you add Purple to Vector but not to match expression
 
 Color.values.map(display) is "Vector(It's Red, It's Green, It's Blue)"
+
+/* OUTPUT_SHOULD_CONTAIN
+error: not found: value Purple
+  val values = Vector(Red, Green, Blue, Purple)
+                                        ^
+one error found
+*/
