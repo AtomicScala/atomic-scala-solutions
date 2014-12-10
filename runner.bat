@@ -12,12 +12,13 @@ from solutionDirs import solutionDirs # In order they appear in book
 
 # Directory where runner.bat lives:
 ROOT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+SUCCEEDED = os.path.join(ROOT_DIR, "Succeeded.txt")
 
 parser = argparse.ArgumentParser(description='With no arguments, runs all the scala scripts and capture any errors')
 parser.add_argument("-f", "--file", nargs='+', action='store', help="Run only on the designated files")
 parser.add_argument("-p", "--prerequisites", action='store_true', help="Compile prerequisites")
 parser.add_argument("-c", "--clean", action='store_true', help="Remove 'run' artifacts")
-parser.add_argument("-r", "--remove_results", action='store_true', help="Remove all results.txt files")
+parser.add_argument("-r", "--remove_results", action='store_true', help="Remove Succeeded.txt")
 parser.add_argument("-s", "--simplify", action='store_true', help="Remove unimportant trace files & show non-empty error files")
 parser.add_argument("-u", "--unusedfiles", action='store_true', help="Display non 'Solution-' and non 'Starter-' scala files")
 parser.add_argument("-t", "--trace", action='store_true', help="Output trace information")
@@ -135,13 +136,69 @@ def run():
         for n in glob('Solution-*.scala'):
             runfile(n)
 
+import collections
+
+class SuccessfullyRun(collections.MutableMapping):
+    def __init__(self):
+        if os.path.exists(SUCCEEDED):
+            self.store = eval(file(SUCCEEDED).read())
+            print("read from file")
+        else:
+            self.store = dict()
+            print("Created new")
+        print("now is: " + pprint.pformat(self.store))
+
+    def __getitem__(self, key):
+        if self.store.has_key(key):
+            return self.store[key]
+        return None
+
+    def update(self):
+        with file(SUCCEEDED, 'w') as succ:
+            succ.write(pprint.pformat(self.store))
+
+    def __setitem__(self, key, value):
+        self.store[key] = value
+        self.update()
+
+    def __delitem__(self, key):
+        del self.store[key]
+        self.update()
+
+    def __iter__(self):
+        return iter(self.store)
+
+    def __len__(self):
+        return len(self.store)
+
+    def __repr__(self):
+        return repr(self.store)
+
+    def keys(self):
+        return self.store.keys()
+
+    def values(self):
+        return self.store.values()
+
+    def __cmp__(self, dict):
+        return cmp(self.store, dict)
+
+    def __contains__(self, item):
+        return item in self.store
+
+    def add(self, key, value):
+        self.store[key] = value
+        self.update()
+
+    def __call__(self):
+        return self.store
+
+    def __unicode__(self):
+        return unicode(repr(self.store))
+
 
 def runfile(name):
-    if os.path.exists("results.txt"):
-        for line in file("results.txt").readlines():
-            if name in line and "Failed" not in line:
-                print line.rstrip()
-                return
+    if SuccessfullyRun()[name]: return
     base = name.rsplit('.')[0]
     outputFile = base + ".out"
     errorFile = base + ".err"
@@ -184,14 +241,12 @@ def runfile(name):
 
 
 def verify(name, test):
-    with file("results.txt", 'a') as results:
-        if test:
-            print("   " + name + ": Passed")
-            print >>results, "!  " + name + ": Passed"
-        else:
-            print("   " + name + ": Failed")
-            print >>results, "!  " + name + ": Failed"
-            sys.exit(1)
+    if test:
+        print("   " + name + ": Passed")
+        SuccessfullyRun()[name] = "Passed"
+    else:
+        print("   " + name + ": Failed")
+        sys.exit(1)
 
 
 def simplify():
@@ -243,9 +298,9 @@ def showUnusedFiles():
 
 
 def remove_results():
-    for f in glob("results.txt") + glob("*/results.txt"):
-        print "removing " + f
-        os.remove(f)
+    if os.path.exists(SUCCEEDED):
+        print "removing " + SUCCEEDED
+        os.remove(SUCCEEDED)
 
 
 if __name__ == '__main__':
