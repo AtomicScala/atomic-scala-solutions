@@ -143,7 +143,7 @@ class SuccessfullyRun(object):
     def __init__(self):
         if os.path.exists(SUCCEEDED):
             with file(SUCCEEDED) as f:
-                self.map = eval(f.read())
+                self.map = defaultdict(set, eval(f.read()))
         else:
             self.map = defaultdict(set)
 
@@ -156,19 +156,10 @@ class SuccessfullyRun(object):
     def add(self, directory, filename):
         self.map[directory].add(filename)
         with file(SUCCEEDED, 'w') as f:
-            f.write(pprint.pformat(self.map).replace("<type 'set'>", 'set'))
+            f.write(pprint.pformat(self.map.items()))
 
     def __repr__(self):
         return repr(self.map.items())
-
-if args.test:
-    sr = SuccessfullyRun()
-    myrep = sr.map.items()
-    #pprint.pprint(myrep)
-    sr2 = defaultdict(set, myrep)
-    myrep2 = sr2.items()
-    pprint.pprint(myrep2)
-    sys.exit()
 
 
 def runfile(fname):
