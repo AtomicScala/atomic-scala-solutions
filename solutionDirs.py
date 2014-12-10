@@ -1,4 +1,4 @@
-# Solution directories in the order the chapters appear in the book
+# Example & Solution directories in the order the chapters appear in the book
 
 solutionDirs = [
     "Values",
@@ -121,14 +121,11 @@ if not os.path.exists(SUBLIME):
     SUBLIME = "subl"
 
 def findUnusedAtomicTest():
-    from pprint import pprint
     from glob import glob
     import subprocess, re
     for tdir in solutionDirs:
-        dirmsg = tdir + "\n" + '=' * len(tdir)
         with visitDir(tdir):
             for sfile in glob("*.scala"):
-                msg = sfile + ": "
                 original = open(sfile).read()
                 code = re.sub("//.*", "", original)
                 multiline_comment = re.compile(r'/\*(.*?)\*/', re.DOTALL)

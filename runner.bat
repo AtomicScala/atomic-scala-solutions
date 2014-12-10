@@ -1,4 +1,5 @@
 @setlocal enabledelayedexpansion && py.exe -x "%~f0" %* & exit /b !ERRORLEVEL!
+# Note py.exe assumes installation of Python 3, but this program uses Python 2.7
 ## - 'Applications' directory: compile all, run command lines, capture output and verify
 ## - Copy errors._ to Converting Exceptions with Try
 ## - Create different version of runner for book examples; extract new book examples and verify them
@@ -33,6 +34,7 @@ parser.add_argument("--sublime", action='store_true', help="Open Sublime Text on
 args = parser.parse_args()
 
 def main():
+    "This is hacky"
     if not any(vars(args).values()) or args.trace or args.debug or args.sublime: # Change this so it's ONLY args.trace on the CL
         run()
         return
@@ -64,7 +66,6 @@ if args.trace:
 else:
     def trace(arg): pass
 
-
 if args.debug:
     def debug(arg): pprint.pprint(arg)
 else:
@@ -79,6 +80,7 @@ def visitDir(d):
     os.chdir(old)
 
 
+# Might generalize runner by putting this in an external import
 compileFiles = [
     # (Directory, [(file, artifact), (file, artifact), ...])
     ("ALittleReflection", [
@@ -166,7 +168,7 @@ class SuccessfullyRun(object):
             f.write(pprint.pformat(self.map.items()))
 
     def __repr__(self):
-        return repr(self.map.items())
+        return pprint.pformat(self.map.items())
 
 
 def runfile(fname):
@@ -174,8 +176,6 @@ def runfile(fname):
     if SuccessfullyRun().contains(dirname, fname): return
 
     def verify(test):
-        FAIL = '\033[91m'
-        ENDC = '\033[0m'
         if test:
             print("   " + fname + ": " + colorama.Back.GREEN + "Passed" + colorama.Style.RESET_ALL)
             SuccessfullyRun().add(dirname, fname)
@@ -260,6 +260,7 @@ def simplify():
 
 
 def clean():
+    "This is not working right"
     print "Cleaning"
     removals = [os.path.join(d[0], f) for d in os.walk(".") for f in d[2]
                 if f.endswith(".out") or
