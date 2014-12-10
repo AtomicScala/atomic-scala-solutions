@@ -84,10 +84,8 @@ def findmissing():
     paths = [p[:-1] for p in glob.glob('*/')]
     pprint.pprint(set(paths).symmetric_difference(set(solutionDirs)))
 
-
 from contextlib import contextmanager
 import os
-from glob import glob
 
 @contextmanager
 def visitDir(d):
@@ -96,8 +94,9 @@ def visitDir(d):
     yield d
     os.chdir(old)
 
-if __name__ == '__main__':
+def findUnbracedMethods():
     from pprint import pprint
+    from glob import glob
     start = solutionDirs.index("Methods")
     stop = solutionDirs.index("Brevity")
     for tdir in solutionDirs[start:stop]:
@@ -117,3 +116,5 @@ if __name__ == '__main__':
                         print ln
                         os.system("subl " + sfile)
 
+if __name__ == '__main__':
+    findUnbracedMethods()

@@ -1,6 +1,5 @@
 @setlocal enabledelayedexpansion && python -x "%~f0" %* & exit /b !ERRORLEVEL!
 #start python code here (tested on Python 2.7.4)
-## - Capture any failures in a central file, then clean the artifacts
 ## - 'Applications' directory: compile all, run command lines, capture output and verify
 ## - Add command to check for superfluous inclusion of AtomicTest
 ## - Copy errors._ to Converting Exceptions with Try
@@ -23,6 +22,7 @@ parser.add_argument("-s", "--simplify", action='store_true', help="Remove unimpo
 parser.add_argument("-u", "--unusedfiles", action='store_true', help="Display non 'Solution-' and non 'Starter-' scala files")
 parser.add_argument("-t", "--trace", action='store_true', help="Output trace information")
 parser.add_argument("-d", "--debug", action='store_true', help="Output debug information")
+parser.add_argument("--test", action='store_true', help="Run a test")
 args = parser.parse_args()
 
 def main():
@@ -136,143 +136,71 @@ def run():
         for n in glob('Solution-*.scala'):
             runfile(n)
 
-import collections
-
-# class SuccessfullyRun(collections.MutableMapping):
-#     def __init__(self):
-#         if os.path.exists(SUCCEEDED):
-#             self.store = eval(file(SUCCEEDED).read())
-#             print("read from file")
-#         else:
-#             self.store = dict()
-#             print("Created new")
-#         print("now is: " + pprint.pformat(self.store))
-
-#     def __getitem__(self, key):
-#         if self.store.has_key(key):
-#             return self.store[key]
-#         return None
-
-#     def update(self):
-#         with file(SUCCEEDED, 'w') as succ:
-#             succ.write(pprint.pformat(self.store))
-
-#     def __setitem__(self, key, value):
-#         self.store[key] = value
-#         self.update()
-
-#     def __delitem__(self, key):
-#         del self.store[key]
-#         self.update()
-
-#     def __iter__(self):
-#         return iter(self.store)
-
-#     def __len__(self):
-#         return len(self.store)
-
-#     def __repr__(self):
-#         return repr(self.store)
-
-#     def keys(self):
-#         return self.store.keys()
-
-#     def values(self):
-#         return self.store.values()
-
-#     def __cmp__(self, dict):
-#         return cmp(self.store, dict)
-
-#     def __contains__(self, item):
-#         return item in self.store
-
-#     def add(self, key, value):
-#         self.store[key] = value
-#         self.update()
-
-#     def __call__(self):
-#         return self.store
-
-#     def __unicode__(self):
-#         return unicode(repr(self.store))
 from collections import defaultdict
-class SuccessfullyRun(defaultdict):
-    def __init__(self, *args, **kwargs):
-        defaultdict.__init__(self, dict)
-    # def __init__(self):
-    #     if os.path.exists(SUCCEEDED):
-    #         self.store = eval(file(SUCCEEDED).read())
-    #         print("read from file")
-    #     else:
-    #         self.store = collections.defaultDict(dict)
-    #         print("Created new")
-    #     print("now is: " + pprint.pformat(self.store))
 
-    # def __getitem__(self, key):
-    #     # if self.store.has_key(key):
-    #     return self.store[key]
-    #     # return None
+class SuccessfullyRun(object):
 
-    # def update(self):
-    #     with file(SUCCEEDED, 'w') as succ:
-    #         succ.write(pprint.pformat(repr(self.store))
+    def __init__(self):
+        if os.path.exists(SUCCEEDED):
+            with file(SUCCEEDED) as f:
+                self.map = eval(f.read())
+        else:
+            self.map = defaultdict(set)
 
-    # def __setitem__(self, key, value):
-    #     self.store[key] = value
-    #     self.update()
+    def contains(self, directory, filename):
+        if self.map.has_key(directory):
+            return filename in self.map[directory]
+        else:
+            return False
 
-    # def __delitem__(self, key):
-    #     del self.store[key]
-    #     self.update()
+    def add(self, directory, filename):
+        self.map[directory].add(filename)
+        with file(SUCCEEDED, 'w') as f:
+            f.write(pprint.pformat(self.map).replace("<type 'set'>", 'set'))
 
-    # def __iter__(self):
-    #     return iter(self.store)
+    def __repr__(self):
+        return repr(self.map.items())
 
-    # def __len__(self):
-    #     return len(self.store)
-
-    # def __repr__(self):
-    #     return repr(self.store)
-
-    # def keys(self):
-    #     return self.store.keys()
-
-    # def values(self):
-    #     return self.store.values()
-
-    # def __cmp__(self, dict):
-    #     return cmp(self.store, dict)
-
-    # def __contains__(self, item):
-    #     return item in self.store
-
-    # def add(self, key, value):
-    #     self.store[key] = value
-    #     self.update()
-
-    # def __call__(self):
-    #     return self.store
-
-    # def __unicode__(self):
-    #     return unicode(repr(self.store))
+if args.test:
+    sr = SuccessfullyRun()
+    myrep = sr.map.items()
+    #pprint.pprint(myrep)
+    sr2 = defaultdict(set, myrep)
+    myrep2 = sr2.items()
+    pprint.pprint(myrep2)
+    sys.exit()
 
 
-def runfile(name):
-    if SuccessfullyRun()[name]: return
-    base = name.rsplit('.')[0]
+def runfile(fname):
+    dirname = os.path.basename(os.getcwd())
+    if SuccessfullyRun().contains(dirname, fname): return
+
+    def verify(test):
+        if test:
+            print("   " + fname + ": Passed")
+            SuccessfullyRun().add(dirname, fname)
+        else:
+            print("   " + fname + ": Failed")
+            sys.exit(1)
+
+    base = fname.rsplit('.')[0]
     outputFile = base + ".out"
     errorFile = base + ".err"
-    if os.path.basename(os.getcwd()) in [f[0] for f in compileFiles]:
+
+    if dirname in [f[0] for f in compileFiles]:
         trace("adding -nocompdaemon")
         flag = " -nocompdaemon "
     else:
         flag = ""
-    cmd = "scala " + flag + name + " > " + outputFile + " 2> " + errorFile
+
+    cmd = "scala " + flag + fname + " > " + outputFile + " 2> " + errorFile
     trace("    " + cmd)
     os.system(cmd)
-    contents = file(name).read()
+
+    contents = file(fname).read()
     OUTPUT_SHOULD_BE = re.search(r"OUTPUT_SHOULD_BE(.*)\*/", contents, re.DOTALL)
     OUTPUT_SHOULD_CONTAIN = re.search(r"OUTPUT_SHOULD_CONTAIN(.*)\*/", contents, re.DOTALL)
+
     if OUTPUT_SHOULD_BE:
         should_be = OUTPUT_SHOULD_BE.group(1).strip()
         trace("output should be [" + should_be + "]")
@@ -280,33 +208,30 @@ def runfile(name):
             generated = open(errorFile).read().strip() + "\n" + open(outputFile).read().strip()
             debug("generated: [" + generated + "]")
             debug("should be: [" + should_be + "]")
-            verify(name, should_be == generated)
+            verify(should_be == generated)
         else:
-            verify(name, should_be == open(outputFile).read().strip())
+            verify(should_be == open(outputFile).read().strip())
     elif OUTPUT_SHOULD_CONTAIN:
         should_contain = OUTPUT_SHOULD_CONTAIN.group(1).strip()
         trace("output should contain [" + should_contain + "]")
         if "error" in should_contain:
-            verify(name, should_contain in file(errorFile).read())
+            verify(should_contain in file(errorFile).read())
         else: # Examine line-by-line
             results = file(outputFile).read()
             for line in should_contain.splitlines():
                 trace("testing line " + line)
                 trace(line in results)
                 if not line in results:
-                    verify(name, False)
-            verify(name, True)
+                    verify(False)
+            verify(True)
     else: # No "SHOULD"
-        verify(name, len(file(errorFile).read()) == 0)
+        verify(len(file(errorFile).read()) == 0)
 
-
-def verify(name, test):
-    if test:
-        print("   " + name + ": Passed")
-        SuccessfullyRun()[name] = "Passed"
-    else:
-        print("   " + name + ": Failed")
-        sys.exit(1)
+    # If file ran successfully, remove artifacts:
+    if os.path.exists(outputFile):
+        os.remove(outputFile)
+    if os.path.exists(errorFile):
+        os.remove(errorFile)
 
 
 def simplify():
