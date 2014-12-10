@@ -12,7 +12,11 @@ class Cup3 {
     percentFull // Return this value
   }
 }
-val cup3 = new Cup3
 
+val cup3 = new Cup3
 cup3.percentFull = 56
 cup3.percentFull is 56
+
+/* OUTPUT_SHOULD_BE
+56
+*/

@@ -19,3 +19,11 @@ cup3.add(-55) is 0
 cup3.add(10) is 10
 cup3.add(-9) is 1
 cup3.add(-2) is 0
+
+/* OUTPUT_SHOULD_BE
+45
+0
+10
+1
+0
+*/

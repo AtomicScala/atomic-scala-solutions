@@ -17,3 +17,7 @@ class Cup4 {
 val cup4 = new Cup4
 cup4.set(56)
 cup4.get() is 56
+
+/* OUTPUT_SHOULD_BE
+56
+*/
