@@ -1,4 +1,4 @@
-@setlocal enabledelayedexpansion && python -x "%~f0" %* & exit /b !ERRORLEVEL!
+@setlocal enabledelayedexpansion && py.exe -x "%~f0" %* & exit /b !ERRORLEVEL!
 ## - 'Applications' directory: compile all, run command lines, capture output and verify
 ## - Add command to check for superfluous inclusion of AtomicTest
 ## - Copy errors._ to Converting Exceptions with Try
