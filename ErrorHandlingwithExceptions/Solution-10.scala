@@ -35,3 +35,4 @@ try {
 } catch {
   case e:Exception => println("withoutCatch exception caught")
 }
+// needs solution testing

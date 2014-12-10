@@ -9,3 +9,4 @@ object WalkActivity {
 }
 
 WalkActivity.start("Johnny")
+// needs solution testing

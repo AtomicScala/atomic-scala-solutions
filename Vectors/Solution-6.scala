@@ -7,3 +7,4 @@ val v5 = Vector("The", "dog", "visited", "the", "firehouse")
 for(word <- v5.reverse) {
   println(word)
 }
+// needs solution testing

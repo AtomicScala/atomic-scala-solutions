@@ -1,9 +1,9 @@
 @setlocal enabledelayedexpansion && py.exe -x "%~f0" %* & exit /b !ERRORLEVEL!
 ## - 'Applications' directory: compile all, run command lines, capture output and verify
-## - Add command to check for superfluous inclusion of AtomicTest
 ## - Copy errors._ to Converting Exceptions with Try
 ## - Create different version of runner for book examples; extract new book examples and verify them
 ## - Make an install.bat file to check for and install Python?
+##   (See http://codeboje.de/installing_python_on_demand/)
 import os, sys, shutil, re, inspect, pprint, subprocess
 from contextlib import contextmanager
 from glob import glob

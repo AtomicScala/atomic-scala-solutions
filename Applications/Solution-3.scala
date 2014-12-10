@@ -21,3 +21,5 @@ object Battery2 extends App {
   for(arg <- args)
     println(battery.monitor(arg.toInt))
 }
+
+// needs solution testing

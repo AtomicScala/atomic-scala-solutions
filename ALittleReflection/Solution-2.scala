@@ -7,3 +7,4 @@ class ReflectedToy2(name:String, batteryOperated:Boolean) extends Name
 
 val reflected2 = new ReflectedToy2("Flamingo", false)
 println(reflected2)
+assert("Solution" == "Incomplete")

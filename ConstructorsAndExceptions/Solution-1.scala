@@ -10,3 +10,4 @@ class CodeListingTester1(makeList:String => IndexedSeq[String]) {
 }
 
 new CodeListingTester1(CodeListing.apply)
+// needs solution testing

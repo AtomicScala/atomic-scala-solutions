@@ -9,3 +9,4 @@ val reflected3 = new ReflectedToy3("Flamingo", false)
 println(reflected3)
 
 // The above results in anonymous class $anon$1$ReflectedToy3
+// needs solution

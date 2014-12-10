@@ -1,6 +1,5 @@
 // Solution-3.scala
 // Solution to Exercise 3 in "Methods Inside Classes"
-import com.atomicscala.AtomicTest._
 
 class Flare {
   def light():String = { "Flare used!"}

@@ -7,3 +7,5 @@ object WhenAmI extends App {
   println(new java.util.Date())
   def hi = println("Hello! It's:")
 }
+
+// needs solution testing

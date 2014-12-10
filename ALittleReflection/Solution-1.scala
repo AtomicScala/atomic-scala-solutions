@@ -13,3 +13,5 @@ case class ReflectedToy(name:String, batteryOperated:Boolean) extends Name
 
 val reflectedToy = new ReflectedToy("Bunny", true)
 println(reflectedToy)
+
+assert("Solution" == "Incomplete")

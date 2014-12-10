@@ -17,3 +17,4 @@ case class StudentTeacher extends Teacher
 // case class StudentTeacher extends Teacher
            ^
 */
+// needs solution testing

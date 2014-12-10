@@ -29,3 +29,4 @@ mo1.f(11) is 13
 mo2.f() is 99
 mo2.f(11) is 14
 */
+// needs solution testing

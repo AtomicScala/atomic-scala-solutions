@@ -37,6 +37,7 @@ def isOpen(activity:String, hour:Int) = activity match {
     println("Operating hours: " +
         opens + " - " + closes)
     (hour >= opens && hour <= closes)
-
   case _ => true
 }
+
+// needs solution testing

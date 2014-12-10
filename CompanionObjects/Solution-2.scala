@@ -19,3 +19,4 @@ WalkActivity2.start("Jane")
 WalkActivity2.stop("Jane")
 WalkActivity2.start("John")
 println(WalkActivity2.log)
+// needs solution testing

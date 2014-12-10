@@ -1,6 +1,5 @@
 // Solution-2.scala
 // Solution to Exercise 2 in "Evaluation Order"
-import com.atomicscala.AtomicTest._
 
 val sky = "sunny"
 var temperature = 87

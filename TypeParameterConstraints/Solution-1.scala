@@ -70,4 +70,4 @@ trait House extends Building {
 }
 
 val house = new Object with House
-// incomplete solution
+// needs solution

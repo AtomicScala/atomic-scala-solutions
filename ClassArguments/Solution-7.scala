@@ -1,6 +1,5 @@
 // Solution-7.scala
 // Solution to Exercise 7 in "Class Arguments"
-import com.atomicscala.AtomicTest._
 
 class Cup3(var percentFull:Int) {
   val max = 100
@@ -16,3 +15,4 @@ class Cup3(var percentFull:Int) {
 val cup3 = new Cup3(0)
 cup3.percentFull=100
 println(cup3.percentFull)
+// needs solution testing
