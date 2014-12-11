@@ -8,7 +8,7 @@ class Cup2 {
   def add(increase:Int):Int = {
     percentFull += increase
     if(percentFull > max) percentFull = max
-    percentFull // Return this value
+    percentFull // Return value
   }
 }
 
