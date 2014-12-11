@@ -1,7 +1,8 @@
 @setlocal enabledelayedexpansion && py.exe -x "%~f0" %* & exit /b !ERRORLEVEL!
 # Note py.exe assumes installation of Python 3, but this program uses Python 2.7
-## - Verify that methods use return type declarations before "A bit of style" or wherever it becomes optional
+## - Verify that methods use return type declarations before "Brevity" or wherever it becomes optional
 ##   (Also necessary to apply on book example code)
+## - Do methods need parentheses before "Brevity"?
 ## - 'Applications' directory: compile all, run command lines, capture output and verify
 ## - Copy errors._ to Converting Exceptions with Try
 ## - Create different version of runner for book examples; extract new book examples and verify them
