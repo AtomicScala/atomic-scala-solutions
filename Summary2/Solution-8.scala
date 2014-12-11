@@ -4,7 +4,7 @@ import com.atomicscala.AtomicTest._
 
 class Cell {
   var entry = ' '
-  def set(e:Char) = {
+  def set(e:Char):String = {
     if(entry==' ' && (e=='X' || e=='O')) {
       entry = e
       "successful move"
@@ -19,7 +19,7 @@ class Grid {
     Vector(new Cell, new Cell, new Cell),
     Vector(new Cell, new Cell, new Cell)
   )
-  def play(e:Char, x:Int, y:Int) = {
+  def play(e:Char, x:Int, y:Int):String = {
     val status = {
       if(x < 0 || x > 2 || y < 0 || y > 2)
         "invalid move"
@@ -29,7 +29,7 @@ class Grid {
     showBoard()
     status
   }
-  def showBoard() = {
+  def showBoard():Unit = {
     for(row <- cells) {
       for(cell <- row) {
         print(cell.entry + " ")
