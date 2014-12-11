@@ -13,5 +13,6 @@ matchColor("white") is "UNKNOWN COLOR: white"
 matchColor("blue") is "BLUE"
 
 /* OUTPUT_SHOULD_BE
-
+UNKNOWN COLOR: white
+BLUE
 */

@@ -1,6 +1,5 @@
 // Solution-5.scala
 // Solution to Exercise 5 in "Pattern Matching"
-import com.atomicscala.AtomicTest._
 
 def forecast(temp:Int):String = {
   temp match {

@@ -21,5 +21,10 @@ forecast(0) is "Cloudy"
 forecast(15) is "Unknown"
 
 /* OUTPUT_SHOULD_BE
-
+Sunny
+Mostly Sunny
+Partly Sunny
+Mostly Cloudy
+Cloudy
+Unknown
 */
