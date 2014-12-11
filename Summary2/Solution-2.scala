@@ -15,3 +15,7 @@ for(outer <- allVec) {
 }
 
 allString is "f z g a p 1 455 23 -8 4 9 12 2 My dog ate my homework "
+
+/* OUTPUT_SHOULD_BE
+
+*/

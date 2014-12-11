@@ -31,3 +31,18 @@ for(i <- sVec.sorted) {
   sVecString += i + " "
 }
 sVecString is "My ate dog homework my "
+
+/* OUTPUT_SHOULD_BE
+Vector(a, f, g, p, z)
+a
+z
+a f g p z
+Vector(-8, 1, 2, 4, 9, 12, 23, 455)
+-8
+455
+-8 1 2 4 9 12 23 455
+Vector(My, ate, dog, homework, my)
+My
+my
+My ate dog homework my
+*/

@@ -106,3 +106,7 @@ grid6.play('O', 0, 0)
 grid6.play('O', 0, 1)
 grid6.play('O', 0, 2)
 grid6.checkWinner() is true
+
+/* OUTPUT_SHOULD_BE
+
+*/

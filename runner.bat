@@ -1,11 +1,13 @@
 @setlocal enabledelayedexpansion && py.exe -x "%~f0" %* & exit /b !ERRORLEVEL!
 # Note py.exe assumes installation of Python 3, but this program uses Python 2.7
+## - Verify that methods use return type declarations before "A bit of style" or wherever it becomes optional
+##   (Also necessary to apply on book example code)
 ## - 'Applications' directory: compile all, run command lines, capture output and verify
 ## - Copy errors._ to Converting Exceptions with Try
 ## - Create different version of runner for book examples; extract new book examples and verify them
 ## - Make an install.bat file to check for and install Python?
 ##   (See http://codeboje.de/installing_python_on_demand/)
-import os, sys, shutil, re, inspect, pprint, subprocess
+import os, sys, shutil, re, inspect, pprint, subprocess, string
 from contextlib import contextmanager
 from glob import glob
 import argparse
@@ -67,7 +69,7 @@ else:
     def trace(arg): pass
 
 if args.debug:
-    def debug(arg): pprint.pprint(arg)
+    def debug(arg): print(arg)
 else:
     def debug(arg): pass
 
@@ -211,14 +213,17 @@ def runfile(fname):
 
     if OUTPUT_SHOULD_BE:
         should_be = OUTPUT_SHOULD_BE.group(1).strip()
-        trace("output should be [" + should_be + "]")
+        debug("should be: [\n" + pprint.pformat(should_be) + "\n]")
         if "warning:" in should_be:
             generated = open(errorFile).read().strip() + "\n" + open(outputFile).read().strip()
             debug("generated: [" + generated + "]")
-            debug("should be: [" + should_be + "]")
             verify(should_be == generated)
         else:
-            verify(should_be == open(outputFile).read().strip())
+            actual = open(outputFile).read().strip()
+            actual = '\n'.join(map(string.rstrip, actual.splitlines()))
+            debug("actual: [\n" + pprint.pformat(actual) + "\n]")
+            verify(should_be == actual)
+
     elif OUTPUT_SHOULD_CONTAIN:
         should_contain = OUTPUT_SHOULD_CONTAIN.group(1).strip()
         trace("output should contain [" + should_contain + "]")
@@ -232,6 +237,7 @@ def runfile(fname):
                 if not line in results:
                     verify(False)
             verify(True)
+
     else: # No "SHOULD"
         verify(len(file(errorFile).read()) == 0)
 
