@@ -4,3 +4,7 @@ import com.atomicscala.AtomicTest._
 
 val rangeSum = Range.inclusive(0, 10).sum
 rangeSum is 55
+
+/* OUTPUT_SHOULD_BE
+55
+*/

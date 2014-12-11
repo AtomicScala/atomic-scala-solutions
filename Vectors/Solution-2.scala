@@ -5,8 +5,11 @@ import com.atomicscala.AtomicTest._
 val v4 = Vector(Vector(0, 1, 2), Vector(3, 4, 5))
 println(v4)
 
-/* You should do this in the REPL
+/* REPL Session:
 scala> val v4 = Vector(Vector(0, 1, 2), Vector(3, 4, 5))
 v4: scala.collection.immutable.Vector[scala.collection.immutable.Vector[Int]] = Vector(Vector(0, 1, 2), Vector(3, 4, 5))
 */
-// needs solution testing
+
+/* OUTPUT_SHOULD_BE
+Vector(Vector(0, 1, 2), Vector(3, 4, 5))
+*/

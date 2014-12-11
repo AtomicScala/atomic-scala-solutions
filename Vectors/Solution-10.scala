@@ -8,8 +8,7 @@ println("Max is " + l.max)
 println("Sum is (not defined)")
 println("Reverse is " + l.reverse)
 
-// You should do this in the REPL
-// List[String]
+// REPL Session:
 /* scala> val l = List("sometimes", "a", "list", "of", "words", "is", "nonsense")
 l: List[java.lang.String] = List(sometimes, a, list, of, words, is, nonsense)
 
@@ -45,8 +44,7 @@ println("Sum is (defined) " + intList.sum)
 println("Reverse is " + intList.reverse)
 
 
-// You should do this in the REPL
-// List[Int]
+// REPL Session:
 /*
 scala> val intList = List(1, 3, 5, 7, 9, 5, 9)
 intList: List[Int] = List(1, 3, 5, 7, 9, 5, 9)
@@ -77,6 +75,8 @@ println("Max is " + s.max)
 println("Sum is (defined) " + s.sum)
 println("Reverse is not defined")
 
+
+// REPL Session:
 /* scala> val s = Set(1, 3, 5, 6, 9, 5, 9)
 s: scala.collection.immutable.Set[Int] = Set(5, 1, 6, 9, 3)
 
@@ -91,6 +91,22 @@ res35: Int = 24
 
 */
 
-/* Solution: All of the same operations exist on List as on Vector, including being able to access each element of the list
-Set differs from Vector and List in that it only allows one of each value and it's not displaying in insertion order
+/* Solution: All of the same operations exist on List as on Vector,
+including being able to access each element of the list. Set differs
+from Vector and List in that it only allows one of each value and
+it doesn't display in insertion order */
+
+/* OUTPUT_SHOULD_BE
+Min is a
+Max is words
+Sum is (not defined)
+Reverse is List(nonsense, is, words, of, list, a, sometimes)
+Min is 1
+Max is 9
+Sum is (defined) 39
+Reverse is List(9, 5, 9, 7, 5, 3, 1)
+Min is 1
+Max is 9
+Sum is (defined) 24
+Reverse is not defined
 */

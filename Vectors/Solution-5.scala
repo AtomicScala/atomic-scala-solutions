@@ -7,4 +7,11 @@ val v5 = Vector("The", "dog", "visited", "the", "firehouse")
 for(word <- v5) {
   println(word.reverse)
 }
-// needs solution testing
+
+/* OUTPUT_SHOULD_BE
+ehT
+god
+detisiv
+eht
+esuoherif
+*/

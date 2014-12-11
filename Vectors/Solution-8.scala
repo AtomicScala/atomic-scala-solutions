@@ -9,3 +9,8 @@ val v6 = Vector("the", "dog", "visited", "the", "firehouse")
 // max and min are defined by alphabetical order
 v6.max is "visited"
 v6.min is "dog"
+
+/* OUTPUT_SHOULD_BE
+visited
+dog
+*/
