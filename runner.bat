@@ -20,7 +20,7 @@ ROOT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe(
 SUCCEEDED = os.path.join(ROOT_DIR, "Succeeded.txt")
 SUBLIME = r'C:\Program Files\SublimeText2\sublime_text.exe'
 if not os.path.exists(SUBLIME):
-    SUBLIME = "subl"
+    SUBLIME = r'C:\Program Files\Sublime Text 3\sublime_text.exe'
 
 parser = argparse.ArgumentParser(description='With no arguments, runs all the scala scripts and capture any errors')
 parser.add_argument("-f", "--file", nargs='+', action='store', help="Run only on the designated files")

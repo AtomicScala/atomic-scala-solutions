@@ -1,5 +1,7 @@
 // Solution-5.scala
 // Solution to Exercise 5 in "Summary 2"
+// To run, first compile ClassBodies.scala:
+// scalac ClassBodies.scala
 import com.atomicscala.AtomicTest._
 import com.atomicscala.Bodies._
 
@@ -18,5 +20,11 @@ for(i <- eb.all) {
 everyone is "Janet Doe, Janet Doe, Janet Doe, "
 
 /* OUTPUT_SHOULD_BE
-
+Nobody's home
+Janet Doe is SomeBody
+Janet Doe
+Janet Doe is SomeBody
+Janet Doe is SomeBody
+Janet Doe is SomeBody
+Janet Doe, Janet Doe, Janet Doe,
 */

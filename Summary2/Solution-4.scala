@@ -10,5 +10,6 @@ wb.cube(3) is 27
 wb.bang("pop") is "pop!"
 
 /* OUTPUT_SHOULD_BE
-
+27
+pop!
 */

@@ -3,7 +3,9 @@
 import com.atomicscala.AtomicTest._
 
 val v = Vector('a', 45, "silly", 76.4)
+println(v)
 // v.max
+println("v contains 'Any'")
 println("v.max is not defined")
 
 /* REPL session:
@@ -16,5 +18,7 @@ scala> v.max
 */
 
 /* OUTPUT_SHOULD_BE
-
+Vector(a, 45, silly, 76.4)
+v contains 'Any'
+v.max is not defined
 */
