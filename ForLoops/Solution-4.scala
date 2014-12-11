@@ -8,3 +8,7 @@ for(i <- Range(0, 10).inclusive) {
     totalEvens = totalEvens + i
 }
 totalEvens is 30
+
+/* OUTPUT_SHOULD_BE
+30
+*/

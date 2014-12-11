@@ -13,3 +13,9 @@ for(i <- 0 to 10) {
 evens is 30
 odds is 25
 (evens + odds) is 55
+
+/* OUTPUT_SHOULD_BE
+30
+25
+55
+*/

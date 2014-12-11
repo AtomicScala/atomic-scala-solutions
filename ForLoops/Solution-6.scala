@@ -13,3 +13,9 @@ for(i<- Range.inclusive(0, 10)) {
 println(evens2)
 println(odds2)
 evens2 + odds2 is 55
+
+/* OUTPUT_SHOULD_BE
+30
+25
+55
+*/
