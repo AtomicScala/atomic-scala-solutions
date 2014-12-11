@@ -4,7 +4,7 @@ import com.atomicscala.AtomicTest._
 
 class FlexibleFamily(mom:String, dad:String, kids:String*) {
   def familySize():Int = {
-    var count = 2    // see change!
+    var count = 2
     for(i<-kids) {
       count = count + 1
     }
@@ -14,3 +14,7 @@ class FlexibleFamily(mom:String, dad:String, kids:String*) {
 
 val familyNoKids = new FlexibleFamily("Mom", "Dad")
 familyNoKids.familySize is 2
+
+/* OUTPUT_SHOULD_BE
+2
+*/

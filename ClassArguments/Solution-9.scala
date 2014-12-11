@@ -13,3 +13,9 @@ def squareThem(x:Int*):Int = {
 squareThem(2) is 4
 squareThem(2, 4) is 20
 squareThem(1, 2, 4) is 21
+
+/* OUTPUT_SHOULD_BE
+4
+20
+21
+*/

@@ -1,11 +1,9 @@
 // Solution-5.scala
 // Solution to Exercise 5 in "Class Arguments"
-import com.atomicscala.AtomicTest._
 
-println("Uncomment the text in the solution to see the error")
+// This produces an error:
 
-// Uncomment the following to see the error
-/*class Family4(kids:String*, mom:String, dad:String) {
+class Family4(kids:String*, mom:String, dad:String) {
   def familySize():Int = {
     var count = 2
     for(i<-kids) {
@@ -14,5 +12,10 @@ println("Uncomment the text in the solution to see the error")
     count
   }
 }
+
+/* OUTPUT_SHOULD_CONTAIN
+error: *-parameter must come last
+class Family4(kids:String*, mom:String, dad:String) {
+              ^
+one error found
 */
-// needs solution testing

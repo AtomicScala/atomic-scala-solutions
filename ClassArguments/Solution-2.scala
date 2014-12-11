@@ -16,3 +16,8 @@ val family3 = new FlexibleFamily("Mom", "Dad", "Sally", "Dick")
 family3.familySize is 4
 val family4 = new FlexibleFamily("Dad", "Mom", "Harry")
 family4.familySize is 3
+
+/* OUTPUT_SHOULD_BE
+4
+3
+*/

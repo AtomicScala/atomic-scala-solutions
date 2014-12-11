@@ -6,8 +6,10 @@ class Cup2(var percentFull:Int) {
   val max = 100
   def add(increase:Int):Int = {
     percentFull += increase
-    if(percentFull > max) percentFull = max
-    percentFull // Return this value
+    if(percentFull > max) {
+      percentFull = max
+    }
+    percentFull
   }
 }
 
@@ -17,3 +19,10 @@ cup2.add(-15) is 30
 cup2.add(-50) is -20
 cup2.percentFull = 70
 cup2.percentFull is 70
+
+/* OUTPUT_SHOULD_BE
+45
+30
+-20
+70
+*/
