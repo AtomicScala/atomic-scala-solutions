@@ -6,7 +6,7 @@ class Item(val name:String, var price:Int) {
   def cost(grocery:Boolean=false, medication:Boolean=false, taxRate:Double=0.10):Double = {
     if(grocery || medication) price
     else price + (taxRate * price)
-    }
+  }
 }
 
 val flour = new Item(name="flour", 4)

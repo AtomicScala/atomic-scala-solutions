@@ -1,7 +1,7 @@
 // Solution-6.scala
 // Solution to Exercise 6 in "Methods"
 
-def manyTimesString(str:String, num:Int) = {
+def manyTimesString(str:String, num:Int):String = {
   str * num
 }
 

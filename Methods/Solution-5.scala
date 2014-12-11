@@ -1,7 +1,7 @@
 // Solution-5.scala
 // Solution to Exercise 5 in "Methods"
 
-def addStrings(str1:String, str2:String) = {
+def addStrings(str1:String, str2:String):String = {
   str1 + str2
 }
 

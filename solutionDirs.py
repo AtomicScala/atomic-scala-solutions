@@ -118,7 +118,7 @@ def findUnbracedMethods():
 
 SUBLIME = r'C:\Program Files\SublimeText2\sublime_text.exe'
 if not os.path.exists(SUBLIME):
-    SUBLIME = "subl"
+    SUBLIME = r"C:\Program Files\Sublime Text 3\sublime_text.exe"
 
 def findUnusedAtomicTest():
     from glob import glob
@@ -138,5 +138,28 @@ def findUnusedAtomicTest():
                     subprocess.call([SUBLIME, sfile])
 
 
+def findMethodsWithoutReturnTypes():
+    from pprint import pprint
+    from glob import glob
+    start = solutionDirs.index("Methods")
+    stop = solutionDirs.index("Brevity")
+    for tdir in solutionDirs[start:stop]:
+        dirmsg = tdir + "\n" + '=' * len(tdir)
+        with visitDir(tdir):
+            for sfile in glob("*.scala"):
+                msg = sfile + ": "
+                lines = open(sfile).readlines()
+                for ln in lines:
+                    if "def " in ln and '):' not in ln:
+                        if dirmsg:
+                            print dirmsg
+                            dirmsg = None
+                        if msg:
+                            print msg
+                            msg = None
+                        print ln
+                        os.system("subl " + sfile)
+
+
 if __name__ == '__main__':
-    findUnusedAtomicTest()
+    findMethodsWithoutReturnTypes()

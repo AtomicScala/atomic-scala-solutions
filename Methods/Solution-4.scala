@@ -1,7 +1,7 @@
 // Solution-4.scala
 // Solution to Exercise 4 in "Methods"
 
-def getMe(str:String) = {
+def getMe(str:String):String = {
   str.toLowerCase
 }
 

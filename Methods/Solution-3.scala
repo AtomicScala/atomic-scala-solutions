@@ -1,7 +1,7 @@
 // Solution-3.scala
 // Solution to Exercise 3 in "Methods"
 
-def isArg1GreaterThanArg2(num1:Double, num2:Double) = {
+def isArg1GreaterThanArg2(num1:Double, num2:Double):Boolean = {
   num1 > num2
 }
 
