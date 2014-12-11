@@ -15,7 +15,7 @@ def forecast(temp:Int):String = {
 
 def forecastLoop(data:Vector[Int]):Unit = {
   for(s <-data)
-    println("forecast("+s+") is " + forecast(s))
+    println("forecast(" + s + ") is " + forecast(s))
 }
 
 val allData = forecastLoop(Vector(100, 80, 50, 20, 15, 80, 20))

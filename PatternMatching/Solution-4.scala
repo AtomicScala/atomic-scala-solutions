@@ -19,3 +19,7 @@ forecast(50) is "Partly Sunny"
 forecast(20) is "Mostly Cloudy"
 forecast(0) is "Cloudy"
 forecast(15) is "Unknown"
+
+/* OUTPUT_SHOULD_BE
+
+*/

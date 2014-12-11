@@ -30,3 +30,7 @@ checkTruth2(true || false, true) is "Both are true"
 checkTruth2(1 > 0 && -1 < 0, 1 == 2) is "First: true, second: false"
 checkTruth2(1 >= 2, 1 >= 1) is "First: false, second: true"
 checkTruth2(true && false, false && true) is "Both are false"
+
+/* OUTPUT_SHOULD_BE
+
+*/
