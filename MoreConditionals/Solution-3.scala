@@ -10,3 +10,9 @@ def isPalIgnoreCase(str:String):Boolean = {
 isPalIgnoreCase("Bob") is true
 isPalIgnoreCase("DAD") is true
 isPalIgnoreCase("Blob") is false
+
+/* OUTPUT_SHOULD_BE
+true
+true
+false
+*/

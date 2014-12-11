@@ -6,10 +6,10 @@ def isPalIgnoreSpecial(str:String):Boolean = {
   var createdStr = ""
   for(c <- str) {
     val theValue = c.toInt
-    if(theValue >64 && theValue < 123) {
+    if(theValue > 64 && theValue < 123) {
       createdStr += c
     }
-    else if(theValue > 47 && theValue <58) {
+    else if(theValue > 47 && theValue < 58) {
       createdStr += c
     }
   }
@@ -20,3 +20,8 @@ def isPalIgnoreSpecial(str:String):Boolean = {
 
 isPalIgnoreSpecial("Madam I'm adam") is true
 isPalIgnoreSpecial("trees") is false
+
+/* OUTPUT_SHOULD_BE
+true
+false
+*/

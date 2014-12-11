@@ -167,6 +167,12 @@ class SuccessfullyRun(object):
         with file(SUCCEEDED, 'w') as f:
             f.write(pprint.pformat(self.map.items()))
 
+    def clear_directory(self, directory):
+        if self.map.has_key(directory):
+            del self.map[directory]
+            with file(SUCCEEDED, 'w') as f:
+                f.write(pprint.pformat(self.map.items()))
+
     def __repr__(self):
         return pprint.pformat(self.map.items())
 
@@ -286,9 +292,16 @@ def showUnusedFiles():
 
 
 def remove_results():
-    if os.path.exists(SUCCEEDED):
-        print "removing " + SUCCEEDED
-        os.remove(SUCCEEDED)
+    "If in a subdirectory, leaves everything else alone"
+    dirname = os.path.basename(os.getcwd())
+    if dirname != ROOT_DIR:
+        if os.path.exists(SUCCEEDED):
+            print "clearing " + dirname + " from success results"
+            SuccessfullyRun().clear_directory(dirname)
+    else:
+        if os.path.exists(SUCCEEDED):
+            print "removing " + SUCCEEDED
+            os.remove(SUCCEEDED)
 
 
 if __name__ == '__main__':

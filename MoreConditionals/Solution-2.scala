@@ -10,3 +10,9 @@ def isPalindrome(str:String):Boolean = {
 isPalindrome("mom") is true
 isPalindrome("dad") is true
 isPalindrome("street") is false
+
+/* OUTPUT_SHOULD_BE
+true
+true
+false
+*/
