@@ -20,7 +20,7 @@ class Tea(val teaBags:Int = 1,
     if(sugar) total = total + 16
     total
   }
-  def describe = {
+  def describe:String = {
     name + extras
   }
 }

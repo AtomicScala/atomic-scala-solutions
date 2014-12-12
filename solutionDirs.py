@@ -97,6 +97,7 @@ def visitDir(d):
 def findUnbracedMethods():
     from pprint import pprint
     from glob import glob
+    import subprocess, re
     start = solutionDirs.index("Methods")
     stop = solutionDirs.index("Brevity")
     for tdir in solutionDirs[start:stop]:
@@ -114,7 +115,7 @@ def findUnbracedMethods():
                             print msg
                             msg = None
                         print ln
-                        os.system("subl " + sfile)
+                        subprocess.call([SUBLIME, sfile])
 
 SUBLIME = r'C:\Program Files\SublimeText2\sublime_text.exe'
 if not os.path.exists(SUBLIME):
@@ -141,6 +142,7 @@ def findUnusedAtomicTest():
 def findMethodsWithoutReturnTypes():
     from pprint import pprint
     from glob import glob
+    import subprocess, re
     start = solutionDirs.index("Methods")
     stop = solutionDirs.index("Brevity")
     for tdir in solutionDirs[start:stop]:
@@ -150,7 +152,9 @@ def findMethodsWithoutReturnTypes():
                 msg = sfile + ": "
                 lines = open(sfile).readlines()
                 for ln in lines:
-                    if "def " in ln and '):' not in ln:
+                    if "def " in ln and \
+                        '):' not in ln and \
+                        "this(" not in ln:
                         if dirmsg:
                             print dirmsg
                             dirmsg = None
@@ -158,7 +162,7 @@ def findMethodsWithoutReturnTypes():
                             print msg
                             msg = None
                         print ln
-                        os.system("subl " + sfile)
+                        subprocess.call([SUBLIME, sfile])
 
 
 if __name__ == '__main__':

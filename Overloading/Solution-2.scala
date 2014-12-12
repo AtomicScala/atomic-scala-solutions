@@ -4,9 +4,9 @@ import com.atomicscala.AtomicTest._
 
 def f():Int = { 0 }
 def f(i:Int):Int = { i }
-def f(i:Int, j:Int) = { i + j }
-def f(i:Int, j:Int, k:Int) = { i + j + k }
-def f(i:Int, j:Int, k:Int, l:Int) = { i + j + k + l }
+def f(i:Int, j:Int):Int = { i + j }
+def f(i:Int, j:Int, k:Int):Int = { i + j + k }
+def f(i:Int, j:Int, k:Int, l:Int):Int = { i + j + k + l }
 
 f() is 0
 f(1) is 1

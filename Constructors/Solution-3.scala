@@ -19,7 +19,7 @@ class Tea2(val decaf:Boolean = false,
     if(sugar) total = total + 16
     total
   }
-  def describe = {
+  def describe:String = {
     name + extras
   }
 }

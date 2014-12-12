@@ -17,11 +17,11 @@ class ClothesWasher3(val model:String, val capacity:Double) {
     this("Unknown", 2)
   }
 
-  def wash(bleach:Int, fabricSoftener:Int) = {
+  def wash(bleach:Int, fabricSoftener:Int):String = {
     "Wash used " + bleach + " bleach and " + fabricSoftener + " fabric softener"
   }
 
-  def wash() = {
+  def wash():String = {
     "Simple wash"
   }
 }
