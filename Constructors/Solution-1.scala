@@ -50,3 +50,14 @@ doubleHalfCaf.shots is 2
 tripleHalfCaf.decaf is 2
 tripleHalfCaf.caf() is 1
 tripleHalfCaf.shots is 3
+
+/* OUTPUT_SHOULD_BE
+(1,1,false,false,)
+(1,2,false,false,)
+1
+1
+2
+2
+1
+3
+*/

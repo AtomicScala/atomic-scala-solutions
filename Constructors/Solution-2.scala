@@ -40,3 +40,14 @@ sweetGreen.calories is 16
 val teaLatte = new Tea(sugar=true, milk=true)
 teaLatte.describe is "Earl Grey + milk + sugar"
 teaLatte.calories is 116
+
+/* OUTPUT_SHOULD_BE
+Earl Grey
+0
+Lemon Zinger decaf
+0
+Jasmine Green + sugar
+16
+Earl Grey + milk + sugar
+116
+*/
