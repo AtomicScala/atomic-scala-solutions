@@ -2,14 +2,19 @@
 // Solution to Exercise 3 in "Auxiliary Constructors"
 import com.atomicscala.AtomicTest._
 
-println("Can't put anything before the call to primary constructor")
+// You can't put anything before the call to the primary constructor
 
 class TryMe(val name:String) {
   def this() = {
-    // println("Can't put anything before the call to primary constructor")
-    // Can't even put a val
-    // val someVal = 0
+    // Can't even put a val definition:
+    val someVal = 0
     this("Default Name")
   }
 }
-// needs solution testing
+
+/* OUTPUT_SHOULD_CONTAIN
+error: 'this' expected but 'val' found.
+    val someVal = 0
+    ^
+one error found
+*/

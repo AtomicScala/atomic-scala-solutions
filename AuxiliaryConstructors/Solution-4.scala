@@ -29,3 +29,8 @@ class ClothesWasher3(val model:String, val capacity:Double) {
 val washer7 = new ClothesWasher3("LG 100", 3.6)
 washer7.wash(2, 1) is "Wash used 2 bleach and 1 fabric softener"
 washer7.wash() is "Simple wash"
+
+/* OUTPUT_SHOULD_BE
+Wash used 2 bleach and 1 fabric softener
+Simple wash
+*/

@@ -17,3 +17,12 @@ washer5.model is "AllInOne"
 val washer6 = new ClothesWasher2(capacity=3.6D)
 washer6.capacity is 3.6D
 washer6.model is "Unknown"
+
+/* OUTPUT_SHOULD_BE
+2.0
+Unknown
+2.0
+AllInOne
+3.6
+Unknown
+*/
