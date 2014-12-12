@@ -9,3 +9,8 @@ c2.height is 5
 //c2.height = 10
 c2.width = 19
 c2.width is 19
+
+/* OUTPUT_SHOULD_BE
+5
+19
+*/
