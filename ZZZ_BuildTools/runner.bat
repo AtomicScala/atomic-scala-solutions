@@ -228,6 +228,7 @@ def runfile(fname):
 
     elif OUTPUT_SHOULD_CONTAIN:
         should_contain = OUTPUT_SHOULD_CONTAIN.group(1).strip()
+        if not should_contain: verify(False)
         def testAgainstFile(filename):
             results = file(filename).read()
             for line in should_contain.splitlines():

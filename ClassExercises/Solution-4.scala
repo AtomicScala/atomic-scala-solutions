@@ -30,3 +30,7 @@ st2.minutes is 45
 val st3 = new SimpleTime(9, 30).subtract(new SimpleTime(10, 0))
 st3.hours is 0
 st3.minutes is 0
+
+/* OUTPUT_SHOULD_BE
+
+*/

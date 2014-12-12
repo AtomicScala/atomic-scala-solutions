@@ -24,3 +24,7 @@ namedST.hours is 9
 namedST.minutes is 0
 anotherNamedST.hours is 0
 anotherNamedST.minutes is 30
+
+/* OUTPUT_SHOULD_BE
+
+*/
