@@ -17,8 +17,9 @@ import colorama
 colorama.init()
 
 # Directory where runner.bat lives:
-ROOT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-SUCCEEDED = os.path.join(ROOT_DIR, "Succeeded.txt")
+HOME_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+ROOT_DIR = os.path.dirname(HOME_DIR)
+SUCCEEDED = os.path.join(HOME_DIR, "Succeeded.txt")
 SUBLIME = r'C:\Program Files\SublimeText2\sublime_text.exe'
 if not os.path.exists(SUBLIME):
     SUBLIME = r'C:\Program Files\Sublime Text 3\sublime_text.exe'
