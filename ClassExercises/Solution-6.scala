@@ -9,15 +9,13 @@ class SimpleTimeAux(val hours:Int, val minutes:Int) {
   def subtract(aTime:SimpleTimeAux):SimpleTimeAux = {
     val h = hours - aTime.hours
     val m = minutes - aTime.minutes
-
-    // see simplification above
-    if(h < 0)
-      return new SimpleTimeAux(0, 0)
-
-    if(m >= 0)
+    if(h < 0) {
+      new SimpleTimeAux(0, 0)
+    } else if(m >= 0) {
       new SimpleTimeAux(h, m)
-    else
-      new SimpleTimeAux(h-1, m+60)
+    } else {
+      new SimpleTimeAux(h - 1, m + 60)
+    }
   }
 }
 
@@ -31,5 +29,8 @@ auxST2.hours is 2
 auxST2.minutes is 15
 
 /* OUTPUT_SHOULD_BE
-
+4
+5
+2
+15
 */

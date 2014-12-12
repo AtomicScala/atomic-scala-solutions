@@ -6,16 +6,13 @@ class SimpleTime(val hours:Int, val minutes:Int) {
   def subtract(aTime:SimpleTime):SimpleTime = {
     val h = hours - aTime.hours
     val m = minutes - aTime.minutes
-
-    // see simplification above
-  if(h < 0)
-    return new SimpleTime(0, 0)
-
-  if(m >= 0)
-    new SimpleTime(h, m)
-  else
-    new SimpleTime(h-1, m+60)
-
+    if(h < 0) {
+      new SimpleTime(0, 0)
+    } else if(m >= 0) {
+      new SimpleTime(h, m)
+    } else {
+      new SimpleTime(h - 1, m + 60)
+    }
   }
 }
 
@@ -32,5 +29,10 @@ st3.hours is 0
 st3.minutes is 0
 
 /* OUTPUT_SHOULD_BE
-
+1
+0
+0
+45
+0
+0
 */
