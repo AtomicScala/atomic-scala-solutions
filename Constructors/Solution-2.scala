@@ -7,20 +7,20 @@ class Tea(val teaBags:Int = 1,
           val milk:Boolean = false,
           val sugar:Boolean = false,
           val name:String = "Earl Grey") {
-  def extras:String = {
+  def extras():String = {
     var text:String = ""
     if(decaf) text += " decaf"
     if(milk) text += " + milk"
     if(sugar) text += " + sugar"
     text
   }
-  def calories:Int = {
+  def calories():Int = {
     var total = 0
     if(milk) total = total + 100
     if(sugar) total = total + 16
     total
   }
-  def describe:String = {
+  def describe():String = {
     name + extras
   }
 }

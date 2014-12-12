@@ -2,9 +2,7 @@
 // Solution to Exercise 2 in "Pattern Matching with Types"
 import com.atomicscala.AtomicTest._
 
-case class Person(name:String) {
-  override def toString:String = { name }
-}
+case class Person(name:String)
 
 def convertToSize(x:Any):Any = {
   x match {
