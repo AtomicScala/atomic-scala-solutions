@@ -227,17 +227,28 @@ def runfile(fname):
 
     elif OUTPUT_SHOULD_CONTAIN:
         should_contain = OUTPUT_SHOULD_CONTAIN.group(1).strip()
-        trace("output should contain [" + should_contain + "]")
-        if "error" in should_contain:
-            verify(should_contain in file(errorFile).read())
-        else: # Examine line-by-line
-            results = file(outputFile).read()
+        def testAgainstFile(filename):
+            results = file(filename).read()
             for line in should_contain.splitlines():
-                trace("testing line " + line)
-                trace(line in results)
                 if not line in results:
                     verify(False)
             verify(True)
+        if "error" in should_contain:
+            testAgainstFile(errorFile)
+            # results = file(errorFile).read()
+            # for line in should_contain.splitlines():
+            #     if not line in results:
+            #         verify(False)
+            # verify(True)
+        else:
+            testAgainstFile(outputFile)
+            # results = file(outputFile).read()
+            # for line in should_contain.splitlines():
+            #     trace("testing line " + line)
+            #     trace(line in results)
+            #     if not line in results:
+            #         verify(False)
+            # verify(True)
 
     else: # No "SHOULD"
         verify(len(file(errorFile).read()) == 0)
