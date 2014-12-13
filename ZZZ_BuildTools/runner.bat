@@ -253,7 +253,8 @@ def runfile(fname):
             # verify(True)
 
     else: # No "SHOULD"
-        verify(len(file(errorFile).read()) == 0)
+        verify(False) # Require a SHOULD
+        #verify(len(file(errorFile).read()) == 0)
 
     # If file ran successfully, remove artifacts:
     if os.path.exists(outputFile):

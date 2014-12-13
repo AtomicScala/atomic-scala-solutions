@@ -7,7 +7,7 @@ case class Activity(date:String, action:String)
 def getDates(action:String, activities:Vector[Activity]):Vector[String]  = {
   for {
     a <- activities
-    if a.action equals(action)
+    if a.action.equals(action)
   }
   yield a.date
 }
@@ -24,5 +24,7 @@ getDates("Run", activities) is Vector("01-01", "01-04", "01-03")
 getDates("Bike", activities) is Vector()
 
 /* OUTPUT_SHOULD_BE
-
+Vector(01-03, 01-10)
+Vector(01-01, 01-04, 01-03)
+Vector()
 */
