@@ -3,12 +3,12 @@
 import com.atomicscala.AtomicTest._
 
 val v = Vector(1, 5, 7, 8)
-val dogYears = (x:Int) => (x*7)
+val dogYears = (x:Int) => (x * 7)
 
 var s = ""
-v.foreach(x => (s = s + (dogYears(x) + " ")))
+v.foreach((x:Int) => (s = s + (dogYears(x) + " ")))
 s is "7 35 49 56 "
 
 /* OUTPUT_SHOULD_BE
-
+7 35 49 56
 */

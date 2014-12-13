@@ -8,5 +8,5 @@ numberV.foreach(n => str += n)
 str is "1234"
 
 /* OUTPUT_SHOULD_BE
-
+1234
 */

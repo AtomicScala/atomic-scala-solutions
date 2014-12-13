@@ -8,5 +8,5 @@ numberV.foreach(n => str1 += n + ",")
 str1 is "1,2,3,4,"
 
 /* OUTPUT_SHOULD_BE
-
+1,2,3,4,
 */

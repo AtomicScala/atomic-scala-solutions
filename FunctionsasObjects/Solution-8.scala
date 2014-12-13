@@ -8,5 +8,7 @@ pluralize("dog") is "dogs"
 pluralize("silly") is "sillys"
 
 /* OUTPUT_SHOULD_BE
-
+cats
+dogs
+sillys
 */

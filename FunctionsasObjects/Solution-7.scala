@@ -9,5 +9,5 @@ numbers.foreach(x => (s = s + (x*x + " ")))
 s is "1 4 25 9 49 "
 
 /* OUTPUT_SHOULD_BE
-
+1 4 25 9 49
 */
