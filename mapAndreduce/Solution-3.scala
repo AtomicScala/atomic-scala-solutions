@@ -10,3 +10,7 @@ for(n<-v)
   vb1 += (n*11)+10
 
 vb1.result is Vector(21, 32, 43, 54)
+
+/* OUTPUT_SHOULD_BE
+
+*/

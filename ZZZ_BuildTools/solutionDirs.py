@@ -78,6 +78,11 @@ solutionDirs = [
     "ExtensibleSystemswithTypeClasses",
 ]
 
+import os, inspect, sys
+
+# Directory where runner.bat lives:
+HOME_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+ROOT_DIR = os.path.dirname(HOME_DIR)
 
 def findmissing():
     import glob, pprint
@@ -165,5 +170,33 @@ def findMethodsWithoutReturnTypes():
                         subprocess.call([SUBLIME, sfile])
 
 
+output_should_be = """
+/* OUTPUT_SHOULD_BE
+
+*/
+"""
+
+def addOutputShouldBeToSolutions():
+    from glob import glob
+    import subprocess, re
+    for tdir in solutionDirs:
+        dirmsg = tdir + "\n" + '=' * len(tdir)
+        with visitDir(os.path.join(ROOT_DIR, tdir)):
+            for sfile in glob("Solution-*.scala"):
+                msg = sfile
+                with open(sfile) as f:
+                    solution = f.read()
+                if "OUTPUT_SHOULD" not in solution:
+                    if dirmsg:
+                        print dirmsg
+                        dirmsg = None
+                    if msg:
+                        print msg
+                        msg = None
+                    with open(sfile, 'w') as f:
+                        f.write(solution + output_should_be)
+                    subprocess.call([SUBLIME, sfile])
+
+
 if __name__ == '__main__':
-    findMethodsWithoutReturnTypes()
+    addOutputShouldBeToSolutions()

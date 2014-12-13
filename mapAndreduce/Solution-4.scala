@@ -9,3 +9,7 @@ for(n <- v)
   vb2 += (n+1)
 
 vb2.result is Vector(2, 3, 4, 5)
+
+/* OUTPUT_SHOULD_BE
+
+*/

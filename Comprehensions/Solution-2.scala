@@ -13,3 +13,7 @@ def yielding2(l:List[Int]):List[Int] = {
 
 val theList = List(1,2,3,5,6,7,8,10,13,14,17)
 yielding2(theList) is Vector(1,3,5,7)
+
+/* OUTPUT_SHOULD_BE
+
+*/

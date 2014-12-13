@@ -7,3 +7,7 @@ var sum = 0
 for(n<-vReduce)
   sum += n
 sum is 1111
+
+/* OUTPUT_SHOULD_BE
+
+*/
