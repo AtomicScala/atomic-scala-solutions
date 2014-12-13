@@ -4,10 +4,10 @@ import com.atomicscala.AtomicTest._
 
 val vReduce = Vector(1, 10, 100, 1000)
 var sum = 0
-for(n<-vReduce)
+for(n <- vReduce)
   sum += n
 sum is 1111
 
 /* OUTPUT_SHOULD_BE
-
+1111
 */

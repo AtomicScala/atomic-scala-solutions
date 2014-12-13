@@ -10,5 +10,6 @@ sumIt(1, 2, 3) is 6
 sumIt(45, 45, 45, 60) is 195
 
 /* OUTPUT_SHOULD_BE
-
+6
+195
 */
