@@ -15,5 +15,5 @@ val v = Vector(1,2,3,5,6,7,8,10,13,14,17)
 oddLT10(v) is Vector(1,3,5,7)
 
 /* OUTPUT_SHOULD_BE
-
+Vector(1, 3, 5, 7)
 */
