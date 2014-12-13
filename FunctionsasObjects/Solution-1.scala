@@ -6,3 +6,7 @@ var str = ""
 val numberV = Vector(1, 2, 3, 4)
 numberV.foreach(n => str += n)
 str is "1234"
+
+/* OUTPUT_SHOULD_BE
+
+*/

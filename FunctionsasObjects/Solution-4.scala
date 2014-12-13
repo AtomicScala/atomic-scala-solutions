@@ -8,3 +8,7 @@ val dogYears = (x:Int) => (x*7)
 var s = ""
 v.foreach(x => (s = s + (dogYears(x) + " ")))
 s is "7 35 49 56 "
+
+/* OUTPUT_SHOULD_BE
+
+*/

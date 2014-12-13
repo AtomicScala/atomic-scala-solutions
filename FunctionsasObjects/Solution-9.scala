@@ -10,3 +10,7 @@ var s = ""
 words.foreach(x => (s = s + (pluralize(x) + " ")))
 
 s is "words cats animals "
+
+/* OUTPUT_SHOULD_BE
+
+*/

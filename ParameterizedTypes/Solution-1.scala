@@ -7,3 +7,7 @@ def explicitDouble(v1:Double, v2:Double, v3:Double):Vector[Double] = {
 }
 
 explicitDouble(1, 2, 3) is Vector(1.0, 2.0, 3.0)
+
+/* OUTPUT_SHOULD_BE
+Vector(1.0, 2.0, 3.0)
+*/

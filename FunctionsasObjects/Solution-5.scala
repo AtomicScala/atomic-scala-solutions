@@ -7,3 +7,7 @@ val v = Vector(1, 5, 7, 8)
 v.foreach(x => (s = s + (x*7 + " ")))
 
 s is "7 35 49 56 "
+
+/* OUTPUT_SHOULD_BE
+
+*/
