@@ -16,3 +16,7 @@ def plus1(x:Any):Any = {
 plus1("car") is "cars"
 plus1(67) is 68
 plus1(Person("Joanna")) is "Person(Joanna) + guest"
+
+/* OUTPUT_SHOULD_BE
+
+*/

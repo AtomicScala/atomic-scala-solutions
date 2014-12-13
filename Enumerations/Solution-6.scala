@@ -25,3 +25,7 @@ checkLevel(Empty) is "Alert"
 checkLevel(Draining) is "Level Draining OK"
 checkLevel(Pooling) is "Warning!"
 checkLevel(Dry) is "Alert"
+
+/* OUTPUT_SHOULD_BE
+
+*/

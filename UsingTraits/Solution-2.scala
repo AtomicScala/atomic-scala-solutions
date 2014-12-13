@@ -35,3 +35,7 @@ for(i <- 0 to 3)
   c.connect(false) is true
 c.connected is 0
 c.connect(false) is false
+
+/* OUTPUT_SHOULD_BE
+
+*/

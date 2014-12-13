@@ -20,3 +20,7 @@ object WalkActivity3 {
 
 val sally = new WalkActivity3
 sally.calories(150, 30) is 82
+
+/* OUTPUT_SHOULD_BE
+
+*/

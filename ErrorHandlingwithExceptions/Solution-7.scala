@@ -26,3 +26,7 @@ def t1 = try {
 }
 
 t1 is "Ex caught in t1"
+
+/* OUTPUT_SHOULD_BE
+
+*/

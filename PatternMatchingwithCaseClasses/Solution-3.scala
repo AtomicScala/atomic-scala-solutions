@@ -20,3 +20,7 @@ def travel2(transport:Any):String = {
 case class Kitten(name:String)
 
 travel2(Kitten("Kitty")) is "Kitten(Kitty) is in limbo!"
+
+/* OUTPUT_SHOULD_BE
+
+*/

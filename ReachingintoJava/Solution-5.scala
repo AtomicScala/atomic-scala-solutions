@@ -15,3 +15,7 @@ s.addValue(100)
 
 s.getMean is 55
 s.getStandardDeviation is 39.370039370059054
+
+/* OUTPUT_SHOULD_BE
+
+*/

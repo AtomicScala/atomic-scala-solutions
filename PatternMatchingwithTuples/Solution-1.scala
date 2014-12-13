@@ -8,3 +8,7 @@ Remove the backticks from ColorBlend.scala and see what error messages are produ
 
 // see ColorBlendNoTicks.scala
 // needs solution testing
+
+/* OUTPUT_SHOULD_BE
+
+*/

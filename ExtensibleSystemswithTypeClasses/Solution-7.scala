@@ -7,3 +7,7 @@ second transform method that produces a different type of result.
 {oldDescription}*/
 
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

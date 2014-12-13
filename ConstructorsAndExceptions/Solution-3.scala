@@ -14,3 +14,7 @@ class CodeListingTester3(makeList:String => IndexedSeq[String]) {
 
 new CodeListingTester3(CodeListing.apply)
 // needs solution testing
+
+/* OUTPUT_SHOULD_BE
+
+*/

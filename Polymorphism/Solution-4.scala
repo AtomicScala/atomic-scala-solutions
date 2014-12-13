@@ -39,3 +39,7 @@ class Dragon2 extends Character2("Puff")
 
 val d2 = new Dragon2
 d2.player is "Puff"
+
+/* OUTPUT_SHOULD_BE
+
+*/

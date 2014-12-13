@@ -26,3 +26,7 @@ def monthNumber(name:MonthName) = {
 July is "July"
 
 monthNumber(July) is 6
+
+/* OUTPUT_SHOULD_BE
+
+*/

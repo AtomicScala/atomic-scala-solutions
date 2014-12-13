@@ -13,3 +13,7 @@ val people = Vector(
   Person("Sally", "Small", "sally@small.com"))
 
 people.size is 3
+
+/* OUTPUT_SHOULD_BE
+
+*/

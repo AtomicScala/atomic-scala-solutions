@@ -20,3 +20,7 @@ val art = new Object with ArtPeriod
 art.period(1400) is "Renaissance"
 art.period(1650) is "Baroque"
 art.period(1279) is "Pre-Renaissance"
+
+/* OUTPUT_SHOULD_BE
+
+*/

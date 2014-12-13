@@ -18,3 +18,7 @@ f2(6) is Some(4)
 f2(0) is None
 f2(24) is Some(1)
 f2(25) is Some(0)
+
+/* OUTPUT_SHOULD_BE
+
+*/

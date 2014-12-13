@@ -23,3 +23,7 @@ class PrehistoricAnimal extends Animal {
 val dino = new PrehistoricAnimal
 dino.animal("T-Rex") is "T-Rex"
 dino.animal is "Dinosaur"
+
+/* OUTPUT_SHOULD_BE
+
+*/

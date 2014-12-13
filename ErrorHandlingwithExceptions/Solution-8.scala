@@ -49,3 +49,7 @@ def test3(fail:Boolean) = {
 
 test3(false) is "success"
 test3(true) is "success"
+
+/* OUTPUT_SHOULD_BE
+
+*/

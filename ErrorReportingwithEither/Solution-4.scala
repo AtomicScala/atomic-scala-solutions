@@ -13,3 +13,7 @@ def testLetters(n:Int) = {
 testLetters(0) is "Vowel: a"
 testLetters(4) is "Vowel: e"
 testLetters(13) is "Consonant: n"
+
+/* OUTPUT_SHOULD_BE
+
+*/

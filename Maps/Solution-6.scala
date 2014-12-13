@@ -17,3 +17,7 @@ val m2 = m + ("jiminy@cricket.com" -> Name("Jiminy", "Cricket"))
 
 val map3 = m2 - "jiminy@cricket.com"
 map3.size is 2
+
+/* OUTPUT_SHOULD_BE
+
+*/

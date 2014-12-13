@@ -18,3 +18,7 @@ weather(81, 45) is ("Hot", "Humid")
 weather(50, 45) is ("Temperate", "Humid")
 weather(27, 55) is ("Cold", "Damp")
 weather(27, 30) is ("Cold", "Pleasant")
+
+/* OUTPUT_SHOULD_BE
+
+*/

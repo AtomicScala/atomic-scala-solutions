@@ -23,3 +23,7 @@ object Battery2 extends App {
 }
 
 // needs solution testing
+
+/* OUTPUT_SHOULD_BE
+
+*/

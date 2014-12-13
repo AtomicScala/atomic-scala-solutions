@@ -25,3 +25,7 @@ catchall(0) is "no throw"
 catchall(1) is "ex1"
 catchall(2) is "ex2"
 catchall(3) is "ex3"
+
+/* OUTPUT_SHOULD_BE
+
+*/

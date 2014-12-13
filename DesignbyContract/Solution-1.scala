@@ -11,3 +11,7 @@ result. The postcondition should check the result to verify that it
 is in the expected range of values. {oldDescription}*/
 
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

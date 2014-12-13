@@ -9,3 +9,7 @@ def addMultiply(x:Int, y:Double, s:String) = {
 
 val r2:Double = addMultiply(7, 9, "Inside addMultiply")
 r2 is 33.6
+
+/* OUTPUT_SHOULD_BE
+
+*/

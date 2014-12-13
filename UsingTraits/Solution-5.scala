@@ -23,3 +23,7 @@ class Painting(title:String, year:Int)
 
 val painting = new Painting("The Starry Night", 1889)
 painting.period is "Modern"
+
+/* OUTPUT_SHOULD_BE
+
+*/

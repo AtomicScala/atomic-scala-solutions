@@ -17,3 +17,7 @@ class Wall2 extends Inert {
 
 val wall2 = new Wall2
 wall2.draw is "Don't draw on the wall!"
+
+/* OUTPUT_SHOULD_BE
+
+*/

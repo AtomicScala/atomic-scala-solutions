@@ -20,3 +20,7 @@ convertToSize2("truck") is 5
 convertToSize2(Person("Joanna")) is 1
 convertToSize2(45.6F) is 46
 convertToSize2(Vector(1, 2, 3)) is 0
+
+/* OUTPUT_SHOULD_BE
+
+*/

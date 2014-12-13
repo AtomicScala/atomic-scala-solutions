@@ -7,3 +7,7 @@ ScalaDoc to identify these (Note the names are often different).
 Create simple examples and mutate them. {oldDescription}*/
 
 assert("Solution" == "Incomplete")
+
+/* OUTPUT_SHOULD_BE
+
+*/

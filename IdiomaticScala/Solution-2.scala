@@ -43,3 +43,7 @@ adding 14 to 42
 adding 16 to 56
 adding 18 to 72
 Sum is 90 */
+
+/* OUTPUT_SHOULD_BE
+
+*/

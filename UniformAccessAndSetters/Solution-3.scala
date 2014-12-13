@@ -12,3 +12,7 @@ val fun = new FunStuff
 fun.x is "all the fun happens here"
 fun.x = "make it so"
 fun.x is "make it so"
+
+/* OUTPUT_SHOULD_BE
+
+*/

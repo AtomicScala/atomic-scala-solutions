@@ -18,3 +18,7 @@ def travel2(transport:Any):String = {
 }
 
 travel2(Passenger("Sally", "Marie")) is "Sally is walking"
+
+/* OUTPUT_SHOULD_BE
+
+*/

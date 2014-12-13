@@ -10,3 +10,7 @@ println(reflected3)
 
 // The above results in anonymous class $anon$1$ReflectedToy3
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

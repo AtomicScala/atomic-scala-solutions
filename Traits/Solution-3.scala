@@ -14,3 +14,7 @@ trait Toy
 
 val toy2 = new Toy with BatteryPower
 toy2.monitor(50) is "green"
+
+/* OUTPUT_SHOULD_BE
+
+*/

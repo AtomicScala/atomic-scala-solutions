@@ -9,3 +9,7 @@ reference). Now create a val reference to a mutable Map and
 demonstrate what this means. {oldDescription}*/
 
 assert("Solution" == "Incomplete")
+
+/* OUTPUT_SHOULD_BE
+
+*/

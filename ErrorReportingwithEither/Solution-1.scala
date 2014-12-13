@@ -26,3 +26,7 @@ test(6) is 4
 test(0) is "Failed: Divide by zero"
 test(24) is 1
 test(25) is 0
+
+/* OUTPUT_SHOULD_BE
+
+*/

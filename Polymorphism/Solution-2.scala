@@ -19,3 +19,7 @@ in.draw is "Inert drawing!"
 class Wall extends Inert
 val wall = new Wall
 wall.draw is "Inert drawing!"
+
+/* OUTPUT_SHOULD_BE
+
+*/

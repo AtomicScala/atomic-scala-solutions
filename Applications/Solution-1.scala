@@ -9,3 +9,7 @@ object WhenAmI extends App {
 }
 
 // needs solution testing
+
+/* OUTPUT_SHOULD_BE
+
+*/

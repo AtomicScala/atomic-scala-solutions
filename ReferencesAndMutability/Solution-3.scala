@@ -7,3 +7,7 @@ what to do when you have a Vector whose contents need to change.
 {oldDescription}*/
 
 assert("Solution" == "Incomplete")
+
+/* OUTPUT_SHOULD_BE
+
+*/

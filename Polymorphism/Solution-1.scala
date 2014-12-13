@@ -27,3 +27,7 @@ car.moves is "Locomotion!"
 // try somethat that doesn't use the Mobile trait
 // val blob = new Animal
 // blob.moves is "Locomotion!"
+
+/* OUTPUT_SHOULD_BE
+
+*/

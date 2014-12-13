@@ -13,3 +13,7 @@ val a1 = new FancyNumber1(2)
 a1.power(3) is 8
 val b1 = new FancyNumber1(10)
 b1.power(2) is 100
+
+/* OUTPUT_SHOULD_BE
+
+*/

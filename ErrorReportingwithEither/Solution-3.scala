@@ -18,3 +18,7 @@ divideLetters is "Vector(Left(a), Right(b)," +
 "Left(o), Right(p), Right(q), Right(r)," +
 "Right(s), Right(t), Left(u), Right(v)," +
 "Right(w), Right(x), Right(y), Right(z))"
+
+/* OUTPUT_SHOULD_BE
+
+*/

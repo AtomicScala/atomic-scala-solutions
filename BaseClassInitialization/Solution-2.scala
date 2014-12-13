@@ -17,3 +17,7 @@ roaringApe.myWords is Vector("Roar")
 
 val chattyBonobo = new Bonobo2(150, 14, "Female")
 chattyBonobo.knownWords is Vector("Roar","Hello")
+
+/* OUTPUT_SHOULD_BE
+
+*/

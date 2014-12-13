@@ -14,3 +14,7 @@ import Math.max
   findMax(aList, 0) is 45
 
 }
+
+/* OUTPUT_SHOULD_BE
+
+*/

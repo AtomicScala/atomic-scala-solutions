@@ -31,3 +31,7 @@ season(January) is "Winter"
 season(April) is "Spring"
 season(August) is "Summer"
 season(November) is "Autumn"
+
+/* OUTPUT_SHOULD_BE
+
+*/

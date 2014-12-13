@@ -16,3 +16,7 @@ def t(i:Int) = try {
 
 t(5) is "IndexOutOfBoundsException"
 t(-1) is "IndexOutOfBoundsException"
+
+/* OUTPUT_SHOULD_BE
+
+*/

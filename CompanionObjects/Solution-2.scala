@@ -20,3 +20,7 @@ WalkActivity2.stop("Jane")
 WalkActivity2.start("John")
 println(WalkActivity2.log)
 // needs solution testing
+
+/* OUTPUT_SHOULD_BE
+
+*/

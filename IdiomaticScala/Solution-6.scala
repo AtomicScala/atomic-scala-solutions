@@ -24,3 +24,7 @@ cat.meow is "mew!"
 }
 val hamster = new Hamster
 hamster.exercise is "squeak! Running on wheel"
+
+/* OUTPUT_SHOULD_BE
+
+*/

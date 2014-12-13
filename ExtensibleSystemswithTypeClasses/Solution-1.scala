@@ -8,3 +8,7 @@ Rectangle and its associated RectangleCalc to Shape_TypeClass.scala
 and verify that it works. Note the differences. {oldDescription}*/
 
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

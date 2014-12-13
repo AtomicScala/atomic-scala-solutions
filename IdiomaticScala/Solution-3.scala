@@ -41,3 +41,7 @@ def isOpen(activity:String, hour:Int) = activity match {
 }
 
 // needs solution testing
+
+/* OUTPUT_SHOULD_BE
+
+*/

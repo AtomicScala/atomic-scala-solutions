@@ -8,3 +8,7 @@ val m = Map("sally@taylor.com"->Name("Sally","Taylor"),
             "mary@smith.com"->Name("Mary", "Smith"))
 
 m("sally@taylor.com") is Name("Sally", "Taylor")
+
+/* OUTPUT_SHOULD_BE
+
+*/

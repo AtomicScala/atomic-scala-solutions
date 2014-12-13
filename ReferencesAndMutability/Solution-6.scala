@@ -7,3 +7,7 @@ immutable fields. Is the resulting class mutable or immutable?
 {oldDescription}*/
 
 assert("Solution" == "Incomplete")
+
+/* OUTPUT_SHOULD_BE
+
+*/

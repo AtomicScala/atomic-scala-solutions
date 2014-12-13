@@ -11,3 +11,7 @@ case class MyAdder(x:Int) extends Adder(x) {
 
 val myNum = MyAdder(15)
 myNum.add(20) is 35
+
+/* OUTPUT_SHOULD_BE
+
+*/

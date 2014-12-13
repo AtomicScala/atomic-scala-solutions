@@ -33,3 +33,7 @@ class VacationHouse2(state:String, zip:String, val startMonth:Int, val endMonth:
 val v2 = new VacationHouse2("MI","49431",6,8)
 v2 is "Rented house in MI for months of " +
 "June through August"
+
+/* OUTPUT_SHOULD_BE
+
+*/

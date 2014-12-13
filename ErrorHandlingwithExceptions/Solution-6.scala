@@ -28,3 +28,7 @@ def t2 = try {
 
 t1 is "Ex1"
 t2 is "Ex2"
+
+/* OUTPUT_SHOULD_BE
+
+*/

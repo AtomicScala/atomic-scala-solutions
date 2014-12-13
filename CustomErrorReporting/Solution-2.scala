@@ -7,3 +7,7 @@ import com.atomicscala.AtomicTest._
 {oldDescription}*/
 
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

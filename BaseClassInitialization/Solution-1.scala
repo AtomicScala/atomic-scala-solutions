@@ -30,3 +30,7 @@ display(new BonoboB(100, 12, "Male")) is
 "weight: 100.0 age: 12 gender: Male"
 display(new BonoboC(150, 18, "Female")) is
 "weight: 150.0 age: 18 gender: Female"
+
+/* OUTPUT_SHOULD_BE
+
+*/

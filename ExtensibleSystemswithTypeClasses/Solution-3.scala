@@ -7,3 +7,7 @@ do not create an associated Calc class. Try to use it and see what
 happens. {oldDescription}*/
 
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

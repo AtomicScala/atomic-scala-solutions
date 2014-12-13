@@ -24,3 +24,7 @@ val d = new Derived(1)
 d.d3 is 1 // Calls getter (line 20)
 d.d3 = 42 // Calls setter (line 21)
 d.d3 is 42
+
+/* OUTPUT_SHOULD_BE
+
+*/

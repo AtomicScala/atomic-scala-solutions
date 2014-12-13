@@ -28,3 +28,7 @@ def listing(name:String) =
 new CodeListingTester2(listing)
 
 // needs solution testing
+
+/* OUTPUT_SHOULD_BE
+
+*/

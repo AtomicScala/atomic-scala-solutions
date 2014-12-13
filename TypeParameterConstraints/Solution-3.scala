@@ -8,3 +8,7 @@ to explore the possibilities and see if you can determine the
 differences. {oldDescription}*/
 
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

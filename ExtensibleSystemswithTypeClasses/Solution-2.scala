@@ -8,3 +8,7 @@ the Shape. Verify that it works. Now do the same thing to
 Shape_TypeClass.scala and note the differences. {oldDescription}*/
 
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

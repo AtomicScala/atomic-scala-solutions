@@ -4,3 +4,7 @@ import com.atomicscala.AtomicTest._
 
 println("You could pass parameters into the constructor, but that would pollute the class.")
 // needs solution testing
+
+/* OUTPUT_SHOULD_BE
+
+*/

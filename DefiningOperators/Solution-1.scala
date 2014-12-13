@@ -24,3 +24,7 @@ someST.minutes is 0
 val someST2 = new SimpleTime2(10, 30) - new SimpleTime2(9, 45)
 someST2.hours is 0
 someST2.minutes is 45
+
+/* OUTPUT_SHOULD_BE
+
+*/

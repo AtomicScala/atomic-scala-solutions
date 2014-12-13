@@ -11,3 +11,7 @@ their associated Transformers and show that your type class system
 works correctly. {oldDescription}*/
 
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

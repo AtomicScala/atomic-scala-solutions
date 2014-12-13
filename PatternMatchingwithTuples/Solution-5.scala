@@ -15,3 +15,7 @@ blend3(yellow, magenta) is purple
 blend3(red, magenta) is purple
 blend3(purple, white) is purple
 blend3(white, red) is red
+
+/* OUTPUT_SHOULD_BE
+
+*/

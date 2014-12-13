@@ -8,3 +8,7 @@ case class Bicycle(riders:Int) {
 
 val forTwo = Bicycle(2)
 forTwo is "Bicycle built for 2"
+
+/* OUTPUT_SHOULD_BE
+
+*/

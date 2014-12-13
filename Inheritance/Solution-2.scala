@@ -19,3 +19,7 @@ says(new GreatApe) is "says Grrr!"
 says(new Bonobo) is "says Grrr!"
 says(new Chimpanzee) is "says Grrr!"
 says(new BonoboB) is "says Grrr!"
+
+/* OUTPUT_SHOULD_BE
+
+*/

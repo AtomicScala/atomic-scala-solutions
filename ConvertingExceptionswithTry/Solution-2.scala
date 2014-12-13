@@ -15,3 +15,7 @@ f2(0) is Success("OK Bob")
 f2(1) is Success("Reason")
 f2(2) is Success(11)
 f2(3) is Success(1.618)
+
+/* OUTPUT_SHOULD_BE
+
+*/

@@ -12,3 +12,7 @@ that the result is in the expected range of values.
 {oldDescription}*/
 
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

@@ -22,3 +22,7 @@ class Sum(args:Int*) {
     total
   }
 }
+
+/* OUTPUT_SHOULD_BE
+
+*/

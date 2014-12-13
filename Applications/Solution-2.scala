@@ -20,3 +20,7 @@ object Battery1 extends App {
   battery.monitor(30) is "yellow"
   battery.monitor(10) is "red"
 }
+
+/* OUTPUT_SHOULD_BE
+
+*/

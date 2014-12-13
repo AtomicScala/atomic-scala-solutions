@@ -33,3 +33,7 @@ work.serveFood is false
 val simple = new SimpleKitchen
 simple.serveFood is true
 simple.prepFood is true
+
+/* OUTPUT_SHOULD_BE
+
+*/

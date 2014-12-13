@@ -36,3 +36,7 @@ try {
   case e:Exception => println("withoutCatch exception caught")
 }
 // needs solution testing
+
+/* OUTPUT_SHOULD_BE
+
+*/

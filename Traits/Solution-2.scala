@@ -16,3 +16,7 @@ class BatteryPoweredToy extends Toy with BatteryPower
 
 val toy = new BatteryPoweredToy
 toy.monitor(50) is "green"
+
+/* OUTPUT_SHOULD_BE
+
+*/

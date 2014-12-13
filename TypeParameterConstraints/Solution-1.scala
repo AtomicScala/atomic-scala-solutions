@@ -71,3 +71,7 @@ trait House extends Building {
 
 val house = new Object with House
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

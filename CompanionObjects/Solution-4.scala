@@ -40,3 +40,7 @@ WalkActivity4.start("John")
 WalkActivity4.stop("John")
 WalkActivity4.stop("Suzie")
 println(WalkActivity4.log)
+
+/* OUTPUT_SHOULD_BE
+
+*/

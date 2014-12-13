@@ -20,3 +20,7 @@ object MonthName extends Enumeration {
 
 MonthName.February is "February"
 MonthName.February.id is 1
+
+/* OUTPUT_SHOULD_BE
+
+*/

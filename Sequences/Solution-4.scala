@@ -21,3 +21,7 @@ val f3 = new Friend("Sally", "Taylor", "sally@taylor.com")
 val sorted2 = Vector(f1, f2, f3).sortBy(_.email)
 
 sorted2 is "Vector(Mary Add, Sally Taylor, Zach Smith)"
+
+/* OUTPUT_SHOULD_BE
+
+*/

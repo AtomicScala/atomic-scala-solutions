@@ -41,3 +41,7 @@ val groceryCart2 = Set("apple",
 percentMeat(groceryCart2) is 10.0
 percentVegetarian(groceryCart2) is 20.0
 percentProtein(groceryCart2) is 30.0
+
+/* OUTPUT_SHOULD_BE
+
+*/

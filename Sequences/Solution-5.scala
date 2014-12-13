@@ -22,3 +22,7 @@ val friends2 = Vector(
 val s1 = friends2.sortBy(_.first)
 val s2 = s1.sortBy(_.last)
 s2 is "Vector(Mary Add, Mary Smith, Zach Smith, Sally Taylor)"
+
+/* OUTPUT_SHOULD_BE
+
+*/

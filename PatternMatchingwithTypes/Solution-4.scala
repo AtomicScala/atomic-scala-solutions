@@ -16,3 +16,7 @@ quantify(100) is "medium"
 quantify(20.56) is "small"
 quantify(100000) is "large"
 quantify(-15999) is "small"
+
+/* OUTPUT_SHOULD_BE
+
+*/

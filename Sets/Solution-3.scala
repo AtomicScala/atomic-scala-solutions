@@ -15,3 +15,7 @@ Set("toys", "games", "books") is basement.flatten
 
 Set("shoes", "clothes", "toys", "dishes", "games", "books") is
   house.flatten.flatten
+
+/* OUTPUT_SHOULD_BE
+
+*/

@@ -16,3 +16,7 @@ alphanumeric('a') is Some('a')
 alphanumeric('m') is Some('m')
 alphanumeric('$') is None
 alphanumeric('Z') is Some('Z')
+
+/* OUTPUT_SHOULD_BE
+
+*/

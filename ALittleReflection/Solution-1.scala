@@ -15,3 +15,7 @@ val reflectedToy = new ReflectedToy("Bunny", true)
 println(reflectedToy)
 
 assert("Solution" == "Incomplete")
+
+/* OUTPUT_SHOULD_BE
+
+*/

@@ -18,3 +18,7 @@ def t = try {
 }
 
 t is "Throws null pointer exception"
+
+/* OUTPUT_SHOULD_BE
+
+*/

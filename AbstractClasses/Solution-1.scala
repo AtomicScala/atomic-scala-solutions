@@ -28,3 +28,7 @@ val duck = new Duck
 duck.food is "plants"
 val cow = new Cow
 cow.food is "grass"
+
+/* OUTPUT_SHOULD_BE
+
+*/

@@ -13,3 +13,7 @@ val pairs = group1 zip group2
 pairs is Vector(
   ("Sally Smith","Betsy Blanc"),
   ("Dan Jones","Stormy Morgan"))
+
+/* OUTPUT_SHOULD_BE
+
+*/

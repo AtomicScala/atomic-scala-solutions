@@ -17,3 +17,7 @@ a3.**(3) is 8
 val b3 = new FancyNumber3(10)
 b3 ^ 2 is 100
 b3 ** 2 is 100
+
+/* OUTPUT_SHOULD_BE
+
+*/

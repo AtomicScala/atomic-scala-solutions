@@ -26,3 +26,7 @@ new CodeListingTester2(CodeListing.apply)
 }
 */
 // needs solution testing
+
+/* OUTPUT_SHOULD_BE
+
+*/

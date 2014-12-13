@@ -9,3 +9,7 @@ through. Add a precondition to prevent the failure.
 {oldDescription}*/
 
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

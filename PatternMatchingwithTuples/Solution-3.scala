@@ -13,3 +13,7 @@ blend(yellow,blue) is green
 Blend.blend(red, yellow) is orange
 blend(red, red) is red
 blend(yellow,blue) is green
+
+/* OUTPUT_SHOULD_BE
+
+*/

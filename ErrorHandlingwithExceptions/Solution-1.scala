@@ -10,3 +10,7 @@ def solution1 =
   }
 
 solution1 is "solution1"
+
+/* OUTPUT_SHOULD_BE
+
+*/

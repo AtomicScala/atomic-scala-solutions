@@ -8,3 +8,7 @@ house if you tore it down and put a new one in its place. Your house
 is mutable. Write code to demonstrate this idea. {oldDescription}*/
 
 assert("Solution" == "Incomplete")
+
+/* OUTPUT_SHOULD_BE
+
+*/

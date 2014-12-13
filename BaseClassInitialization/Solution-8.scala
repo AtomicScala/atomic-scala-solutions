@@ -18,3 +18,7 @@ case class StudentTeacher extends Teacher
            ^
 */
 // needs solution testing
+
+/* OUTPUT_SHOULD_BE
+
+*/

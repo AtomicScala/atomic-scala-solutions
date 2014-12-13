@@ -7,3 +7,7 @@ Shape_Inheritance.scala in Shape_TypeClass.scala and see what
 happens. Why does this make sense? {oldDescription}*/
 
 // needs solution
+
+/* OUTPUT_SHOULD_BE
+
+*/

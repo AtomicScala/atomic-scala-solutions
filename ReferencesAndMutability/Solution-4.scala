@@ -7,3 +7,7 @@ import com.atomicscala.AtomicTest._
 {oldDescription}*/
 
 assert("Solution" == "Incomplete")
+
+/* OUTPUT_SHOULD_BE
+
+*/

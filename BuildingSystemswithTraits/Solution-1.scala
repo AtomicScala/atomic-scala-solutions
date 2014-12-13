@@ -56,3 +56,7 @@ val usual = new Coffee(Double, Caf, Here, NoMilk, NoFlavor)
 usual is "Coffee(Double,Caf,Here,NoMilk,NoFlavor)"
 val mocha = new Coffee(Double, HalfCaf, ToGo, Skim, Choc)
 mocha is "Coffee(Double,HalfCaf,ToGo,Skim,Choc)"
+
+/* OUTPUT_SHOULD_BE
+
+*/
