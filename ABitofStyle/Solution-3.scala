@@ -10,5 +10,5 @@ val e3 = new Exclaim3("big yes")
 e3.noParens is "big yes!"
 
 /* OUTPUT_SHOULD_BE
-
+big yes!
 */

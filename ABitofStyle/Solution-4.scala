@@ -15,7 +15,9 @@ val e4 = new Exclaim4("counting")
 e4.exclaim() is "counting!"
 e4.exclaim() is "counting!"
 e4.count is 2
-
+ 
 /* OUTPUT_SHOULD_BE
-
+counting!
+counting!
+2
 */

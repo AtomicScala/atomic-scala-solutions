@@ -7,10 +7,11 @@ class Exclaim(val s:String) {
   def noParens = s + "!"
 }
 
-val e = new Exclaim("cool")
-e.noParens is "cool!"
-e.parens() is "cool!"
+val e = new Exclaim("yes")
+e.noParens is "yes!"
+e.parens() is "yes!"
 
 /* OUTPUT_SHOULD_BE
-
+yes!
+yes!
 */

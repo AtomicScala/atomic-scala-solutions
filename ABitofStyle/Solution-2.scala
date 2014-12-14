@@ -12,5 +12,6 @@ e2.noParens is "yes!"
 e2.parens() is "yes!"
 
 /* OUTPUT_SHOULD_BE
-
+yes!
+yes!
 */
