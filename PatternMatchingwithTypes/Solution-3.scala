@@ -22,5 +22,10 @@ convertToSize2(45.6F) is 46
 convertToSize2(Vector(1, 2, 3)) is 0
 
 /* OUTPUT_SHOULD_BE
-
+45
+3
+5
+1
+46
+0
 */

@@ -4,10 +4,13 @@ import com.atomicscala.AtomicTest._
 
 def forecast(temp:Int):String = {
   temp match {
-    case i: Int if i > 80 => "Sunny"
-    case i: Int if i > 50 => "Mostly Sunny"
-    case i: Int if i > 20 => "Partly Sunny"
-    case i: Int if i > 0 => "Mostly Cloudy"
+  	// You could say this:
+    // case i if i > 80 => "Sunny"
+    // Or:
+    case _ if temp > 80 => "Sunny"
+    case _ if temp > 50 => "Mostly Sunny"
+    case _ if temp > 20 => "Partly Sunny"
+    case _ if temp > 0 => "Mostly Cloudy"
     case 0 => "Cloudy"
     case _ => "Unknown"
   }
@@ -25,5 +28,14 @@ forecast(0) is "Cloudy"
 forecast(-1) is "Unknown"
 
 /* OUTPUT_SHOULD_BE
-
+Sunny
+Sunny
+Mostly Sunny
+Mostly Sunny
+Partly Sunny
+Partly Sunny
+Mostly Cloudy
+Mostly Cloudy
+Cloudy
+Unknown
 */
