@@ -6,5 +6,6 @@ def assignResult(arg:Boolean):Int = {
   val result = if(arg) 42 else 47
   result
 }
+
 assignResult(true) is 42
 assignResult(false) is 47

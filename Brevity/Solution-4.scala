@@ -9,21 +9,22 @@ class Coffee(val shots:Int = 2,
              val syrup:String = "") {
   var result = ""
   println(caf(), decaf, milk, toGo, syrup)
-  def getCup() = {
+
+  def getCup() =
     if(toGo)
       result += "ToGoCup "
     else
       result += "HereCup "
-  }
+
   def caf() = shots - decaf
 
-  def pourShots() = {
+  def pourShots() =
     for(s <- 0 until shots)
       if(decaf > 0)
         result += "decaf shot "
       else
         result += "shot "
-  }
+
   def addMilk() =
     if(milk)
       result += "milk "
@@ -46,5 +47,12 @@ tripleHalfCaf.caf() is 1
 tripleHalfCaf.shots is 3
 
 /* OUTPUT_SHOULD_BE
-
+(1,1,false,false,)
+(1,2,false,false,)
+1
+1
+2
+2
+1
+3
 */
