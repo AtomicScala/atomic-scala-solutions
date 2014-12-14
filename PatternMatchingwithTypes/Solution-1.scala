@@ -18,5 +18,7 @@ plus1(67) is 68
 plus1(Person("Joanna")) is "Person(Joanna) + guest"
 
 /* OUTPUT_SHOULD_BE
-
+cars
+68
+Person(Joanna) + guest
 */
