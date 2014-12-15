@@ -4,9 +4,7 @@ import com.atomicscala.AtomicTest._
 import scala.math.pow
 
 class FancyNumber3(val num:Int) {
-  def power(n:Int):Int = {
-    pow(num.toDouble,  n.toDouble).toInt
-  }
+  def power(n:Int):Int = pow(num.toDouble,  n.toDouble).toInt
   def ^(n:Int):Int = power(n)
   def **(n:Int):Int = power(n)
 }
@@ -19,5 +17,8 @@ b3 ^ 2 is 100
 b3 ** 2 is 100
 
 /* OUTPUT_SHOULD_BE
-
+8
+8
+100
+100
 */

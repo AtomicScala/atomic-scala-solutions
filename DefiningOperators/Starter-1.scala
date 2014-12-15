@@ -4,7 +4,7 @@ import com.atomicscala.AtomicTest._
 
 val someT1 = new SimpleTime2(10, 30)
 val someT2 = new SimpleTime2(9, 30)
-val someST = someT1-someT2
+val someST = someT1 - someT2
 someST.hours is 1
 someST.minutes is 0
 
