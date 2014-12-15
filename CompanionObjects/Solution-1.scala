@@ -5,12 +5,11 @@ import com.atomicscala.AtomicTest._
 class WalkActivity
 
 object WalkActivity {
-  def start(athlete:String)  { println("started!") }
+  def start(athlete:String) = println(s"$athlete started!")
 }
 
 WalkActivity.start("Johnny")
-// needs solution testing
 
 /* OUTPUT_SHOULD_BE
-
+Johnny started!
 */

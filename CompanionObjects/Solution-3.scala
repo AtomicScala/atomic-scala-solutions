@@ -10,17 +10,15 @@ class WalkActivity3 {
 object WalkActivity3 {
   var log = new String
   val MET = 2.3
-  def start(athlete:String) {
-    log += ("[" + athlete + "] Activity started,")
-  }
-  def stop(athlete:String) {
-    log += ("[" + athlete + "] Activity stopped,")
-  }
+  def start(athlete:String) =
+    log += "[" + athlete + "] Activity started,"
+  def stop(athlete:String) =
+    log += "[" + athlete + "] Activity stopped,"
 }
 
 val sally = new WalkActivity3
 sally.calories(150, 30) is 82
 
 /* OUTPUT_SHOULD_BE
-
+82
 */

@@ -10,22 +10,19 @@ class WalkActivity4 {
 object WalkActivity4 {
   var log = new String
   def MET(mph:Double) = mph match {
-    case x:Double if(x < 1.7) => 2.3
-    case x:Double if(x < 2.5) => 2.9
-    case x:Double if(x < 3) => 3.3
-    case x:Double if(x >= 3) => 3.3
+    case x if(x < 1.7) => 2.3
+    case x if(x < 2.5) => 2.9
+    case x if(x < 3) => 3.3
+    case x if(x >= 3) => 3.3
     case _ => 2.3
   }
   val MET = 2.3
-  def start(athlete:String)  {
-    log += ("[" + athlete + "] Activity started,")
-  }
-  def stop(athlete:String) {
-    log +=("[" + athlete + "] Activity stopped,")
-  }
+  def start(athlete:String) =
+    log += "[" + athlete + "] Activity started,"
+  def stop(athlete:String) =
+    log += "[" + athlete + "] Activity stopped,"
 }
 
-// test the MET method
 WalkActivity4.MET(1.0) is 2.3
 WalkActivity4.MET(2.7) is 3.3
 
@@ -39,8 +36,12 @@ WalkActivity4.start("Suzie")
 WalkActivity4.start("John")
 WalkActivity4.stop("John")
 WalkActivity4.stop("Suzie")
-println(WalkActivity4.log)
+WalkActivity4.log is "[Suzie] Activity started,[John] Activity started,[John] Activity stopped,[Suzie] Activity stopped,"
 
 /* OUTPUT_SHOULD_BE
-
+2.3
+3.3
+117
+82
+[Suzie] Activity started,[John] Activity started,[John] Activity stopped,[Suzie] Activity stopped,
 */

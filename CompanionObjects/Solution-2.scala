@@ -7,20 +7,17 @@ class WalkActivity2
 object WalkActivity2 {
   //val log = new StringBuilder (another solution!)
   var log = new String
-  def start(athlete:String) {
-    log += ("[" + athlete + "] Activity started.")
-  }
-  def stop(athlete:String) {
-    log += ("[" + athlete + "] Activity stopped.")
-  }
+  def start(athlete:String) =
+    log += "[" + athlete + "] Activity started."
+  def stop(athlete:String) =
+    log += "[" + athlete + "] Activity stopped."
 }
 
 WalkActivity2.start("Jane")
 WalkActivity2.stop("Jane")
 WalkActivity2.start("John")
-println(WalkActivity2.log)
-// needs solution testing
+WalkActivity2.log is "[Jane] Activity started.[Jane] Activity stopped.[John] Activity started."
 
 /* OUTPUT_SHOULD_BE
-
+[Jane] Activity started.[Jane] Activity stopped.[John] Activity started.
 */
