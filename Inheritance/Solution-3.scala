@@ -16,5 +16,7 @@ b.ride is "Riding"
 b.wheels is 2
 
 /* OUTPUT_SHOULD_BE
-
+Riding
+Riding
+2
 */

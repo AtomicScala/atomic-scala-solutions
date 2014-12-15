@@ -3,7 +3,6 @@
 import com.atomicscala.AtomicTest._
 
 class GreatApe {
-  // Not practical, just demonstration:
   val weight = 100.0
   val age = 12
   def vocalize = "Grrr!"
@@ -21,5 +20,8 @@ says(new Chimpanzee) is "says Grrr!"
 says(new BonoboB) is "says Grrr!"
 
 /* OUTPUT_SHOULD_BE
-
+says Grrr!
+says Grrr!
+says Grrr!
+says Grrr!
 */

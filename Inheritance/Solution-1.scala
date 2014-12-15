@@ -11,11 +11,6 @@ class GreatApe {
 
 class Bonobo extends GreatApe
 class Chimpanzee extends GreatApe
-class BonoboB extends Bonobo
-
-def display(ape:GreatApe) =
-  "weight: " + ape.weight +
-  " age: " + ape.age
 
 val ape1 = new GreatApe
 ape1.vocalize is "Grrr!"
@@ -25,5 +20,7 @@ val ape3 = new Chimpanzee
 ape3.vocalize is "Grrr!"
 
 /* OUTPUT_SHOULD_BE
-
+Grrr!
+Grrr!
+Grrr!
 */
