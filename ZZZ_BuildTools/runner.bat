@@ -318,7 +318,7 @@ def showUnusedFiles():
 def remove_results():
     "If in a subdirectory, leaves everything else alone"
     dirname = os.path.basename(os.getcwd())
-    if dirname != ROOT_DIR:
+    if dirname != os.path.basename(ROOT_DIR):
         if os.path.exists(SUCCEEDED):
             print "clearing " + dirname + " from success results"
             SuccessfullyRun().clear_directory(dirname)
