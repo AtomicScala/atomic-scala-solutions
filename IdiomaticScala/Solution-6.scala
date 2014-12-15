@@ -26,5 +26,7 @@ val hamster = new Hamster
 hamster.exercise is "squeak! Running on wheel"
 
 /* OUTPUT_SHOULD_BE
-
+yip!
+mew!
+squeak! Running on wheel
 */

@@ -27,7 +27,7 @@ for(i <- Range(0, 20, 2)) {
 }
 println("Sum is " + sum)
 
-/* Output:
+/* OUTPUT_SHOULD_BE
 0 1 2 3 4 5 6 7 8 9
 0 1 2 3 4 5 6 7 8 9
 0 1 2 3 4 5 6 7 8 9
@@ -42,8 +42,5 @@ adding 12 to 30
 adding 14 to 42
 adding 16 to 56
 adding 18 to 72
-Sum is 90 */
-
-/* OUTPUT_SHOULD_BE
-
+Sum is 90
 */

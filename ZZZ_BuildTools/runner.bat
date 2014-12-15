@@ -240,24 +240,12 @@ def runfile(fname):
             verify(True)
         if "error" in should_contain:
             testAgainstFile(errorFile)
-            # results = file(errorFile).read()
-            # for line in should_contain.splitlines():
-            #     if not line in results:
-            #         verify(False)
-            # verify(True)
         else:
             testAgainstFile(outputFile)
-            # results = file(outputFile).read()
-            # for line in should_contain.splitlines():
-            #     trace("testing line " + line)
-            #     trace(line in results)
-            #     if not line in results:
-            #         verify(False)
-            # verify(True)
 
     else: # No "SHOULD"
+        debug("missing a SHOULD")
         verify(False) # Require a SHOULD
-        #verify(len(file(errorFile).read()) == 0)
 
     # If file ran successfully, remove artifacts:
     if os.path.exists(outputFile):

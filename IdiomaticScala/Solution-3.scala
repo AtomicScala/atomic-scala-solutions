@@ -7,26 +7,18 @@ import com.atomicscala.AtomicTest._
 val activity = "swimming"
 val hour = 10
 
-val isOpen = {
-  if(activity == "swimming" ||
-     activity == "ice skating") {
+val isOpen =
+  if(activity == "swimming" || activity == "ice skating") {
     val opens = 9
     val closes = 20
-    println("Operating hours: " +
-      opens + " - " + closes)
+    println("Operating hours: " + opens + " - " + closes)
     if(hour >= opens && hour <= closes) true
-    else false
-
-  }
-  else true
-
-}
+    else
+      false
+  } else
+    true
 
 println(isOpen)
-/* Output:
-Operating hours: 9 - 20
-true
-*/
 
 // OR ...
 
@@ -34,14 +26,16 @@ def isOpen(activity:String, hour:Int) = activity match {
   case "swimming" | "ice skating" =>
     val opens = 9
     val closes = 20
-    println("Operating hours: " +
-        opens + " - " + closes)
+    println("Operating hours: " + opens + " - " + closes)
     (hour >= opens && hour <= closes)
   case _ => true
 }
 
-// needs solution testing
+println(isOpen("swimming", 10))
 
 /* OUTPUT_SHOULD_BE
-
+Operating hours: 9 - 20
+true
+Operating hours: 9 - 20
+true
 */
