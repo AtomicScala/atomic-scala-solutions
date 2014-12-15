@@ -4,13 +4,19 @@ import com.atomicscala.AtomicTest._
 
 def weather(temperature:Int, humidity:Int) = {
   if(humidity > 40) {
-     if(temperature > 80) ("Hot", "Humid")
-     else if(temperature < 50) ("Cold", "Damp")
-     else ("Temperate", "Humid")
+    if(temperature > 80)
+      ("Hot", "Humid")
+    else if(temperature < 50)
+      ("Cold", "Damp")
+    else
+      ("Temperate", "Humid")
   } else {
-     if(temperature > 80) ("Hot", "Pleasant")
-     else if(temperature < 50) ("Cold", "Pleasant")
-     else ("Temperate", "Pleasant")
+    if(temperature > 80)
+      ("Hot", "Pleasant")
+    else if(temperature < 50)
+      ("Cold", "Pleasant")
+    else
+      ("Temperate", "Pleasant")
   }
 }
 
@@ -20,5 +26,8 @@ weather(27, 55) is ("Cold", "Damp")
 weather(27, 30) is ("Cold", "Pleasant")
 
 /* OUTPUT_SHOULD_BE
-
+(Hot,Humid)
+(Temperate,Humid)
+(Cold,Damp)
+(Cold,Pleasant)
 */

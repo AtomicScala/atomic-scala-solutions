@@ -24,5 +24,13 @@ ski3 is "Blue"
 view3 is "Night"
 
 /* OUTPUT_SHOULD_BE
-
+65
+Sunny
+Stars
+78
+Cloudy
+Satellites
+51
+Blue
+Night
 */
