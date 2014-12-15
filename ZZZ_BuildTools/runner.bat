@@ -87,6 +87,9 @@ def visitDir(d):
 # Might generalize runner by putting this in an external import
 compileFiles = [
     # (Directory, [(file, artifact), (file, artifact), ...])
+    (".", [
+        ("AtomicTest.scala", "com/atomicscala/AtomicTest.class"),
+    ]),
     ("ALittleReflection", [
         ("Name.scala", "com/atomicscala/Name.class"),
         ("Name2.scala", "com/atomicscala/Name2.class"),

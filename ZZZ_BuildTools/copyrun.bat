@@ -5,6 +5,9 @@ from contextlib import contextmanager
 
 run_bat = """\
 @echo off
+if not defined CLASSPATH (
+    set CLASSPATH={}.;..;
+)
 {} %*
 if ERRORLEVEL 1 (
     echo.
@@ -26,7 +29,7 @@ with visitDir('..'):
     for dirname in solutionDirs:
         with visitDir(dirname):
             with file("run.bat", 'w') as f:
-                f.write(run_bat.format(r"..\ZZZ_BuildTools\runner.bat"))
+                f.write(run_bat.format(r"%~dp0..\;", r"..\ZZZ_BuildTools\runner.bat"))
     # Root directory has a different path:
     with file("run.bat", 'w') as f:
-        f.write(run_bat.format(r"ZZZ_BuildTools\runner.bat"))
+        f.write(run_bat.format(r"%~dp0;", r"ZZZ_BuildTools\runner.bat"))

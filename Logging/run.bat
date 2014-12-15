@@ -1,4 +1,7 @@
 @echo off
+if not defined CLASSPATH (
+    set CLASSPATH=%~dp0..\;.;..;
+)
 ..\ZZZ_BuildTools\runner.bat %*
 if ERRORLEVEL 1 (
     echo.
