@@ -19,5 +19,7 @@ val cn = Cycle(5)
 cn is "Cycle with 5 wheels"
 
 /* OUTPUT_SHOULD_BE
-
+Unicycle
+Bicycle
+Cycle with 5 wheels
 */

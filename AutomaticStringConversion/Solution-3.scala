@@ -19,8 +19,11 @@ bike is "Bicycle"
 val quad = Cycle2(4)
 quad is "Cycle with 4 wheels"
 
-val cNegative = Cycle2(-2) is "That's not a cycle!"
+Cycle2(-2) is "That's not a cycle!"
 
 /* OUTPUT_SHOULD_BE
-
+Unicycle
+Bicycle
+Cycle with 4 wheels
+That's not a cycle!
 */
