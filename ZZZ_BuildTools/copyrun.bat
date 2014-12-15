@@ -5,6 +5,7 @@ from contextlib import contextmanager
 
 run_bat = """\
 @echo off
+setlocal enabledelayedexpansion
 if not defined CLASSPATH (
     set CLASSPATH={}.;..;
 )

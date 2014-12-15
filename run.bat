@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 if not defined CLASSPATH (
     set CLASSPATH=%~dp0;.;..;
 )
