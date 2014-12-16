@@ -11,11 +11,11 @@ val cities = Vector("Boston",
   "Albany","Buffalo","Cleveland",
   "Columbus","Indianapolis",
   "St. Louis", "Kansas City",
-  "Denver","Grand Junction",
-  "Salt Lake City","Las Vegas",
-  "Bakersfield","San Francisco")
+  "Denver", "Grand Junction",
+  "Salt Lake City", "Las Vegas",
+  "Bakersfield", "San Francisco")
 val c = new CarTrip(cities,
-  "6/1/2012","7/1/2012")
+  "6/1/2012", "7/1/2012")
 c.origination is "Boston"
 c.destination is "San Francisco"
 c.startDate is "6/1/2012"

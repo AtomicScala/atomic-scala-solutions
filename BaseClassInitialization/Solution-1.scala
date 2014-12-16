@@ -32,5 +32,9 @@ display(new BonoboC(150, 18, "Female")) is
 "weight: 150.0 age: 18 gender: Female"
 
 /* OUTPUT_SHOULD_BE
-
+weight: 100.0 age: 12 gender: Male
+weight: 100.0 age: 12 gender: Female
+weight: 100.0 age: 12 gender: Male
+weight: 100.0 age: 12 gender: Male
+weight: 150.0 age: 18 gender: Female
 */

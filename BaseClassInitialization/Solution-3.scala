@@ -21,5 +21,6 @@ h.toString is "Where the heart is"
 h.heart is true
 
 /* OUTPUT_SHOULD_BE
-
+Where the heart is
+true
 */
