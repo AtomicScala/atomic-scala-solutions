@@ -1,5 +1,5 @@
 @echo off
-start "atomic scala solutions" run.bat
+start /I "atomic scala solutions" run.bat
 if ERRORLEVEL 1 (
     echo.
     echo =================================================
