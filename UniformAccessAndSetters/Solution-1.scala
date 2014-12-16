@@ -28,5 +28,6 @@ d.d3 = 42 // Calls setter (line 21)
 d.d3 is 42
 
 /* OUTPUT_SHOULD_BE
-
+1
+42
 */

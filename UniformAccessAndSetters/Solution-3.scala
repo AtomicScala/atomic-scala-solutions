@@ -14,5 +14,6 @@ fun.x = "make it so"
 fun.x is "make it so"
 
 /* OUTPUT_SHOULD_BE
-
+all the fun happens here
+make it so
 */
