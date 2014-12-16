@@ -6,9 +6,8 @@ from contextlib import contextmanager
 run_bat = """\
 @echo off
 setlocal enabledelayedexpansion
-if not defined CLASSPATH (
-    set CLASSPATH={}.;..;
-)
+set CLASSPATH={}.;..;..\libs\commons-math3-3.3.jar;
+echo CLASSPATH is [!CLASSPATH!]
 {} %*
 if ERRORLEVEL 1 (
     echo.

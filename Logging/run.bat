@@ -1,8 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
-if not defined CLASSPATH (
-    set CLASSPATH=%~dp0..\;.;..;
-)
+set CLASSPATH=%~dp0..\;.;..;..\libs\commons-math3-3.3.jar;
+echo CLASSPATH is [!CLASSPATH!]
 ..\ZZZ_BuildTools\runner.bat %*
 if ERRORLEVEL 1 (
     echo.

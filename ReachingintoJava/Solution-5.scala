@@ -1,7 +1,7 @@
 // Solution-5.scala
 // Solution to Exercise 5 in "Reaching into Java"
 import com.atomicscala.AtomicTest._
-import org.apache.commons.math._
+import org.apache.commons.math3._
 import stat.descriptive._
 
 val s = new SummaryStatistics
@@ -17,5 +17,6 @@ s.getMean is 55
 s.getStandardDeviation is 39.370039370059054
 
 /* OUTPUT_SHOULD_BE
-
+55.0
+39.370039370059054
 */
