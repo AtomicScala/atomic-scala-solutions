@@ -1,5 +1,7 @@
 // Solution-2.scala
 // Solution to Exercise 2 in "Applications"
+// Compile, then run with
+// > scala Battery1
 import com.atomicscala.AtomicTest._
 
 trait EnergySource

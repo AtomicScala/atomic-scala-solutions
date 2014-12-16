@@ -1,5 +1,7 @@
 // Solution-1.scala
 // Solution to Exercise 1 in "Applications"
+// Compile, then run with
+// > scala WhenAmI
 import com.atomicscala.AtomicTest._
 
 object WhenAmI extends App {
