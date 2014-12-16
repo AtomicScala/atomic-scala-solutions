@@ -30,5 +30,6 @@ val cow = new Cow
 cow.food is "grass"
 
 /* OUTPUT_SHOULD_BE
-
+plants
+grass
 */

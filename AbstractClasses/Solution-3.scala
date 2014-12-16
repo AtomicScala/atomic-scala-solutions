@@ -14,5 +14,5 @@ val num = new NumericAdder(5)
 num.add(10) is 15
 
 /* OUTPUT_SHOULD_BE
-
+15
 */

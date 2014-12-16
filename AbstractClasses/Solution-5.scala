@@ -5,25 +5,23 @@ import com.atomicscala.AtomicTest._
 abstract class Animal {
   def templateMethod =
     "The " + animal + " goes " + sound
-  // Abstract methods (no function body):
   def animal:String
   def sound:String
   def food:String
 }
 
 class PrehistoricAnimal extends Animal {
-  def food:String = "insects"
-  def sound:String = "roar"
-  // If you remove the following line, this will fail
-  // Needs a definition
   def animal:String = "Dinosaur"
-  def animal(name:String):String = name
+  def sound:String = "roar"
+  def food:String = "other dinosaurs"
+  def namedAnimal(name:String):String = animal + ": " + name
 }
 
 val dino = new PrehistoricAnimal
-dino.animal("T-Rex") is "T-Rex"
-dino.animal is "Dinosaur"
+dino.namedAnimal("T-Rex") is "Dinosaur: T-Rex"
+dino.templateMethod is "The Dinosaur goes roar"
 
 /* OUTPUT_SHOULD_BE
-
+Dinosaur: T-Rex
+The Dinosaur goes roar
 */
