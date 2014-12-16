@@ -208,11 +208,19 @@ def runfile(fname):
     else:
         flag = ""
 
-    cmd = "scala " + flag + fname + " > " + outputFile + " 2> " + errorFile
-    trace("    " + cmd)
-    os.system(cmd)
+    cmd = "scala " + flag + fname 
 
     contents = file(fname).read()
+
+    if "// >" in contents: # Could use re here
+        for  line in contents.splitlines():
+            if "// >" in line:
+                cmd = line.split("// >")[1]
+
+    cmd += " > " + outputFile + " 2> " + errorFile
+    debug("    " + cmd)
+    os.system(cmd)
+
     OUTPUT_SHOULD_BE = re.search(r"OUTPUT_SHOULD_BE(.*)\*/", contents, re.DOTALL)
     OUTPUT_SHOULD_CONTAIN = re.search(r"OUTPUT_SHOULD_CONTAIN(.*)\*/", contents, re.DOTALL)
 

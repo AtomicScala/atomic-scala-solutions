@@ -23,5 +23,7 @@ object Battery2 extends App {
 }
 
 /* OUTPUT_SHOULD_BE
-Not yet testing properly
+red
+yellow
+green
 */

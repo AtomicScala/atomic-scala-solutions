@@ -10,6 +10,6 @@ object WhenAmI extends App {
   def hi = println("Hello! It's:")
 }
 
-/* OUTPUT_SHOULD_BE
-Not yet testing properly
+/* OUTPUT_SHOULD_CONTAIN
+Hello! It's:
 */
