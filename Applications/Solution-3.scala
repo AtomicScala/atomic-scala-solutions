@@ -22,8 +22,6 @@ object Battery2 extends App {
     println(battery.monitor(arg.toInt))
 }
 
-// needs solution testing
-
 /* OUTPUT_SHOULD_BE
-
+Not yet testing properly
 */

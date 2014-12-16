@@ -24,5 +24,5 @@ object Battery1 extends App {
 }
 
 /* OUTPUT_SHOULD_BE
-
+Not yet testing properly
 */
