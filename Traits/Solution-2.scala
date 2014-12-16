@@ -3,10 +3,10 @@
 import com.atomicscala.AtomicTest._
 
 trait BatteryPower {
-  def monitor(charge:Int):String = {
-    if(charge < 20) "red"
-    else if(charge < 40) "yellow"
-    else "green"
+  def monitor(level:Int) = level match {
+    case i if(i < 20) => "red"
+    case i if(i <= 39) => "yellow"
+    case _ => "green"
   }
 }
 
@@ -18,5 +18,5 @@ val toy = new BatteryPoweredToy
 toy.monitor(50) is "green"
 
 /* OUTPUT_SHOULD_BE
-
+green
 */

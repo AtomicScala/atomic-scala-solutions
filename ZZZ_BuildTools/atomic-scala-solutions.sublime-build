@@ -1,0 +1,9 @@
+{
+  "cmd": ["C:\\Program Files (x86)\\scala\\bin\\scala.bat", "$file"],
+  "variants": [
+      {
+        "name": "Run",
+        "cmd": ["run.bat", "-f", "$file"]
+      }
+  ]
+}

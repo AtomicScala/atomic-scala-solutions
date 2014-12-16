@@ -19,23 +19,26 @@ battery.monitor(80) is "green"
 battery.monitor(30) is "yellow"
 battery.monitor(10) is "red"
 
- /* or, fancier solution
+ // With pattern matching:
 
-trait BatteryPower {
+trait BatteryPower2 {
   def monitor(level:Int) = level match {
-    case i: Int if(i < 20) => "red"
-    case i: Int if(i <= 39) => "yellow"
+    case i if(i < 20) => "red"
+    case i if(i <= 39) => "yellow"
     case _ => "green"
   }
 }
 
-val batteryPower = new EnergySource with BatteryPower
-batteryPower.monitor(80) is "green"
-batteryPower.monitor(30) is "yellow"
-batteryPower.monitor(10) is "red"
-
-*/
+val battery2 = new EnergySource with BatteryPower2
+battery2.monitor(80) is "green"
+battery2.monitor(30) is "yellow"
+battery2.monitor(10) is "red"
 
 /* OUTPUT_SHOULD_BE
-
+green
+yellow
+red
+green
+yellow
+red
 */
