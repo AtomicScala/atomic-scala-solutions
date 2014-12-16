@@ -6,11 +6,12 @@ object Move extends Enumeration {
   type Move = Value
   val Unset, X, O = Value
 }
+import Move._
 
 class Cell {
-  var entry = Move.Unset
-  def set(e:Move.Value) = {
-    if(entry==Move.Unset && (e==Move.X || e==Move.O)) {
+  var entry = Unset
+  def set(e:Move) = {
+    if(entry == Unset && (e == X || e == O)) {
       entry = e
       "successful move"
     } else
@@ -24,7 +25,7 @@ class Grid {
     Vector(new Cell, new Cell, new Cell),
     Vector(new Cell, new Cell, new Cell)
   )
-  def play(e:Move.Value, x:Int, y:Int) = {
+  def play(e:Move, x:Int, y:Int) = {
     val status = {
       if(x < 0 || x > 2 || y < 0 || y > 2)
         "invalid move"
@@ -52,5 +53,24 @@ grid.play(Move.O, 0, 0) is "successful move"
 grid.play(Move.X, 2, 2) is "successful move"
 
 /* OUTPUT_SHOULD_BE
-
+Unset Unset Unset
+Unset X Unset
+Unset Unset Unset
+successful move
+Unset Unset Unset
+Unset X Unset
+Unset Unset Unset
+invalid move
+Unset Unset Unset
+Unset X Unset
+Unset Unset Unset
+invalid move
+O Unset Unset
+Unset X Unset
+Unset Unset Unset
+successful move
+O Unset Unset
+Unset X Unset
+Unset Unset X
+successful move
 */

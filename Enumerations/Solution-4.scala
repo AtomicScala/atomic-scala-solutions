@@ -33,5 +33,8 @@ season(August) is "Summer"
 season(November) is "Autumn"
 
 /* OUTPUT_SHOULD_BE
-
+Winter
+Spring
+Summer
+Autumn
 */

@@ -27,5 +27,11 @@ checkLevel(Pooling) is "Warning!"
 checkLevel(Dry) is "Alert"
 
 /* OUTPUT_SHOULD_BE
-
+Draining
+5
+Level Low OK
+Alert
+Level Draining OK
+Warning!
+Alert
 */

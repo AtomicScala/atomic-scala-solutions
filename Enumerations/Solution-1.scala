@@ -22,5 +22,6 @@ MonthName.February is "February"
 MonthName.February.id is 1
 
 /* OUTPUT_SHOULD_BE
-
+February
+1
 */

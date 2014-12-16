@@ -4,8 +4,8 @@ import com.atomicscala.AtomicTest._
 
 object MonthName extends Enumeration {
   type MonthName = Value
-  val January,
-      February,
+  val January = Value(1)
+  val February,
       March,
       April,
       May,
@@ -20,13 +20,12 @@ object MonthName extends Enumeration {
 
 import MonthName._
 
-def monthNumber(name:MonthName) = {
-  name.id
-}
-July is "July"
+def monthNumber(name:MonthName) = name.id
 
-monthNumber(July) is 6
+July is "July"
+monthNumber(July) is 7
 
 /* OUTPUT_SHOULD_BE
-
+July
+7
 */

@@ -24,5 +24,8 @@ MonthName2.December.id is 12
 MonthName2.July.id is 7
 
 /* OUTPUT_SHOULD_BE
-
+February
+2
+12
+7
 */
