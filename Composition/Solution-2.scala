@@ -35,5 +35,10 @@ simple.serveFood is true
 simple.prepFood is true
 
 /* OUTPUT_SHOULD_BE
-
+true
+false
+true
+false
+true
+true
 */

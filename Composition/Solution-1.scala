@@ -19,5 +19,6 @@ val prep = new PrepKitchen
 prep.prepFood is true
 
 /* OUTPUT_SHOULD_BE
-
+true
+true
 */
