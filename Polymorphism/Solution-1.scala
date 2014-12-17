@@ -3,31 +3,23 @@
 import com.atomicscala.AtomicTest._
 
 trait Mobile {
-  def moves = "Locomotion!"
+  def moves = "Movement"
 }
 
-class Animal {
-  def breathes = true
-  def descriptor = "Beast"
-}
-class Vehicle {
-  def hasDriver = true
-  def descriptor = "Machine"
+class Animal extends Mobile {
+  override def moves = "Biological " + super.moves
 }
 
-class MovingAnimal extends Animal with Mobile
-class MovingVehicle extends Vehicle with Mobile
+class Vehicle  extends Mobile {
+  override def moves = "Mechanical " + super.moves
+}
 
-val dog = new MovingAnimal
-dog.moves is "Locomotion!"
+def movable(mobile:Mobile) = mobile.moves
 
-val car = new MovingVehicle
-car.moves is "Locomotion!"
-
-// try somethat that doesn't use the Mobile trait
-// val blob = new Animal
-// blob.moves is "Locomotion!"
+movable(new Animal) is "Biological Movement"
+movable(new Vehicle) is "Mechanical Movement"
 
 /* OUTPUT_SHOULD_BE
-
+Biological Movement
+Mechanical Movement
 */

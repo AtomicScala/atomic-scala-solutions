@@ -25,7 +25,7 @@ if not os.path.exists(SUBLIME):
     SUBLIME = r'C:\Program Files\Sublime Text 3\sublime_text.exe'
 
 parser = argparse.ArgumentParser(description='With no arguments, runs all the scala scripts and capture any errors')
-parser.add_argument("-f", "--file", nargs='+', action='store', help="Run only on the designated files")
+parser.add_argument("-f", "--file", nargs='+', action='store', help="Run only on the designated files, force run even if it has passed")
 parser.add_argument("-p", "--prerequisites", action='store_true', help="Compile prerequisites")
 parser.add_argument("-c", "--clean", action='store_true', help="Remove 'run' artifacts")
 parser.add_argument("-r", "--remove_results", action='store_true', help="Remove Succeeded.txt")
@@ -75,6 +75,7 @@ if args.debug:
 else:
     def debug(arg): pass
 
+# def debug(arg): print(arg)
 
 @contextmanager
 def visitDir(d):
@@ -116,6 +117,9 @@ compileFiles = [
     ("Summary2", [
         ("BasicMethods.scala", "com/atomicscala/BasicLibrary/WhizBang.class"),
         ("ClassBodies.scala", "com/atomicscala/Bodies/NoBody.class"),
+    ]),
+    ("Polymorphism", [
+        ("Name.scala", "com/atomicscala/Name.class"),
     ]),
 ]
 
@@ -186,7 +190,8 @@ class SuccessfullyRun(object):
 
 def runfile(fname):
     dirname = os.path.basename(os.getcwd())
-    if SuccessfullyRun().contains(dirname, fname): return
+    # Force run when using -f flag:
+    if SuccessfullyRun().contains(dirname, fname) and not args.file: return
 
     def verify(test):
         if test:
@@ -196,7 +201,7 @@ def runfile(fname):
             print("   " + fname + ": " + colorama.Back.RED + "Failed" + colorama.Style.RESET_ALL)
             if args.sublime:
                 subprocess.call([SUBLIME, fname])
-            sys.exit(1)
+            sys.exit(0) # Nonzero exit code causes noise in sublime build output
 
     base = fname.rsplit('.')[0]
     outputFile = base + ".out"
@@ -208,7 +213,7 @@ def runfile(fname):
     else:
         flag = ""
 
-    cmd = "scala " + flag + fname 
+    cmd = "scala " + flag + fname
 
     contents = file(fname).read()
 
@@ -220,6 +225,10 @@ def runfile(fname):
     cmd += " > " + outputFile + " 2> " + errorFile
     debug("    " + cmd)
     os.system(cmd)
+
+    if os.path.exists(errorFile) and os.stat(errorFile).st_size:
+        print(file(errorFile).read())
+        verify(False)
 
     OUTPUT_SHOULD_BE = re.search(r"OUTPUT_SHOULD_BE(.*)\*/", contents, re.DOTALL)
     OUTPUT_SHOULD_CONTAIN = re.search(r"OUTPUT_SHOULD_CONTAIN(.*)\*/", contents, re.DOTALL)

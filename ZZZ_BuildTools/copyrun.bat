@@ -7,7 +7,7 @@ run_bat = """\
 @echo off
 setlocal enabledelayedexpansion
 set CLASSPATH={}.;..;..\libs\commons-math3-3.3.jar;
-echo CLASSPATH is [!CLASSPATH!]
+:: echo CLASSPATH is [!CLASSPATH!]
 {} %*
 if ERRORLEVEL 1 (
     echo.
