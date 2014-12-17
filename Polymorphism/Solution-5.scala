@@ -1,5 +1,5 @@
 // Solution-5.scala
-// Solution to Exercise 5 in "Polymorphism"
+// Solution to Exercise 5 in "Polymorphism" (2nd edition)
 import com.atomicscala.AtomicTest._
 
 class Seed
@@ -23,3 +23,7 @@ class Garden(seeds:Seed*) {
 
 val garden = new Garden(new Tomato, new Corn, new Zucchini)
 garden is "Tomato, Corn, Zucchini"
+
+/* OUTPUT_SHOULD_BE
+Tomato, Corn, Zucchini
+*/

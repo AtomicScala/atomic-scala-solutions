@@ -36,5 +36,6 @@ d3.player is "Puff"
 d3.id is "NoMagicNoFlyingDragon"
 
 /* OUTPUT_SHOULD_BE
-
+Puff
+NoMagicNoFlyingDragon
 */

@@ -1,5 +1,5 @@
 // Solution-6.scala
-// Solution to Exercise 6 in "Polymorphism"
+// Solution to Exercise 6 in "Polymorphism" (2nd edition)
 import com.atomicscala.AtomicTest._
 
 trait Shape {
@@ -28,6 +28,15 @@ class Drawing(shapes:Shape*) {
   override def toString = draw.mkString(", ")
 }
 
-val drawing = new Drawing(new Rectangle, new Square, new Ellipse, new Circle)
-drawing.draw is "Vector(Rectangle, Square, Ellipse, Circle)"
-drawing is "Rectangle, Square, Ellipse, Circle"
+val drawing = new Drawing(
+  new Rectangle, new Square,
+  new Ellipse, new Circle)
+drawing.draw is "Vector(Rectangle," +
+  " Square, Ellipse, Circle)"
+drawing is "Rectangle, Square," +
+  " Ellipse, Circle"
+
+/* OUTPUT_SHOULD_BE
+Vector(Rectangle, Square, Ellipse, Circle)
+Rectangle, Square, Ellipse, Circle
+*/
