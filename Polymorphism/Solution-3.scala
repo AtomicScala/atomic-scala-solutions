@@ -1,7 +1,6 @@
 // Solution-3.scala
 // Solution to Exercise 3 in "Polymorphism"
 import com.atomicscala.AtomicTest._
-
 import com.atomicscala.Name
 
 class Element extends Name {

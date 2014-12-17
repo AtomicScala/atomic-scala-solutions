@@ -2,21 +2,13 @@
 // Solution to Exercise 4 in "Polymorphism"
 import com.atomicscala.AtomicTest._
 
-class Element2 {
+class Element {
   val id = getClass.getSimpleName.split('$').last
-  def interact(other:Element2) = id + " interact " + other.id
+  def interact(other:Element) = id + " interact " + other.id
 }
 
 trait Skill {
   val id:String
-}
-
-trait Fighting extends Skill {
-  def fight = "Fight!"
-}
-
-trait Digging extends Skill {
-  def dig = "Dig!"
 }
 
 trait Magic extends Skill {
@@ -27,19 +19,12 @@ trait Flight extends Skill {
   def fly = "Fly!"
 }
 
-class Character(var player:String = "None") extends Element2
+class Character(val player:String = "None") extends Element
+class Dragon(val dragonPlayer:String) extends Character(dragonPlayer) with Magic with Flight
 
-class Dragon extends Character with Magic with Flight
-
-val d = new Dragon
-d.player = "Puff"
-
-class Character2(val player:String = "None") extends Element2
-class Dragon2 extends Character2("Puff")
-
-val d2 = new Dragon2
-d2.player is "Puff"
+val d = new Dragon("Puff")
+d.player is "Puff"
 
 /* OUTPUT_SHOULD_BE
-
+Puff
 */

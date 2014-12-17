@@ -2,47 +2,32 @@
 // Solution to Exercise 6 in "Polymorphism"
 import com.atomicscala.AtomicTest._
 
-class Element2 {
-  val id = getClass.getSimpleName.split('$').last
-  def interact(other:Element2) = id + " interact " + other.id
+trait Shape {
+  def draw:String
 }
 
-trait Skill {
-  val id:String
+class Rectangle extends Shape {
+  override def draw = "Rectangle"
 }
 
-trait Fighting extends Skill {
-  def fight = "Fight!"
+class Square extends Rectangle {
+  override def draw = "Square"
 }
 
-trait Digging extends Skill {
-  def dig = "Dig!"
+class Ellipse extends Shape {
+  override def draw = "Ellipse"
 }
 
-trait Magic extends Skill {
-   def castSpell = "Spell!"
+class Circle extends Ellipse {
+  override def draw = "Circle"
 }
 
-trait Flight extends Skill {
-  def fly = "Fly!"
+class Drawing(shapes:Shape*) {
+  val parts = shapes.toVector
+  def draw = for { shape <- parts } yield shape.draw
+  override def toString = draw.mkString(", ")
 }
 
-class Character(var player:String = "None") extends Element2
-
-class Dragon extends Character with Magic with Flight
-
-val d = new Dragon
-d.player = "Puff"
-
-class NoMagicNoFlyingDragon extends Character("Puff")
-
-val d3 = new NoMagicNoFlyingDragon
-
-d3.player is "Puff"
-// d3.fly is "Fly!"
-// d3.Magic is "Spell!"
-d3.id is "NoMagicNoFlyingDragon"
-
-/* OUTPUT_SHOULD_BE
-
-*/
+val drawing = new Drawing(new Rectangle, new Square, new Ellipse, new Circle)
+drawing.draw is "Vector(Rectangle, Square, Ellipse, Circle)"
+drawing is "Rectangle, Square, Ellipse, Circle"
