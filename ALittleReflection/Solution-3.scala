@@ -6,11 +6,9 @@ import com.atomicscala.Name2
 case class ReflectedToy3(name:String, batteryOperated:Boolean) extends Name2
 
 val reflected3 = new ReflectedToy3("Flamingo", false)
-println(reflected3)
 
-// The above results in anonymous class $anon$1$ReflectedToy3
-// needs solution
+reflected3 is "class $ReflectedToy3"
 
 /* OUTPUT_SHOULD_BE
-
+class $ReflectedToy3
 */

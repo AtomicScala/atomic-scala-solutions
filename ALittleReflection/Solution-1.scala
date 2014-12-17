@@ -7,15 +7,15 @@ case class Toy(name:String, batteryOperated:Boolean)
 
 val toy = new Toy("Teddy Bear", false)
 
-println(toy)
+toy is "Toy(Teddy Bear,false)" // Also calls println
 
 case class ReflectedToy(name:String, batteryOperated:Boolean) extends Name
 
 val reflectedToy = new ReflectedToy("Bunny", true)
-println(reflectedToy)
 
-assert("Solution" == "Incomplete")
+reflectedToy is "ReflectedToy"
 
 /* OUTPUT_SHOULD_BE
-
+Toy(Teddy Bear,false)
+ReflectedToy
 */
