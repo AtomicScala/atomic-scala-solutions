@@ -5,3 +5,5 @@
 - Game player or chess piece: http://www.programcreek.com/2014/05/inheritance-vs-composition-in-java/
 
 - Person-employee-manager http://stackoverflow.com/questions/49002/prefer-composition-over-inheritance
+
+- Autonomous moving element, can see and manipulate. But a drone or spybot might just see and not be able to pick things up or manipulate them. Solution could be composition, try it with traits, then observe there could be more arms/manipulators. Basic can move and see, inherit from that and add manipulators.
