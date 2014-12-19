@@ -1,0 +1,7 @@
+- Inherit from Vector to solve a problem, vs. using a vector member, to show how much easier it is mechanically to use composition
+
+- A Garden with multiple sheds, perhaps hedges, planting beds
+
+- Game player or chess piece: http://www.programcreek.com/2014/05/inheritance-vs-composition-in-java/
+
+- Person-employee-manager http://stackoverflow.com/questions/49002/prefer-composition-over-inheritance
