@@ -7,17 +7,17 @@ case class Mobility(mobility:String) extends Ability
 case class Vision(vision:String) extends Ability
 case class Manipulator(manipulator:String) extends Ability
 
-class Drone(val abilities:Vector[Ability]) {
+class Robot(val abilities:Vector[Ability]) {
   override def toString = abilities.mkString(", ")
 }
 
-val arialWalker = new Drone(
+val bot = new Robot(
   Vector(Mobility("Propeller"), Mobility("Legs"),
     Vision("UV"), Vision("Visible Spectrum"),
     Manipulator("Magnet"), Manipulator("Claw"))
 )
 
-arialWalker is "Mobility(Propeller), Mobility(Legs), Vision(UV), Vision(Visible Spectrum), Manipulator(Magnet), Manipulator(Claw)"
+bot is "Mobility(Propeller), Mobility(Legs), Vision(UV), Vision(Visible Spectrum), Manipulator(Magnet), Manipulator(Claw)"
 
 /* OUTPUT_SHOULD_BE
 Mobility(Propeller), Mobility(Legs), Vision(UV), Vision(Visible Spectrum), Manipulator(Magnet), Manipulator(Claw)

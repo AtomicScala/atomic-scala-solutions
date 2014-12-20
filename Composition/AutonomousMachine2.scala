@@ -6,15 +6,15 @@ case class Mobility(mobility:String)
 case class Vision(vision:String)
 case class Manipulator(manipulator:String)
 
-class Drone(val move:Mobility, val see:Vision, val touch:Manipulator) {
+class Robot(val move:Mobility, val see:Vision, val touch:Manipulator) {
   override def toString = s"$move, $see, $touch"
 }
 
-val walker = new Drone(Mobility("Legs"), Vision("Visible Spectrum"), Manipulator("Magnet"))
+val walker = new Robot(Mobility("Legs"), Vision("Visible Spectrum"), Manipulator("Magnet"))
 walker is "Mobility(Legs), Vision(Visible Spectrum), Manipulator(Magnet)"
-val crawler = new Drone(Mobility("Treads"), Vision("Infrared"), Manipulator("Claw"))
+val crawler = new Robot(Mobility("Treads"), Vision("Infrared"), Manipulator("Claw"))
 crawler is "Mobility(Treads), Vision(Infrared), Manipulator(Claw)"
-val arial = new Drone(Mobility("Propeller"), Vision("UV"), Manipulator("None"))
+val arial = new Robot(Mobility("Propeller"), Vision("UV"), Manipulator("None"))
 
 arial is "Mobility(Propeller), Vision(UV), Manipulator(None)"
 
