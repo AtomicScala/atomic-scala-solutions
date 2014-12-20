@@ -68,5 +68,13 @@ simple.prepFood is true
 simple.utensils is "Vector(ServeUtensils, PrepUtensils)"
 
 /* OUTPUT_SHOULD_BE
-
+true
+false
+Vector(ServeUtensils)
+true
+false
+Vector(PrepUtensils)
+true
+true
+Vector(ServeUtensils, PrepUtensils)
 */
