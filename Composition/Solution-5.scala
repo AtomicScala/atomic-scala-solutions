@@ -20,14 +20,24 @@ class Robot {
 }
 
 val bot = new Robot
-bot.addMobility(Mobility("Propeller"))
-bot.addMobility(Mobility("Legs"))
-bot.addVision(Vision("UV"))
-bot.addVision(Vision("Visible Spectrum"))
-bot.addManipulator(Manipulator("Magnet"))
-bot.addManipulator(Manipulator("Claw"))
+bot.addMobility(
+  Mobility("Propeller"))
+bot.addMobility(
+  Mobility("Legs"))
+bot.addVision(
+  Vision("UV"))
+bot.addVision(Vision(
+  "Visible Spectrum"))
+bot.addManipulator(
+  Manipulator("Magnet"))
+bot.addManipulator(
+  Manipulator("Claw"))
 
-bot is "Mobility(Propeller), Mobility(Legs) | Vision(UV), Vision(Visible Spectrum) | Manipulator(Magnet), Manipulator(Claw)"
+bot is "Mobility(Propeller)," +
+" Mobility(Legs) | Vision(UV)," +
+" Vision(Visible Spectrum) | " +
+"Manipulator(Magnet)," +
+" Manipulator(Claw)"
 
 /* OUTPUT_SHOULD_BE
 Mobility(Propeller), Mobility(Legs) | Vision(UV), Vision(Visible Spectrum) | Manipulator(Magnet), Manipulator(Claw)

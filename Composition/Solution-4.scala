@@ -12,12 +12,19 @@ class Robot(val abilities:Vector[Ability]) {
 }
 
 val bot = new Robot(
-  Vector(Mobility("Propeller"), Mobility("Legs"),
-    Vision("UV"), Vision("Visible Spectrum"),
-    Manipulator("Magnet"), Manipulator("Claw"))
+  Vector(Mobility("Propeller"),
+    Mobility("Legs"),
+    Vision("UV"),
+    Vision("Visible Spectrum"),
+    Manipulator("Magnet"),
+    Manipulator("Claw"))
 )
 
-bot is "Mobility(Propeller), Mobility(Legs), Vision(UV), Vision(Visible Spectrum), Manipulator(Magnet), Manipulator(Claw)"
+bot is "Mobility(Propeller), " +
+"Mobility(Legs), Vision(UV), " +
+"Vision(Visible Spectrum), " +
+"Manipulator(Magnet), " +
+"Manipulator(Claw)"
 
 /* OUTPUT_SHOULD_BE
 Mobility(Propeller), Mobility(Legs), Vision(UV), Vision(Visible Spectrum), Manipulator(Magnet), Manipulator(Claw)

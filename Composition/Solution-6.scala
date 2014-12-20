@@ -28,9 +28,19 @@ class Robot {
     manipulator.mkString(", ")
 }
 
-val bot = new Robot + Mobility("Propeller") + Mobility("Legs") + Vision("UV") + Vision("Visible Spectrum") + Manipulator("Magnet") + Manipulator("Claw")
+val bot = new Robot +
+  Mobility("Propeller") +
+  Mobility("Legs") +
+  Vision("UV") +
+  Vision("Visible Spectrum") +
+  Manipulator("Magnet") +
+  Manipulator("Claw")
 
-bot is "Mobility(Propeller), Mobility(Legs) | Vision(UV), Vision(Visible Spectrum) | Manipulator(Magnet), Manipulator(Claw)"
+bot is "Mobility(Propeller)," +
+" Mobility(Legs) | Vision(UV)," +
+" Vision(Visible Spectrum) |" +
+" Manipulator(Magnet)," +
+" Manipulator(Claw)"
 
 /* OUTPUT_SHOULD_BE
 Mobility(Propeller), Mobility(Legs) | Vision(UV), Vision(Visible Spectrum) | Manipulator(Magnet), Manipulator(Claw)

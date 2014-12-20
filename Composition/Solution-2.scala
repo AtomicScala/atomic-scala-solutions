@@ -1,44 +1,39 @@
 // Solution-2.scala
-// Solution to Exercise 2 in "Composition"
+// Solution to Exercise 2 in "Composition" (2nd edition)
 import com.atomicscala.AtomicTest._
 
-trait Kitchen {
-  def serveFood:Boolean
-  def prepFood:Boolean
+case class Mobility(mobility:String)
+case class Vision(vision:String)
+case class Manipulator(manipulator:String)
+
+class Robot(val move:Mobility, val see:Vision, val touch:Manipulator) {
+  override def toString = s"$move, $see, $touch"
 }
 
-class ServingKitchen extends Kitchen {
-  def serveFood:Boolean = true
-  def prepFood:Boolean = false
-}
+val walker = new Robot(
+  Mobility("Legs"),
+  Vision("Visible Spectrum"),
+  Manipulator("Magnet"))
+walker is "Mobility(Legs), " +
+  "Vision(Visible Spectrum)," +
+  " Manipulator(Magnet)"
+val crawler = new Robot(
+  Mobility("Treads"),
+  Vision("Infrared"),
+  Manipulator("Claw"))
+crawler is "Mobility(Treads)," +
+  " Vision(Infrared), " +
+  "Manipulator(Claw)"
+val arial = new Robot(
+  Mobility("Propeller"),
+  Vision("UV"),
+  Manipulator("None"))
 
-class WorkKitchen extends Kitchen {
-  def serveFood:Boolean = false
-  def prepFood:Boolean = true
-}
-
-class SimpleKitchen extends Kitchen {
-  def serveFood:Boolean = true
-  def prepFood:Boolean = true
-}
-
-val serving = new ServingKitchen
-serving.serveFood is true
-serving.prepFood is false
-
-val work = new WorkKitchen
-work.prepFood is true
-work.serveFood is false
-
-val simple = new SimpleKitchen
-simple.serveFood is true
-simple.prepFood is true
+arial is "Mobility(Propeller)," +
+  " Vision(UV), Manipulator(None)"
 
 /* OUTPUT_SHOULD_BE
-true
-false
-true
-false
-true
-true
+Mobility(Legs), Vision(Visible Spectrum), Manipulator(Magnet)
+Mobility(Treads), Vision(Infrared), Manipulator(Claw)
+Mobility(Propeller), Vision(UV), Manipulator(None)
 */

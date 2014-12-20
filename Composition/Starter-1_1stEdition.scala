@@ -1,5 +1,5 @@
 // Starter Code for Exercise 1
-// From "Composition" atom
+// From "Composition" atom (1st Edition)
 import com.atomicscala.AtomicTest._
 
 val serving = new ServingKitchen
