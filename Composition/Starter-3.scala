@@ -13,6 +13,7 @@ val bot = new Robot(
     Manipulator("Magnet"),
     Manipulator("Claw"))
 )
+
 bot is "Mobility(Propeller)," +
 " Mobility(Legs) | Vision(UV)," +
 " Vision(Visible Spectrum) | " +

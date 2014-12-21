@@ -28,7 +28,6 @@ val arial = new Robot(
   Mobility("Propeller"),
   Vision("UV"),
   Manipulator("None"))
-
 arial is "Mobility(Propeller)," +
   " Vision(UV), Manipulator(None)"
 

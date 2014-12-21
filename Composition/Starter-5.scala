@@ -15,6 +15,7 @@ bot.addManipulator(
   Manipulator("Magnet"))
 bot.addManipulator(
   Manipulator("Claw"))
+
 bot is "Mobility(Propeller)," +
 " Mobility(Legs) | Vision(UV)," +
 " Vision(Visible Spectrum) | " +
