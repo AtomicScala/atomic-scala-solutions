@@ -22,5 +22,7 @@ webcam.address is "192.168.0.200"
 webcam.reportStatus is "working"
 
 /* OUTPUT_SHOULD_BE
-
+Showing video
+192.168.0.200
+working
 */

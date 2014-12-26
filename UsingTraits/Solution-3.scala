@@ -48,5 +48,10 @@ c2.connected is 0
 c2.connect(false) is false
 
 /* OUTPUT_SHOULD_BE
-
+5
+true
+1
+true
+0
+false
 */

@@ -37,5 +37,20 @@ c.connected is 0
 c.connect(false) is false
 
 /* OUTPUT_SHOULD_BE
-
+5
+true
+1
+true
+true
+true
+true
+false
+true
+4
+true
+true
+true
+true
+0
+false
 */
