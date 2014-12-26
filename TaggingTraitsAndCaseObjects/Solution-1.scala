@@ -6,6 +6,7 @@ sealed trait Color
 case object Red extends Color
 case object Green extends Color
 case object Blue extends Color
+case object Purple extends Color
 object Color {
   val values = Vector(Red, Green, Blue, Purple)
 }
@@ -16,13 +17,13 @@ def display(c:Color) = c match {
   case Blue => s"It's $c"
 }
 
-// Test fails if you add Purple to Vector but not to match expression
-
-Color.values.map(display) is "Vector(It's Red, It's Green, It's Blue)"
+// Test fails if you add Purple but not to match expression
+// Color.values.map(display) is "Vector(It's Red, It's Green, It's Blue)"
 
 /* OUTPUT_SHOULD_CONTAIN
-error: not found: value Purple
-  val values = Vector(Red, Green, Blue, Purple)
-                                        ^
-one error found
+warning: match may not be exhaustive.
+It would fail on the following input: Purple
+def display(c:Color) = c match {
+                       ^
+one warning found
 */

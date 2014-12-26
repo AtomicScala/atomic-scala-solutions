@@ -20,8 +20,9 @@ Color.values.map(display) is "Vector(It's Red, It's Green, It's Blue)"
 
 println("ANSWER: The test fails but you can add Color to the Vector")
 
-// ANSWER: The test fails but you can add Color to the Vector
-
 /* OUTPUT_SHOULD_BE
-
+Vector(It's Red, It's Green, It's Blue, It's Red)
+[Error] expected:
+Vector(It's Red, It's Green, It's Blue)
+ANSWER: The test fails but you can add Color to the Vector
 */

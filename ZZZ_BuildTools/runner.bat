@@ -207,6 +207,9 @@ def runfile(fname):
     outputFile = base + ".out"
     errorFile = base + ".err"
 
+    if os.path.exists(errorFile): # Erase old errorFile
+        os.remove(errorFile)
+
     if dirname in [f[0] for f in compileFiles]:
         trace("adding -nocompdaemon")
         flag = " -nocompdaemon "
@@ -226,9 +229,11 @@ def runfile(fname):
     debug("    " + cmd)
     os.system(cmd)
 
-    if os.path.exists(errorFile) and os.stat(errorFile).st_size:
-        print(file(errorFile).read())
-        verify(False)
+    # Need to rebuild all to discover why this was in:
+    # if os.path.exists(errorFile) and os.stat(errorFile).st_size:
+    #     print(file(errorFile).read())
+    #     debug(colorama.Back.RED + errorFile + " exists and is nonzero" + colorama.Style.RESET_ALL)
+    #     verify(False)
 
     OUTPUT_SHOULD_BE = re.search(r"OUTPUT_SHOULD_BE(.*)\*/", contents, re.DOTALL)
     OUTPUT_SHOULD_CONTAIN = re.search(r"OUTPUT_SHOULD_CONTAIN(.*)\*/", contents, re.DOTALL)
@@ -255,7 +260,7 @@ def runfile(fname):
                 if not line in results:
                     verify(False)
             verify(True)
-        if "error" in should_contain:
+        if "error" in should_contain or "warning" in should_contain:
             testAgainstFile(errorFile)
         else:
             testAgainstFile(outputFile)

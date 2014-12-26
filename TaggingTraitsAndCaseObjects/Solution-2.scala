@@ -12,5 +12,7 @@ EnumColor.Blue is "Blue"
 EnumColor.Green is "Green"
 
 /* OUTPUT_SHOULD_BE
-
+Red
+Blue
+Green
 */
