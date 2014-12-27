@@ -2,11 +2,7 @@
 // Solution to Exercise 1 in "Type Parameter Constraints"
 import com.atomicscala.AtomicTest._
 
-/*{oldDescription}
-1.  Modify House5.scala from Composition by adding Enumerations for different types of food and utensils. Use type constraints for Clean and Store as shown in Resilience.scala
-{oldDescription}*/
-
-// House5.scala
+// Here's one way to solve it -- but not the only way.
 
 trait Building
 trait Room
@@ -23,7 +19,8 @@ object Protein extends Enumeration {
        with Edible
     type Protein = _Val
     val beef, chicken, pork, tofu = _Val()
-  }
+}
+import Protein._
 
 object Fruit extends Enumeration {
   case class _Val() extends Val
@@ -31,6 +28,7 @@ object Fruit extends Enumeration {
   type Fruit = _Val
   val apple, orange, banana, tomato = _Val()
 }
+import Fruit._
 
 trait Food[F <: Edible] extends Store[F]
   with Clean[F]
@@ -43,8 +41,8 @@ object Cutlery extends Enumeration {
     with Handheld
   type Cutlery = _Val
   val knife, spoon, fork, spatula = _Val()
-
 }
+import Cutlery._
 
 object Device extends Enumeration {
   case class _Val() extends Val
@@ -52,6 +50,7 @@ object Device extends Enumeration {
   type Device = _Val
   val poacher, timer, sifter, torch = _Val()
 }
+import Device._
 
 trait Utensils[U <: Handheld] extends Store[U]
   with Clean[U]
@@ -66,12 +65,11 @@ trait Kitchen {
 }
 
 trait House extends Building {
-  val kitchens:Vector[Kitchen]
+  val kitchens = Vector[Kitchen]()
 }
 
 val house = new Object with House
-// needs solution
 
 /* OUTPUT_SHOULD_BE
-
+INCOMPLETE SOLUTION
 */
