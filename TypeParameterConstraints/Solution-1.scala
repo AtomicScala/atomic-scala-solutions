@@ -52,23 +52,22 @@ object Device extends Enumeration {
 }
 import Device._
 
-trait Utensils[U <: Handheld] extends Store[U]
-  with Clean[U]
-  with Cook[U]
+trait Utensil[Utensil <: Handheld] extends Store[Utensil]
+  with Clean[Utensil]
+  with Cook[Utensil]
 
-trait Kitchen {
-  val rooms:Vector[Room]
+trait Kitchen extends Room {
   val storage:Storage
   val sinks:Vector[Sink]
   val food:Food[Edible]
-  val utensils:Utensils[Handheld]
+  val utensils:Vector[Utensil[Handheld]]
 }
 
-trait House extends Building {
+case class House() extends Building {
   val kitchens = Vector[Kitchen]()
 }
 
-val house = new Object with House
+House is "House"
 
 /* OUTPUT_SHOULD_BE
 INCOMPLETE SOLUTION

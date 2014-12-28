@@ -2,12 +2,19 @@
 // Solution to Exercise 2 in "Type Parameter Constraints"
 import com.atomicscala.AtomicTest._
 
-/*{oldDescription}
-Modify Constraint.scala so that CallF is a function rather than a class.
-{oldDescription}*/
+class WithF {
+  def f(n:Int) = n * 11
+}
 
-// needs solution
+def callF[T <: WithF](t:T, n:Int) = t.f(n)
+
+callF(new WithF, 2) is 22
+
+callF(new WithF {
+  override def f(n:Int) = n * 7
+}, 2) is 14
 
 /* OUTPUT_SHOULD_BE
-INCOMPLETE SOLUTION
+22
+14
 */
