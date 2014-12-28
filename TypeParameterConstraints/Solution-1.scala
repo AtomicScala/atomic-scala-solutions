@@ -8,51 +8,51 @@ trait Building
 trait Room
 trait Storage
 trait Sink
-trait Store[T]
+trait Storable
+trait Store[T <: Storable]
 trait Cook[T]
-trait Clean[T]
+trait Cleanable
+trait Clean[T <: Cleanable]
 
-trait Edible
+trait Edible extends Cleanable with Storable
 
 object Protein extends Enumeration {
-  case class _Val() extends Val
-       with Edible
+  case class _Val() extends Val with Edible
     type Protein = _Val
     val beef, chicken, pork, tofu = _Val()
 }
 import Protein._
 
 object Fruit extends Enumeration {
-  case class _Val() extends Val
-    with Edible
+  case class _Val() extends Val with Edible
   type Fruit = _Val
   val apple, orange, banana, tomato = _Val()
 }
 import Fruit._
 
-trait Food[F <: Edible] extends Store[F]
+trait Food[F <: Edible]
+  extends Store[F]
   with Clean[F]
   with Cook[F]
 
-trait Handheld
+trait Handheld extends Cleanable with Storable
 
 object Cutlery extends Enumeration {
-  case class _Val() extends Val
-    with Handheld
+  case class _Val() extends Val with Handheld
   type Cutlery = _Val
   val knife, spoon, fork, spatula = _Val()
 }
 import Cutlery._
 
 object Device extends Enumeration {
-  case class _Val() extends Val
-    with Handheld
+  case class _Val() extends Val with Handheld
   type Device = _Val
   val poacher, timer, sifter, torch = _Val()
 }
 import Device._
 
-trait Utensil[Utensil <: Handheld] extends Store[Utensil]
+trait Utensil[Utensil <: Handheld]
+  extends Store[Utensil]
   with Clean[Utensil]
   with Cook[Utensil]
 
@@ -70,5 +70,5 @@ case class House() extends Building {
 House is "House"
 
 /* OUTPUT_SHOULD_BE
-INCOMPLETE SOLUTION
+House
 */
