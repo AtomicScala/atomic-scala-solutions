@@ -31,6 +31,7 @@ object Syrup extends Enumeration {
   val NoFlavor, Vanilla, Hazelnut,
     Raspberry, Choc = _Val()
 }
+
 trait Amount {
   val pumps:Int
 }
@@ -47,13 +48,9 @@ import Syrup._
 
 case class Coffee(shots:Shots, caffeine:Caffeine, cup:Cup, milk:Milk, syrup:Syrup)
 
-val single = new Coffee(Single, Caf, Here, Skim, Choc)
-single is "Coffee(Single,Caf,Here,Skim,Choc)"
-
-val usual = new Coffee(Double, Caf, Here, NoMilk, NoFlavor)
-usual is "Coffee(Double,Caf,Here,NoMilk,NoFlavor)"
-val mocha = new Coffee(Double, HalfCaf, ToGo, Skim, Choc)
-mocha is "Coffee(Double,HalfCaf,ToGo,Skim,Choc)"
+Coffee(Single, Caf, Here, Skim, Choc) is "Coffee(Single,Caf,Here,Skim,Choc)"
+Coffee(Double, Caf, Here, NoMilk, NoFlavor) is "Coffee(Double,Caf,Here,NoMilk,NoFlavor)"
+Coffee(Double, HalfCaf, ToGo, Skim, Choc) is "Coffee(Double,HalfCaf,ToGo,Skim,Choc)"
 
 /* OUTPUT_SHOULD_BE
 Coffee(Single,Caf,Here,Skim,Choc)

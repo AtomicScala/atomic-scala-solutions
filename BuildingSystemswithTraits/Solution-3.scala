@@ -25,19 +25,12 @@ object Milk extends Enumeration {
 trait Flavor
 
 object Syrup extends Enumeration {
-  type Syrup = Value
-  val NoFlavor, Vanilla, Hazelnut,
-    Raspberry, Choc = Value
-}
-
-/*object Syrup extends Enumeration {
   case class _Val() extends Val
     with Flavor
   type Syrup = _Val
   val NoFlavor, Vanilla, Hazelnut,
     Raspberry, Choc = _Val()
 }
-*/
 
 import Syrup._
 
@@ -49,42 +42,30 @@ trait Taste[F <: Flavor] extends Amount {
   val flavor:F
 }
 
-//class Sweetener(quantity:Int, Syrup:Syrup) extends Taste[Syrup]
-
 import Shots._
 import Caffeine._
 import Cup._
 import Milk._
 import Syrup._
 
-class Coffee(shots:Shots,
-  caffeine:Caffeine,
-  cup:Cup) {
-  override def toString =
-    s"Coffee($shots,$caffeine,$cup)"
+class Coffee(shots:Shots, caffeine:Caffeine, cup:Cup) {
+  override def toString = s"Coffee($shots,$caffeine,$cup)"
 }
 
-class Latte(shots:Shots,
-  caffeine:Caffeine, cup:Cup,
-  val milk:Milk)
-  extends Coffee(shots, caffeine, cup) {
-    override def toString =
-      s"Latte($shots,$caffeine,$cup,$milk)"
-  }
+class Latte(shots:Shots, caffeine:Caffeine, cup:Cup, val milk:Milk)
+extends Coffee(shots, caffeine, cup) {
+  override def toString = s"Latte($shots,$caffeine,$cup,$milk)"
+}
 
-class Mocha(shots:Shots,
-  caffeine:Caffeine, cup:Cup, milk:Milk)
-  extends Latte(shots,
-    caffeine, cup, milk) {
-      val flavor = Choc
-      override def toString =
-      s"Mocha($shots,$caffeine,$cup,$milk,$flavor)"
-
-  }
+class Mocha(shots:Shots, caffeine:Caffeine, cup:Cup, milk:Milk)
+extends Latte(shots, caffeine, cup, milk) {
+  val flavor = Choc
+  override def toString = s"Mocha($shots,$caffeine,$cup,$milk,$flavor)"
+}
 
 val mocha = new Mocha(Double,Caf,ToGo,Skim)
 mocha is "Mocha(Double,Caf,ToGo,Skim,Choc)"
 
 /* OUTPUT_SHOULD_BE
-
+Mocha(Double,Caf,ToGo,Skim,Choc)
 */

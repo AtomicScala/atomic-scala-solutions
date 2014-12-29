@@ -31,6 +31,7 @@ object Syrup extends Enumeration {
   val NoFlavor, Vanilla, Hazelnut,
     Raspberry, Choc = _Val()
 }
+
 trait Amount {
   val pumps:Int
 }
@@ -45,18 +46,14 @@ import Cup._
 import Milk._
 import Syrup._
 
-class Coffee(shots:Shots,
-  caffeine:Caffeine,
-  cup:Cup) {
+class Coffee(shots:Shots, caffeine:Caffeine, cup:Cup, syrup:Syrup=NoFlavor) {
   override def toString = s"Coffee($shots,$caffeine,$cup)"
 }
 
-case class Latte(shots:Shots,
-  caffeine:Caffeine, cup:Cup,
-  val milk:Milk)
-  extends Coffee(shots, caffeine, cup) {
-    override def toString = s"Latte($shots,$caffeine,$cup,$milk)"
-  }
+class Latte(shots:Shots, caffeine:Caffeine, cup:Cup, val milk:Milk)
+extends Coffee(shots, caffeine, cup) {
+  override def toString = s"Latte($shots,$caffeine,$cup,$milk)"
+}
 
 val latte = new Latte(Single, Caf, Here, Skim)
 latte is "Latte(Single,Caf,Here,Skim)"
@@ -65,5 +62,6 @@ val usual = new Coffee(Double, Caf, Here)
 usual is "Coffee(Double,Caf,Here)"
 
 /* OUTPUT_SHOULD_BE
-
+Latte(Single,Caf,Here,Skim)
+Coffee(Double,Caf,Here)
 */
