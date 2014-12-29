@@ -6,22 +6,23 @@ trait Contact {
   val email:String
 }
 
-class Person2(val first:String, val last:String) {
-  override def toString = first + " " + last
+class Person(val first:String, val last:String) {
+  override def toString = s"$first $last"
 }
 
 class Friend(first:String, last:String, val email:String)
-  extends Person2(first:String, last:String) with Contact {
-}
+  extends Person(first:String, last:String) with Contact
 
-val f1 = new Friend("Mary", "Add", "mary@add.com")
-val f2 = new Friend("Zach", "Smith", "zach@smith.com")
-val f3 = new Friend("Sally", "Taylor", "sally@taylor.com")
+val friends = Vector(
+  new Friend("Zach", "Smith", "zach@smith.com"),
+  new Friend("Mary", "Add", "mary@add.com"),
+  new Friend("Sally","Taylor","sally@taylor.com")
+)
 
-val sorted2 = Vector(f1, f2, f3).sortBy(_.email)
+val sorted = friends.sortBy(_.email)
 
-sorted2 is "Vector(Mary Add, Sally Taylor, Zach Smith)"
+sorted is "Vector(Mary Add, Sally Taylor, Zach Smith)"
 
 /* OUTPUT_SHOULD_BE
-
+Vector(Mary Add, Sally Taylor, Zach Smith)
 */

@@ -2,19 +2,17 @@
 // Solution to Exercise 3 in "Sequences"
 import com.atomicscala.AtomicTest._
 
-case class Person(first:String, last:String, email:String) {
-  override def toString = first + " " + last
-  val fullName = toString
-}
+case class Person(first:String, last:String, email:String)
 
-val p1 = Person("Zach", "Smith", "zach@smith.com")
-val p2 = Person("Mary", "Add", "mary@add.com")
-val p3 = Person("Sally", "Taylor", "sally@taylor.com")
+val people = Vector(
+  Person("Zach", "Smith", "zach@smith.com"),
+  Person("Mary", "Add", "mary@add.com"),
+  Person("Sally", "Taylor", "sally@taylor.com")
+)
 
-val v = Vector(p1, p2, p3)
-val sorted = v.sortBy(_.last)
-sorted is "Vector(Mary Add, Zach Smith, Sally Taylor)"
+val sorted = people.sortBy(_.last)
+sorted is "Vector(Person(Mary,Add,mary@add.com), Person(Zach,Smith,zach@smith.com), Person(Sally,Taylor,sally@taylor.com))"
 
 /* OUTPUT_SHOULD_BE
-
+Vector(Person(Mary,Add,mary@add.com), Person(Zach,Smith,zach@smith.com), Person(Sally,Taylor,sally@taylor.com))
 */

@@ -7,7 +7,7 @@ trait Contact {
 }
 
 class Person2(val first:String, val last:String) {
-  override def toString = first + " " + last
+  override def toString = s"$first $last"
 }
 
 class Friend(first:String, last:String, val email:String)
@@ -25,5 +25,5 @@ val s4 = s3.sortBy(_.first)
 s4 is "Vector(Mary Add, Mary Smith, Sally Taylor, Zach Smith)"
 
 /* OUTPUT_SHOULD_BE
-
+Vector(Mary Add, Mary Smith, Sally Taylor, Zach Smith)
 */

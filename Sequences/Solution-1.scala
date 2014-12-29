@@ -3,7 +3,7 @@
 import com.atomicscala.AtomicTest._
 
 case class Person(first:String, last:String, email:String) {
-  override def toString = first + " " + last
+  override def toString = s"$first $last"
   val fullName = toString
 }
 
@@ -13,5 +13,7 @@ p.first is "John"
 p.email is "john@smith.com"
 
 /* OUTPUT_SHOULD_BE
-
+John Smith
+John
+john@smith.com
 */
