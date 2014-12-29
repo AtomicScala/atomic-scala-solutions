@@ -17,5 +17,7 @@ Set("shoes", "clothes", "toys", "dishes", "games", "books") is
   house.flatten.flatten
 
 /* OUTPUT_SHOULD_BE
-
+Set(shoes, clothes, toys, dishes)
+Set(toys, games, books)
+Set(dishes, clothes, books, shoes, games, toys)
 */
