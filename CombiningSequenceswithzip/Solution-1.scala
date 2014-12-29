@@ -8,8 +8,8 @@ val people = Vector("Sally Smith",
 val size = people.size
 val group1 = people.take(size/2)
 val group2 = people.takeRight(size/2)
-
 val pairs = group1 zip group2
+
 pairs is Vector(
   ("Sally Smith","Betsy Blanc"),
   ("Dan Jones","Stormy Morgan"),
