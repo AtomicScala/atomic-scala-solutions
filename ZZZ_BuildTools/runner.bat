@@ -121,6 +121,9 @@ compileFiles = [
     ("Polymorphism", [
         ("Name.scala", "com/atomicscala/Name.class"),
     ]),
+    ("BuildingSystemswithTraits", [
+        ("SodaFountain.scala", "sodafountain/IceCream.class"),
+    ]),
 ]
 
 

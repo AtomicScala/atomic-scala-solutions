@@ -1,17 +1,23 @@
 // Solution-4.scala
 // Solution to Exercise 4 in "Building Systems with Traits"
 import com.atomicscala.AtomicTest._
+import sodafountain._
+import IceCream._
 
-println("""Topping is a 'tag'. You can think of it as a
-  way to signify some likeness.
-  In this case, all of the classes that extend the Trait
-  also have quantities associated
-  with them except for Cherry.
-  If you leave off the 'with Topping',
-  you wouldn't be able to
-  add Toppings in the MaltShoppe's
-  MadeToOrder variation.""")
+object Container extends Enumeration {
+  type Container = Value
+  val Pint, Quart, HalfGallon = Value
+}
+import Container._
+
+case class TakeHome(container:Container, flavor:IceCream)
+
+TakeHome(Pint, Chocolate) is "TakeHome(Pint,Chocolate)"
+TakeHome(Quart, Strawberry) is "TakeHome(Quart,Strawberry)"
+TakeHome(HalfGallon, Vanilla) is "TakeHome(HalfGallon,Vanilla)"
 
 /* OUTPUT_SHOULD_BE
-
+TakeHome(Pint,Chocolate)
+TakeHome(Quart,Strawberry)
+TakeHome(HalfGallon,Vanilla)
 */
