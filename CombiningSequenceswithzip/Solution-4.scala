@@ -2,8 +2,6 @@
 // Solution to Exercise 4 in "Combining Sequences with zip"
 import com.atomicscala.AtomicTest._
 
-/* Taking a similar approach as ZipMap.scala, modify IndexWithZip.scala to use the result of zipWithIndex */
-
 def number(s:String) =
   s.zip(Range(0, s.length)).map {
     case (ch, n) => (n, ch)
