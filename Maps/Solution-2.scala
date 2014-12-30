@@ -10,5 +10,5 @@ val m = Map("sally@taylor.com"->Name("Sally","Taylor"),
 m("sally@taylor.com") is Name("Sally", "Taylor")
 
 /* OUTPUT_SHOULD_BE
-
+Name(Sally,Taylor)
 */

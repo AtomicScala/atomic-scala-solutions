@@ -2,7 +2,7 @@
 // Solution to Exercise 1 in "Maps"
 import com.atomicscala.AtomicTest._
 
-val constants = Map(.141 -> "Pi", 2.718-> "e", 1.618-> "phi")
+val constants = Map(3.141 -> "Pi", 2.718-> "e", 1.618-> "phi")
 
 Map((3.141, "Pi"), (2.718, "e"), (1.618, "phi")) is constants
 
@@ -26,5 +26,11 @@ List("(3.141,Pi)", "(2.718,e)", "(1.618,phi)")
 "List(3.141: Pi, 2.718: e, 1.618: phi)"
 
 /* OUTPUT_SHOULD_BE
-
+Map(3.141 -> Pi, 2.718 -> e, 1.618 -> phi)
+Map(3.141 -> Pi, 2.718 -> e, 1.618 -> phi)
+e
+Set(3.141, 2.718, 1.618)
+MapLike(Pi, e, phi)
+List((3.141,Pi), (2.718,e), (1.618,phi))
+List(3.141: Pi, 2.718: e, 1.618: phi)
 */

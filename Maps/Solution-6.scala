@@ -2,22 +2,33 @@
 // Solution to Exercise 6 in "Maps"
 import com.atomicscala.AtomicTest._
 
-val set1 = Set("English", "French", "Spanish", "German", "Chinese")
-val set2 = set1 + "French"
+val map1 = Map("English" -> "", "French" -> "", "Spanish" -> "", "German" -> "", "Chinese" -> "")
+map1.size is 5
+map1.contains("Spanish") is true
 
-val set3 = set1 - "Spanish"
-set3.size is 4
+val map2 = map1 - "Spanish"
+map2.size is 4
+map2.contains("Spanish") is false
 
 case class Name(firstName:String, lastName:String)
 
-val m = Map("sally@taylor.com" -> Name("Sally","Taylor"),
-            "mary@smith.com" -> Name("Mary", "Smith"))
+val map3 = Map("sally@taylor.com" -> Name("Sally","Taylor"),
+               "mary@smith.com" -> Name("Mary", "Smith"),
+               "jiminy@cricket.com" -> Name("Jiminy", "Cricket"))
+map3.size is 3
+map3.contains("jiminy@cricket.com") is true
 
-val m2 = m + ("jiminy@cricket.com" -> Name("Jiminy", "Cricket"))
-
-val map3 = m2 - "jiminy@cricket.com"
-map3.size is 2
+val map4 = map3 - "jiminy@cricket.com"
+map4.size is 2
+map4.contains("jiminy@cricket.com") is false
 
 /* OUTPUT_SHOULD_BE
-
+5
+true
+4
+false
+3
+true
+2
+false
 */
