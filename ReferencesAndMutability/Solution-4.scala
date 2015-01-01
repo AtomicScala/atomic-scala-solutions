@@ -15,8 +15,9 @@ Vector("Sticky") ++ shapes is
   "Vector(Sticky, Ovoid, Round, Rectangular, Oblong, Pointy)"
 
 // Wait, there ARE assignment-combination operators. Pretend the ':'
-// represents the collection (two dots represent two elements?) and the '+'
-// then shows which side you're attaching the new element onto:
+// represents the collection (two dots represent two elements?) and
+// the '+' then shows which side you're attaching the new element
+// onto:
 shapes +:= "Fat"
 shapes :+= "Skinny"
 shapes is "Vector(Fat, Ovoid, Round, Rectangular, Oblong, Pointy, Skinny)"
