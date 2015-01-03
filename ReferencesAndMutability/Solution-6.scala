@@ -2,12 +2,18 @@
 // Solution to Exercise 6 in "References & Mutability"
 import com.atomicscala.AtomicTest._
 
-/*{oldDescription}  Create a class that has both mutable and
-immutable fields. Is the resulting class mutable or immutable?
-{oldDescription}*/
+class Foo(var x:Int)
 
-assert("Solution" == "Incomplete")
+def modarg(f:Foo) = f.x += 1
+
+val z = new Foo(1)
+z.x is 1
+modarg(z)
+z.x is 2
+println("Yes, modarg has side effects")
 
 /* OUTPUT_SHOULD_BE
-
+1
+2
+Yes, modarg has side effects
 */
