@@ -2,13 +2,17 @@
 // Solution to Exercise 7 in "References & Mutability"
 import com.atomicscala.AtomicTest._
 
-/*{oldDescription}  Your house's contents can change, perhaps
-through a remodel or a shopping trip, but it wouldn't be the same
-house if you tore it down and put a new one in its place. Your house
-is mutable. Write code to demonstrate this idea. {oldDescription}*/
+case class Mutable(val x:Int, var y:String)
 
-assert("Solution" == "Incomplete")
+val m = Mutable(42, "If any part of the object can change")
+
+m is "Mutable(42,If any part of the object can change)"
+
+m.y += ", then it's mutable"
+
+m is "Mutable(42,If any part of the object can change, then it's mutable)"
 
 /* OUTPUT_SHOULD_BE
-
+Mutable(42,If any part of the object can change)
+Mutable(42,If any part of the object can change, then it's mutable)
 */
