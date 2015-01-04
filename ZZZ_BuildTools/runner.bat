@@ -124,6 +124,9 @@ compileFiles = [
     ("BuildingSystemswithTraits", [
         ("SodaFountain.scala", "sodafountain/IceCream.class"),
     ]),
+    ("PatternMatchingwithTuples", [
+        ("PaintColors.scala", "paintcolors/Color.class"),
+    ]),
 ]
 
 
