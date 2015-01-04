@@ -13,13 +13,14 @@ def throwall(n:Int) = n match {
   case _ => "no throw"
 }
 
-def catchall(n:Int) = try {
-  throwall(n)
-} catch {
-  case e:ex1 => "ex1"
-  case e:ex2 => "ex2"
-  case e:ex3 => "ex3"
-}
+def catchall(n:Int) =
+  try {
+    throwall(n)
+  } catch {
+    case e:ex1 => "ex1"
+    case e:ex2 => "ex2"
+    case e:ex3 => "ex3"
+  }
 
 catchall(0) is "no throw"
 catchall(1) is "ex1"
@@ -27,5 +28,8 @@ catchall(2) is "ex2"
 catchall(3) is "ex3"
 
 /* OUTPUT_SHOULD_BE
-
+no throw
+ex1
+ex2
+ex3
 */

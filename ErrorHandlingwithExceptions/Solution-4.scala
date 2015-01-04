@@ -15,5 +15,5 @@ def t = try {
 t is "Oops!"
 
 /* OUTPUT_SHOULD_BE
-
+Oops!
 */

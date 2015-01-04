@@ -35,8 +35,20 @@ try {
 } catch {
   case e:Exception => println("withoutCatch exception caught")
 }
-// needs solution testing
 
 /* OUTPUT_SHOULD_BE
-
++++++++++++++
+throwing: false
+Inside withCatch finally
++++++++++++++
+throwing: true
+caught Exception
+Inside withCatch finally
+-----------
+throwing: false
+Inside withoutCatch finally
+-----------
+throwing: true
+Inside withoutCatch finally
+withoutCatch exception caught
 */

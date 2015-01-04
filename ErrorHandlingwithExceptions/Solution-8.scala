@@ -35,9 +35,9 @@ def test2(fail:Boolean) = try {
 test2(true) is "fail"
 test2(false) is "success"
 
-// In some cases, you can guarantee that the initialization
-// succeeds, but this only works if you have a way to recover from
-// constructor failure:
+// In some cases, you can guarantee that the initialization succeeds,
+// but this only works if you have a way to recover from constructor
+// failure:
 def test3(fail:Boolean) = {
   val fc = try {
     new FailingConstructor(fail)
@@ -51,5 +51,10 @@ test3(false) is "success"
 test3(true) is "success"
 
 /* OUTPUT_SHOULD_BE
-
+failed
+success
+fail
+success
+success
+success
 */

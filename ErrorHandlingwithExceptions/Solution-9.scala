@@ -30,5 +30,5 @@ def test = try {
 test is "Level3"
 
 /* OUTPUT_SHOULD_BE
-
+Level3
 */
