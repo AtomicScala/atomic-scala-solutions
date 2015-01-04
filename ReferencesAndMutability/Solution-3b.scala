@@ -22,7 +22,7 @@ val original = lst
 
 lst :+= 99
 lst is "MutableList(1, 2, 3, 99)"
-lst == original is false
+lst == original is false // Original is still not modified!
 val original2 = lst
 lst +:= -1
 lst is "MutableList(-1, 1, 2, 3, 99)"
@@ -33,5 +33,12 @@ lst(4) = 111 // You can modify elements
 lst is "MutableList(-1, 1, 2, 3, 111)"
 
 /* OUTPUT_SHOULD_BE
-
+class scala.collection.immutable.$colon$colon
+class scala.collection.mutable.MutableList
+MutableList(1, 2, 3, 99)
+false
+MutableList(-1, 1, 2, 3, 99)
+false
+99
+MutableList(-1, 1, 2, 3, 111)
 */

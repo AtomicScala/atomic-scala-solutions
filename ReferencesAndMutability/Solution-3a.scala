@@ -12,7 +12,7 @@ colors is "List(red, green, yellow)"
 
 lst :+= 99 // Now lst is pointing at a different List
 lst is "List(1, 2, 3, 99)"
-lst == original is false
+lst == original is false // Original is not modified
 val original2 = lst
 lst +:= -1
 lst is "List(-1, 1, 2, 3, 99)"
@@ -23,5 +23,11 @@ lst(4) is 99
 lst is "List(-1, 1, 2, 3, 99)"
 
 /* OUTPUT_SHOULD_BE
-
+List(red, green, yellow)
+List(1, 2, 3, 99)
+false
+List(-1, 1, 2, 3, 99)
+false
+99
+List(-1, 1, 2, 3, 99)
 */
