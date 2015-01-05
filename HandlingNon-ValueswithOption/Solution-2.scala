@@ -2,10 +2,6 @@
 // Solution to Exercise 2 in "Handling Non-Values with Option"
 import com.atomicscala.AtomicTest._
 
-/*{oldDescription}
- Add explicit return types to the exercise above.
-{oldDescription}*/
-
 def f2(i:Int):Option[Int] =
   if(i == 0)
     None
@@ -20,5 +16,10 @@ f2(24) is Some(1)
 f2(25) is Some(0)
 
 /* OUTPUT_SHOULD_BE
-
+Some(6)
+Some(4)
+Some(4)
+None
+Some(1)
+Some(0)
 */

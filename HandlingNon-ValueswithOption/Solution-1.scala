@@ -16,5 +16,10 @@ f(24) is Some(1)
 f(25) is Some(0)
 
 /* OUTPUT_SHOULD_BE
-
+Some(6)
+Some(4)
+Some(4)
+None
+Some(1)
+Some(0)
 */
