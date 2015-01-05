@@ -32,5 +32,7 @@ grid.play('X', 1, 1) is Left("invalid move")
 grid.play('O', 1, 3) is Left("invalid move")
 
 /* OUTPUT_SHOULD_BE
-
+Right(successful move)
+Left(invalid move)
+Left(invalid move)
 */
