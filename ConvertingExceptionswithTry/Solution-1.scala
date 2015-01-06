@@ -19,5 +19,8 @@ f(2) is "11"
 f(3) is "1.618"
 
 /* OUTPUT_SHOULD_BE
-
+OK Bob
+Reason
+11
+1.618
 */

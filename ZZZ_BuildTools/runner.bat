@@ -37,18 +37,28 @@ parser.add_argument("--test", action='store_true', help="Run a test")
 parser.add_argument("--sublime", action='store_true', help="Open Sublime Text on a failed file")
 args = parser.parse_args()
 
+if args.debug:
+    def debug(arg): print(arg)
+    debug.ing = True
+    print "debug"
+else:
+    def debug(arg): pass
+    debug.ing = False
+
 def main():
     "This is hacky"
-    if not any(vars(args).values()) or args.trace or args.debug or args.sublime: # Change this so it's ONLY args.trace on the CL
-        run()
-        return
+    if args.clean:
+        clean()
+    if args.remove_results:
+        remove_results()
     if args.file:
         compilePrerequisites()
+        debug("args.file: " + str(args.file))
         for fname in args.file:
             runfile(fname)
         return
-    if args.clean:
-        clean()
+    if not any(vars(args).values()) or args.trace or args.debug or args.sublime: # Change this so it's ONLY args.trace on the CL
+        run()
         return
     if args.prerequisites:
         compilePrerequisites()
@@ -59,23 +69,13 @@ def main():
     if args.unusedfiles:
         showUnusedFiles()
         return
-    if args.remove_results:
-        remove_results()
-        return
-    parser.print_help()
+    #parser.print_help()
 
 
 if args.trace:
     def trace(arg): pprint.pprint(arg)
 else:
     def trace(arg): pass
-
-if args.debug:
-    def debug(arg): print(arg)
-else:
-    def debug(arg): pass
-
-# def debug(arg): print(arg)
 
 @contextmanager
 def visitDir(d):
@@ -126,6 +126,9 @@ compileFiles = [
     ]),
     ("PatternMatchingwithTuples", [
         ("PaintColors.scala", "paintcolors/Color.class"),
+    ]),
+    ("ConvertingExceptionswithTry", [
+        ("Errors.scala", "errors/toss.class"),
     ]),
 ]
 
@@ -235,12 +238,6 @@ def runfile(fname):
     debug("    " + cmd)
     os.system(cmd)
 
-    # Need to rebuild all to discover why this was in:
-    # if os.path.exists(errorFile) and os.stat(errorFile).st_size:
-    #     print(file(errorFile).read())
-    #     debug(colorama.Back.RED + errorFile + " exists and is nonzero" + colorama.Style.RESET_ALL)
-    #     verify(False)
-
     OUTPUT_SHOULD_BE = re.search(r"OUTPUT_SHOULD_BE(.*)\*/", contents, re.DOTALL)
     OUTPUT_SHOULD_CONTAIN = re.search(r"OUTPUT_SHOULD_CONTAIN(.*)\*/", contents, re.DOTALL)
 
@@ -252,6 +249,10 @@ def runfile(fname):
             debug("generated: [" + generated + "]")
             verify(should_be == generated)
         else:
+            if os.path.exists(errorFile) and os.stat(errorFile).st_size:
+                print(file(errorFile).read())
+                debug(colorama.Back.RED + errorFile + " exists and is nonzero" + colorama.Style.RESET_ALL)
+                verify(False)
             actual = open(outputFile).read().strip()
             actual = '\n'.join(map(string.rstrip, actual.splitlines()))
             debug("actual: [\n" + pprint.pformat(actual) + "\n]")
@@ -276,9 +277,9 @@ def runfile(fname):
         verify(False) # Require a SHOULD
 
     # If file ran successfully, remove artifacts:
-    if os.path.exists(outputFile):
+    if os.path.exists(outputFile) and not debug.ing :
         os.remove(outputFile)
-    if os.path.exists(errorFile):
+    if os.path.exists(errorFile) and not debug.ing:
         os.remove(errorFile)
 
 

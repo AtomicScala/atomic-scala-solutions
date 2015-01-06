@@ -1,6 +1,8 @@
 // Solution-2.scala
 // Solution to Exercise 2 in "Converting Exceptions with Try"
 import com.atomicscala.AtomicTest._
+import util.{Try, Success, Failure}
+import errors._
 
 def f2(n:Int) = Try(toss(n)).transform(
   i => Success(s"$i Bob"), // Success
