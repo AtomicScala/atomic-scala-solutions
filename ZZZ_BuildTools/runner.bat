@@ -131,11 +131,23 @@ compileFiles = [
         ("Errors.scala", "errors/toss.class"),
         ("CodeListing.scala", "codelisting/CodeListing.class"),
     ]),
+    ("CustomErrorReporting", [
+        ("CodeListing.scala", "codelisting/CodeListing.class"),
+        ("CodeListingTester.scala", "codelistingtester/CodeListingTester.class"),
+        ("Fail.scala", "com/atomicscala/reporterr/Fail.class"),
+    ]),
 ]
 
 
 def compilePrerequisites():
     message = "Compiling prerequisites"
+    def rebuild(scalaFile, dependency):
+        if not os.path.exists(dependency):
+            return True
+        if os.path.getmtime(scalaFile) > os.path.getmtime(dependency):
+            return True
+        return False
+
     for direct, items in compileFiles:
         trace(direct)
         trace(items)
@@ -143,7 +155,7 @@ def compilePrerequisites():
             for scala, dep in items:
                 trace(scala)
                 trace(dep)
-                if not os.path.exists(dep):
+                if rebuild(scala, dep):
                     if message:
                         print(message)
                         message = None # Only display it once
