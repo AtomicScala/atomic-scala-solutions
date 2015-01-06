@@ -19,5 +19,8 @@ f2(2) is Success(11)
 f2(3) is Success(1.618)
 
 /* OUTPUT_SHOULD_BE
-
+Success(OK Bob)
+Success(Reason)
+Success(11)
+Success(1.618)
 */

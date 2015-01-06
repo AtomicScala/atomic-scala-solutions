@@ -129,6 +129,7 @@ compileFiles = [
     ]),
     ("ConvertingExceptionswithTry", [
         ("Errors.scala", "errors/toss.class"),
+        ("CodeListing.scala", "codelisting/CodeListing.class"),
     ]),
 ]
 

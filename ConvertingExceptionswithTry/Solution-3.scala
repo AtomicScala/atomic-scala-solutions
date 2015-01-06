@@ -7,7 +7,7 @@ import codelisting._
 
 class CodeListingTester2(
   makeList:String => IndexedSeq[String]) {
-  val l = makeList("CodeListingTester.scala")
+  val l = makeList("NonExistentFile.scala")
   var index = 1
   for(i <- l) {
     println (f"$index%2d $i")
@@ -30,5 +30,5 @@ new CodeListingTester2(listing)
 // needs solution testing
 
 /* OUTPUT_SHOULD_BE
-
+1 File Not Found: NonExistentFile.scala
 */
