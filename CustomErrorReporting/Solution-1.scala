@@ -28,8 +28,15 @@ def listing(name:String) = {
   }
 }
 
+// For this to work, line 5 of CodeListingTester.Scala must be
+// changed to:
+// class CodeListingTester(makeList: String => IndexedSeq[java.io.Serializable]) {
+
 new CodeListingTester(listing)
 
 /* OUTPUT_SHOULD_BE
-
+class CodeListingTester(makeList: String => IndexedSeq[java.io.Serializable]) {
+File Not Found: NotAFile.scala
+NotAScalaFile.txt doesn't end with '.scala'
+Error: Null file name
 */

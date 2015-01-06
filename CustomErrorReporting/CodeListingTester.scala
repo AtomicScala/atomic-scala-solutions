@@ -2,11 +2,10 @@
 package codelistingtester
 import com.atomicscala.AtomicTest._
 
-class CodeListingTester(
-  makeList:String => IndexedSeq[String]) {
+class CodeListingTester(makeList: String => IndexedSeq[java.io.Serializable]) {
 
   makeList("CodeListingTester.scala")(4) is
-  "class CodeListingTester("
+  "class CodeListingTester(makeList: String => IndexedSeq[java.io.Serializable]) {"
 
   makeList("NotAFile.scala")(0) is
   "File Not Found: NotAFile.scala"
