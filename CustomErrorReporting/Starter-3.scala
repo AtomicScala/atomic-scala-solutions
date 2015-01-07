@@ -1,20 +1,8 @@
-// Solution-3.scala
-// Solution to Exercise 3 in "Custom Error Reporting"
-// A simpler approach is acceptable; this cleverness comes from:
-// http://stackoverflow.com/questions/1987820/how-to-apply-a-function-to-a-tuple
+// Starter Code for Exercise 3
+// From "Custom Error Reporting"
 import com.atomicscala.AtomicTest._
 import util.{Success, Failure}
 import com.atomicscala.reporterr.Fail
-
-def testArgs(tests:(Boolean, String)*) = {
-  def argtest(test:Boolean, msg:String) = {
-    if(!test)
-      Fail(msg)
-    else
-      Success
-  }
-  tests.map((argtest _).tupled)
-}
 
 def f(s:String, i:Int, d:Double) = {
   val results = testArgs(
@@ -24,7 +12,7 @@ def f(s:String, i:Int, d:Double) = {
     (d > 0.1, "d must be > 0.1"),
     (d < 0.9, "d must be < 0.9")
   )
-  results.filter(_.isInstanceOf[Failure[_]]).mkString(", ")
+  // Perform filtering here
 }
 
 f("foo", 11, 0.5) is ""
@@ -33,11 +21,3 @@ f("", 11, 0.5) is "Failure(s must be non-zero length)"
 f("foo", -11, 0.5) is "Failure(i must be positive)"
 f("foo", 11, 0.1) is "Failure(d must be > 0.1)"
 f("foo", 11, 0.9) is "Failure(d must be < 0.9)"
-
-/* OUTPUT_SHOULD_BE
-Failure(length of s must be <= 10)
-Failure(s must be non-zero length)
-Failure(i must be positive)
-Failure(d must be > 0.1)
-Failure(d must be < 0.9)
-*/
