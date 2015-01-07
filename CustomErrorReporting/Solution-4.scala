@@ -1,12 +1,24 @@
 // Solution-4.scala
 // Solution to Exercise 4 in "Custom Error Reporting"
 import com.atomicscala.AtomicTest._
+import codelisting._
+import java.io.FileNotFoundException
+import util.Success
+import com.atomicscala.reporterr.Fail
 
-/*{oldDescription}
-4.  Modify CodeListingCustom.scala to use Try and recover.
-{oldDescription}*/
-
-// needs solution
+object CodeListingCustom {
+  def apply(name:String) =
+    try {
+      Success(new CodeListing(name))
+    } catch {
+      case _:FileNotFoundException =>
+        Fail(s"File Not Found: $name")
+      case _:NullPointerException =>
+        Fail("Error: Null file name")
+      case e:ExtensionException =>
+        Fail(e.getMessage)
+    }
+}
 
 /* OUTPUT_SHOULD_BE
 
