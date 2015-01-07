@@ -6,33 +6,32 @@ import com.atomicscala.AtomicTest._
 import util.{Success, Failure}
 import com.atomicscala.reporterr.Fail
 
-def testArgs(tests:(Boolean, String)*) = {
+def testArgs(tests:(Boolean, String)*):Seq[Serializable] = {
   def argtest(test:Boolean, msg:String) = {
     if(!test)
       Fail(msg)
     else
-      Success()
+      Success
   }
-  val argtest_ = argtest _
-  val failures = for {
-    test <- tests
-    result = argtest_.tupled(test)
-    if (result match {
-      case _:Success[_] => false
-      case _:Failure[_] => true
-    })
-  } yield result
-  println(failures)
+  tests.map((argtest _).tupled)
 }
 
+def filterFailures(testResults:Seq[Serializable]) =
+  testResults map {
+    case Success => false
+    case _:Failure[_] => true
+  }
+
 def testedArgs(s:String, i:Int, d:Double) = {
-  testArgs(
+  val results = testArgs(
     (s.length > 0, "s must be non-zero length"),
     (s.length <= 10, "length of s must be <= 10"),
     (i >= 0, "i must be positive"),
     (d > 0.1, "d must be > 0.1"),
     (d < 0.9, "d must be < 0.9")
   )
+  println(results)
+  println(filterFailures(results))
 }
 
 testedArgs("foo", 11, 0.5)
