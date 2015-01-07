@@ -17,12 +17,19 @@ def testArgs(tests:(Boolean, String)*):Seq[Serializable] = {
 }
 
 def filterFailures(testResults:Seq[Serializable]) =
-  testResults map {
+  for {
+    result <- testResults
+    rslt <- result match {
+      case Success => None
+      case Failure(msg) => Some(msg)
+    }
+  } yield rslt
+/*  (testResults map {
     case Success => false
-    case _:Failure[_] => true
-  }
+    case Failure(msg) => msg
+  }).filter(_)*/
 
-def testedArgs(s:String, i:Int, d:Double) = {
+def f(s:String, i:Int, d:Double) = {
   val results = testArgs(
     (s.length > 0, "s must be non-zero length"),
     (s.length <= 10, "length of s must be <= 10"),
@@ -30,15 +37,16 @@ def testedArgs(s:String, i:Int, d:Double) = {
     (d > 0.1, "d must be > 0.1"),
     (d < 0.9, "d must be < 0.9")
   )
-  println(results)
-  println(filterFailures(results))
+  //println(results.mkString(", "))
+  println(filterFailures(results).mkString(", "))
 }
 
-testedArgs("foo", 11, 0.5)
-testedArgs("", 11, 0.5)
-testedArgs("foo", -11, 0.5)
-testedArgs("foo", 11, 0.1)
-testedArgs("foo", 11, 0.9)
+f("foo", 11, 0.5)
+f("foobarbazbingo", 11, 0.5)
+f("", 11, 0.5)
+f("foo", -11, 0.5)
+f("foo", 11, 0.1)
+f("foo", 11, 0.9)
 
 /* OUTPUT_SHOULD_BE
 
