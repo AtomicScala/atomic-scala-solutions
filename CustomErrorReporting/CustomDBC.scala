@@ -6,7 +6,7 @@ import com.atomicscala.AtomicTest._
 import util.{Success, Failure}
 import com.atomicscala.reporterr.Fail
 
-def testArgs(tests:Vector[(Boolean, String)]) = {
+def testArgs(tests:(Boolean, String)*) = {
   def argtest(test:Boolean, msg:String) = {
     if(!test)
       Fail(msg)
@@ -26,13 +26,13 @@ def testArgs(tests:Vector[(Boolean, String)]) = {
 }
 
 def testedArgs(s:String, i:Int, d:Double) = {
-  testArgs(Vector(
+  testArgs(
     (s.length > 0, "s must be non-zero length"),
     (s.length <= 10, "length of s must be <= 10"),
     (i >= 0, "i must be positive"),
     (d > 0.1, "d must be > 0.1"),
     (d < 0.9, "d must be < 0.9")
-  ))
+  )
 }
 
 testedArgs("foo", 11, 0.5)
@@ -43,11 +43,4 @@ testedArgs("foo", 11, 0.9)
 
 /* OUTPUT_SHOULD_BE
 
-*/
-
-/*  argtest(s.length > 0, "s must be non-zero length")
-  argtest(s.length <= 10, "length of s must be <= 10")
-  argtest(i >= 0, "i must be positive")
-  argtest(d > 0.1, "d must be > 0.1")
-  argtest(d < 0.9, "d must be < 0.9")
 */
