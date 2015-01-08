@@ -256,6 +256,7 @@ def runfile(fname):
 
     OUTPUT_SHOULD_BE = re.search(r"OUTPUT_SHOULD_BE(.*)\*/", contents, re.DOTALL)
     OUTPUT_SHOULD_CONTAIN = re.search(r"OUTPUT_SHOULD_CONTAIN(.*)\*/", contents, re.DOTALL)
+    VERIFY_BY_INSPECTION = re.search(r"VERIFY_BY_INSPECTION", contents)
 
     if OUTPUT_SHOULD_BE:
         should_be = OUTPUT_SHOULD_BE.group(1).strip()
@@ -287,6 +288,9 @@ def runfile(fname):
             testAgainstFile(errorFile)
         else:
             testAgainstFile(outputFile)
+
+    elif VERIFY_BY_INSPECTION:
+        verify(True)
 
     else: # No "SHOULD"
         debug("missing a SHOULD")

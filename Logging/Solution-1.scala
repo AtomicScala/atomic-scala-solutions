@@ -8,6 +8,11 @@ trait Logging {
   log.setUseParentHandlers(false)
   log.addHandler(
     new FileHandler("AtomicLog.txt"))
+  // Additional handler:
+  log.addHandler(
+    new FileHandler("AtomicLogDuplicate.txt"))
+  log.addHandler(new ConsoleHandler)
+  // Additional handler:
   log.addHandler(new ConsoleHandler)
   log.setLevel(Level.ALL)
   log.getHandlers.foreach(
@@ -41,6 +46,4 @@ lt.g(0)
 lt.g(-1)
 lt.g(101)
 
-/* OUTPUT_SHOULD_BE
-
-*/
+// VERIFY_BY_INSPECTION
