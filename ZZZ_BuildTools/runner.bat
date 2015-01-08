@@ -136,6 +136,9 @@ compileFiles = [
         ("CodeListingTester.scala", "codelistingtester/CodeListingTester.class"),
         ("Fail.scala", "com/atomicscala/reporterr/Fail.class"),
     ]),
+    ("DesignbyContract", [
+        ("Solution-2.scala", "ConvertLetters.class"),
+    ]),
 ]
 
 
