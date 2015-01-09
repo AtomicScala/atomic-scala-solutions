@@ -6,7 +6,18 @@ import com.atomicscala.AtomicTest._
 3.  Rewrite the code in ExtensionMethodArguments.scala to turn Ops into a value class.
 {oldDescription}*/
 
-// needs solution
+case class Book(title:String)
+
+object BookExtension {
+  implicit class Ops(book:Book) {
+    def categorize(category:String) =
+      s"$book, category: $category"
+  }
+}
+import BookExtension._
+
+Book("Dracula") categorize "Vampire" is
+"Book(Dracula), category: Vampire"
 
 /* OUTPUT_SHOULD_BE
 
