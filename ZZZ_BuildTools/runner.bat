@@ -142,6 +142,9 @@ compileFiles = [
     ("Logging", [
         ("Solution-3.scala", "LoggingTest.class"),
     ]),
+    ("ExtensionMethods", [
+        ("Solution-3.scala", "Test.class"),
+    ]),
 ]
 
 
