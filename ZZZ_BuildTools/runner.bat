@@ -139,6 +139,9 @@ compileFiles = [
     ("DesignbyContract", [
         ("Solution-2.scala", "ConvertLetters.class"),
     ]),
+    ("Logging", [
+        ("Solution-3.scala", "LoggingTest.class"),
+    ]),
 ]
 
 

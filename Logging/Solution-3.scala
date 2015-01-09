@@ -6,10 +6,16 @@ import java.util.logging._
 trait Logging {
   val log = Logger.getLogger(".")
   log.setUseParentHandlers(false)
-  log.addHandler(new FileHandler("AtomicLog.txt"))
-  log.addHandler(new ConsoleHandler)
   log.setLevel(Level.ALL)
-  log.getHandlers.foreach(_.setLevel(Level.ALL))
+  def addHandlers(levels:Level*) =
+    for(level <- levels) {
+      val fh = new FileHandler("AtomicLog-" + level.getName + ".txt")
+      val ch = new ConsoleHandler
+      fh.setLevel(level)
+      ch.setLevel(level)
+      log.addHandler(fh)
+      log.addHandler(ch)
+    }
   def error(msg:String) = log.severe(msg)
   def warn(msg:String) = log.warning(msg)
   def info(msg:String) = log.info(msg)
@@ -17,8 +23,7 @@ trait Logging {
   def trace(msg:String) = log.finer(msg)
 }
 
-class LoggingTest extends Logging {
-  info("Constructing a LoggingTest")
+object LoggingTest extends App with Logging {
   def f = {
     trace("entering f")
     // ...
@@ -31,14 +36,25 @@ class LoggingTest extends Logging {
     if(i > 100)
       warn(s"i getting high: $i")
   }
+  def argcvt(arg:String) =
+    arg match {
+      case "ALL" => Level.ALL
+      case "SEVERE" => Level.SEVERE
+      case "WARNING" => Level.WARNING
+      case "INFO" => Level.INFO
+      case "CONFIG" => Level.CONFIG
+      case "FINE" => Level.FINE
+      case "FINER" => Level.FINER
+      case _ => throw new IllegalArgumentException(arg + " not an option")
+    }
+  for(arg <- args) {
+    println("Logging level: " + argcvt(arg))
+    addHandlers(argcvt(arg))
+  }
+  f
+  g(0)
+  g(-1)
+  g(101)
 }
 
-val lt = new LoggingTest
-lt.f
-lt.g(0)
-lt.g(-1)
-lt.g(101)
-
-/* OUTPUT_SHOULD_BE
-
-*/
+// VERIFY_BY_INSPECTION
