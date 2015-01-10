@@ -1,23 +1,15 @@
-// Solution-2.scala
+// Solution-2b.scala
 // Solution to Exercise 2 in "Extensible Systems with Type Classes"
 import com.atomicscala.AtomicTest._
-
-/*{oldDescription} 2.  Add a new operation show to
-Shape_Inheritance.scala that returns a String of information about
-the Shape. Verify that it works. Now do the same thing to
-Shape_TypeClass.scala and note the differences. {oldDescription}*/
-
 import scala.math.{Pi, sqrt}
 
 trait Calc[S] {
   def area(shape:S):Double
 }
 
-def a[S](shape:S)(implicit calc:Calc[S]) =
-  f"$shape area: ${calc.area(shape)}%2.2f"
+def a[S](shape:S)(implicit calc:Calc[S]) = f"$shape area: ${calc.area(shape)}%2.2f"
 
-def show[S](shape:S) =
-  s"${shape.getClass.getSimpleName}"
+def checkSum[S](shape:S)(implicit calc:Calc[S]) = calc.area(shape).toString.foldLeft(0)(_ + _)
 
 case class Circle(radius:Double)
 
@@ -39,10 +31,15 @@ a(Circle(2.2)) is "Circle(2.2) area: 13.82"
 a(EQLTriangle(3.9)) is "EQLTriangle(3.9) area: 6.59"
 a(Circle(4.5)) is "Circle(4.5) area: 28.27"
 
-show(Circle(2.2)) is "Circle"
-show(EQLTriangle(3.9)) is "EQLTriangle"
-show(Circle(4.5)) is "Circle"
+checkSum(Circle(2.2)) is 935
+checkSum(EQLTriangle(3.9)) is 891
+checkSum(Circle(4.5)) is 935
 
 /* OUTPUT_SHOULD_BE
-
+Circle(2.2) area: 13.82
+EQLTriangle(3.9) area: 6.59
+Circle(4.5) area: 28.27
+935
+891
+935
 */

@@ -1,4 +1,4 @@
-// Solution-1.scala
+// Solution-1b.scala
 // Solution to Exercise 1 in "Extensible Systems with Type Classes"
 import com.atomicscala.AtomicTest._
 import scala.math.{Pi, sqrt}
