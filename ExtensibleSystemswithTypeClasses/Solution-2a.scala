@@ -28,13 +28,18 @@ val shapes = Vector(Circle(2.2),
 
 def a(s:Shape) = f"$s area: ${s.area}%.2f"
 
+def show(s:Shape) = s.getClass.getSimpleName
+
 val result = for(s <- shapes) yield a(s)
+val shows = (for(s <- shapes) yield show(s)).mkString(", ")
 
 result is "Vector(Circle(2.2) area: " +
 "13.82, EQLTriangle(3.9) area: 6.59," +
 " Circle(4.5) area: 28.27)"
 
+shows is "Circle, EQLTriangle, Circle"
 
 /* OUTPUT_SHOULD_BE
-
+Vector(Circle(2.2) area: 13.82, EQLTriangle(3.9) area: 6.59, Circle(4.5) area: 28.27)
+Circle, EQLTriangle, Circle
 */

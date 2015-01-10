@@ -16,6 +16,9 @@ trait Calc[S] {
 def a[S](shape:S)(implicit calc:Calc[S]) =
   f"$shape area: ${calc.area(shape)}%2.2f"
 
+def show[S](shape:S) =
+  s"${shape.getClass.getSimpleName}"
+
 case class Circle(radius:Double)
 
 implicit object CircleCalc
@@ -33,10 +36,12 @@ extends Calc[EQLTriangle] {
 }
 
 a(Circle(2.2)) is "Circle(2.2) area: 13.82"
-a(EQLTriangle(3.9)) is
-"EQLTriangle(3.9) area: 6.59"
+a(EQLTriangle(3.9)) is "EQLTriangle(3.9) area: 6.59"
 a(Circle(4.5)) is "Circle(4.5) area: 28.27"
 
+show(Circle(2.2)) is "Circle"
+show(EQLTriangle(3.9)) is "EQLTriangle"
+show(Circle(4.5)) is "Circle"
 
 /* OUTPUT_SHOULD_BE
 
