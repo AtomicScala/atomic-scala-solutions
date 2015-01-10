@@ -1,11 +1,6 @@
-// Solution-4.scala
+// Solution-4b.scala
 // Solution to Exercise 4 in "Extensible Systems with Type Classes"
 import com.atomicscala.AtomicTest._
-
-/*{oldDescription} 4.  Try duplicating lines 19-20 and 24 of
-Shape_Inheritance.scala in Shape_TypeClass.scala and see what
-happens. Why does this make sense? {oldDescription}*/
-
 import scala.math.{Pi, sqrt}
 
 trait Calc[S] {
@@ -32,11 +27,22 @@ extends Calc[EQLTriangle] {
 }
 
 a(Circle(2.2)) is "Circle(2.2) area: 13.82"
-a(EQLTriangle(3.9)) is
-"EQLTriangle(3.9) area: 6.59"
+a(EQLTriangle(3.9)) is "EQLTriangle(3.9) area: 6.59"
 a(Circle(4.5)) is "Circle(4.5) area: 28.27"
 
+val shapes = Vector(Circle(2.2), EQLTriangle(3.9), Circle(4.5))
+
+// We can discover the type information using pattern matching:
+val result = shapes map {
+  case s:Circle => a(s)      // These look the same ...
+  case s:EQLTriangle => a(s) // But now s is typed
+}
+
+result is "Vector(Circle(2.2) area: 13.82, EQLTriangle(3.9) area: 6.59, Circle(4.5) area: 28.27)"
 
 /* OUTPUT_SHOULD_BE
-
+Circle(2.2) area: 13.82
+EQLTriangle(3.9) area: 6.59
+Circle(4.5) area: 28.27
+Vector(Circle(2.2) area: 13.82, EQLTriangle(3.9) area: 6.59, Circle(4.5) area: 28.27)
 */
