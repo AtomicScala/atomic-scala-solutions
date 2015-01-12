@@ -45,22 +45,33 @@ else:
     def debug(arg): pass
     debug.ing = False
 
+###########################
+# def debug(arg): print(arg)
+# debug.ing = True
+# print "debugging"
+###########################
+
 def main():
     "This is hacky"
     if args.clean:
+        debug("clean")
         clean()
     if args.remove_results:
+        debug("remove results")
         remove_results()
     if args.file:
+        debug("Run one file")
         compilePrerequisites()
         debug("args.file: " + str(args.file))
         for fname in args.file:
             runfile(fname)
         return
     if not any(vars(args).values()) or args.trace or args.debug or args.sublime: # Change this so it's ONLY args.trace on the CL
+        debug("Run all files")
         run()
         return
     if args.prerequisites:
+        debug("Compile prerequisites")
         compilePrerequisites()
         return
     if args.simplify:
@@ -175,15 +186,15 @@ def compilePrerequisites():
 
 def run():
     compilePrerequisites()
-    if os.getcwd().endswith("atomic-scala-solutions"):
-        trace("Running all")
+    if os.path.basename(os.getcwd()).startswith("atomic-scala-solutions"):
+        debug("Running all")
         for p in solutionDirs:
             print(p)
             with visitDir(p):
                 for n in glob('Solution-*.scala'):
                     runfile(n)
     else:
-        trace("Just running this directory")
+        debug("Just running this directory")
         for n in glob('Solution-*.scala'):
             runfile(n)
 
