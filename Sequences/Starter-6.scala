@@ -10,5 +10,5 @@ val friends3 = Vector(
 )
 
 val s3 = // call first sort here
-val s4 = // sort s4 here
+val s4 = // sort s3 here
 s4 is "Vector(Mary Add, Mary Smith, Sally Taylor, Zach Smith)"
