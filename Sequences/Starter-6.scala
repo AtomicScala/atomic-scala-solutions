@@ -9,6 +9,6 @@ val friends3 = Vector(
   new Friend("Mary", "Smith", "mary@smith.com")
 )
 
-val s3 = // call first sort here
-val s4 = // sort s1 here
+val s3 = // Perform first sort here
+val s4 = // Sort s3 here
 s4 is "Vector(Mary Add, Mary Smith, Sally Taylor, Zach Smith)"
