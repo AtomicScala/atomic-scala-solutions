@@ -5,10 +5,10 @@ val airTemperature = 40
 val hour = 7
 
 // Uncomment these one at a time:
-val activity = "swimming"
-// val activity = "walking"
-// val activity = "biking"
-// val activity = "couch"
+/* val activity = "swimming" */
+/* val activity = "walking" */
+/* val activity = "biking" */
+/* val activity = "couch" */
 
 val isOpen = {
   if(activity == "swimming") {
